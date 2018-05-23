@@ -1,0 +1,83 @@
+/**
+ * Mixins
+ */
+
+/**
+ * Clearfix
+ *   Usage
+ *   - CSS: hoge { @include clearfix; }
+ *   - HTML: class="clearfix"
+ */
+@mixin clearfix() {
+	&::after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+}
+.clearfix {
+	@include clearfix;
+}
+
+
+/**
+ * Inline List
+ *   Usage
+ *   - CSS: ul.hoge { @include inline-list; }
+ *   - HTML: class="inline-list"
+ */
+@mixin inline-list() { // ul
+	li {
+		display: inline-block;
+		padding-right: .5rem;
+		padding-left: .5rem;
+		// &:not(:last-child) {
+		// 	margin-right: 1rem;
+		// }
+	}
+}
+.inline-list {
+	@include inline-list;
+}
+
+
+
+/**
+ * font-awesome common
+ *
+ * 色指定は _base.scss の FontAwesome (font-awesome) の項を参照
+ *
+ * // Solid Sample
+ * //   線アイコン使いたいなら regular のアイコンを指定 (font-family は同じ)
+ * .user::before {
+ *   @extend %my-fa-icon-base;
+ *   font-family: "Font Awesome 5 Free";
+ *   margin-right: .5rem;
+ *   font-weight: 900; // regular のアイコンフォントなら 400
+ *   content: "\f007";
+ *   color: #F00;
+ * }
+ *
+ * // Brands Sample
+ * .twitter::before {
+ *   @extend %my-fa-icon-base;
+ *   margin-right: .5rem;
+ *   font-family: "Font Awesome 5 Brands";
+ *   content: "\f099";
+ *   color: #00aced;
+ * }
+ */
+%my-fa-icon-base {
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}
+@mixin my-fa-icon-base() {
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}

@@ -1,0 +1,118 @@
+/**
+ * 2 Column Layout
+ */
+.single-post,
+.archive,
+.blog,
+.page-template-page-two-column {
+	.site-content { // &.container
+		margin-top: 0;
+		@media($md_){
+			display: grid;
+			grid-template-columns: 1fr 15rem;
+			grid-gap: 3%;
+		}
+	}
+
+		#primary {
+			@media($md_){
+				margin-top: 0;
+			}
+		}
+			main {
+				@media($md_){
+					padding: 2rem;
+				}
+			}
+
+		#secondary {
+			// -> _sidebar.php
+		}
+}
+
+
+.archive,
+.blog {
+	main [class^="container"] {
+		margin-top: 0;
+	}
+	.page-header {
+		text-align: center;
+		.page-title {
+			font-size: $font-x-large;
+			color: $color-primary;
+		}
+		.archive-description { // div
+		}
+	}
+	.entry-title {
+		a {
+			color: $color-primary;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.category {
+		display: inline-block;
+		color: $color-secondary;
+	}
+}
+
+
+/**
+ * WordPress Article
+ */
+.single-post {
+	.entry-title {
+		color: $color-primary;
+		margin-top: .5rem;
+		margin-bottom: .5rem;
+	}
+	.entry-category { // p
+		margin-top: 0;
+		margin-bottom: 0;
+		display: inline-block;
+		font-weight: bold;
+		color: $color-secondary;
+	}
+	.entry-meta {
+		font-size: $font-small;
+	}
+	.entry-footer {
+		text-align: right;
+		font-size: $font-small;
+	}
+}
+
+
+/**
+ * WordPress Comments
+ */
+.comments-area {
+	background-color: rgba(255,255,255,.4);
+	padding: 2rem;
+	margin-top: 3rem;
+}
+	.comment-reply-title { // h3
+		margin-top: 0;
+		&:before {
+			@include my-fa-icon-base;
+			font-family: "Font Awesome 5 Free";
+			margin-right: .5rem;
+			font-weight: 900; // regular のアイコンフォントなら 400
+			content: "\f4ad";
+			color: $color-primary-light;
+		}
+	}
+	.logged-in-as {
+		font-size: $font-small;
+		margin-top: 0;
+	}
+	.form-submit {
+		margin-bottom: 0;
+	}
+	.form-submit .submit { // 送信ボタン
+		@extend .btn--primary;
+	}

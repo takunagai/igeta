@@ -1,0 +1,154 @@
+/**
+ * ヘッダー
+ * ============================================================
+ * ※ メインメニューは primary-menu.scss (#primary-menu) を参照
+ * ※ ヒーローイメージは _hero-image.scss を参照
+ */
+.header-wrapper {
+	position: relative;
+}
+@media($md_){
+	.home #masthead {
+		position: absolute;
+		width: 100%;
+		top: 0;
+	}
+}
+#masthead { // header[role="banner"] jQueryがsizzleを使わないようID指定
+	.container {
+		margin-top: 0;
+		margin-bottom: 0;
+		@media ($_md) {
+			width: 100%;
+		}
+		@media ($md_) {
+			display: grid;
+			grid-template-columns: 240px 1fr;
+			grid-gap: 2rem;
+			align-items: center;
+		}
+	}
+}
+
+		.site-branding { // ロゴとキャッチフレーズを囲む領域
+			@media ($_md) {
+				height: 40px;
+				background-color: #FFF;
+			}
+		}
+			.site-title {//トップページはh1、以外はp カスタムロゴ未設定時はテキスト
+				margin-top: .5rem;
+				margin-bottom: .5rem;
+				font-size: $font-x-large;
+				font-weight: bold;
+				line-height: 1rem;
+				@media ($_md){
+					margin-top: .5rem;
+					margin-bottom: .25rem;
+				}
+			}
+				#masthead .custom-logo-link {
+					// -> _wp-essential.scss
+				}
+			.catch-phrase { // キャッチフレーズ(設定されていれば表示)
+				margin-top: 0;
+				font-size: $font-small;
+				margin-bottom: 0;
+				@media ($_md) {
+					display: none;
+				}
+			}
+
+		#primary-menu {
+			// → _primary-menu.scss
+		}
+
+
+@media($_md){
+	.site-branding {
+		text-align: center;
+		color: red;
+	}
+}
+
+
+@media($md_){
+	#masthead {
+		background-color: rgba(255,255,255,.5);
+		// background-color: #FFF;
+	}
+}
+
+
+
+/**
+ * WordPress カスタムヘッダー
+ *   -> _wp-essential.scss で設定
+ */
+// .wp-custom-header {}
+
+
+
+/**
+ * パンくずリスト
+ * Breadcrumb NavXT
+ * セパレーターの設定は上記プラグインの設定画面で
+ * Bootstrap のものをオーバーライド
+ */
+.breadcrumbs {
+	margin-top: .5rem;
+	margin-bottom: 2rem;
+	font-size: $font-small;
+	a {
+		display: inline-block;
+		color: $color-gray-600;
+		&:hover {
+			color: $color-link;
+		}
+	}
+}
+
+
+
+/**
+ * 最上位のヘッダー
+ *   header.php の説明を参照
+ */
+.top-header { // container
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	background-color: $color-gray-300;
+}
+	.top-header__title { // p
+		margin-bottom: 0;
+		text-align: center;
+		font-size: 1.5rem;
+	}
+
+
+/**
+ * お知らせの"重要なお知らせ"のみ表示
+ *   TODO: stiky を使う？
+ */
+.header-important-information { // aside
+	width: 100%;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	font-size: $font-small;
+	text-align: center;
+	ul {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-left: 0;
+		list-style-type: none;
+	}
+		li {
+			background-color: $color-secondary;
+			&:not(:first-child){
+				border-top: 1px solid #FFF;
+			}
+		}
+		a {
+			text-decoration: underline;
+		}
+}

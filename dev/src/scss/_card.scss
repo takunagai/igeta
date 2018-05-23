@@ -1,0 +1,53 @@
+/**
+ * Card
+ */
+.card {
+	line-height: 1.4;
+}
+	.card__img {
+		width: 100%;
+	}
+	.card__body {
+		margin-right: 1rem;
+		margin-left: 1rem;
+	}
+		.card__title {
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+		.card__meta {
+			font-size: smaller;
+		}
+.card.card--base,
+.card--base .card {
+	@extend .card;
+	background-color: #FFF;
+	// box-shadow: 0 0 3px rgba(0,0,0,.3);
+	// filter: drop-shadow(0 1px 2px rgba(0,0,0,.2));
+}
+	.card.card--base .card__body,
+	.card--base .card .card__body {
+		// margin-right: .5rem;
+		// margin-left: .5rem;
+	}
+		.card.card--base .card__body .card__title,
+		.card--base .card .card__body .card__title {}
+		.card.card--base .card__body .card__meta,
+		.card--base .card .card__body .card__meta {}
+
+.card--rounded,
+.card--rounded .card {
+	border-radius: 5px;
+	img:first-child {
+		border-top-right-radius: 5px;
+		border-top-left-radius: 5px;
+	}
+}
+
+
+
+.card.card--boxed,
+.card--boxed .card {
+	@extend .card;
+	border: 1px solid $color-gray-500;
+}

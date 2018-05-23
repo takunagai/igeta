@@ -1,0 +1,94 @@
+/**
+ * Table
+ *   塗りや線等のスタイルは _variable.scss に
+ */
+table,th,td {
+	border-color: $color-table-line;
+	border-style: solid;
+}
+table {
+	max-width: 100%;
+	margin: 1em 0 2em;
+	border-collapse: collapse;
+	border-width: $table-line-width 0 0 $table-line-width;
+}
+table.equal-row-width { // 中のtd幅均等に
+	width: 100%;
+	table-layout: fixed;
+}
+caption {
+	margin-bottom: .2rem;
+	text-align: left;
+	font-weight: bold;
+	line-height: 1.4;
+}
+	caption:before {
+	content: '● ';
+	color: $color-table-line;
+	}
+table.td-align-center td { // tdを横センター揃え
+	text-align: center;
+}
+table.td-align-right td { // tdを横右揃え
+	text-align: right;
+}
+table.td-valign-top td { // td内要素を上揃え
+	vertical-align: top;
+}
+caption {}
+thead {}
+tfoot {}
+th, td {
+	border-width: 0 $table-line-width $table-line-width 0;
+	padding: 2px 10px;
+	vertical-align: middle;
+}
+th {
+	color: $color-table-th-text;
+	background-color: $color-table-th-bg;
+	line-height: 1.25;
+	text-align: center;
+	a {
+	color: $color-table-th-link-text;
+	&:hover {color: $color-link-hover;}
+	}
+}
+td {
+	color: $color-table-td-text;
+	background-color: $color-table-td-bg;
+}
+.table--no-padding td,
+.table--no-padding th {
+	padding: 0 .4rem !important;
+	img {
+	vertical-align: top;
+	}
+}
+//奇数行にスタイリング
+.table--stripe tr:nth-child(2n+1) td {
+	background-color: $color-table-td-bg-alt;
+}
+//行、セルのハイライト
+tr.row-highlight {
+	th {} // background-color: $color-table-row-th-bg-highlight;
+	td {
+	// background-color: $color-table-row-td-bg-highlight;
+	color: #F00;
+	font-weight: bold;
+	}
+}
+th.cell-highlight {background-color: $color-table-cell-th-bg-highlight;}
+td.cell-highlight {background-color: $color-table-cell-td-bg-highlight;}
+
+// 注釈付き
+.table-with-notes {
+	margin-bottom: 1em;
+	table {
+	margin-bottom: 0;
+	}
+	.table-with-notes__note { // p
+	margin-top: 5px;
+	font-size: $font-small;
+	line-height: 1.4;
+	}
+}

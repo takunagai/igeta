@@ -1,0 +1,18 @@
+ {
+  "root": true,
+  "extends": "eslint:recommended",
+  "rules": {
+    "indent": [ 1, "tab" ],
+    "linebreak-style": [ 2, "unix" ],
+    "semi": [ 2, "always" ],
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "jquery": true
+  },
+  "parserOptions": {
+      "sourceType": "module"
+  }
+}

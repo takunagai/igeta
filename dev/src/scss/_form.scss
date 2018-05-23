@@ -1,0 +1,100 @@
+input,
+textarea {
+	max-width: 100%;
+}
+
+.comments-area { //div#comments
+}
+  .comments-title { //h2
+    span {} //タイトル (括弧内のテキスト)
+  }
+  .comment-navigation { //nav#comment-nav-above, #comment-nav-below 共通。コメントのページ分割時のみ表示
+    .nav-links {//div, 記事の前後記事リンクと共通のクラス
+      .nav-previous {//div
+        a {}
+      }
+      .nav-next {//div
+        a {}
+      }
+    }
+  }
+    #comment-nav-above { //nav
+      display: none;
+    }
+    #comment-nav-below { //nav
+    }
+  .comment-list { //ol、コメント本体
+  }
+    .comment { //li
+      margin-bottom: .5rem;
+      border-bottom: 1px solid $color-primary-light;
+      &.thread-alt {}
+      &.alt {}
+      &.odd {}
+      &.thread-odd {}
+      &.even {}
+      &.thread-even {}
+      &.depth-1 {}
+      &.depth-2 {}
+      &.depth-3 {}
+    }
+      .comment-body { //article
+      }
+        .comment-meta { //footer
+        }
+          .comment-author {//div.vcard
+            .avatar { //img.avatar-32.photo
+            }
+            b { //.fn,
+              .url { //a, コメンター名
+              }
+            }
+          }
+          .comment-metadata { //div
+            a {
+              time {}
+            }
+            .edit-link {}
+              .comment-edit-link { //a, 編集
+                margin-left: .5rem;
+                font-size: $font-small;
+                font-style: italic;
+                text-decoration: underline;
+              }
+          }
+        .comment-content { //div
+          p {
+            margin-bottom: 0;
+          }
+        }
+        .reply { //div, 返信
+          margin-bottom: .5rem;
+          .comment-reply-link { //a
+            text-decoration: underline;
+            &:before {
+              content: '» ';
+            }
+          }
+        }
+
+  .comment-respond { //div#respond
+  }
+    .comment-reply-title { //h3.reply-title
+    }
+    .comment-form { //form#commentform
+    }
+      .logged-in-as { //p
+        margin-bottom: 1rem;
+      }
+      .comment-form-comment { //p
+        margin-bottom: .5rem;
+        label {
+          display: block;
+        }
+        textarea { //comment
+        }
+      }
+      .form-submit { //p
+        .submit { //input#submit
+        }
+      }

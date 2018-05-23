@@ -1,0 +1,248 @@
+/**
+ * メインメニュー
+ * ============================================================
+ * nav[role="navigation"] 内
+ * メニューの ID やクラス名は、primary-menu.php の wp_nav_menu() で定義
+ */
+
+
+/**
+ * モバイル用 表示/非表示 トグルボタン
+ */
+#primary-menu-toggle-button { // button
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	font-size: $font-x-large;
+	color: $color-gray-600;
+	background-color: #FFF;
+	border: none;
+	// border: 1px solid $color-gray-400;
+	&:before {
+		content: '≡';
+	}
+}
+.primary-menu-toggle-button--open:before {
+	content: '×' !important;
+}
+.admin-bar #primary-menu-toggle-button {
+	// top: 2.875rem;
+}
+
+
+
+/**
+ * メニュー (共通)
+ * @link: クラス一覧 https://wpdocs.osdn.jp/テンプレートタグ/wp_nav_menu
+ */
+#primary-menu { // nav
+	// z-index: 1;
+	ul {
+		padding-left: 0;
+		list-style-type: none;
+		.menu-item { // li 全てのメニュー項目
+			a {
+				display: block;
+				width: 100%;
+				font-size: $font-small;
+				text-decoration: none;
+				color: $color-font;
+			}
+		}
+		& > li {
+			a {
+				padding: .5rem;
+			}
+		}
+		.menu-item-has-children { // 子を持つ親メニュー項目 li
+		}
+			.sub-menu { // ul 2階層目以降に付加
+				li {}
+					a {}
+			}
+	a {
+		&:before,
+		&:after {
+			@include my-fa-icon-base;
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900; // regular のアイコンフォントなら 400
+		}
+	}
+
+
+		// li 現在のページのメニュー項目
+		.current-menu-item {
+			a { background-color: $color-gray-100; }
+		}
+
+		// メニュー項目に付くクラス群
+		.current-menu-item         {} // li 現在のページのメニュー項目
+
+		.current-menu-parent       {} // li 現在のページの階層の親に対応するメニュー項目
+		.current-OBJECT-parent     {} // li 現在のオブジェクトの階層の親に対応するメニュー項目
+		.current-TYPE-parent       {} // li 現在のタイプの階層の親に対応するメニュー項目
+
+		.current-menu-ancestor     {} // li 現在のページの階層の先祖に対応するメニュー項目
+		.current-OBJECT-ancestor   {} // li 現在のオブジェクトの階層の先祖に対応するメニュー項目
+		.current-TYPE-ancestor     {} // li 現在のタイプの階層の先祖に対応するメニュー項目
+
+		.menu-item-home            {} // li サイトのフロント ページに対応するメニュー項目
+
+		.page_item                 {} // li 固定ページに対応するメニュー項目
+		.page_item_has_children    {} // li サブページを持つメニュー項目
+		.page-item-ID              {} // li $IDは固定ページのIDはであり、固定ページに対応するメニュー項目
+
+		.current_page_item         {} // li 現在表示されている固定ページに対応するメニュー項目
+		.current_page_parent       {} // li 現在表示されている固定ページの階層の親に対応するメニュー項目
+		.current_page_ancestor     {} // li 現在表示されている固定ページの階層の先祖に対応するメニュー項目
+
+		.menu-item-object-category {} // li カテゴリに対応するメニュー項目
+		.menu-item-object-tag      {} // li タグに対応するメニュー項目
+		.menu-item-object-page     {} // li 固定ページに対応するメニュー項目
+		.menu-item-object-CUSTOM   {} // li カスタムポストタイプやカスタム分類に対応したメニュー項目
+
+		.menu-item-type-post_type  {} // li ポストタイプに対応するメニュー項目
+		.menu-item-type-taxonomy   {} // li カスタム分類に対応するメニュー項目
+	}
+}
+
+/**
+ * スマートフォン
+ */
+@media ($_md) {
+	#primary-menu {
+		display: none;
+		&.primary-menu--open {
+			display: block;
+			animation: mobile-menu .4s linear 0s;
+			@keyframes mobile-menu {
+				from { opacity: 0; }
+				  to { opacity: 1; }
+			}
+		}
+		& > ul {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		& > ul > .menu-item > a { // 1階層目
+			// padding-top: 1rem;
+			// padding-bottom: 1rem;
+		}
+		a:after {
+			float: right;
+			content: "\f105";
+			color: $color-primary-light;
+		}
+		.menu-item { // li
+			a {
+				background-color: white;
+				border-bottom: $color-gray-200 1px solid;
+				&:hover {
+					background-color: $color-gray-100;
+				}
+				&:before {
+					margin-right: .5rem;
+					content: "\f138";
+					color: $color-primary;
+				}
+			}
+		}
+			.sub-menu {
+				li {}
+					a {
+						padding-left: 2rem;;
+						&:before {
+							margin-right: .5rem;
+							content: "\f0da";
+							color: $color-primary-light;
+						}
+					}
+			}
+	}
+}
+
+
+/**
+ * タブレット以上
+ */
+@media ($md_) {
+	#primary-menu-toggle-button {
+		display: none;
+	}
+
+	#primary-menu {
+		text-align: right;
+		> ul {
+			display:inline-flex;
+			text-align: left;
+			// justify-content: space-between;
+		}
+			.menu-item { // li
+			}
+			.menu-item-home {
+				display: none !important;
+			}
+			.menu-item-has-children { // 子を持つ親メニュー項目 li
+				position: relative;
+				> a:after {
+					margin-left: .25rem;
+					content: "\f0d7";
+					color: $color-primary-light;
+				}
+			}
+				.sub-menu { // ul 2階層目以降に付加
+					display: none;
+					position: absolute;
+					border: $color-gray-200 1px solid;
+					box-shadow: 1px 1px 0 1px rgba(0,0,0,.2);
+					li {
+						z-index: 999;
+						width: 12rem;
+					}
+						a {
+							background-color: white;
+							border-bottom: $color-gray-200 1px dotted;
+							&:hover {
+								background-color: $color-gray-100;
+							}
+							&:before {
+								margin-right: .5rem;
+								content: "\f0da";
+								color: $color-primary-light;
+							}
+						}
+				}
+
+				.menu-item-has-children:hover .sub-menu {
+					display: block;
+					animation: show-sub-menu .4s linear 0s;
+					@keyframes show-sub-menu {
+						from { opacity: 0; }
+						  to { opacity: 1; }
+					}
+				}
+				.menu-item-has-children:hover .sub-menu {}
+	}
+}
+
+
+
+/**
+ * デスクトップ
+ */
+@media ($lg_) {
+	#primary-menu {}
+}
+
+
+
+/**
+ * form
+ */
+#site-navigation__search {
+	input {}
+	button {}
+}

@@ -1,0 +1,39 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/Users/taku_n/vccw/wordpress/wp/wp-content/themes/igeta/dev/src",
+			"folder_exclude_patterns":["node_modules"]
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/taku_n/vccw/wordpress/wp/wp-content/themes/igeta/dev",
+			"folder_exclude_patterns":["node_modules"]
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/taku_n/vccw/wordpress/wp/wp-content/themes/igeta",
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/taku_n/vccw",
+		},
+	],
+	"settings": {
+		"tab_size": 4,
+		"translate_tabs_to_spaces": false
+	}
+}
+
+/*
+  ## 除外のサンプル ("folders"：[] 内に追記)
+
+  * ファイル："file_exclude_patterns":["*.jpg","test.php"]
+  * フォルダ："folder_exclude_patterns":["img","js"]
+
+  ## ビルド
+
+  * "build_systems": []
+
+*/

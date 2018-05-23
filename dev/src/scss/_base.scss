@@ -1,0 +1,205 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html {
+	line-height: 1.7;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Meiryo, "Yu Gothic", sans-serif; // 游ゴシックを使いたければ「頭に」 YuGothic を追加;
+	// font-weight: 500;//Windowsで游ゴシック体のウェイトを Medium にするために必要
+	color: $color_font;
+	-webkit-font-smoothing: antialiased; // Safari(Mac,iOS)で文字を細めに。ボタンは文字が見にくくなるので戻している
+	-moz-osx-font-smoothing: grayscale; // Firefoxで文字にアンチエイリアス。ボタンは文字が見えにくく鳴るので戻している
+}
+
+body {
+	margin: 0;
+}
+
+
+/**
+ * Adjustment
+ */
+
+// 子要素を持つ可能性がブロック要素から、子要素がはみ出ないように
+div,section,aside,header,footer,main,article,nav,
+hgroup,h1,h2,h3,h4,h5,h6,
+p,blockquote,ul,ol,li,dl,dt,dd,
+figure,figcaption,video,
+table,tbody,thead,tfoot,
+form,fieldset,address,pre {
+	// overflow-y: hidden;
+	padding-top: .02px;
+	padding-bottom: .02px;
+}
+
+// 長い半角文字列を改行させる
+p,h1,h2,h3,h4,h5,h6,
+th,td,dt,dd,label {
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+figure {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+// 長いのをはみ出させない
+pre {
+	overflow-x: auto;
+	line-height:.7rem;
+}
+
+
+/**
+ * Typography
+ */
+
+// Size Set (You can use these font size variables directry.)
+.font-xx-large { font-size: $font-xx-large; }
+.font-x-large  { font-size: $font-x-large;  }
+.font-large    { font-size: $font-large;    }
+.font-small    { font-size: $font-small;    }
+.font-x-small  { font-size: $font-x-small;  }
+
+// small tag in header tag
+h1,h2,h3,h4,h5,h6 {
+	small {
+		display: block;
+		font-weight: normal;
+		font-size: $font-small;
+	}
+}
+
+a {
+	color: $color-link;
+	&:hover {
+		color: $color-link-hover;
+	}
+	&:visited {
+		color: $color-link-visited;
+	}
+}
+
+textarea {
+	max-width: 100%;
+}
+
+.warning {
+	color: $color-red;
+}
+
+// 区切り文字
+.separator {
+	color: $color-gray-400;
+}
+
+// アクセシビリティ用 (スクリーンリーダー用)
+.screen-reader-text {
+	position: absolute;
+	left: -9999px;
+}
+legend.screen-reader-text {
+	display: none;
+}
+
+
+/**
+ * FontAwesome (font-awesome)
+ *   @link http://weboook.blog22.fc2.com/blog-entry-399.html
+ */
+.fa-facebook, .fa-facebook-square  { color: #3B5998; }
+.fa-instagram { color: #262626; }
+.fa-twitter   { color: #1DA1F2; }
+.fa-line      { color: #00C300; }
+.fa-youtube   { color: #CD201F; }
+
+[class*="fa-"]:hover {
+	filter: brightness(120%);
+}
+
+
+/*--------------------------------------------------------------
+# Utility Classes
+--------------------------------------------------------------*/
+
+// device
+.mobile-only {
+	@media ($sm_) {
+		display: none;
+	}
+}
+
+// margin adjustment
+.mt-0 { margin-top:      0 !important; }
+.mt-1 { margin-top: .25rem !important; }
+.mt-2 { margin-top:  .5rem !important; }
+.mt-3 { margin-top:   1rem !important; }
+.mt-4 { margin-top: 1.5rem !important; }
+.mt-5 { margin-top:   2rem !important; }
+.mt-6 { margin-top:   3rem !important; }
+
+.mb-0 { margin-bottom:      0 !important; }
+.mb-1 { margin-bottom: .25rem !important; }
+.mb-2 { margin-bottom:  .5rem !important; }
+.mb-3 { margin-bottom:   1rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.mb-5 { margin-bottom:   2rem !important; }
+.mb-6 { margin-bottom:   3rem !important; }
+.mb-0+*,.mb-1+*,.mb-2+*,.mb-3+*,
+.mb-4+*,.mb-5+*,.mb-6+*,.mb-7+* {
+	margin-top: 0 !important;
+}
+
+// モバイルだけ改行させない
+@media($_md){
+	.no-break {
+		display: inline-block;
+	}
+}
+
+
+// 下線
+.border-bottom {
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+
+// 角丸
+.rounded-images img,
+.rounded-images--5 img,
+.rounded,
+.rounded--5 {
+	border-radius: 5px;
+}
+.rounded-images--3 img,
+.rounded--3 {
+	border-radius: 3px;
+}
+.rounded-images--7 img,
+.rounded--7 {
+	border-radius: 7px;
+}
+.rounded-images--10 img,
+.rounded--10 {
+	border-radius: 10px;
+}
+
+// 円
+.circle--images img,
+.circle {
+	border-radius: 9999px;
+}
+
+// Box Shadow
+.box-shadow-images img,
+.box-shadow {
+	box-shadow: 0 1px 3px rgba(0,0,0,.3);
+}
+
+// Blur
+.blur {
+	filter: blur(7px);
+}

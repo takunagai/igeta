@@ -1,0 +1,44 @@
+/**
+ * Hero Image
+ */
+.hero-image-wrapper { // div
+	.hero-image { // div
+		 z-index: -9999;
+		// ※ width, height, background-image は custom-header.php に記述
+		// mediaquery でモバイル表示時の高さも設定
+		position:relative;
+		width: 100%;
+		max-height: 70vh;
+		@media($sm_){ max-height: 50vh; }
+		@media($md_){ max-height: 60vh; }
+		@media($lg_){ max-height: 70vh; }
+		background-size: cover; /*contain*/
+		background-position: center center;
+		background-repeat: no-repeat;
+		// background-size: auto 100%;
+		// filter: brightness(70%);// filter: blur( ぼかしの長さ ); contrast( 数字 or パーセンテージ )
+		.hero-image__body { // div
+			display: inline-block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform : translate(-50%,-50%);
+			text-align: center;
+			padding-right: 1rem;
+			padding-left: 1rem;
+			background-color: rgba(255,255,255,.8);
+			@media($_sm){
+				font-size: $font-small;
+				width: 19em;
+			}
+			p {
+				margin-top: .5rem;
+				margin-bottom: .5rem;
+				letter-spacing: .15rem;
+				@media($md_){
+					letter-spacing: .2rem;
+				}
+			}
+		}
+	}
+}

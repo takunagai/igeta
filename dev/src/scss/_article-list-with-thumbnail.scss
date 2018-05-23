@@ -1,0 +1,45 @@
+/**
+ * 記事タイトル一覧(サムネイル付き)
+ */
+.article-list-with-thumbnail {outline: 1px solid lightgray;
+	padding: .75rem;
+}
+@media ($md_) {
+	.article-list-with-thumbnail {
+	width: 20rem;
+	}
+}
+	.article-list-with-thumbnail__item {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start; // vertical
+	}
+	.article-list-with-thumbnail__item:not(:last-child) {
+		margin-bottom: .5rem;
+		padding-bottom: .5rem;
+		border-bottom: 1px dotted lightgray;
+	}
+	.article-list-with-thumbnail__item__thumbnail {
+		width: 6rem;
+		order: 1;
+	}
+		.article-list-with-thumbnail__item__thumbnail img {
+		border: 2px solid white;
+		outline: 1px solid lightgray;
+		}
+	.article-list-with-thumbnail__item__content {
+		order: 2;
+		width: 12rem;
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-left: 1rem;
+	}
+		.article-list-with-thumbnail__item__content__title {
+		/*display: block;*/
+		}
+		.article-list-with-thumbnail__item__content__taxonomy,
+		.article-list-with-thumbnail__item__content__meta {
+		font-size: .75rem;
+		}
+		.article-list-with-thumbnail__item__content__taxonomy {}
+		.article-list-with-thumbnail__item__content__meta {}

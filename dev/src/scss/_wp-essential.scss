@@ -1,0 +1,465 @@
+/**
+ * WordPress 用のクラス
+ * ============================================================
+ * 公式テーマに必須 (ないと Theme Check 通らない)
+ * 参考：https://gist.github.com/codeclarifiedsnip/2156515
+ */
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.alignleft {
+	float: left;
+	margin-right: .75em;
+	text-align: left;
+}
+.alignright {
+	float: right;
+	margin-left: .75em;
+	text-align: right;
+}
+
+.wp-caption { // figure
+	max-width: 100%;
+	text-align: center;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	img {}
+}
+	.wp-caption-text { // figcaption
+		font-size: $font-small;
+		margin-top: .25rem;
+	}
+
+// .gallery-caption {} → ギャラリー参照
+
+
+// 先頭に固定表示の投稿に付与
+.sticky {
+	// border: 1px dotted $color-primary-light;
+}
+.tag-sticky { // ループ(シングルページ(article)、アーカイブページ(section))
+	// border: 1px dotted $color-primary-light !important;
+}
+
+// 記事作成者がログインした状態で投稿したコメント
+.bypostauthor {
+	font-weight: bold;
+}
+
+// アクセシビリティ用 (_s のものを流用)
+// TODO: Bootstrapの.sr-onlyと重複
+// 　　the_post_navigation(),	the_posts_pagination(), get search form() 等が吐き出す
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	&:focus {
+		background-color: #f1f1f1;
+		border-radius: 3px;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		color: #21759b;
+		display: block;
+		font-size: 14px;
+		font-size: 0.875rem;
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; /* Above WP toolbar. */
+	}
+}
+
+
+// 以下必要なら
+
+// // ログイン時、adminbar で上部が隠れないように
+// .admin-bar {
+//	 margin-top: 32px;
+//	 #masthead { // 固定ヘッダーの場合
+//		 margin-top: 32px;
+//	 }
+// }
+
+
+
+/**
+ * 続きを読むリンク(moreタグ)
+ */
+.more-link { // a
+	display: inline-block;
+	float: right;
+	border: 1px solid gray;
+	// @include media-breakpoint-up(lg) {
+	//	 float: right;
+	// }
+	&:after { // 要らない？
+		content: '';
+		display: block;
+		clear: right;
+	}
+}
+
+/**
+ * 画像
+ */
+.size-thumbnail { max-width: 240px; }
+// .size-medium		{max-width: 600px;}
+// .size-large		 {max-width: 1200px;}
+// .size-full			{max-width: 1200px;}
+
+
+
+/**
+ * アイキャッチ画像 (独自設定クラス content.php 他)
+ *   アイキャッチ画像のある投稿には .has-post-thumbnail が付く
+ */
+.post-thumbnail-wrapper {//div
+	position: relative;
+	text-align: center;
+}
+	// .single main {
+	//	 .post-thumbnail-wrapper {
+	//		 text-align: center;
+	//		 max-width: 100%;
+	//		 @include media-breakpoint-down(sm) {
+	//			 margin-right: -2rem;
+	//			 margin-left: -2rem;
+	//		 }
+	//	 }
+	// }
+	// .archive {
+	//	 .post-thumbnail-wrapper {
+	//		 display: inline-block;
+	//		 float: left;
+	//		 margin-right: 1rem;
+	//	 }
+	// }
+	.post-thumbnail {// img アイキャッチ画像。a要素の子要素
+		text-align: center;
+		@media($_sm) {
+			img {
+				width: 100%;
+			}
+		}
+	}
+		.post-thumbnail__caption { // p
+			display: inline-block;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			margin-bottom: 0;
+			padding: .125rem .5rem;
+			font-size: $font-small;
+			font-style: italic;
+			background-color: rgba(255,255,255,.3);
+			a {
+				display: block;
+				color: $color-font;
+				text-decoration: underline;
+				&:hover {
+					color: $color-gray-600;
+				}
+			}
+		}
+		.post-thumbnail--noimg {//img アイキャッチ画像が設定されてないとkの代替画像に付く
+			//outline: 1px solid green;
+		}
+		.post-thumbnail--noimg--small {
+			width: 160px;
+		}
+
+
+
+/**
+ * WordPress がデフォルトで生成するクラスタグ
+ */
+// .categories {}
+// .cat-item {}
+// .current-cat {}
+// .current-cat-parent {}
+// .children {}
+// .pagenav {}
+// .page_item {}
+// .current_page_item {}
+// .current_page_parent {}
+// .current_page_ancestor {}
+// .blogroll {}
+// .linkcat{}
+
+
+
+/**
+ * ウィジェット
+ */
+.widget { // section, 共通
+	margin-bottom: 1rem;
+}
+	.widget-title { // h2
+		margin-top: 0;
+	}
+
+.widget.widget_recent_entries,
+.widget.widget_archive,
+.widget.widget_categories {
+	ul {}
+	li {// 投稿数は aタグの外
+		a {
+			&:hover {}
+		}
+	}
+}
+
+.widget.widget_categories {
+	.cat-item {} // li 共通
+		.children { // ul 子リスト
+			.cat-item {}
+		}
+}
+.widget.widget_recent_entries {}
+.widget.widget_archive {}
+
+.widget.widget_search {}
+
+.widget.widget_text {}
+	.textwidget { // div
+		p {}
+	}
+
+.tag-archive { // span
+	a {}
+}
+
+
+
+
+.widget-area-after-post { // aside, &.widget
+	margin-bottom: 3rem;
+	.widget {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+	.widget-title {
+		margin-bottom: 0;
+	}
+	.widget {}
+	.widget-title {} // h2
+	.textwidget {} // ウィジェットの種類によって違う
+		.tel {}
+}
+
+
+.widget-area-main-bottom { // aside, &.widget
+	margin-bottom: 3rem;
+	.widget {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+	.widget-title {
+		margin-bottom: 0;
+	}
+	.widget {}
+	.widget-title {} // h2
+	.textwidget {} // ウィジェットの種類によって違う
+		.tel {}
+}
+
+
+
+/**
+ * 前後リンク表示、ページネーションリンク
+ */
+// wp関数の the_post_navigation() が吐き出す
+.post-navigation {
+	margin-top: 1em;
+}
+	.nav-links { //div
+		display: flex;
+		justify-content: center;
+		align-items: stretch;
+		.nav-previous, .nav-next {
+			width: 49%;
+			padding: .5rem 1rem;
+			border: 1px solid $color-gray-400;
+			font-size: smaller;
+			a {
+				display: block;
+				text-decoration: none;
+			}
+		}
+		.nav-previous { //div
+			a:before {
+				content: '« ';
+			}
+		}
+		.nav-next { //div
+			text-align: right;
+			a:after {
+				content: ' »';
+			}
+		}
+
+		.page-numbers { // リンクなしの.currentはspan、リンクはa
+			margin-right: .5rem;
+			margin-left: .5rem;
+			.current {}
+			&.next {}
+			&.previous {}
+		}
+	}
+
+
+
+/**
+ * Embed
+ */
+
+// Youtube movie
+// Facebook Post
+
+// Twitter Tweet
+.twitter-tweet { // blockquote
+	border: 1px dotted gray;
+	p {
+		margin-right: 1rem;
+		margin-left: 1rem;
+		&:last-child { // meta
+			font-size: $font-small;
+			text-align: right;
+			a {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+
+
+/**
+ * カスタムヘッダー
+ * ダッシュボードで差替えできる画像。ヘッダーでなくても良い
+ */
+.wp-custom-header { // div#wp-custom-header
+	padding-right: 0 !important;
+	padding-left: 0 !important;
+	// height: 100vh;
+	// background: url(image.jpg) no-repeat fixed; background-size: cover;
+	// p { // テキスト。必須ではない
+	//	 margin-top: -2em;
+	//	 margin-left: 1em;
+	//	 color: #FFF;
+	//	 letter-spacing: .2em;
+	// }
+	img, video, iframe {
+		display: block;
+		width: 100vw;
+		height: auto; // 100vh
+		// height: 30vh
+		// filter:brightness(30%); // 暗くする
+	}
+}
+
+/**
+ * カスタムロゴ
+ * ダッシュボードで差替えできるロゴ。ヘッダーやフッターで使う
+ */
+.custom-logo-link {
+	display: inline-block;
+}
+	.custom-logo { // img カスタムロゴを設定した場合のみ表示
+		@media ($_md){
+			margin-right: auto;
+			margin-left: auto;
+			max-height: 2.5rem;
+			height: 1rem;
+			width: auto;
+		}
+	}
+	#masthead {
+		.custom-logo-link { // h1 or p > a カスタムロゴ未設定時のテキスト装飾
+			text-decoration: none;
+			.custom-logo { // img カスタムロゴを設定した場合のみ表示
+				@media ($_md){
+					max-height: 2.5rem;
+				}
+			}
+		}
+	}
+	.footer-information {
+		.custom-logo-link { // h1 or p > a カスタムロゴ未設定時のテキスト装飾
+			text-decoration: none;
+			.custom-logo { // img カスタムロゴを設定した場合のみ表示
+				max-width: 50%;
+				@media ($_md){
+					max-width: 100%;
+					max-height: 2rem;
+				}
+			}
+		}
+	}
+
+
+/**
+ * ページ分けした時に表示される前後リンクとページネーション
+ *   パラメーターで変更可
+ */
+.page-links_next-previous,
+.page-links_by_number { // div "ページ: 1 "
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.page-links_next-previous { // p
+	a {
+		@extend .btn--primary;
+		margin-right: .25rem;
+		margin-left: .25rem;
+	}
+  // a:first-child {
+  //   margin-right: 1.5rem;
+  //   &:before {
+  //     content: '« ';
+  //   }
+  // }
+  // a:last-child {
+  //   &:after {
+  //     content: ' »';
+  //   }
+  // }
+}
+.page-links_by_number { // div "ページ: 1 "
+  margin-top: 1rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px dotted #E7E7E7;
+  span {
+    vertical-align: middle;
+  }
+  .page-links__number { // span ページの数字 リンク付きは a タグ内
+    padding: .25rem .5rem;
+    border: 1px solid #E7E7E7;
+  }
+  & > .page-links__number { // span ページの数字(現在のページ)
+    margin-right: .5rem;
+    margin-left: .5rem;
+  }
+  a {
+    margin-right: .5rem;
+    margin-left: .5rem;
+    background-color: #E7E7E7;
+    &:hover {
+      background-color: #CCC;
+    }
+    .page-links__number { // span ページの数字 リンク付きは a タグ内
+      border: 1px solid #E7E7E7;
+    }
+  }
+}

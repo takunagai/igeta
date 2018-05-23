@@ -1,0 +1,104 @@
+/**
+ * Speech Bubble
+ *
+ * TODO: モバイルファーストに
+ */
+.bubble {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+  .bubble__speaker {
+    width: 20%;
+    margin-right: 1rem;
+    text-align: center;
+    font-size: .8rem;
+  }
+    .bubble__speaker img {
+      width: 100%;
+      border-radius: 100%;
+    }
+  .bubble__speech {
+    width: 75%;
+    position: relative;
+    padding: 1rem;
+    background: #FFF;
+    border-radius: .5rem;
+    border: #E7E7E7 solid 3px;
+  }
+
+  .bubble__speech:before,
+  .bubble__speech:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 1rem 1rem 1rem 0;
+    display: block;
+    width: 0;
+    margin-top: -1rem;
+    top: 50%;
+  }
+  .bubble__speech:before {
+    border-color: transparent #E7E7E7;
+    z-index: 0;
+    left: -17px;
+  }
+  .bubble__speech:after {
+    border-color: transparent #FFF;
+    z-index: 1;
+    left: -13px; /* 線幅に合わせ調整(before との差が太さ) */
+  }
+    .bubble__speech *:first-child {
+      margin-top: 0;
+    }
+    .bubble__speech *:last-child {
+      margin-bottom: 0;
+    }
+
+.bubble--reverse {}
+  .bubble--reverse .bubble__speaker {
+    order: 2;
+  }
+  .bubble--reverse .bubble__speech {
+    order: 1;
+    margin-left: 0;
+    margin-right: 2rem;
+  }
+  .bubble--reverse .bubble__speech:before,
+  .bubble--reverse .bubble__speech:after {
+    border-width: 1rem 0 1rem 1rem;
+  }
+  .bubble--reverse .bubble__speech:before {
+    left: initial;
+    right: -17px;
+  }
+  .bubble--reverse .bubble__speech:after {
+    left: initial;
+    right: -13px;
+  }
+
+@media($_md){
+  .bubble {
+    align-items: flex-start;
+  }
+  .bubble:before,
+  .bubble:after {
+    top: 3rem;
+  }
+    .bubble__speaker {
+      margin-top: 1rem;
+      margin-right: .5rem;
+    }
+    .bubble__speaker img {
+      width: 60px;
+    }
+    .bubble__speech:before,
+    .bubble__speech:after {
+      top: 2rem;
+    }
+    .bubble--reverse .bubble__speech {
+      margin-right: 1.5rem;
+    }
+}

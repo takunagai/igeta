@@ -1,0 +1,97 @@
+// WordPress Header -> scss/wp-comment-header.css
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+// @import './dev/node_modules/normalize.css/'; // -> glup-concat で統合
+
+@import './scss/variables';
+@import './scss/mixin';
+@import './scss/base';
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import './scss/element-table';
+@import './scss/element-list';
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import './scss/layout-grid';
+@import './scss/layout-container';
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import './scss/header';
+@import './scss/primary-menu';
+@import './scss/hero-image';
+@import './scss/content';
+@import './scss/sidebar';
+@import './scss/footer';
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import './scss/card';
+@import './scss/media';
+@import './scss/button';
+@import './scss/speech-bubble'; // ふきだし
+// label
+// alert
+
+/*--------------------------------------------------------------
+# Object (Image, Movie, iframe etc)
+--------------------------------------------------------------*/
+@import './scss/object';
+
+/*--------------------------------------------------------------
+# background
+--------------------------------------------------------------*/
+@import './scss/background';
+
+/*--------------------------------------------------------------
+# WordPress
+--------------------------------------------------------------*/
+@import './scss/wp-essential'; // WordPress 必須 他
+@import './scss/wp-plugins';   // プラグイン
+@import './scss/wp-gallery';   // 標準ギャラリー
+@import './scss/form';
+// Widgets
+
+/*--------------------------------------------------------------
+# JavaScript
+--------------------------------------------------------------*/
+@import './scss/javascript';
+
+/*--------------------------------------------------------------
+# Print
+--------------------------------------------------------------*/
+ @import './scss/print';
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+// @import 'modules/accessibility';
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+// @import 'modules/infinite-scroll';
+
+/*--------------------------------------------------------------
+# Web Font
+--------------------------------------------------------------*/
+// ★★子テーマと重複。パス。整理すること
+
+/**
+ * Font Awesome
+ *   Cheetsheet: @link https://fontawesome.com/cheatsheet
+ *   Icon List : @link https://fontawesome.com/icons?d=gallery&s=solid&m=free (右上 i マークで文字コード表示)
+ */
+@import './scss/font-awesome/fontawesome.scss'; //基本・必須
+@import './scss/font-awesome/fa-solid.scss'; //Solid (塗り)
+// @import './scss/font-awesome/fa-regular.scss'; //Regular (線)
+@import './scss/font-awesome/fa-brands.scss'; //ロゴ等
+// -> glup-concat で統合

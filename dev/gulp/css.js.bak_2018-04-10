@@ -1,0 +1,85 @@
+// @file css.js
+
+/**
+ * CSS関連のタスク (css, css2, css_watch)
+ * 注意：uncss でdist内のHTMLファイルを参照するので、htmlタスクの後に実行されるようにすること
+ * 参考：@link: http://blog.flup.jp/2015/02/17/gulp_webpack_stylus/
+ * ★★TODO: パーシャルの編集保存時、CSSタスクは実行されると出るが、実際は再変換していないのを修正
+ * もしsourcemapがずれたらgulp-sassのcompressでなくgulp-minify-cssを使うとよい
+ * ※ soucemapsはuncss非対応なのでソースマップが正常に生成されない → 解決案：分岐で本番用はsoucemapを無効、uncssを有効、開発はその逆
+ */
+
+import gulp from 'gulp';
+import autoprefixer from 'gulp-autoprefixer';
+import concat from 'gulp-concat';
+import gulpif from 'gulp-if';
+import notify from 'gulp-notify';
+import plumber from 'gulp-plumber';
+import print from 'gulp-print';
+import sass from 'gulp-sass';
+import uncss from 'gulp-uncss';
+import {css as config} from '../config'; // == var config = require('../config').css;
+import {css2 as config2} from '../config'; // == var config = require('../config').css;
+// import cache from 'gulp-cached';
+// import newer from 'gulp-newer';
+// import sourcemaps from 'gulp-sourcemaps';
+// import watch from 'gulp-watch'; // もう不要？ gulp3 のgulp.watch()はファイルの追加や削除に反応しないバグがあるため使っている
+//import postcss         from 'gulp-postcss';//ブラウザ未実装のCSSをトランスコンパイル
+
+
+//function名がタスク名となるv4への移行を見据え、無名関数ではなく関数宣言で記述
+const css = () => {
+  return gulp.src(config.src)
+    //.pipe(newer(config.dist))//変更があったファイルのみ処理(タイムスタンプで比較)
+    .pipe(plumber({errorHandler: (error) => { notify('css', error);}})) // エラー出ても止まらないようにする
+    //.pipe(cache('css_cache'))
+    //エラー1/2：.pipe(gulpif(!config.isProduction, sourcemaps.init()))//ソースマップ作成開始。対応プラグイン：https://github.com/floridoo/gulp-sourcemaps/wiki/Plugins-with-gulp-sourcemaps-support
+    //エラー：.pipe(sass('compressed').on('error', sass.logError))//sass.sync()で同期処理, 元：sass({outputStyle: config.outputStyle}) sourcemapあるのでやめた
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))//sass.sync()で同期処理, 元：sass({outputStyle: config.outputStyle}) sourcemapあるのでやめた
+    .pipe(concat(config.output))                // 1ファイルに統合
+    .pipe(gulpif(config.isProduction, uncss({ html: config.uncssRefHTML }))) //指定のHTMLを参照し、使われていないCSSを削除(sourcemaps非対応)
+    .pipe(autoprefixer(config.autoprefixer))    // ベンダープリフィックス
+    //エラー2/2：.pipe(gulpif(!config.isProduction, sourcemaps.write())) //ソースマップ出力。soucemapを独立ファイルとして書き出すなら write('./maps')、無しならコンパイル後のCSSに埋め込まれる
+    .pipe(plumber.stop())                       //
+    .pipe(gulp.dest(config.dist))               // 出力
+    //.pipe(reload({stream: true}))             // ブラウザリロード(Browser-sync)
+    //.pipe(notify({ message: 'task "css" complete' }));
+    .pipe(print(function(filepath) { return 'css: ' + filepath; }));
+};
+css.description = '変換：SCSS → CSS'; // gulp --tasks で注釈を表示
+gulp.task('css', css);
+
+
+// WordPress editor-style.css 用
+const css2 = () => {
+  return gulp.src(config2.src)
+    //.pipe(newer(config2.dist))//変更があったファイルのみ処理(タイムスタンプで比較)
+    .pipe(plumber({errorHandler: (error) => { notify('css', error);}})) // エラー出ても止まらないようにする
+    //.pipe(cache('css_cache'))
+    //エラー1/2：.pipe(gulpif(!config2.isProduction, sourcemaps.init()))//ソースマップ作成開始。対応プラグイン：https://github.com/floridoo/gulp-sourcemaps/wiki/Plugins-with-gulp-sourcemaps-support
+    //エラー：.pipe(sass('compressed').on('error', sass.logError))//sass.sync()で同期処理, 元：sass({outputStyle: config2.outputStyle}) sourcemapあるのでやめた
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))//sass.sync()で同期処理, 元：sass({outputStyle: config2.outputStyle}) sourcemapあるのでやめた
+    .pipe(concat(config2.output))                // 1ファイルに統合
+    .pipe(autoprefixer(config2.autoprefixer))    // ベンダープリフィックス
+    //エラー2/2：.pipe(gulpif(!config2.isProduction, sourcemaps.write())) //ソースマップ出力。soucemapを独立ファイルとして書き出すなら write('./maps')、無しならコンパイル後のCSSに埋め込まれる
+    .pipe(plumber.stop())                       //
+    .pipe(gulp.dest(config2.dist))               // 出力
+    //.pipe(reload({stream: true}))             // ブラウザリロード(Browser-sync)
+    //.pipe(notify({ message: 'task "css" complete' }));
+    .pipe(print(function(filepath) { return 'css2: ' + filepath; }));
+};
+css.description = '変換(WordPress editor-style.css)：SCSS → CSS'; // gulp --tasks で注釈を表示
+gulp.task('css2', css2);
+
+
+const css_watch = (callback) => {
+  gulp.watch(config.src, ['css']);
+  // // 旧コード
+  // // 要確認：gulp3のgulp.watch()はファイルの追加や削除に反応しないバグがある(v4では解決)。プラグインgulp-watchで解決できる
+  // watch(config.watchSrc, () => { //v4 で `gulp.watch(config.src, ['css']);` に戻す
+  //   gulp.start("css");
+  // });
+  callback(); // TODO：必要？
+};
+css_watch.description = '監視：SCSS → 変更があれば css タスクを実行';
+gulp.task('css_watch', css_watch);

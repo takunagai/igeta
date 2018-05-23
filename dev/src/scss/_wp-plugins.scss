@@ -1,0 +1,191 @@
+/**
+ * WordPress プラグイン
+ * ============================================================
+ */
+
+/**
+ * ContactForm 7
+ */
+.wpcf7-list-item { // span
+	display: block !important;
+}
+.wpcf7c-btn-confirm {
+	@extend .btn--secondary;
+}
+
+/**
+ * Breadcrumb NavXT (パンくずリスト)
+ */
+.breadcrumbs {
+	span[property="name"] { // 各項目
+		display: inline-block;
+		max-width: 10rem;
+		vertical-align: middle;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+		a[property="item"] {
+			//
+		}
+		.home {} // トップページ
+			span[property="name"] {
+				//
+			}
+}
+
+/**
+ * Wordpress Related Posts (関連記事表示)
+ */
+.wp_rp_wrap {
+	margin-top: 3rem;
+}
+	.wp_rp_content {
+	}
+	.related_post_title { // h3
+		margin-bottom: 1.5rem;
+		border-bottom: 1px solid $color-primary-light;
+		font-size: 1.2rem;
+	}
+	.related_post { // ul
+		padding-left: 0;
+		list-style-type: none;
+	}
+		.related_post li {}
+		.wp_rp_thumbnail { // a
+			display: block;
+			text-align: center;
+		}
+			.wp_rp_thumbnail img {
+				max-width: 100%;
+			}
+		.wp_rp_title { // a
+			display: block;
+			margin-top: .5rem;
+			font-size: $font-small;
+			line-height: 1.2;
+			word-break : break-all;
+		}
+
+
+
+/**
+ * ページナビゲーション（ページ送り） WP-PageNavi プラグイン
+ */
+.wp-pagenavi { // div
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	border-top: 1px dotted $color-gray-200;
+	border-bottom: 1px dotted $color-gray-200;
+	.pages { // span ページ/総ページ (例： 1 / 5)
+		border: none;
+	}
+	.current, .page, .nextpostslink {
+		padding-right: .75rem;
+		padding-left: .75rem;
+		border-radius: 2rem;
+	}
+	.current { // span 現在のページ
+		background-color: #BFBFBF;
+		border-color: #BFBFBF !important;
+		font-weight: normal !important;
+	}
+	.page { // a.page.larger 現在以外のページ
+	&:hover {
+		background-color: #BFBFBF;
+		border-color: #BFBFBF;
+	}
+	}
+	.nextpostslink,
+	.previouspostslink { // a 前後のページ (« »)
+		border: none;
+		text-decoration: underline;
+	}
+}
+
+
+/**
+ * Recent Posts Widget Extended
+ *		 干渉を防ぐため、配置したウィジェットアイテムの "Use Default Styles" にチェック
+ */
+.recent-posts-extended {
+	.widget-title {}
+}
+	.rpwe-block {} // div
+	.rpwe-ul { // ul
+		list-style: none !important;
+		margin-left: 0 !important;
+	}
+		.rpwe-li { // li
+		margin-bottom: .5rem !important;
+		padding-bottom: .5rem !important;
+		border-bottom: 1px solid #E7E7E7 !important;
+		&:last-child {
+			margin-bottom: 0 !important;
+			padding-bottom: 0 !important;
+			border-bottom: none !important;
+		}
+		}
+		.rpwe-title { // h3
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+			clear: none !important;
+			background: none !important;
+			a {
+			font-size: .875rem;
+			} // 記事タイトル
+		}
+		.rpwe-thumb {
+			border: 1px solid #E7E7E7 !important;
+			margin: 2px 10px 2px 0 !important;
+			padding: 3px !important;
+		}
+		.rpwe-summary {}
+		.rpwe-time,
+		.rpwe-comment {
+			font-size: small !important;
+		}
+		.rpwe-time {}
+		.rpwe-comment {
+			padding-left: 5px !important;
+		}
+		.rpwe-alignleft {
+			display: inline;
+			float: left;
+		}
+		.rpwe-alignright {
+			display: inline;
+			float: right;
+		}
+		.rpwe-aligncenter {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	.rpwe-clearfix:before,
+	.rpwe-clearfix:after {
+		content: '';
+		display: table !important;
+	}
+	.rpwe-clearfix:after {
+		clear: both;
+	}
+	.rpwe-clearfix {
+		zoom: 1;
+	}
+
+
+
+/**
+ * Simple Tags ウィジェット
+ */
+.st-tag-cloud {}//div
+	.st-tags {//a
+		background-color: $color-gray-100;
+		&:hover {
+			background-color: $color-gray-200;
+		}
+	}

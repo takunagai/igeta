@@ -1,0 +1,82 @@
+/**
+ * Color
+ */
+$color-bg: #FFF;
+
+$color-font: #333;
+$color-font-light: #666;
+
+$color-primary: #AD9468;
+$color-primary-light: lighten($color-primary, 30%);
+$color-primary-dark: darken($color-primary, 15%);
+
+$color-secondary: #dee2e6;
+$color-secondary-light: lighten($color-secondary, 1%);
+$color-secondary-dark: darken($color-secondary, 15%);
+
+$color-accent: #B95B28;
+$color-info: #A4C6FF;
+
+$color-link: #03C;
+$color-link-hover: lighten($color-link, 15%);
+$color-link-visited: darken($color-link, 15%);
+// $color_link_active: #F00;
+
+$color-red: #F00;
+$color-yellow: #FFD700;
+
+$color-gray-100: #F8F9FA;
+$color-gray-200: #E9ECEF;
+$color-gray-300: #DEE2E6;
+$color-gray-400: #CED4DA;
+$color-gray-500: #ADB5BD;
+$color-gray-600: #868E96;
+$color-gray-700: #495057;
+$color-gray-800: #343A40;
+$color-gray-900: #212529;
+
+
+/**
+ * Fonts
+ *   Font Color -> see Colors
+ */
+$font-xx-large:     2rem; // 32px
+$font-x-large :   1.5rem; // 24px
+// larger     : 1.31979375em;
+$font-large   : 1.125rem; // 18px
+$font-normal  : 1rem;     // 16px
+// smaller    : .91666875em;
+$font-small   :  .875rem; // 14px。html small は、.8125rem
+$font-x-small :  .625rem; // 10px
+
+
+/**
+ * Media Queries Break Point
+ *   Usage: @media ($sm_) { ... }
+ */
+$_sm: 'max-width: 480px';
+$sm_: 'min-width: 481px';
+$_md: 'max-width: 768px';
+$md_: 'min-width: 769px';
+$_lg: 'max-width: 1024px';
+$lg_: 'min-width: 1025px';
+
+$sm_md : 'min-width: 481px) and (max-width: 768px';
+$md_lg : 'min-width: 769px) and (max-width: 1024px';
+
+
+/**
+ * Table
+ */
+$color-table-line:                 #CCC;            // テーブルの線
+$color-table-th-text:              $color-font;     // thのテキスト
+$color-table-th-link-text:         $color-link;     // thのリンクテキスト
+$color-table-th-bg:                #E7E7E7;         // thの背景
+$color-table-td-text:              $color-font;     // tdのテキスト
+$color-table-td-bg:                #FFF;            // tdの背景
+$color-table-td-bg-alt:            $color-gray-100; // tdの背景2
+$color-table-row-th-bg-highlight:  #BBD;            // 特定行の色付け th
+$color-table-row-td-bg-highlight:  #CCE;            // 特定行の色付け td
+$color-table-cell-th-bg-highlight: #BBD;            // 特定セルの色付け th or td
+$color-table-cell-td-bg-highlight: #CCE;            // 特定セルの色付け th or td
+$table-line-width: 1px; // 線幅

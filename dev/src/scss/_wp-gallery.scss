@@ -1,0 +1,142 @@
+/**
+ * ギャラリー (WordPress標準のもの)
+ *   投稿タイプ"ギャラリー”は関係ない
+ *   TODO: カラムレイアウト、レスポンシブ対応する
+ */
+.gallery { // div、 .galleryid-3783.gallery-columns-5.gallery-size-medium
+	display: grid;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+.gallery-columns-1 {
+}
+.gallery-columns-2 {
+	grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+	grid-gap: 1rem;
+	@media($sm_) { grid-gap: 2rem; }
+}
+.gallery-columns-3 {
+	grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+	grid-gap: 1rem;
+	@media($sm_) { grid-gap: 2rem; }
+}
+.gallery-columns-4 {
+	grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+	grid-gap: 1rem;
+	@media($sm_) { grid-gap: 2rem; }
+}
+.gallery-columns-5 {
+	grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+	grid-gap: .5rem;
+	@media($sm_) { grid-gap: 1rem; }
+}
+.gallery-columns-6 {
+	grid-template-columns: repeat(auto-fit, minmax(4em, 1fr));
+	grid-gap: .25rem;
+	@media($sm_) { grid-gap: .5rem; }
+}
+
+  .gallery-item {//figure、各画像(共通)
+      // margin-bottom: 1.5rem;
+  }
+
+// 3, 4 ,5列は、モバイルで2列
+.gallery-columns-2,
+.gallery-columns-3,
+.gallery-columns-4,
+.gallery-columns-5,
+.gallery-columns-6 {
+	.gallery-item { // need for visual editor
+		width: 100%;
+	}
+	@media($_sm){
+		grid-template-columns: 1fr 1fr;
+		grid-gap: .5rem .25rem;
+		font-size: $font-small;
+	}
+}
+
+
+    .gallery-icon {//div、画像を囲む要素
+    	position: relative;
+        text-align: center;
+        a {
+          img {}
+          &:after {
+			@include my-fa-icon-base;
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900; // regular のアイコンフォントなら 400
+			content: "\f065";
+
+          	position: absolute;
+          	right: 8px;
+          	bottom: 5px;
+			color: white;
+			opacity: .7;
+          }
+        }
+    }
+    .gallery-caption {//figcaption、.wp-caption-text併記、※Theme Check 必須
+        text-align: center;
+    }
+
+// /**
+//  * ギャラリー (WordPress標準のもの)
+//  *   投稿タイプ"ギャラリー”は関係ない
+//  *   TODO: カラムレイアウト、レスポンシブ対応する
+//  */
+// .gallery { // div
+//     overflow: hidden;
+// }
+//   .gallery-item {//figure、各画像(共通)
+//       float: left;
+//       margin-top: 0;
+//       margin-bottom: 20px;
+//       margin-left: 0;
+//   }
+//   // 投稿画面で指定するカラム数別(1〜9)の指定
+//   .gallery-columns-1 .gallery-item { // .div.gallery 以下同
+//       width: 100%;
+//       margin-right: 0;
+//   }
+//   .gallery-columns-2 .gallery-item {
+//       width: 49%;
+//       margin-right: 1%;
+//   }
+//   .gallery-columns-3 .gallery-item {
+//       width: 32%;
+//       margin-right: 1%;
+//   }
+//   .gallery-columns-4 .gallery-item {
+//       width: 24%;
+//       margin-right: 1%;
+//   }
+//   .gallery-columns-5 .gallery-item {
+//       width: 19%;
+//       margin-right: 1%;
+//   }
+//   .gallery-columns-6 .gallery-item {
+//       width: 15.666%;
+//       margin-right: 1%;
+//   }
+//   .gallery-columns-7 .gallery-item {
+//       width: 13.285714286%;
+//       margin-right: 1%;
+//   }
+//   .gallery-columns-8 .gallery-item {
+//       width: 13.285714285*7%;
+//       margin-right: 1%;
+//   }
+//   .gallery-columns-9 .gallery-item {
+//       width: 10.11111111%;
+//       margin-right: 1%;
+//   }
+//     .gallery-icon {//div、画像を囲む要素
+//         text-align: center;
+//         a {
+//           img {}
+//         }
+//     }
+//     .gallery-caption {//figcaption、.wp-caption-text併記、※Theme Check 必須
+//         text-align: center;
+//     }

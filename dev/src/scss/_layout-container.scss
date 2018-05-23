@@ -1,0 +1,46 @@
+.container,
+.container--narrow {
+	width: 95%;
+	margin: 2rem auto 1rem;
+	// padding-top: 2rem;
+	// padding-bottom: 2rem;
+}
+@media($sm_){
+	.container,
+	.container--narrow {
+		width: 90%;
+	}
+}
+.container {
+	max-width: 64rem;
+}
+.container--narrow {
+	max-width: 48rem;
+}
+.container--no-magin {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.container,
+.container--narrow {
+	.container,
+	.container--narrow {
+		width: 100%;
+	}
+}
+
+@media ($md_) {
+	.width-50,
+	.width-75 {
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.width-50 {
+		width: 50%;
+	}
+	.width-75 {
+		width: 75%;
+	}
+
+}

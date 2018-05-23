@@ -1,0 +1,56 @@
+/**
+ * Object (image, movie, iframe etc.)
+ */
+
+// ギャラリー -> _wp-gallery.scss
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: text-bottom;
+	// pointer-events: none;
+}
+@media($_md){
+	.img--mobile-small,
+	.img--mobile-x-small {
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.img--mobile-small {
+		width: 75%;
+	}
+	.img--mobile-x-small {
+		width: 50%;
+	}
+}
+a:hover img { // ロールオーバー時に明るくなる効果
+	filter: brightness(105%);// filter: blur( ぼかしの長さ ); contrast( 数字 or パーセンテージ );
+}
+a:active img { // クリック時にボタン押したように凹む効果
+	position: relative;
+	left: 1px;
+	top: 1px;
+}
+
+// 埋込iframeのレスポンシブ対応（div.embed_containerで囲む）
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%;//ここでデフォルトの高さ調整 100%なら正方形
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+	height: auto;
+	iframe, object, embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+.rounded--images img {
+	// ※ 角丸、円、Box Shadow、Blur -> _base.scss
+}

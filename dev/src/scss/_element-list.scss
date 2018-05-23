@@ -1,0 +1,35 @@
+/**
+ * Mixins
+ */
+
+/**
+ * Inline List
+ *   Usage
+ *   - CSS: hoge { @include inline-list; }
+ *   - HTML: class="inline-list"
+ */
+
+
+
+/**
+ * Base
+ */
+ul,ol {
+	padding-left: 1.5rem;
+}
+
+dt {
+	font-weight: bold;
+}
+dd+dt {
+	margin-top: .5rem;
+}
+dd {
+	margin-left: 1rem;
+}
+
+
+ul.no-listmarker {
+	list-style-type: none;
+	padding-left: .5rem;
+}

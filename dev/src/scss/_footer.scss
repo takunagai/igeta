@@ -1,0 +1,131 @@
+/**
+ * フッター
+ * ============================================================
+ */
+
+//
+.pagination { // nav, Bootstrap
+	display: block !important;
+	text-align: center;
+}
+
+//
+#move-to-page-top { // a メインコンテンツ内
+	position: fixed;
+	display: inline-block;
+	background-color: transparentize( black, .5 );
+	padding: 1em;
+	right: 0;
+	bottom: 0;
+	color: white;
+	@media ($md_) {
+		&:hover {
+			text-decoration: none;
+			background-color: transparentize( black, .6 );
+		}
+	}
+}
+
+// フッター (社名、ウィジェットメニュー)
+.footer-information {
+	font-size: $font-small;
+	@media($md_){
+		.container {
+			display: grid;
+			grid-template-columns: 2fr 1fr 1fr;
+			address {
+				grid-row: 1;
+				grid-column: 1;
+			}
+		}
+	}
+		.widget {
+			a {
+				color: theme-color("dark");
+				text-decoration: none;
+				&:hover {
+					color: theme-color("dark");
+					border-bottom: 1px dotted $color-link;
+				}
+			}
+		}
+			.widget-title { // ウィジェットタイトルあれば
+				font-size: $font-small;
+				margin-bottom: 0;
+			}
+			.widget_text {} // テキストウィジェットなら
+			.menu { // ul、リストタイプのウィジェットなら
+				padding-left: 0;
+				@media($_sm){
+					margin-top: 0;
+				}
+			}
+				.menu-item { // li
+					list-style-type: none;
+					@media($_sm){
+						line-height: 2.4;
+					}
+					&:before {
+						@extend %my-fa-icon-base;
+						font-family: "Font Awesome 5 Free";
+						margin-right: .5em;
+						font-weight: 900; // regular のアイコンフォントなら 400
+						content: "\f0da";
+						color: $color-primary-light;
+					}
+				}
+		address {
+			font-style: normal;
+			@media($_sm){
+				text-align: center;
+				padding-top: 2rem;
+				border-top: 1px dotted $color-primary;
+			}
+		}
+			.site-title { // カスタムロゴがあれば画像、なければテキスト
+				font-size: $font-large;
+				.custom-logo-link { // a
+					text-decoration: none;
+				}
+					.custom-logo { // img、カスタムロゴが設定されている場合
+					}
+			}
+}
+
+// // フッターメニュー
+// .menu-footer_nav-container { // div コンテナ
+//	 // ここに記述
+// }
+//	 #menu-footer_nav.menu { // ul
+//		 border: 1px dotted purple;
+//		 text-align: center;
+//		 font-size: $font-size-small;
+//		 .menu-item { // li ID付く: #menu-item-2169
+//			 display: inline-block;
+//			 margin-right: .5em;
+//			 margin-left: .5em;
+//			 a {
+//				 text-decoration: none;
+//				 border-bottom: 1px dotted;
+//			 }
+//		 }
+//	 }
+
+// 親の文書に適用されるメタデータ。脚注、著作権情報、プライバシーポリシーへのリンク etc.
+.site-footer { // footer[role="contentinfo"]
+	text-align: center;
+	font-size: $font-x-small;
+	background-color: $color-primary;
+	p {
+		margin-top: .5rem;
+		margin-bottom: .5rem;
+		color: white;
+	}
+	a {
+		color: white;
+		text-decoration: underline;
+	}
+	span {
+		display: inline-block;
+	}
+}
