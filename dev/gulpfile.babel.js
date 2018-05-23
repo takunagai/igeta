@@ -142,6 +142,7 @@ gulp.task('copy', copy);
  */
 export function css() {
   return gulp.src(paths.css.src)
+    // .pipe(notify(paths.css.dest)) // Test
     .pipe(plumber({ // .pipe(plumber.stop()) でその箇所で停止できる
       errorHandler: notify.onError("Error: <%= error.message %>")
     }))
