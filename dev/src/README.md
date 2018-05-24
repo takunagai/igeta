@@ -1,4 +1,4 @@
-# igeta
+ # igeta
 
 Contributors: tak_na
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -33,7 +33,7 @@ Frequently Asked Questions
 
 ### Does this theme support any plugins?
 
-igeta includes support for Infinite Scroll in Jetpack.
+igeta includes support for breadcrumb-navxt, .
 
 
 Changelog

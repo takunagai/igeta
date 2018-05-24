@@ -1,0 +1,39 @@
+/**
+ * accordion
+ *
+ * @link https://saruwakakun.com/html-css/reference/accordion
+ */
+.accordion {
+	margin-top: 1rem;
+	label {
+		display: block;
+		margin-top: 1px;
+		padding : .5rem 1rem;
+		color: #FFF;
+		font-weight: bold;
+		background: $color-primary;
+		cursor: pointer;
+		transition: all .5s;
+		&:after {
+			float: right;
+			content: '▼';
+		}
+		&:hover {
+			background: $color-primary-light;
+		}
+	}
+	input {
+		display: none;
+	}
+}
+	.accordion__content {
+		height: 0;
+		padding: 0 1rem;
+		overflow: hidden;
+		transition: .5s;
+	}
+	.accordion__open_flag:checked + .accordion__content {
+		height: auto;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
