@@ -7,10 +7,7 @@
 	.card__img {
 		width: 100%;
 	}
-	.card__body {
-		margin-right: 1rem;
-		margin-left: 1rem;
-	}
+	.card__body {}
 		.card__title {
 			margin-top: 1rem;
 			margin-bottom: 1rem;
@@ -27,8 +24,8 @@
 }
 	.card.card--base .card__body,
 	.card--base .card .card__body {
-		// margin-right: .5rem;
-		// margin-left: .5rem;
+		margin-right: 1rem;
+		margin-left: 1rem;
 	}
 		.card.card--base .card__body .card__title,
 		.card--base .card .card__body .card__title {}
@@ -43,8 +40,6 @@
 		border-top-left-radius: 5px;
 	}
 }
-
-
 
 .card.card--boxed,
 .card--boxed .card {
