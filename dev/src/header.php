@@ -108,9 +108,8 @@
 		// }
 	}
 
-
 	?>
-	<?php if ( is_home() ) : ?>
+	<?php if ( is_home() || ( 'post' === get_post_type() && ( is_category() || is_tag() || is_month() || is_author() ) ) ) : ?>
 		<div class="bg--post-thumbnail">
 			<p class="parent-title">ブログ</p>
 		</div>

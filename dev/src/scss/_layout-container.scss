@@ -4,18 +4,16 @@
 	margin: 2rem auto 1rem;
 	// padding-top: 2rem;
 	// padding-bottom: 2rem;
-}
-@media($sm_){
-	.container,
-	.container--narrow {
+	@media($sm_){
 		width: 90%;
 	}
 }
+
 .container {
-	max-width: 64rem;
+	max-width: 64rem; // 1024px
 }
 .container--narrow {
-	max-width: 48rem;
+	max-width: 48rem; // 768px
 }
 .container--no-magin {
 	margin-top: 0;
