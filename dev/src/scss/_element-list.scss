@@ -35,4 +35,14 @@ ul.no-listmarker {
 }
 ul.inline-list {
 	display: inline-block;
+	padding-left: 0;
+}
+ul.inline-list--label {
+	li {
+		margin-bottom: 5px;
+		padding: 5px 10px;
+		color: #FFF;
+		font-weight: bold;
+		background-color: $color-primary;
+	}
 }
