@@ -38,7 +38,6 @@
 			<div class="container">
 
 			<?php
-			// ロゴ (カスタムロゴが設定されていればカスタムロゴ、なければテキストを表示)
 			if ( has_custom_logo() ) {
 				$igeta_site_title = get_custom_logo();
 			}
@@ -62,24 +61,15 @@
 			<?php endif; ?>
 
 
-			<?php get_template_part( 'template-parts/primary-menu' ); // メインメニュー ?>
+			<?php get_template_part( 'template-parts/primary-menu' ); ?>
 
 			</div>
 		</header>
 
 
 
-
-
 		<?php if ( is_front_page() ) : ?>
-			<div class="hero-image-wrapper">
-				<?php // the_custom_header_markup(); // カスタムヘッダー(動画 or 画像) 画像と動画の両方を設定したら動画読み込み完了まで画像を表示 ?>
-				<div class="hero-image">
-					<div class="hero-image__body">
-						<p>オトナもコドモも本気で愉しむ</p>
-					</div>
-				</div>
-			</div>
+			<?php get_template_part( 'template-parts/hero-image' ); ?>
 		<?php endif ; ?>
 
 	</div>

@@ -15,16 +15,27 @@
  */
 function igeta_widgets_init() {
 
-    // フロントページのコンテンツ
+    // フロントページのヒーローイメージ
     register_sidebar( array(
-        'id'            => 'front-page-contents',
-        'name'          => esc_html__( 'トップページ (front-page)', 'igeta' ),
-        'description'   => esc_html__( 'Content Blocks で編集 (ID: front-page-contents)', 'igeta' ),
-        'before_widget' => '<div class="container-wrapper container-wrapper-%1$s widget_front-page-contents"><section class="widget %2$s container">',
-        'after_widget'  => '</section></div>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>'
+        'id'            => 'content-in-hero-image',
+        'name'          => esc_html__( 'ヒーローイメージのコンテンツ', 'igeta' ),
+        'description'   => esc_html__( 'トップページのヒーローイメージ(メイン画像)中のコンテンツ (ID: content-in-hero-image)', 'igeta' ),
+        'before_widget' => '<div class="hero-image__content">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<p class="hero-image__content__title">',
+        'after_title'   => '</p>'
     ) );
+
+    // フロントページのコンテンツ
+    // register_sidebar( array(
+    //     'id'            => 'front-page-contents',
+    //     'name'          => esc_html__( 'トップページ (front-page)', 'igeta' ),
+    //     'description'   => esc_html__( 'Content Blocks で編集 (ID: front-page-contents)', 'igeta' ),
+    //     'before_widget' => '<div class="container-wrapper container-wrapper-%1$s widget_front-page-contents"><section class="widget %2$s container">',
+    //     'after_widget'  => '</section></div>',
+    //     'before_title'  => '<h2 class="widget-title">',
+    //     'after_title'   => '</h2>'
+    // ) );
 
     // サイドバー 1〜2
     //     第一引数の数値で数を調整できる

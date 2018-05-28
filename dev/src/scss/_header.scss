@@ -15,6 +15,7 @@
 	}
 }
 #masthead { // header[role="banner"] jQueryがsizzleを使わないようID指定
+	z-index: 999;
 	.container {
 		margin-top: 0;
 		margin-bottom: 0;

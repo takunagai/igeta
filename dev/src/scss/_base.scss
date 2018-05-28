@@ -67,12 +67,16 @@ hr {
 .font-small    { font-size: $font-small;    }
 .font-x-small  { font-size: $font-x-small;  }
 
-// small tag in header tag
+
 h1,h2,h3,h4,h5,h6 {
+	line-height: 1.4;
 	small {
 		display: block;
 		font-weight: normal;
 		font-size: $font-small;
+	}
+	small.inline {
+		display: inline;
 	}
 }
 
