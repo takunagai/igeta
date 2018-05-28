@@ -8,6 +8,7 @@
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 	// padding: 1rem;
+	-ms-grid-rows: auto auto;
 }
 .grid {
 	grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));

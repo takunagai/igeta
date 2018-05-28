@@ -3,9 +3,7 @@
  */
 .hero-image-wrapper { // div
 	.hero-image { // div
-		 // z-index: -9999;
-		// ※ width, height, background-image は custom-header.php に記述
-		// mediaquery でモバイル表示時の高さも設定
+		// width, height, background-image は custom-header.php に記述
 		position:relative;
 		width: 100%;
 		max-height: 70vh;
@@ -23,37 +21,50 @@
 			left: 50%;
 			transform : translate(-50%,-50%);
 			text-align: center;
-			padding-right: 1rem;
-			padding-left: 1rem;
-			// background-color: rgba(255,255,255,.8);
-			@media($_sm){
-				width: 19em;
-			}
-		}
-			.hero-image__content__title { // p
-				// font-weight: bold;
+			// padding: 1rem 1rem 0;
+			// background-color: rgba(255,255,255,.7);
+
+			.hero-image__content__title { // p, わかりやすい並び順のため、あえて入れ子内似している
 				color: $color-primary;
+				line-height: 1.4;
+				@media($_md){
+					font-size: $font-large !important;
+				}
 				@media($md_){
 					font-size: $font-x-large;
 				}
 			}
+
 			.textwidget { // div, テキストウィジェットの場合
-				.hero-image__content__title {
+				.hero-image__content__title { // .ウィジェットの見出しでなく、本文欄に見出しを設定した場合
 					small {
 						display: block;
 					}
 				}
 				p {
-					// margin-top: .5rem;
-					// margin-bottom: .5rem;
-					letter-spacing: .15rem;
 					@media($_md){
 						font-size: $font-small;
 					}
-					@media($md_){
-						letter-spacing: .2rem;
-					}
 				}
 			}
+		}
 	}
 }
+
+// .hero-image {}
+// 	.hero-image__content { // div
+// 		padding: 1rem 1rem 0;
+// 		background-color: rgba(255,255,255,.7);
+// 		.hero-image__content__title {} //p
+// 		.textwidget {
+// 			.hero-image__content__title {} // p
+// 			p {
+// 				margin-top: .5rem;
+// 				margin-bottom: .5rem;
+// 				letter-spacing: .15rem;
+// 				@media($md_){
+// 					letter-spacing: .2rem;
+// 				}
+// 			}
+// 		}
+// 	}
