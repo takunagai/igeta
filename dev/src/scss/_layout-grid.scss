@@ -27,7 +27,7 @@
 }
 
 .grid--gap-none {
-	grid-gap: 0;
+	grid-gap: 0 !important;
 }
 .grid--gap-narrow {
 	grid-gap: .5rem;
