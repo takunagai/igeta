@@ -1,5 +1,6 @@
+
 /**
- * Media
+ * Media - IE非対応なシンプル版
  */
 .media,
 [class^="media--"] {
@@ -115,5 +116,47 @@
 	.media--75,
 	.media--75--mobile-2col {
 		grid-template-columns: 75% 1fr;
+	}
+}
+
+
+
+/**
+ * Media (autoprefixer で IE11対応)
+ */
+_:-ms-input-placeholder, :root .selector {
+	.media,
+	[class^="media--"] {
+		> * {
+			margin: 0 .5rem 1rem;
+			@media($sm_) { margin: 0 1rem 2rem ; }
+		}
+	}
+
+	.media,
+	.media--25,
+	.media--50,
+	.media--75 {
+		grid-template-columns: 12em 1fr;
+	}
+	.media--mobile-2col,
+	.media--25--mobile-2col,
+	.media--50--mobile-2col,
+	.media--75--mobile-2col {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	// .media--thumbnail { // li
+	// 	grid-template-columns: 5rem 1fr;
+	// }
+
+	@media($md_){
+		.media,
+		[class^="media--"] {
+			> * {
+				margin: 0 .625rem;
+				@media($sm_) { margin: 0 1.25rem; }
+			}
+		}
 	}
 }

@@ -170,7 +170,7 @@ export function css() {
       //   html: [rootDir + '/*.html'], // ※ php は対象ファイルとできないので、WordPress なら公開ページのURLを対象とすること
       //   // ignore: ['.fade']
       // }),
-      autoprefixer(),
+      autoprefixer({ grid: true }),
       cssMqpacker(),
       cssDeclarationSorter({order: 'smacss'}),
       // postcssStyleGuide({

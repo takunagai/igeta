@@ -1,14 +1,13 @@
 /**
- * Grid Layout
+ * Grid Layout - IE非対応なシンプル版
+ *     ★★TODO: 2カラムの細くなった時のstyleも付け足す
  */
 .grid,
 .grid--narrow,
 .grid--wide {
 	display: grid;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-	// padding: 1rem;
-	-ms-grid-rows: auto auto;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 .grid {
 	grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
@@ -51,12 +50,6 @@
 			grid-gap: .5rem .25rem;
 			font-size: smaller;
 		}
-	}
-}
-@media ($_sm) {
-	.grid,
-	.grid--narrow,
-	.grid--wide {
 		&.grid--mobile-3col {
 			grid-template-columns: 1fr 1fr 1fr;
 			grid-gap: .5rem .25rem;
@@ -64,3 +57,220 @@
 		}
 	}
 }
+
+
+
+/**
+ * Grid Layout (autoprefixer で IE11対応)
+ */
+/* IE10〜11 */
+_:-ms-input-placeholder, :root .selector {
+	.grid,
+	.grid--narrow,
+	.grid--wide {
+		> * {
+			margin: 0 .5rem 1rem;
+			@media($sm_) { margin: 0 1rem 2rem ; }
+		}
+	}
+
+	@media ($_sm) {
+		.grid,
+		.grid--narrow,
+		.grid--wide {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media ($sm_) {
+		.grid {
+			grid-template-columns: 1fr 1fr;
+		}
+		.grid--narrow {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		.grid--wide {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media ($md_) {
+		.grid {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		.grid--narrow {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+		.grid--wide {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	@media ($lg_) {
+		.grid {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		.grid--narrow {
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		}
+		.grid--wide {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+
+	.grid--gap-none {
+		> * {
+			margin: 0 !important;
+		}
+	}
+	.grid--gap-narrow {
+		> * {
+			margin: 0 .25rem .5rem;
+			@media($sm_) { margin: 0 .5rem 1rem ; }
+		}
+	}
+	.grid--gap-normal {
+		> * {
+			margin: 0 .5rem 1rem;
+			@media($sm_) { margin: 0 1rem 2rem ; }
+		}
+	}
+	.grid--gap-wide {
+		> * {
+			margin: 0 1rem 2rem;
+			@media($sm_) { margin: 0 2rem 4rem ; }
+		}
+	}
+
+	@media ($_md) {
+		.grid,
+		.grid--narrow,
+		.grid--wide {
+			&.grid--mobile-2col {
+				grid-template-columns: 1fr 1fr;
+				font-size: $font-small;
+			}
+			&.grid--mobile-3col {
+				grid-template-columns: 1fr 1fr 1fr;
+				font-size: $font-small;
+			}
+		}
+	}
+	@media($sm_md) {
+		.grid--narrow.grid--mobile-2col {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+}
+
+
+
+/**
+ * Grid Layout (autoprefixer で IE11対応)
+ */
+/* IE10〜11 */
+// _:-ms-input-placeholder, :root .selector {
+// 	.grid,
+// 	.grid--narrow,
+// 	.grid--wide {
+// 		display: grid;
+// 		margin-top: 1rem;
+// 		margin-bottom: 1rem;
+// 		> * {
+// 			margin: 0 .5rem 1rem;
+// 			@media($sm_) { margin: 0 1rem 2rem ; }
+// 		}
+// 	}
+
+// 	@media ($_sm) {
+// 		.grid,
+// 		.grid--narrow,
+// 		.grid--wide {
+// 			grid-template-columns: 1fr;
+// 		}
+// 	}
+
+// 	@media ($sm_) {
+// 		.grid {
+// 			grid-template-columns: 1fr 1fr;
+// 		}
+// 		.grid--narrow {
+// 			grid-template-columns: 1fr 1fr 1fr;
+// 		}
+// 		.grid--wide {
+// 			grid-template-columns: 1fr;
+// 		}
+// 	}
+
+// 	@media ($md_) {
+// 		.grid {
+// 			grid-template-columns: 1fr 1fr 1fr;
+// 		}
+// 		.grid--narrow {
+// 			grid-template-columns: 1fr 1fr 1fr 1fr;
+// 		}
+// 		.grid--wide {
+// 			grid-template-columns: 1fr 1fr;
+// 		}
+// 	}
+
+// 	@media ($lg_) {
+// 		.grid {
+// 			grid-template-columns: 1fr 1fr 1fr;
+// 		}
+// 		.grid--narrow {
+// 			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+// 		}
+// 		.grid--wide {
+// 			grid-template-columns: 1fr 1fr 1fr;
+// 		}
+// 	}
+
+// 	.grid--gap-none {
+// 		> * {
+// 			margin: 0 !important;
+// 		}
+// 	}
+// 	.grid--gap-narrow {
+// 		> * {
+// 			margin: 0 .25rem .5rem;
+// 			@media($sm_) { margin: 0 .5rem 1rem ; }
+// 		}
+// 	}
+// 	.grid--gap-normal {
+// 		> * {
+// 			margin: 0 .5rem 1rem;
+// 			@media($sm_) { margin: 0 1rem 2rem ; }
+// 		}
+// 	}
+// 	.grid--gap-wide {
+// 		> * {
+// 			margin: 0 1rem 2rem;
+// 			@media($sm_) { margin: 0 2rem 4rem ; }
+// 		}
+// 	}
+
+// 	@media ($_md) {
+// 		.grid,
+// 		.grid--narrow,
+// 		.grid--wide {
+// 			&.grid--mobile-2col {
+// 				grid-template-columns: 1fr 1fr;
+// 				font-size: $font-small;
+// 			}
+// 			&.grid--mobile-3col {
+// 				grid-template-columns: 1fr 1fr 1fr;
+// 				font-size: $font-small;
+// 			}
+// 		}
+// 	}
+// 	@media($sm_md) {
+// 		.grid--narrow.grid--mobile-2col {
+// 			grid-template-columns: 1fr 1fr 1fr;
+// 		}
+// 	}
+// }
+
+
+
+
