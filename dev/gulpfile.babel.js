@@ -147,7 +147,7 @@ export function css() {
       errorHandler: notify.onError("Error: <%= error.message %>")
     }))
     .pipe(sourcemaps.init()) // sourcemap がずれたら gulp-sass のcompressでなく gulp-minify-css を使うとよいらしい
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError)) //'compressed', 'expanded'
     .pipe(concat(paths.css.outputFile))
     // .pipe(replace('../font/', './font/')) // Webフォント open-iconic のパスを合わせる
     .pipe(postcss([

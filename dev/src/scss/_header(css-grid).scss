@@ -24,16 +24,14 @@
 		}
 		@media ($md_) {
 			display: grid;
-			grid-template-areas: "site-branding primary-menu";
 			grid-template-columns: 240px 1fr;
-			column-gap: 2rem;
+			grid-gap: 2rem;
 			align-items: center;
 		}
 	}
 }
 
 		.site-branding { // ロゴとキャッチフレーズを囲む領域
-			grid-area: site-branding;
 			@media ($_md) {
 				height: 40px;
 				background-color: #FFF;
@@ -63,7 +61,6 @@
 			}
 
 		#primary-menu {
-			grid-area: primary-menu;
 			// → _primary-menu.scss
 		}
 

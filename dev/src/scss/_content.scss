@@ -9,13 +9,15 @@
 		margin-top: 0;
 		@media($md_){
 			display: grid;
+			grid-template-areas: "primary secondary";
 			grid-template-columns: 1fr 15rem;
-			grid-gap: 3%;
+			column-gap: 3%;
 		}
 	}
 
 		#primary {
 			@media($md_){
+				grid-area: primary;
 				margin-top: 0;
 			}
 		}
@@ -26,6 +28,7 @@
 			}
 
 		#secondary {
+			grid-area: secondary;
 			// -> _sidebar.php
 		}
 }
