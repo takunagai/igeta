@@ -1,276 +1,272 @@
 /**
- * Grid Layout - IE非対応なシンプル版
- *     ★★TODO: 2カラムの細くなった時のstyleも付け足す
+ * Grid Layout
  */
 .grid,
 .grid--narrow,
 .grid--wide {
-	display: grid;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
+	@media($sm_) {
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
+
+// 広さ3段階
 .grid {
-	grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
-	grid-gap: 1rem;
-	@media($sm_) { grid-gap: 2rem; }
+	@media($sm_md) {
+		.grid__item {
+			flex-basis: 48%;
+			margin: 1%;
+		}
+	}
+	@media($md_lg) {
+		.grid__item {
+			flex-basis: 31.3%;
+			margin: 1%;
+		}
+	}
+	@media($lg_) {
+		.grid__item {
+			flex-basis: 31.3%;
+			margin: 1%;
+		}
+	}
+	&.grid--gap-none {
+		@media($sm_md) {
+			.grid__item {
+				flex-basis: 50%;
+				margin: 0;
+			}
+		}
+		@media($md_lg) {
+			.grid__item {
+				flex-basis: 33.3%;
+				margin: 0;
+			}
+		}
+		@media($lg_) {
+			.grid__item {
+				flex-basis: 33.3%;
+				margin: 0;
+			}
+		}
+	}
+	&.grid--gap-narrow {
+		@media($sm_md) {
+			.grid__item {
+				flex-basis: 49.5%;
+				margin: .5%;
+			}
+		}
+		@media($md_lg) {
+			.grid__item {
+				flex-basis: 32.3%;
+				margin: .5%;
+			}
+		}
+		@media($lg_) {
+			.grid__item {
+				flex-basis: 32.3%;
+				margin: .5%;
+			}
+		}
+	}
+	&.grid--gap-wide {
+		@media($sm_md) {
+			.grid__item {
+				flex-basis: 46%;
+				margin: 2%;
+			}
+		}
+		@media($md_lg) {
+			.grid__item {
+				flex-basis: 29.3%;
+				margin: 2%;
+			}
+		}
+		@media($lg_) {
+			.grid__item {
+				flex-basis: 29.3%;
+				margin: 2%;
+			}
+		}
+	}
 }
 .grid--narrow {
-	grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
-	grid-gap: .5rem;
-	@media($sm_) { grid-gap: 1rem; }
+	@media($sm_md) {
+		.grid__item {
+			flex-basis: 48%;
+			margin: 1%;
+		}
+	}
+	@media($md_lg) {
+		.grid__item {
+			flex-basis: 31.3%;
+			margin: 1%;
+		}
+	}
+	@media($lg_) {
+		.grid__item {
+			flex-basis: 23%;
+			margin: 1%;
+		}
+	}
+	&.grid--gap-none {
+		@media($sm_md) {
+			.grid__item {
+				flex-basis: 50%;
+				margin: 0;
+			}
+		}
+		@media($md_lg) {
+			.grid__item {
+				flex-basis: 33.3%;
+				margin: 0;
+			}
+		}
+		@media($lg_) {
+			.grid__item {
+				flex-basis: 25%;
+				margin: 0;
+			}
+		}
+	}
+	&.grid--gap-narrow {
+		@media($sm_md) {
+			.grid__item {
+				flex-basis: 49.5%;
+				margin: .5%;
+			}
+		}
+		@media($md_lg) {
+			.grid__item {
+				flex-basis: 32.3%;
+				margin: .5%;
+			}
+		}
+		@media($lg_) {
+			.grid__item {
+				flex-basis: 24%;
+				margin: .5%;
+			}
+		}
+	}
+	&.grid--gap-wide {
+		@media($sm_md) {
+			.grid__item {
+				flex-basis: 46%;
+				margin: 2%;
+			}
+		}
+		@media($md_lg) {
+			.grid__item {
+				flex-basis: 29.3%;
+				margin: 2%;
+			}
+		}
+		@media($lg_) {
+			.grid__item {
+				flex-basis: 21%;
+				margin: 2%;
+			}
+		}
+	}
 }
 .grid--wide {
-	grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
-	grid-gap: 1rem;
-	@media($sm_) { grid-gap: 2rem; }
-}
-
-.grid--gap-none {
-	grid-gap: 0 !important;
-}
-.grid--gap-narrow {
-	grid-gap: .5rem;
-	@media($sm_) { grid-gap: 1rem; }
-}
-.grid--gap-normal {
-	grid-gap: 1rem;
-	@media($sm_) { grid-gap: 2rem; }
-}
-.grid--gap-wide {
-	grid-gap: 2rem;
-	@media($sm_) { grid-gap: 4rem; }
-}
-
-@media ($_sm) {
-	.grid,
-	.grid--narrow,
-	.grid--wide {
-		&.grid--mobile-2col {
-			grid-template-columns: 1fr 1fr;
-			grid-gap: .5rem .25rem;
-			font-size: smaller;
-		}
-		&.grid--mobile-3col {
-			grid-template-columns: 1fr 1fr 1fr;
-			grid-gap: .5rem .25rem;
-			font-size: smaller;
-		}
-	}
-}
-
-
-
-/**
- * Grid Layout (autoprefixer で IE11対応)
- */
-/* IE10〜11 */
-_:-ms-input-placeholder, :root .selector {
-	.grid,
-	.grid--narrow,
-	.grid--wide {
-		> * {
-			margin: 0 .5rem 1rem;
-			@media($sm_) { margin: 0 1rem 2rem ; }
-		}
-	}
-
-	@media ($_sm) {
-		.grid,
-		.grid--narrow,
-		.grid--wide {
-			grid-template-columns: 1fr;
-		}
-	}
-
-	@media ($sm_) {
-		.grid {
-			grid-template-columns: 1fr 1fr;
-		}
-		.grid--narrow {
-			grid-template-columns: 1fr 1fr 1fr;
-		}
-		.grid--wide {
-			grid-template-columns: 1fr;
-		}
-	}
-
-	@media ($md_) {
-		.grid {
-			grid-template-columns: 1fr 1fr 1fr;
-		}
-		.grid--narrow {
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-		}
-		.grid--wide {
-			grid-template-columns: 1fr 1fr;
-		}
-	}
-
-	@media ($lg_) {
-		.grid {
-			grid-template-columns: 1fr 1fr 1fr;
-		}
-		.grid--narrow {
-			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		}
-		.grid--wide {
-			grid-template-columns: 1fr 1fr 1fr;
-		}
-	}
-
-	.grid--gap-none {
-		> * {
-			margin: 0 !important;
-		}
-	}
-	.grid--gap-narrow {
-		> * {
-			margin: 0 .25rem .5rem;
-			@media($sm_) { margin: 0 .5rem 1rem ; }
-		}
-	}
-	.grid--gap-normal {
-		> * {
-			margin: 0 .5rem 1rem;
-			@media($sm_) { margin: 0 1rem 2rem ; }
-		}
-	}
-	.grid--gap-wide {
-		> * {
-			margin: 0 1rem 2rem;
-			@media($sm_) { margin: 0 2rem 4rem ; }
-		}
-	}
-
-	@media ($_md) {
-		.grid,
-		.grid--narrow,
-		.grid--wide {
-			&.grid--mobile-2col {
-				grid-template-columns: 1fr 1fr;
-				font-size: $font-small;
-			}
-			&.grid--mobile-3col {
-				grid-template-columns: 1fr 1fr 1fr;
-				font-size: $font-small;
-			}
-		}
-	}
 	@media($sm_md) {
-		.grid--narrow.grid--mobile-2col {
-			grid-template-columns: 1fr 1fr 1fr;
+		.grid__item {
+			flex-basis: 100%;
+			margin: 0;
+		}
+	}
+	@media($md_lg) {
+		.grid__item {
+			flex-basis: 48%;
+			margin: 1%;
+		}
+	}
+	@media($lg_) {
+		.grid__item {
+			flex-basis: 48%;
+			margin: 1%;
+		}
+	}
+	&.grid--gap-none {
+		@media($sm_md) {
+			.grid__item {
+				flex-basis: 100%;
+				margin: 0;
+			}
+		}
+		@media($md_lg) {
+			.grid__item {
+				flex-basis: 50%;
+				margin: 0;
+			}
+		}
+		@media($lg_) {
+			.grid__item {
+				flex-basis: 50%;
+				margin: 0;
+			}
+		}
+	}
+	&.grid--gap-narrow {
+		@media($sm_md) {
+			.grid__item {
+				flex-basis: 100%;
+				margin: 0;
+			}
+		}
+		@media($md_lg) {
+			.grid__item {
+				flex-basis: 49%;
+				margin: .5%;
+			}
+		}
+		@media($lg_) {
+			.grid__item {
+				flex-basis: 49%;
+				margin: .5%;
+			}
+		}
+	}
+	&.grid--gap-wide {
+		@media($sm_md) {
+			.grid__item {
+				flex-basis: 100%;
+				margin: 0;
+			}
+		}
+		@media($md_lg) {
+			.grid__item {
+				flex-basis: 46%;
+				margin: 2%;
+			}
+		}
+		@media($lg_) {
+			.grid__item {
+				flex-basis: 46%;
+				margin: 2%;
+			}
 		}
 	}
 }
 
 
-
-/**
- * Grid Layout (autoprefixer で IE11対応)
- */
-/* IE10〜11 */
-// _:-ms-input-placeholder, :root .selector {
-// 	.grid,
-// 	.grid--narrow,
-// 	.grid--wide {
-// 		display: grid;
-// 		margin-top: 1rem;
-// 		margin-bottom: 1rem;
-// 		> * {
-// 			margin: 0 .5rem 1rem;
-// 			@media($sm_) { margin: 0 1rem 2rem ; }
-// 		}
-// 	}
-
-// 	@media ($_sm) {
-// 		.grid,
-// 		.grid--narrow,
-// 		.grid--wide {
-// 			grid-template-columns: 1fr;
-// 		}
-// 	}
-
-// 	@media ($sm_) {
-// 		.grid {
-// 			grid-template-columns: 1fr 1fr;
-// 		}
-// 		.grid--narrow {
-// 			grid-template-columns: 1fr 1fr 1fr;
-// 		}
-// 		.grid--wide {
-// 			grid-template-columns: 1fr;
-// 		}
-// 	}
-
-// 	@media ($md_) {
-// 		.grid {
-// 			grid-template-columns: 1fr 1fr 1fr;
-// 		}
-// 		.grid--narrow {
-// 			grid-template-columns: 1fr 1fr 1fr 1fr;
-// 		}
-// 		.grid--wide {
-// 			grid-template-columns: 1fr 1fr;
-// 		}
-// 	}
-
-// 	@media ($lg_) {
-// 		.grid {
-// 			grid-template-columns: 1fr 1fr 1fr;
-// 		}
-// 		.grid--narrow {
-// 			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-// 		}
-// 		.grid--wide {
-// 			grid-template-columns: 1fr 1fr 1fr;
-// 		}
-// 	}
-
-// 	.grid--gap-none {
-// 		> * {
-// 			margin: 0 !important;
-// 		}
-// 	}
-// 	.grid--gap-narrow {
-// 		> * {
-// 			margin: 0 .25rem .5rem;
-// 			@media($sm_) { margin: 0 .5rem 1rem ; }
-// 		}
-// 	}
-// 	.grid--gap-normal {
-// 		> * {
-// 			margin: 0 .5rem 1rem;
-// 			@media($sm_) { margin: 0 1rem 2rem ; }
-// 		}
-// 	}
-// 	.grid--gap-wide {
-// 		> * {
-// 			margin: 0 1rem 2rem;
-// 			@media($sm_) { margin: 0 2rem 4rem ; }
-// 		}
-// 	}
-
-// 	@media ($_md) {
-// 		.grid,
-// 		.grid--narrow,
-// 		.grid--wide {
-// 			&.grid--mobile-2col {
-// 				grid-template-columns: 1fr 1fr;
-// 				font-size: $font-small;
-// 			}
-// 			&.grid--mobile-3col {
-// 				grid-template-columns: 1fr 1fr 1fr;
-// 				font-size: $font-small;
-// 			}
-// 		}
-// 	}
-// 	@media($sm_md) {
-// 		.grid--narrow.grid--mobile-2col {
-// 			grid-template-columns: 1fr 1fr 1fr;
-// 		}
-// 	}
-// }
-
-
-
-
+// モバイルで2列/3列
+.grid--mobile-2col,
+.grid--mobile-3col {
+	display: flex;
+	flex-wrap: wrap;
+	font-size: smaller;
+}
+	.grid--mobile-2col .grid__item {
+		flex-basis: 48%;
+		margin: 1%;
+	}
+	.grid--mobile-3col .grid__item {
+		flex-basis: 32.3%;
+		margin: .5%;
+	}
