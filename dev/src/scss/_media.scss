@@ -122,9 +122,10 @@
 
 
 /**
- * Media (autoprefixer で IE11対応)
+ * Media (autoprefixer で IE10〜11 対応)
  */
-_:-ms-input-placeholder, :root .selector {
+@media screen\0 {
+/* autoprefixer: off */
 	.media,
 	[class^="media--"] {
 		> * {

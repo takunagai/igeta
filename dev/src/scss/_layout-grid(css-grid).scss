@@ -1,0 +1,309 @@
+/**
+ * Grid Layout - IE非対応なシンプル版
+ *     ★★TODO: 2カラムの細くなった時のstyleも付け足す
+ */
+.grid,
+.grid--narrow,
+.grid--wide {
+	display: grid;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+.grid {
+	grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+	gap: 1rem;
+	@media($sm_) { gap: 2rem; }
+}
+.grid--narrow {
+	grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+	gap: .5rem;
+	@media($sm_) { gap: 1rem; }
+}
+.grid--wide {
+	grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+	gap: 1rem;
+	@media($sm_) { gap: 2rem; }
+}
+
+.grid--gap-none {
+	gap: 0 !important;
+}
+.grid--gap-narrow {
+	gap: .5rem;
+	@media($sm_) { gap: 1rem; }
+}
+.grid--gap-normal {
+	gap: 1rem;
+	@media($sm_) { gap: 2rem; }
+}
+.grid--gap-wide {
+	gap: 2rem;
+	@media($sm_) { gap: 4rem; }
+}
+
+@media ($_sm) {
+	.grid,
+	.grid--narrow,
+	.grid--wide {
+		&.grid--mobile-2col {
+			grid-template-columns: 1fr 1fr;
+			gap: .5rem .25rem;
+			font-size: smaller;
+		}
+		&.grid--mobile-3col {
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: .5rem .25rem;
+			font-size: smaller;
+		}
+	}
+}
+
+
+
+/**
+ * Grid Layout (autoprefixer で IE10〜11 対応)
+ */
+/*! autoprefixer: off */
+#{unquote('_:-ms-input-placeholder, :root')} .grid,
+#{unquote('_:-ms-input-placeholder, :root')} .grid--narrow,
+#{unquote('_:-ms-input-placeholder, :root')} .grid--wide {
+	display: -ms-grid;
+}
+#{unquote('_:-ms-input-placeholder, :root')} .grid > *,
+#{unquote('_:-ms-input-placeholder, :root')} .grid--narrow > *,
+#{unquote('_:-ms-input-placeholder, :root')} .grid--wide > * {
+	margin: 0 .5rem 1rem;
+	@media($sm_) { margin: 0 1rem 2rem ; }
+}
+
+@media ($_sm) {
+	#{unquote('_:-ms-input-placeholder, :root')} .grid,
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--narrow,
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--wide {
+		// grid-template-columns: 1fr;
+		-ms-grid-columns: 1fr;
+		-ms-grid-rows: auto;
+	}
+}
+
+@media ($sm_) {
+	#{unquote('_:-ms-input-placeholder, :root')} .grid {
+		// grid-template-columns: 1fr 1fr;
+		-ms-grid-columns: 1fr 0 1fr;
+		-ms-grid-rows: auto;
+	}
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--narrow {
+		// grid-template-columns: 1fr 1fr 1fr;
+		-ms-grid-columns: 1fr 0 1fr 0 1fr;
+		-ms-grid-rows: auto;
+	}
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--wide {
+		// grid-template-columns: 1fr;
+		-ms-grid-columns: 1fr;
+		-ms-grid-rows: auto;
+	}
+}
+
+@media ($md_) {
+	#{unquote('_:-ms-input-placeholder, :root')} .grid {
+		// grid-template-columns: 1fr 1fr 1fr;
+		-ms-grid-columns: 1fr 0 1fr 0 1fr;
+		-ms-grid-rows: auto;
+	}
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--narrow {
+		// grid-template-columns: 1fr 1fr 1fr 1fr;
+		-ms-grid-columns: 1fr 0 1fr 0 1fr 0 1fr;
+		-ms-grid-rows: auto;
+	}
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--wide {
+		// grid-template-columns: 1fr 1fr;
+		-ms-grid-columns: 1fr 0 1fr;
+		-ms-grid-rows: auto;
+	}
+}
+
+@media ($lg_) {
+	#{unquote('_:-ms-input-placeholder, :root')} .grid {
+		// grid-template-columns: 1fr 1fr 1fr;
+		-ms-grid-columns: 1fr 0 1fr 0 1fr;
+		-ms-grid-rows: auto;
+	}
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--narrow {
+		// grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		-ms-grid-columns: 1fr 0 1fr 0 1fr 0 1fr 0 1fr;
+		-ms-grid-rows: auto;
+	}
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--wide {
+		// grid-template-columns: 1fr 1fr 1fr;
+		-ms-grid-columns: 1fr 0 1fr 0 1fr;
+		-ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+	}
+
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--wide > *:nth-child(3n+1) {
+		-ms-grid-column: 1;
+		-ms-grid-row: auto;
+	}
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--wide > *:nth-child(3n+2) {
+		-ms-grid-column: 3;
+		-ms-grid-row: auto;
+	}
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--wide > *:nth-child(3n+3) {
+		-ms-grid-column: 5;
+		-ms-grid-row: auto;
+	}
+}
+
+#{unquote('_:-ms-input-placeholder, :root')} .grid--gap-none > * {
+	margin: 0 !important;
+}
+#{unquote('_:-ms-input-placeholder, :root')} .grid--gap-narrow > * {
+	margin: 0 .25rem .5rem;
+	@media($sm_) { margin: 0 .5rem 1rem ; }
+}
+#{unquote('_:-ms-input-placeholder, :root')} .grid--gap-normal > * {
+	margin: 0 .5rem 1rem;
+	@media($sm_) { margin: 0 1rem 2rem ; }
+}
+#{unquote('_:-ms-input-placeholder, :root')} .grid--gap-wide > * {
+	margin: 0 1rem 2rem;
+	@media($sm_) { margin: 0 2rem 4rem ; }
+}
+
+@media ($_md) {
+	#{unquote('_:-ms-input-placeholder, :root')} .grid.grid--mobile-2col,
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--narrow.grid--mobile-2col,
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--wide.grid--mobile-2col {
+		// grid-template-columns: 1fr 1fr;
+		-ms-grid-columns: 1fr 0 1fr;
+		-ms-grid-rows: auto;
+		font-size: $font-small;
+	}
+	#{unquote('_:-ms-input-placeholder, :root')} .grid.grid--mobile-3col,
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--narrow.grid--mobile-3col,
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--wide.grid--mobile-3col {
+		// grid-template-columns: 1fr 1fr 1fr;
+		-ms-grid-columns: 1fr 0 1fr 0 1fr;
+		-ms-grid-rows: auto;
+		font-size: $font-small;
+	}
+}
+@media($sm_md) {
+	#{unquote('_:-ms-input-placeholder, :root')} .grid--narrow.grid--mobile-2col {
+		// grid-template-columns: 1fr 1fr 1fr;
+		-ms-grid-columns: 1fr 0 1fr 0 1fr;
+		-ms-grid-rows: auto;
+	}
+}
+
+
+
+
+/**
+ * Grid Layout (autoprefixer で IE11対応)
+ */
+/* IE10〜11 */
+// @media screen\0 { {
+// 	.grid,
+// 	.grid--narrow,
+// 	.grid--wide {
+// 		display: grid;
+// 		margin-top: 1rem;
+// 		margin-bottom: 1rem;
+// 		> * {
+// 			margin: 0 .5rem 1rem;
+// 			@media($sm_) { margin: 0 1rem 2rem ; }
+// 		}
+// 	}
+
+// 	@media ($_sm) {
+// 		.grid,
+// 		.grid--narrow,
+// 		.grid--wide {
+// 			grid-template-columns: 1fr;
+// 		}
+// 	}
+
+// 	@media ($sm_) {
+// 		.grid {
+// 			grid-template-columns: 1fr 1fr;
+// 		}
+// 		.grid--narrow {
+// 			grid-template-columns: 1fr 1fr 1fr;
+// 		}
+// 		.grid--wide {
+// 			grid-template-columns: 1fr;
+// 		}
+// 	}
+
+// 	@media ($md_) {
+// 		.grid {
+// 			grid-template-columns: 1fr 1fr 1fr;
+// 		}
+// 		.grid--narrow {
+// 			grid-template-columns: 1fr 1fr 1fr 1fr;
+// 		}
+// 		.grid--wide {
+// 			grid-template-columns: 1fr 1fr;
+// 		}
+// 	}
+
+// 	@media ($lg_) {
+// 		.grid {
+// 			grid-template-columns: 1fr 1fr 1fr;
+// 		}
+// 		.grid--narrow {
+// 			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+// 		}
+// 		.grid--wide {
+// 			grid-template-columns: 1fr 1fr 1fr;
+// 		}
+// 	}
+
+// 	.grid--gap-none {
+// 		> * {
+// 			margin: 0 !important;
+// 		}
+// 	}
+// 	.grid--gap-narrow {
+// 		> * {
+// 			margin: 0 .25rem .5rem;
+// 			@media($sm_) { margin: 0 .5rem 1rem ; }
+// 		}
+// 	}
+// 	.grid--gap-normal {
+// 		> * {
+// 			margin: 0 .5rem 1rem;
+// 			@media($sm_) { margin: 0 1rem 2rem ; }
+// 		}
+// 	}
+// 	.grid--gap-wide {
+// 		> * {
+// 			margin: 0 1rem 2rem;
+// 			@media($sm_) { margin: 0 2rem 4rem ; }
+// 		}
+// 	}
+
+// 	@media ($_md) {
+// 		.grid,
+// 		.grid--narrow,
+// 		.grid--wide {
+// 			&.grid--mobile-2col {
+// 				grid-template-columns: 1fr 1fr;
+// 				font-size: $font-small;
+// 			}
+// 			&.grid--mobile-3col {
+// 				grid-template-columns: 1fr 1fr 1fr;
+// 				font-size: $font-small;
+// 			}
+// 		}
+// 	}
+// 	@media($sm_md) {
+// 		.grid--narrow.grid--mobile-2col {
+// 			grid-template-columns: 1fr 1fr 1fr;
+// 		}
+// 	}
+// }
+
+
+
+
