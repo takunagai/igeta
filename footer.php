@@ -51,7 +51,7 @@
 
 
     <footer class="site-footer" role="contentinfo">
-        <p>Copyright © 2018 <span>© Amana Nursery school.</span> <span>All rights reserved.</span><?php // <span class="separator"> | </span>WordPress Theme "igeta" by <a href="http://nagaishouten.com" rel="designer">taku_nagai</a> ?></p>
+        <p>Copyright ©2018 <span>a la farine.</span> <span>All rights reserved.</span><?php // <span class="separator"> | </span>WordPress Theme "igeta" by <a href="http://nagaishouten.com" rel="designer">taku_nagai</a> ?></p>
     </footer>
 
 
