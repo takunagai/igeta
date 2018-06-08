@@ -4,6 +4,7 @@
 /******/ 		var chunkIds = data[0];
 /******/ 		var moreModules = data[1];
 /******/ 		var executeModules = data[2];
+/******/
 /******/ 		// add "moreModules" to the modules object,
 /******/ 		// then flag all "chunkIds" as loaded and fire callback
 /******/ 		var moduleId, chunkId, i = 0, resolves = [];
@@ -20,6 +21,7 @@
 /******/ 			}
 /******/ 		}
 /******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
 /******/ 		while(resolves.length) {
 /******/ 			resolves.shift()();
 /******/ 		}
@@ -93,17 +95,32 @@
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
 /******/ 	};
 /******/
 /******/ 	// define __esModule on exports
 /******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -181,7 +198,7 @@ eval("/* WEBPACK VAR INJECTION */(function($) {\n\n/**\n * メインメニュー
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("/* WEBPACK VAR INJECTION */(function($) {\n\n// @file: scroll.js\n// TODO: jQueryで生成した目次リンクがスクロール移動にならないのを直すこと\n\nvar throttle = __webpack_require__(/*! throttle-debounce/throttle */ \"./node_modules/throttle-debounce/throttle.js\");\n\nmodule.exports = function (setting) {\n\n\tvar myTouch = 'ontouchstart' in document ? 'touchstart' : 'click',\n\t    buttonSelector = setting.topLinkButtonID || '#move-to-page-top'; //デフォルト値\n\n\t/**\n * ページ内スムーススクロール\n *     注意：単純にアローファンクションに置き換えたら動かない\n *     http://shirusu-ni-tarazu.hatenablog.jp/entry/2016/02/15/020322\n */\n\tvar headerHeight = 54; // 固定ヘッダー等の高さ(px) TODO: うまく処理するように\n\n\t$('[href^=\"#\"]').on(myTouch, function (e) {\n\t\te.preventDefault();\n\t\tvar href = $(this).attr('href'),\n\t\t    target = $(href === '#top' || href === '#' || href === '' ? 'html' : href),\n\t\t    isSafari = /Safari/.test(navigator.userAgent);\n\n\t\t$(isSafari ? 'body' : 'html').animate({ scrollTop: target.offset().top - headerHeight }, 'slow'); //default 400, 'swing'\n\t});\n\n\t/**\n  * ページ上部へ戻るボタン\n  *     画面右下固定表示。画面の高さ以上/以下のスクロールで表示/非表示\n  *     HTML: <p id=\"move-to-page-top\"><a href=\"#top\"><i class=\"fa fa-chevron-up\"></i>このページTopへ</a></p>\n  *     throttle でスクロールでの発火頻度を抑制\n */\n\t// Setting\n\tvar topBtn = $(buttonSelector),\n\t    //ページTopに戻るボタン\n\twindowHeight = window.innerHeight || document.documentElement.clientHeight || 0; //ウインドウの高さ\n\n\t// ウインドウの高さ以上スクロールさせると表示、以下なら非表示\n\t// scrollイベントは500ミリ秒ごとに発火(依存)\n\twindow.addEventListener('scroll', throttle(500, function () {\n\t\tvar scrollTop = window.pageYOffset || document.documentElement.scrollTop;\n\t\tif (scrollTop > windowHeight) {\n\t\t\ttopBtn.fadeIn();\n\t\t} else {\n\t\t\ttopBtn.fadeOut();\n\t\t}\n\t}), false);\n\n\t// // jQuery + lodash(Underscore.js) の throttle を使う場合\n\t// //     lodash(Underscore.js) の throttleメソッドで処理頻度を抑制\n\t// //         @link: https://gist.github.com/takunagai/457302aaa44421bbc958\n\t// //         @link: http://codepen.io/oreo3/pen/JjHDz\n\t// $(window).scroll(_.throttle(function(){\n\t//   if ($(window).scrollTop() > windowHeight){\n\t//     topBtn.fadeIn();\n\t//   }\n\t//   else {\n\t//     topBtn.fadeOut();\n\t//   }\n\t// }, 500));\n};\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./src/js/components/scroll.js?");
+eval("/* WEBPACK VAR INJECTION */(function($) {\n\n// @file: scroll.js\n// TODO: jQueryで生成した目次リンクがスクロール移動にならないのを直すこと\n\nvar throttle = __webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module 'throttle-debounce/throttle'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));\n\nmodule.exports = function (setting) {\n\n\tvar myTouch = 'ontouchstart' in document ? 'touchstart' : 'click',\n\t    buttonSelector = setting.topLinkButtonID || '#move-to-page-top'; //デフォルト値\n\n\t/**\n * ページ内スムーススクロール\n *     注意：単純にアローファンクションに置き換えたら動かない\n *     http://shirusu-ni-tarazu.hatenablog.jp/entry/2016/02/15/020322\n */\n\tvar headerHeight = 54; // 固定ヘッダー等の高さ(px) TODO: うまく処理するように\n\n\t$('[href^=\"#\"]').on(myTouch, function (e) {\n\t\te.preventDefault();\n\t\tvar href = $(this).attr('href'),\n\t\t    target = $(href === '#top' || href === '#' || href === '' ? 'html' : href),\n\t\t    isSafari = /Safari/.test(navigator.userAgent);\n\n\t\t$(isSafari ? 'body' : 'html').animate({ scrollTop: target.offset().top - headerHeight }, 'slow'); //default 400, 'swing'\n\t});\n\n\t/**\n  * ページ上部へ戻るボタン\n  *     画面右下固定表示。画面の高さ以上/以下のスクロールで表示/非表示\n  *     HTML: <p id=\"move-to-page-top\"><a href=\"#top\"><i class=\"fa fa-chevron-up\"></i>このページTopへ</a></p>\n  *     throttle でスクロールでの発火頻度を抑制\n */\n\t// Setting\n\tvar topBtn = $(buttonSelector),\n\t    //ページTopに戻るボタン\n\twindowHeight = window.innerHeight || document.documentElement.clientHeight || 0; //ウインドウの高さ\n\n\t// ウインドウの高さ以上スクロールさせると表示、以下なら非表示\n\t// scrollイベントは500ミリ秒ごとに発火(依存)\n\twindow.addEventListener('scroll', throttle(500, function () {\n\t\tvar scrollTop = window.pageYOffset || document.documentElement.scrollTop;\n\t\tif (scrollTop > windowHeight) {\n\t\t\ttopBtn.fadeIn();\n\t\t} else {\n\t\t\ttopBtn.fadeOut();\n\t\t}\n\t}), false);\n\n\t// // jQuery + lodash(Underscore.js) の throttle を使う場合\n\t// //     lodash(Underscore.js) の throttleメソッドで処理頻度を抑制\n\t// //         @link: https://gist.github.com/takunagai/457302aaa44421bbc958\n\t// //         @link: http://codepen.io/oreo3/pen/JjHDz\n\t// $(window).scroll(_.throttle(function(){\n\t//   if ($(window).scrollTop() > windowHeight){\n\t//     topBtn.fadeIn();\n\t//   }\n\t//   else {\n\t//     topBtn.fadeOut();\n\t//   }\n\t// }, 500));\n};\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./src/js/components/scroll.js?");
 
 /***/ }),
 
