@@ -86,22 +86,31 @@ function igeta_widgets_init() {
         'after_title'   => '</h2>'
     ) );
 
-    // フッター (1〜3くらいのウィジェットの登録を想定)
+    // フッターメニュー (1〜3くらいのウィジェットの登録を想定)
     register_sidebar( array(
-        'id'            => 'footer',
-        'name'          => esc_html__( 'フッター', 'igeta' ),
-        'description'   => esc_html__( 'フッター (ID: footer)', 'igeta' ),
-        'before_widget' => '<aside class="widget-area-footer widget %2$s">', // default: <li id="%1$s" class="widget %2$s">
+        'id'            => 'footer-nav',
+        'name'          => esc_html__( 'フッターメニュー', 'igeta' ),
+        'description'   => esc_html__( 'フッターメニュー (ID: footer-nav)', 'igeta' ),
+        'before_widget' => '<aside id="%1$s" class="footer-nav widget %2$s">', // default: <li id="%1$s" class="widget %2$s">
         'after_widget'  => '</aside>',
         'before_title'  => '<h2 class="widget-title">', // default: <h2 class="widgettitle">
         'after_title'   => '</h2>'
     ) );
 
-    // フッター
+    // フッター連絡先
     register_sidebar( array(
         'id'            => 'footer-address',
-        'name'          => esc_html__( '連絡先', 'igeta' ),
-        'description'   => esc_html__( '連絡先 (ID: footer-address)', 'igeta' ),
+        'name'          => esc_html__( 'フッター連絡先', 'igeta' ),
+        'description'   => esc_html__( 'フッター連絡先 (ID: footer-address)', 'igeta' ),
+        'before_widget' => '', // default: <li id="%1$s" class="widget %2$s">
+        'after_widget'  => ''
+    ) );
+
+    // フッターコピーライト
+    register_sidebar( array(
+        'id'            => 'footer-copyright',
+        'name'          => esc_html__( 'フッターコピーライト', 'igeta' ),
+        'description'   => esc_html__( 'フッターコピーライト (ID: footer-copyright)', 'igeta' ),
         'before_widget' => '', // default: <li id="%1$s" class="widget %2$s">
         'after_widget'  => ''
     ) );

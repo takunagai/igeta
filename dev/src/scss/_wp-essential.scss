@@ -394,6 +394,9 @@
 			}
 		}
 	}
+	.site-title {
+		max-width: 15rem;
+	}
 	.footer-information {
 		.custom-logo-link { // h1 or p > a カスタムロゴ未設定時のテキスト装飾
 			text-decoration: none;

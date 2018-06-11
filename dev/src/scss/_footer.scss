@@ -32,14 +32,27 @@
 	@media($md_){
 		.container {
 			display: grid;
+			grid-template-areas: "footer-address footer-menu-1 footer-menu-2";
 			grid-template-columns: 2fr 1fr 1fr;
-			address {
-				grid-row: 1;
-				grid-column: 1;
-			}
+			column-gap: 2.5rem;
 		}
+			address {
+				grid-area: footer-address;
+			}
+			#nav_menu-4 { // &.widget
+				grid-area: footer-menu-1;outline:1px solid red;
+			}
+			#nav_menu-5 {
+				grid-area: footer-menu-2;
+			}
+			// .footer-nav:first-child { // &.widget
+			// 	grid-area: footer-menu-1;
+			// }
+			// .footer-nav:nth-child(2) {
+			// 	grid-area: footer-menu-2;
+			// }
 	}
-		.widget {
+		.widget { // &.footer-nav
 			a {
 				color: theme-color("dark");
 				text-decoration: none;

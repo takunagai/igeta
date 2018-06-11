@@ -25,7 +25,7 @@ get_header();
 
             <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <div class="container--narrow">
-                    <ul class="no-listmarker">
+                    <ul class="media--thumbnail">
 
             <?php
             /* Start the Loop */

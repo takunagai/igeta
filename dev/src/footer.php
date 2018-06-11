@@ -18,7 +18,7 @@
     <div class="footer-information bg-light">
         <div class="container">
 
-            <?php if ( is_active_sidebar( 'footer' ) ){ dynamic_sidebar( 'footer' ); } ?>
+            <?php if ( is_active_sidebar( 'footer-nav' ) ){ dynamic_sidebar( 'footer-nav' ); } ?>
 
             <address>
                 <?php
@@ -51,7 +51,7 @@
 
 
     <footer class="site-footer" role="contentinfo">
-        <p>Copyright ©2018 <span>a la farine.</span> <span>All rights reserved.</span><?php // <span class="separator"> | </span>WordPress Theme "igeta" by <a href="http://nagaishouten.com" rel="designer">taku_nagai</a> ?></p>
+        <?php if ( is_active_sidebar( 'footer-copyright' ) ){ dynamic_sidebar( 'footer-copyright' ); } ?>
     </footer>
 
 

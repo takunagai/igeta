@@ -1,7 +1,7 @@
 // @file: scroll.js
 // TODO: jQueryで生成した目次リンクがスクロール移動にならないのを直すこと
+import { throttle } from 'throttle-debounce';// { throttle, debounce }
 
-var throttle = require('throttle-debounce/throttle');
 
 module.exports = function(setting) {
 
