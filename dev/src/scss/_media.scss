@@ -1,126 +1,153 @@
 /**
  * Media - IE非対応なシンプル版
  */
-.media,
-[class^="media--"] {
-	display: grid;
-	grid-template-areas: "media-image media-body";
-	column-gap: 1rem;
-	align-items: center;
-	padding-top: 2rem;
-	padding-bottom: 2rem;
-}
-.media--valign-top {
-	align-items: start;
-}
-	.media__img {
-		grid-area: media-image;
-		margin-right: auto;
-		margin-left: auto;
-	}
+
+// Common Settings
+// [class^="media--"]
+	.media__img {}
 	.media__body {
-		grid-area: media-body;
 		*:first-child {
 			margin-top: 0;
 		}
+		*:last-child {
+			margin-bottom: 0;
+		}
 	}
-	  .media__title {}
-	  .media__meta {
-	  	font-size: $font-small;
-	  }
+		.media__title {}
+		.media__meta {
+			font-size: $font-small;
+			line-height: 1.5;
+			@media($_sm){
+				font-size: $font-x-small;
+			}
+		}
 
 .media--no-padding {
 	padding-top: 0;
 	padding-bottom: 0;
 }
 
-.media,
-.media--25,
-.media--50,
-.media--75 {
-    grid-template-columns: 1fr 1fr;
-}
-.media--mobile-2col,
-.media--25--mobile-2col,
-.media--50--mobile-2col,
-.media--75--mobile-2col {
-    grid-template-columns: 1fr 1fr;
+.media--valign-top {
+	align-items: start;
 }
 
-.media--thumbnail { // li
-	padding-top: .5rem;
-	padding-bottom: .5rem;
-    grid-template-columns: 5rem 1fr;
-	border-bottom: 1px dotted $color-primary-light;
-}
-	.media__img {
-		grid-area: media-image;
-		margin-bottom: 0 !important;
-	}
-	.media__body {
-		grid-area: media-body;
-	}
-		.media__body *:last-child {
-			margin-bottom: 0;
-		}
-		.media__title {
-			margin-bottom: 0;
-			font-weight: normal;
-			&+* {
-				margin-top: .25rem;
-			}
-		}
 
 
-@media($_sm){
-	.media--mobile-2col,
-	.media--25--mobile-2col,
-	.media--50--mobile-2col,
-	.media--75--mobile-2col,
-	.media--thumbnail {
-		font-size: smaller;
-		line-height: 1.5;
-	}
-}
-
-@media($sm_){
-	.media--inverse {
-		.media__img {
-			grid-row: 1/2;
-			grid-column: 2/3;
-		}
-		.media__body {
-			grid-row: 1/2;
-			grid-column: 1/2;
-		}
-	}
-}
-
+// 2 column layout parts
 @media($md_){
 	.media,
-	[class^="media--"] {
+	.media--25,
+	.media--50,
+	.media--75,
+	.media--inverse,
+	.media--inverse--25,
+	.media--inverse--50,
+	.media--inverse--75 {
+		display: grid;
 		column-gap: 2.5rem;
-	}
+		align-items: center;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
 		.media__img {
-			margin-bottom: 2.5rem;
+			grid-area: media-image;
+			margin-right: auto;
+			margin-bottom: 0 !important;
+			margin-left: auto;
 		}
+		.media__body {
+			grid-area: media-body;
+		}
+		  .media__title {}
+		  .media__meta {}
+	}
+
+	// Order
 	.media,
-	.media--mobile-2col {
+	.media--25,
+	.media--50,
+	.media--75 {
+		grid-template-areas: "media-image media-body";
+	}
+
+	.media--inverse,
+	.media--inverse--25,
+	.media--inverse--50,
+	.media--inverse--75 {
+		grid-template-areas: "media-body media-image";
+	}
+
+	// set width
+	.media,
+	.media--inverse {
 		grid-template-columns: auto auto;
 	}
-	.media--thumbnail {
-		column-gap: 1rem;
-	}
-	.media--25,
-	.media--25--mobile-2col {
+	.media--25 {
 		grid-template-columns: 25% 1fr;
 	}
 	.media--50,
-	.media--50--mobile-2col {
+	.media--inverse--50 {
 		grid-template-columns: 1fr 1fr;
 	}
-	.media--75,
-	.media--75--mobile-2col {
+	.media--75 {
 		grid-template-columns: 75% 1fr;
+	}
+	.media--inverse--25 {
+		grid-template-columns: 1fr 25%;
+	}
+	// 50 ↑
+	.media--inverse--75 {
+		grid-template-columns: 1fr 75%;
+	}
+}
+
+.media--mobile-2col {
+	@media($_sm){
+		font-size: smaller;
+		line-height: 1.5;
+	}
+	@media($_md){
+		display: grid;
+		grid-template-areas: "media-image media-body";
+		grid-template-columns: auto auto;
+		column-gap: 1.5rem;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+}
+
+
+
+// thumbnail style for index page
+.media--thumbnail { // ul
+	padding-left: 0;
+	li { // li
+		display: grid;
+		grid-template-areas: "media-image media-body";
+	    grid-template-columns: 5rem 1fr;
+	    column-gap: 1rem;
+		align-items: center;
+		padding-top: .5rem;
+		padding-bottom: .5rem;
+		border-bottom: 1px dotted $color-primary-light;
+		@media($_sm){
+			column-gap: .625rem;
+			font-size: smaller;
+			line-height: 1.5;
+		}
+		.media__img { // img
+			grid-area: media-image;
+		}
+		.media__body { // div
+			grid-area: media-body;
+		}
+			.media__title { // h3
+				margin-bottom: 0;
+				font-size: $font-normal;
+				font-weight: normal;
+				&+* {
+					margin-top: .25rem;
+				}
+			}
+			.media__meta {} // p
 	}
 }
