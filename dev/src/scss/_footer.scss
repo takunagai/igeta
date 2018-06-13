@@ -32,15 +32,30 @@
 	@media($md_){
 		.container {
 			display: grid;
-			grid-template-areas: "footer-address footer-menu-1 footer-menu-2";
-			grid-template-columns: 2fr 1fr 1fr;
-			column-gap: 2.5rem;
+			grid-template:
+				"footer-address footer-menu-1 footer-menu-2" /
+				2fr 1fr 1fr;
+			column-gap: 1.5rem;
 		}
 			address {
 				grid-area: footer-address;
+				font-style: normal;
+				@media($_sm){
+					text-align: center;
+					padding-top: 2rem;
+					border-top: 1px dotted $color-primary;
+				}
 			}
+				.site-title { // カスタムロゴがあれば画像、なければテキスト
+					font-size: $font-large;
+					.custom-logo-link { // a
+						text-decoration: none;
+					}
+						.custom-logo { // img、カスタムロゴが設定されている場合
+						}
+				}
 			#nav_menu-4 { // &.widget
-				grid-area: footer-menu-1;outline:1px solid red;
+				grid-area: footer-menu-1;
 			}
 			#nav_menu-5 {
 				grid-area: footer-menu-2;
@@ -54,11 +69,11 @@
 	}
 		.widget { // &.footer-nav
 			a {
-				color: theme-color("dark");
+				color: $color-primary;
 				text-decoration: none;
 				&:hover {
-					color: theme-color("dark");
-					border-bottom: 1px dotted $color-link;
+					color: $color-primary;
+					border-bottom: 1px dotted $color-primary;
 				}
 			}
 		}
@@ -87,22 +102,8 @@
 						color: $color-primary-light;
 					}
 				}
-		address {
-			font-style: normal;
-			@media($_sm){
-				text-align: center;
-				padding-top: 2rem;
-				border-top: 1px dotted $color-primary;
-			}
-		}
-			.site-title { // カスタムロゴがあれば画像、なければテキスト
-				font-size: $font-large;
-				.custom-logo-link { // a
-					text-decoration: none;
-				}
-					.custom-logo { // img、カスタムロゴが設定されている場合
-					}
-			}
+
+
 }
 
 // // フッターメニュー
