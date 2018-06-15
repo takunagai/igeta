@@ -123,6 +123,13 @@ legend.screen-reader-text {
 	display: none;
 }
 
+// モバイルは文字サイズ小さく
+@media($_sm) {
+	.small-text-mobile {
+		font-size: smaller;
+	}
+}
+
 
 /**
  * FontAwesome (font-awesome)
@@ -183,6 +190,29 @@ legend.screen-reader-text {
 .border-bottom {
 	border-bottom: 1px solid rgba(0,0,0,.1);
 }
+
+
+// 囲み記事
+.box,
+.box--white {
+	padding: .5rem;
+	*:first-child {
+		margin-top: 0;
+	}
+	*:last-child {
+		margin-bottom: 0;
+	}
+	@media($sm_){
+		padding: 1rem;
+	}
+}
+.box {
+	border: 1px solid $color-gray-400;
+}
+.box--white {
+	background-color: #FFF;
+}
+
 
 
 // 角丸

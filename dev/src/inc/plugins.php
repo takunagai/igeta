@@ -33,3 +33,10 @@ function wpcf7_text_validation_filter_extend( $result, $tag ) {
     }
     return $result;
 }
+
+
+/**
+ * Contact Form 7
+ * 送信ボタンを押すと送信完了ページに移動
+ * -> メールフォームの固定ページに埋め込み
+ */

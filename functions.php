@@ -101,9 +101,32 @@ if ( ! function_exists( 'igeta_setup' ) ) :
 		}
 		add_filter( 'tiny_mce_before_init', 'extend_tiny_mce_before_init' );
 
+
 		/**
-		* 固定ページで抜粋を使えるようにする
-		*/
+		 * 固定ページでスラッグと斎場の祖先ページのスラッグを body_class() にクラスとして追加
+		 * @link https://www.nxworld.net/wordpress/wp-add-page-slug-body-class.html (fix necessary)
+		 */
+		add_filter( 'body_class', 'add_page_slug_class_name' );
+		function add_page_slug_class_name( $classes ) {
+			if ( is_page() ) {
+				$page = get_post( get_the_ID() );
+				$classes[] = $page->post_name;
+
+				$parent_id = $page->post_parent;
+				if ( 0 == $parent_id ) {
+					$classes[] = get_post($parent_id)->post_name;
+				} else {
+					$ancestorsArray = get_ancestors( $page->ID, 'page', 'post_type' );
+					$progenitor_id = array_pop( $ancestorsArray );
+					$classes[] = get_post($progenitor_id)->post_name . '-child';
+				}
+			}
+			return $classes;
+		}
+
+		/**
+		 * 固定ページで抜粋を使えるようにする
+		 */
 		// add_post_type_support( 'page', 'excerpt' );
 
 		/**
@@ -190,9 +213,13 @@ if ( ! function_exists( 'igeta_setup' ) ) :
 		if ( ! function_exists('tinymce_init') ) {
 
 			function tinymce_init( $init ) {
+				global $allowedposttags;
+
+				$init_array['valid_elements'] = '*[*]'; // 全てのタグと属性を許可（空の span や div タグ等を削除させない）
+				$init_array['extended_valid_elements'] = '*[*]'; // 全ての属性が消されるのを防止 (data- など)
+				$init_array['valid_children'] = '+a[' . implode( '|', array_keys( $allowedposttags ) ) . ']';// a タグに全てのタグを入れられるようにする
+				$init_array['indent'] = true; // インデントを消さない
 				$init['verify_html'] = false; // 空タグ、属性なしのタグを消させない
-				$initArray['valid_children'] = '+body[style], +div[div|span|a], +span[span]'; // 指定の子要素を消させない
-				$init['extended_valid_elements'] = 'a[data-remodal-target]'; // data- 属性が消されるのを防止 ★効かない
 
 				// // data- 属性が消されるのを防止
 				// $ext_elements = '';
