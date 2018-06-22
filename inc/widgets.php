@@ -80,7 +80,7 @@ function igeta_widgets_init() {
         'id'          => 'main-bottom',
         'name'        => 'メインカラム最下部 (ID: main-bottom)',
         'description' => esc_html__( 'メインカラム最下部', 'igeta' ),
-        'before_widget' => '<div class="widget %2$s container">',
+        'before_widget' => '<div id="%1$s" class="widget %2$s container">',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>'

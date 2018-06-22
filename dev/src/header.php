@@ -120,7 +120,7 @@
 	 * カラム分け用
 	 */
 	$layout_class = '';
-	if ( is_single() || is_archive() || is_home() ) {
+	if ( ( is_singular() && ( ! is_singular( 'page' ) ) ) || is_archive() || is_home() ) {
 		$layout_class = ' container';
 	}
 	?>

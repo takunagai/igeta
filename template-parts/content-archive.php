@@ -9,7 +9,7 @@
 
 ?>
 
-    <li>
+	<li>
 		<?php if ( has_post_thumbnail() ) : ?>
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'thumbnail', array( 'class' => "media__img" ) ); ?>

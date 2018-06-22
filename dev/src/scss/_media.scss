@@ -74,9 +74,6 @@
 	.media--inverse--25,
 	.media--inverse--50,
 	.media--inverse--75 {
-		display: grid;
-		column-gap: 2.5rem;
-		align-items: center;
 		padding-top: 2rem;
 		padding-bottom: 2rem;
 		.media__img {
@@ -96,42 +93,68 @@
 	}
 
 	// set width
+
+	$media-column-gap: 2.5rem;
 	.media {
+		display: grid;
+		column-gap: $media-column-gap;
+		align-items: center;
 		grid-template:
 			"media-image media-body" /
 			auto auto;
 	}
 	.media--inverse {
+		display: grid;
+		column-gap: 2.5rem;
+		align-items: center;
 		grid-template:
 			"media-body media-image" /
 			auto auto;
 	}
 	.media--25 {
+		display: grid;
+		column-gap: 2.5rem;
+		align-items: center;
 		grid-template:
 			"media-image media-body" /
 			25% 1fr;
 	}
 	.media--inverse--25 {
+		display: grid;
+		column-gap: 2.5rem;
+		align-items: center;
 		grid-template:
 			"media-body media-image" /
 			1fr 25%;
 	}
 	.media--50 {
+		display: grid;
+		column-gap: 2.5rem;
+		align-items: center;
 		grid-template:
 			"media-image media-body" /
 			1fr 1fr;
 	}
 	.media--inverse--50 {
+		display: grid;
+		column-gap: 2.5rem;
+		align-items: center;
 		grid-template:
 			"media-body media-image" /
 			1fr 1fr;
 	}
 	.media--75 {
+		display: grid;
+		column-gap: 2.5rem;
+		align-items: center;
 		grid-template:
 			"media-image media-body" /
 			75% 1fr;
 	}
 	.media--inverse--75 {
+		display: grid;
+		column-gap: 2.5rem;
+		align-items: center;
 		grid-template:
 			"media-body media-image" /
 			1fr 75%;

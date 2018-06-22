@@ -9,6 +9,7 @@
 
 date_default_timezone_set('Asia/Tokyo');
 
+
 if ( ! function_exists( 'igeta_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -106,7 +107,6 @@ if ( ! function_exists( 'igeta_setup' ) ) :
 		 * 固定ページでスラッグと斎場の祖先ページのスラッグを body_class() にクラスとして追加
 		 * @link https://www.nxworld.net/wordpress/wp-add-page-slug-body-class.html (fix necessary)
 		 */
-		add_filter( 'body_class', 'add_page_slug_class_name' );
 		function add_page_slug_class_name( $classes ) {
 			if ( is_page() ) {
 				$page = get_post( get_the_ID() );
@@ -123,6 +123,7 @@ if ( ! function_exists( 'igeta_setup' ) ) :
 			}
 			return $classes;
 		}
+		add_filter( 'body_class', 'add_page_slug_class_name' );
 
 		/**
 		 * 固定ページで抜粋を使えるようにする
@@ -206,53 +207,6 @@ if ( ! function_exists( 'igeta_setup' ) ) :
 		}
 		add_filter( 'the_content', 'noautop', 1 );
 
-		/**
-		 * ビジュアルエディタに切り替えで、空の span タグや i タグ、data- 属性が消されるのを防止
-		 * @link https://www.the-triad.jp/blog/wordpressのエディタが独自拡張の属性値を消してしまう/
-		 */
-		if ( ! function_exists('tinymce_init') ) {
-
-			function tinymce_init( $init ) {
-				global $allowedposttags;
-
-				$init_array['valid_elements'] = '*[*]'; // 全てのタグと属性を許可（空の span や div タグ等を削除させない）
-				$init_array['extended_valid_elements'] = '*[*]'; // 全ての属性が消されるのを防止 (data- など)
-				$init_array['valid_children'] = '+a[' . implode( '|', array_keys( $allowedposttags ) ) . ']';// a タグに全てのタグを入れられるようにする
-				$init_array['indent'] = true; // インデントを消さない
-				$init['verify_html'] = false; // 空タグ、属性なしのタグを消させない
-
-				// // data- 属性が消されるのを防止
-				// $ext_elements = '';
-				// $target_attr = array('*');
-				// $target_elements = array(
-				// 	'a','b','base','big','blockquote','body','br','caption','dd','div','dl',
-				// 	'dt','em','embed','font','form','h1','h2','h3','h4','h5','h6',
-				// 	'head','hr','html','i','img','input','iframe',
-				// 	'li','link','meta','nobr','noembed','object','ol','option','p','pre','s',
-				// 	'script','select','small',  'span','strike','strong','sub','sup','table',
-				// 	'tbody','td','textarea','tfoot','th','thead','title','tr','tt','u','ul',
-				// );
-
-				// $ext_elements = $target_elements[0];
-
-				// foreach ( $target_elements as $target_element ) {
-				// 	$ext_elements .= ',' . $target_element . '[' . implode( '|', $target_attr ) . ']';
-				// }
-
-				// if ( ! empty( $ext_elements ) ) {
-				// 	if ( ! empty( $init['extended_valid_elements'] ) ) {
-				// 		$init['extended_valid_elements'] .= $ext_elements;
-				// 	} else {
-				// 		$init['extended_valid_elements'] = trim( $ext_elements, ',' );
-				// 	}
-				// }
-
-
-				return $init;
-			}
-			add_filter( 'tiny_mce_before_init', 'tinymce_init', 100 );
-		}
-
 		/* --------- 追加 ここまで --------- */
 	}
 endif;
@@ -325,6 +279,7 @@ if ( !is_admin() ) {
  * enqueue scripts and css files // 追加
  */
 require get_template_directory() . '/inc/dashboard.php';
+require get_template_directory() . '/inc/tinymce.php';
 
 /**
  * Widgets // 追加

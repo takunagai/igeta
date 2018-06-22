@@ -14,7 +14,6 @@
 			column-gap: 3%;
 		}
 	}
-
 		#primary {
 			@media($md_){
 				grid-area: primary;
@@ -26,7 +25,6 @@
 					padding: 2rem;
 				}
 			}
-
 		#secondary {
 			grid-area: secondary;
 			// -> _sidebar.php
