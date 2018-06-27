@@ -4,51 +4,108 @@
  *   TODO: カラムレイアウト、レスポンシブ対応する
  */
 .gallery { // div、 .galleryid-3783.gallery-columns-5.gallery-size-medium
-	display: grid;
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 }
+
+
 .gallery-columns-1 {
 }
-.gallery-columns-2 {
-	grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
-	gap: 1rem;
-	@media($sm_) { gap: 2rem; }
+
+@media($sm_) {
+	.gallery-columns-2 {
+		display: flex;
+		flex-wrap: wrap;
+		.gallery-item {
+			flex-basis: 48%;
+			margin: 1%;
+		}
+	}
 }
-.gallery-columns-3 {
-	grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
-	gap: 1rem;
-	@media($sm_) { gap: 2rem; }
-}
-.gallery-columns-4 {
-	grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
-	gap: 1rem;
-	@media($sm_) { gap: 2rem; }
-}
-.gallery-columns-5 {
-	grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
-	gap: .5rem;
-	@media($sm_) { gap: 1rem; }
-}
+
+.gallery-columns-3,
+.gallery-columns-4,
+.gallery-columns-5,
 .gallery-columns-6 {
-	grid-template-columns: repeat(auto-fit, minmax(4em, 1fr));
-	gap: .25rem;
-	@media($sm_) { gap: .5rem; }
+	display: flex;
+	flex-wrap: wrap;
+	.gallery-item {
+		flex-basis: 48%;
+		margin: 1%;
+	}
+}
+@media($_sm){
+	.gallery-columns-5,
+	.gallery-columns-6 {
+		.gallery-item {
+			flex-basis: 30%;
+			margin: 1%;
+		}
+	}
+}
+@media($sm_md){
+	.gallery-columns-4 {
+		.gallery-item {
+			flex-basis: 30%;
+			margin: 1%;
+		}
+	}
+	.gallery-columns-5 {
+		.gallery-item {
+			flex-basis: 23%;
+			margin: 1%;
+		}
+	}
+	.gallery-columns-6 {
+		.gallery-item {
+			flex-basis: 18%;
+			margin: 1%;
+		}
+	}
+}
+@media($md_){
+	.gallery-columns-3 {
+		.gallery-item {
+			flex-basis: 30%;
+			margin: 1%;
+		}
+	}
+	.gallery-columns-4 {
+		.gallery-item {
+			flex-basis: 23%;
+			margin: 1%;
+		}
+	}
+	.gallery-columns-5 {
+		.gallery-item {
+			flex-basis: 18%;
+			margin: 1%;
+		}
+	}
+	.gallery-columns-6 {
+		.gallery-item {
+			flex-basis: 14%;
+			margin: 1%;
+		}
+	}
 }
 
   .gallery-item {//figure、各画像(共通)
       // margin-bottom: 1.5rem;
   }
 
-// 3, 4 ,5列は、モバイルで2列
+
 .gallery-columns-2,
 .gallery-columns-3,
 .gallery-columns-4,
 .gallery-columns-5,
 .gallery-columns-6 {
+	display: flex;
+	flex-wrap: wrap;
 	.gallery-item { // need for visual editor
 		width: 100%;
 	}
+	// 3, 4 ,5列は、モバイルで2列
 	@media($_sm){
 		grid-template-columns: 1fr 1fr;
 		gap: .5rem .25rem;
@@ -56,12 +113,13 @@
 	}
 }
 
-
     .gallery-icon {//div、画像を囲む要素
     	position: relative;
         text-align: center;
         a {
-          img {}
+          img {
+          	width: 100%;
+          }
           &:after {
 			@include my-fa-icon-base;
 			font-family: "Font Awesome 5 Free";
@@ -78,6 +136,7 @@
     }
     .gallery-caption {//figcaption、.wp-caption-text併記、※Theme Check 必須
         text-align: center;
+        line-height: 1.1;
     }
 
 // /**

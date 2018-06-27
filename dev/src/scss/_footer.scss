@@ -67,6 +67,9 @@
 			// 	grid-area: footer-menu-2;
 			// }
 	}
+		.footer-nav:first-child {
+			margin-bottom: 0;
+		}
 		.widget { // &.footer-nav
 			a {
 				color: $color-primary;
@@ -84,13 +87,14 @@
 			.widget_text {} // テキストウィジェットなら
 			.menu { // ul、リストタイプのウィジェットなら
 				padding-left: 0;
-				@media($_sm){
+				@media($_md){
 					margin-top: 0;
+					margin-bottom: 0;
 				}
 			}
 				.menu-item { // li
 					list-style-type: none;
-					@media($_sm){
+					@media($_md){
 						line-height: 2.4;
 					}
 					&:before {

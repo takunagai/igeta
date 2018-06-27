@@ -1,6 +1,12 @@
 /**
  * Grid Layout
  */
+@mixin inner-bottom-margin($size) {
+	display: block;
+	content: '';
+	margin-bottom: $size;
+}
+
 .grid,
 .grid--narrow,
 .grid--wide {
@@ -17,19 +23,28 @@
 	@media($sm_md) {
 		.grid__item {
 			flex-basis: 48%;
-			margin: 1%;
+			margin: 0 1%;
+			&:after {
+				@include inner-bottom-margin(2%);
+			}
 		}
 	}
 	@media($md_lg) {
 		.grid__item {
 			flex-basis: 31.3%;
-			margin: 1%;
+			margin: 0 1%;
+			&:after {
+				@include inner-bottom-margin(2%);
+			}
 		}
 	}
 	@media($lg_) {
 		.grid__item {
 			flex-basis: 31.3%;
-			margin: 1%;
+			margin: 0 1%;
+			&:after {
+				@include inner-bottom-margin(2%);
+			}
 		}
 	}
 	&.grid--gap-none {
@@ -56,19 +71,28 @@
 		@media($sm_md) {
 			.grid__item {
 				flex-basis: 49.5%;
-				margin: .5%;
+				margin: 0 .5%;
+				&:after {
+					@include inner-bottom-margin(1%);
+				}
 			}
 		}
 		@media($md_lg) {
 			.grid__item {
 				flex-basis: 32.3%;
-				margin: .5%;
+				margin: 0 .5%;
+				&:after {
+					@include inner-bottom-margin(1%);
+				}
 			}
 		}
 		@media($lg_) {
 			.grid__item {
 				flex-basis: 32.3%;
-				margin: .5%;
+				margin: 0 .5%;
+				&:after {
+					@include inner-bottom-margin(1%);
+				}
 			}
 		}
 	}
@@ -76,40 +100,58 @@
 		@media($sm_md) {
 			.grid__item {
 				flex-basis: 46%;
-				margin: 2%;
+				margin: 0 2%;
+				&:after {
+					@include inner-bottom-margin(4%);
+				}
 			}
 		}
 		@media($md_lg) {
 			.grid__item {
 				flex-basis: 29.3%;
-				margin: 2%;
+				margin: 0 2%;
+				&:after {
+					@include inner-bottom-margin(4%);
+				}
 			}
 		}
 		@media($lg_) {
 			.grid__item {
 				flex-basis: 29.3%;
-				margin: 2%;
+				margin: 0 2%;
+				&:after {
+					@include inner-bottom-margin(4%);
+				}
 			}
 		}
 	}
 }
-.grid--narrow {
+.grid--narrow {outline:1px solid red;
 	@media($sm_md) {
 		.grid__item {
 			flex-basis: 48%;
-			margin: 1%;
+			margin: 0 1%;
+			&:after {
+				@include inner-bottom-margin(2%);
+			}
 		}
 	}
 	@media($md_lg) {
 		.grid__item {
 			flex-basis: 31.3%;
-			margin: 1%;
+			margin: 0 1%;
+			&:after {
+				@include inner-bottom-margin(2%);
+			}
 		}
 	}
 	@media($lg_) {
 		.grid__item {
 			flex-basis: 23%;
-			margin: 1%;
+			margin: 0 1%;
+			&:after {
+				@include inner-bottom-margin(10px);
+			}
 		}
 	}
 	&.grid--gap-none {
@@ -136,19 +178,28 @@
 		@media($sm_md) {
 			.grid__item {
 				flex-basis: 49.5%;
-				margin: .5%;
+				margin: 0 .5%;
+				&:after {
+					@include inner-bottom-margin(1%);
+				}
 			}
 		}
 		@media($md_lg) {
 			.grid__item {
 				flex-basis: 32.3%;
-				margin: .5%;
+				margin: 0 .5%;
+				&:after {
+					@include inner-bottom-margin(1%);
+				}
 			}
 		}
 		@media($lg_) {
 			.grid__item {
 				flex-basis: 24%;
-				margin: .5%;
+				margin: 0 .5%;
+				&:after {
+					@include inner-bottom-margin(1%);
+				}
 			}
 		}
 	}
@@ -156,19 +207,28 @@
 		@media($sm_md) {
 			.grid__item {
 				flex-basis: 46%;
-				margin: 2%;
+				margin: 0 2%;
+				&:after {
+					@include inner-bottom-margin(4%);
+				}
 			}
 		}
 		@media($md_lg) {
 			.grid__item {
 				flex-basis: 29.3%;
-				margin: 2%;
+				margin: 0 2%;
+				&:after {
+					@include inner-bottom-margin(4%);
+				}
 			}
 		}
 		@media($lg_) {
 			.grid__item {
 				flex-basis: 21%;
-				margin: 2%;
+				margin: 0 2%;
+				&:after {
+					@include inner-bottom-margin(4%);
+				}
 			}
 		}
 	}
@@ -183,13 +243,19 @@
 	@media($md_lg) {
 		.grid__item {
 			flex-basis: 48%;
-			margin: 1%;
+			margin: 0 1%;
+			&:after {
+				@include inner-bottom-margin(2%);
+			}
 		}
 	}
 	@media($lg_) {
 		.grid__item {
 			flex-basis: 48%;
-			margin: 1%;
+			margin: 0 1%;
+			&:after {
+				@include inner-bottom-margin(2%);
+			}
 		}
 	}
 	&.grid--gap-none {
@@ -222,13 +288,19 @@
 		@media($md_lg) {
 			.grid__item {
 				flex-basis: 49%;
-				margin: .5%;
+				margin: 0 .5%;
+				&:after {
+					@include inner-bottom-margin(1%);
+				}
 			}
 		}
 		@media($lg_) {
 			.grid__item {
 				flex-basis: 49%;
-				margin: .5%;
+				margin: 0 .5%;
+				&:after {
+					@include inner-bottom-margin(1%);
+				}
 			}
 		}
 	}
@@ -242,13 +314,19 @@
 		@media($md_lg) {
 			.grid__item {
 				flex-basis: 46%;
-				margin: 2%;
+				margin: 0 2%;
+				&:after {
+					@include inner-bottom-margin(4%);
+				}
 			}
 		}
 		@media($lg_) {
 			.grid__item {
 				flex-basis: 46%;
-				margin: 2%;
+				margin: 0 2%;
+				&:after {
+					@include inner-bottom-margin(4%);
+				}
 			}
 		}
 	}
@@ -256,40 +334,54 @@
 
 
 // モバイルで2列/3列
+.grid--mobile-2col,
+.grid--mobile-3col {
+	display: flex;
+	flex-wrap: wrap;
+	font-size: smaller;
+}
+
 @media($_sm) {
-	.grid--mobile-2col,
-	.grid--mobile-3col {
-		display: flex;
-		flex-wrap: wrap;
-		font-size: smaller;
-	}
-		.grid--mobile-2col {
+	.grid--mobile-2col {
+		.grid__item {
+			flex-basis: 48%;
+			margin: 0 1%;
+			&:after {
+				@include inner-bottom-margin(2%);
+			}
+		}
+		&.grid--gap-none {
 			.grid__item {
-				flex-basis: 48%;
-				margin: 1%;
+				flex-basis: 50%;
+				margin: 0;
 			}
-			&.grid--gap-none {
-				.grid__item {
-					flex-basis: 50%;
-					margin: 0;
-				}
+		}
+		&.grid--gap-narrow {
+			.grid__item {
+				flex-basis: 49%;
+				margin: 0 .5%;
 			}
-			&.grid--gap-narrow {
-				.grid__item {
-					flex-basis: 49%;
-					margin: .5%;
-				}
+			&:after {
+				@include inner-bottom-margin(1%);
 			}
-			&.grid--gap-wide {
-				.grid__item {
-					flex-basis: 46%;
-					margin: 2%;
+		}
+		&.grid--gap-wide {
+			.grid__item {
+				flex-basis: 46%;
+				margin: 0 2%;
+				&:after {
+					@include inner-bottom-margin(4%);
 				}
 			}
 		}
-		.grid--mobile-3col .grid__item {
-			flex-basis: 32.3%;
-			margin: .5%;
+	}
+}
+
+@media($_md){
+	.grid--mobile-3col {
+		.grid__item {
+			flex-basis: 31.3% !important;
+			margin: 0 .5%;
 			&.grid--gap-none {
 				.grid__item {
 					flex-basis: 33.3%;
@@ -299,14 +391,21 @@
 			&.grid--gap-narrow {
 				.grid__item {
 					flex-basis: 32.83%;
-					margin: .25%;
+					margin: 0 .25%;
+					&:after {
+						@include inner-bottom-margin(.5%);
+					}
 				}
 			}
 			&.grid--gap-wide {
 				.grid__item {
 					flex-basis: 31.3%;
-					margin: 1%;
+					margin: 0 1%;
+					&:after {
+						@include inner-bottom-margin(2%);
+					}
 				}
 			}
 		}
+	}
 }
