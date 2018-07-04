@@ -31,11 +31,10 @@
 
 
 
-	<div class="header-wrapper">
-
+	<div class="site-header-wrapper">
 
 		<header id="masthead" class="site-header" role="banner">
-			<div class="container">
+			<div class="site-header-inner container my-0">
 
 			<?php
 			if ( has_custom_logo() ) {

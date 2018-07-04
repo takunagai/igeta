@@ -29,54 +29,22 @@
 // フッター (社名、ウィジェットメニュー)
 .footer-information {
 	font-size: $font-small;
-	.menu-item { // li
-		// border-bottom: 1px solid $color-primary-dark;
-		position: relative;
-		&:before {
-			position: absolute;
-			top: .25em;
-			font-family: "Font Awesome 5 Free";
-			font-weight: 900;
-			content: "\f0da";
-			color: $color-primary-light;
-	    }
-		a {
-			display: block;
-			padding: .1rem 0 .1rem 1.2rem;
-		}
-	}
-	@media($_sm){
-		address {}
-		.widget {
-			// margin-left: 1.5rem;
-		}
-			.menu { // ul
-				margin-left: -2.5%;
-				margin-right: -2.5%;
-			}
-				.menu-item { // li
-					&:before {
-						left: 1rem; // 左余白
-					}
-					a {
-						// display: block;
-						padding-left: 2.2rem; // 左余白 + 1.2rem (.menu-item a の padding-left 値)
-						border-bottom: 1px dotted $color-primary-light;
-						&:first-child {
-							border-top: 1px dotted $color-primary-light;
-						}
-					}
-				}
-	}
-	@media($sm_){
+	@media($md_){
 		.container {
-			display: flex;
+			display: grid;
+			grid-template:
+				"footer-address footer-menu-1 footer-menu-2" /
+				2fr 1fr 1fr;
+			column-gap: 1.5rem;
 		}
 			address {
-				flex-grow: 1;
-				order: 1;
-				margin-right: auto;
+				grid-area: footer-address;
 				font-style: normal;
+				@media($_sm){
+					text-align: center;
+					padding-top: 2rem;
+					border-top: 1px dotted $color-primary;
+				}
 			}
 				.site-title { // カスタムロゴがあれば画像、なければテキスト
 					font-size: $font-large;
@@ -84,40 +52,24 @@
 						text-decoration: none;
 					}
 						.custom-logo { // img、カスタムロゴが設定されている場合
-							width: 15rem;
 						}
 				}
-			.widget { // 複数個
-				order: 2;
-				margin-left:2%;
-				max-width: 25%;
+			#nav_menu-4 { // &.widget
+				grid-area: footer-menu-1;
 			}
-	}
-	@media($_lg) {
-		address {
-			text-align: center;
-			padding-top: 2rem;
-			border-top: 1px dotted $color-primary-dark;
-		}
-	}
-	@media($sm_lg){
-		.container {
-			flex-wrap: wrap;
-			justify-content: space-around;
-		}
-			address {
-				width: 100%;
-				order: 2 !important;
+			#nav_menu-5 {
+				grid-area: footer-menu-2;
 			}
-			.widget {
-				order: 1 !important;
-			}
+			// .footer-nav:first-child { // &.widget
+			// 	grid-area: footer-menu-1;
+			// }
+			// .footer-nav:nth-child(2) {
+			// 	grid-area: footer-menu-2;
+			// }
 	}
-
 		.footer-nav:first-child {
 			margin-bottom: 0;
 		}
-
 		.widget { // &.footer-nav
 			a {
 				color: $color-primary;
@@ -145,14 +97,14 @@
 					@media($_md){
 						line-height: 2.4;
 					}
-					// &:before {
-					// 	@extend %my-fa-icon-base;
-					// 	font-family: "Font Awesome 5 Free";
-					// 	margin-right: .5em;
-					// 	font-weight: 900; // regular のアイコンフォントなら 400
-					// 	content: "\f0da";
-					// 	color: $color-primary-light;
-					// }
+					&:before {
+						@extend %my-fa-icon-base;
+						font-family: "Font Awesome 5 Free";
+						margin-right: .5em;
+						font-weight: 900; // regular のアイコンフォントなら 400
+						content: "\f0da";
+						color: $color-primary-light;
+					}
 				}
 
 

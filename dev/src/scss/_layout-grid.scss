@@ -126,7 +126,7 @@
 		}
 	}
 }
-.grid--narrow {outline:1px solid red;
+.grid--narrow {
 	@media($sm_md) {
 		.grid__item {
 			flex-basis: 48%;

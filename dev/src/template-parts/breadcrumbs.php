@@ -9,7 +9,7 @@
 
 ?>
 <?php if ( ! is_front_page() && function_exists( 'bcn_display' ) ) : ?>
-<div class="container container--no-magin">
+<div class="container my-0">
 	<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
 		<?php bcn_display(); // Breadcrumb NavXT Plugin ?>
 	</div>

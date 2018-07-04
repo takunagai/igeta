@@ -178,6 +178,35 @@ legend.screen-reader-text {
 	margin-top: 0 !important;
 }
 
+.my-0 {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+.my-1 {
+	margin-top: .25rem !important;
+	margin-bottom: .25rem !important;
+}
+.my-2 {
+	margin-top: .5rem !important;
+	margin-bottom: .5rem !important;
+}
+.my-3 {
+	margin-top: 1rem !important;
+	margin-bottom: 1rem !important;
+}
+.my-4 {
+	margin-top: 1.5rem !important;
+	margin-bottom: 1.5rem !important;
+}
+.my-5 {
+	margin-top: 2rem !important;
+	margin-bottom: 2rem !important;
+}
+.my-6 {
+	margin-top: 3rem !important;
+	margin-bottom: 3rem !important;
+}
+
 // モバイルだけ改行させない
 @media($_md){
 	.no-break {

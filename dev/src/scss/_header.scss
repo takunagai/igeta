@@ -4,84 +4,17 @@
  * ※ メインメニューは primary-menu.scss (#primary-menu) を参照
  * ※ ヒーローイメージは _hero-image.scss を参照
  */
-.header-wrapper {
+.site-header-wrapper {
 	position: relative;
 }
-@media($md_){
-	.home #masthead {
-		position: absolute;
-		width: 100%;
-		top: 0;
-	}
-}
-#masthead { // header[role="banner"] jQueryがsizzleを使わないようID指定
-	z-index: 999;
-	.container {
-		margin-top: 0;
-		margin-bottom: 0;
-		@media ($_md) {
-			width: 100%;
-		}
-		@media ($md_) {
-			display: grid;
-			grid-template-areas: "site-branding primary-menu";
-			grid-template-columns: 240px 1fr;
-			column-gap: 2rem;
-			align-items: center;
-		}
-	}
-}
-
-		.site-branding { // ロゴとキャッチフレーズを囲む領域
-			grid-area: site-branding;
-			@media ($_md) {
-				height: 40px;
-				background-color: #FFF;
-			}
-		}
-			.site-title {//トップページはh1、以外はp カスタムロゴ未設定時はテキスト
-				margin-top: .5rem;
-				margin-bottom: .5rem;
-				font-size: $font-x-large;
-				font-weight: bold;
-				line-height: 1rem;
-				@media ($_md){
-					margin-top: .5rem;
-					margin-bottom: .25rem;
-				}
-			}
-				#masthead .custom-logo-link {
-					// -> _wp-essential.scss
-				}
-			.catch-phrase { // キャッチフレーズ(設定されていれば表示)
-				margin-top: 0;
-				font-size: $font-small;
-				margin-bottom: 0;
-				@media ($_md) {
-					display: none;
-				}
-			}
-
-		#primary-menu {
-			grid-area: primary-menu;
-			// → _primary-menu.scss
-		}
 
 
-@media($_md){
-	.site-branding {
-		text-align: center;
-		color: red;
-	}
-}
 
-
-@media($md_){
-	#masthead {
-		background-color: rgba(255,255,255,.5);
-		// background-color: #FFF;
-	}
-}
+/**
+ * Navbar (サイトロゴとメインメニュー)
+ *   -> _primary-menu.scss で設定
+ */
+// #masthead {}
 
 
 
