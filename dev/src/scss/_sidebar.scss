@@ -4,13 +4,19 @@
 #secondary {
 	padding: 2rem 0;
 	font-size: smaller;
-	li {
-		a {
-			&:hover {
-				text-decoration: underline;
+	ul {
+		margin-bottom: 0;
+		padding-left: 0;
+		list-style-type: none;
+	}
+		li {
+			a {
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 		}
-	}
+
 	.sidebar {
 		&.sidebar-1 {}
 		&.sidebar-2 {}
@@ -21,19 +27,6 @@
 
 			@media ($md_) {
 				padding: 1rem;
-				ul {
-					margin-bottom: 0;
-					padding-left: 0;
-					list-style-type: none;
-				}
-					li:before {
-					  // @include my-fa-icon-base;
-					  // font-family: "Font Awesome 5 Free";
-					  // margin-right: .5rem;
-					  // font-weight: 900; // regular のアイコンフォントなら 400
-					  // content: "\f0da";
-					  // color: $color-primary-light;
-					}
 			}
 
 			.widget-title {}

@@ -1310,6 +1310,12 @@ main section {
   font-size: smaller;
 }
 
+#secondary ul {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
 #secondary li a:hover {
   text-decoration: underline;
 }
@@ -7175,11 +7181,6 @@ readers do not read off random characters that represent icons */
   }
   #secondary .widget {
     padding: 1rem;
-  }
-  #secondary .widget ul {
-    margin-bottom: 0;
-    padding-left: 0;
-    list-style-type: none;
   }
   #move-to-page-top:hover {
     background-color: rgba(0, 0, 0, 0.4);
