@@ -32,6 +32,9 @@
 	.menu-item { // li
 		// border-bottom: 1px solid $color-primary-dark;
 		position: relative;
+		&:hover {
+			border-bottom: none;
+		}
 		&:before {
 			position: absolute;
 			top: .25em;
@@ -46,6 +49,9 @@
 		}
 	}
 	@media($_sm){
+		.container {
+			margin-top: 0;
+		}
 		address {}
 		.widget {
 			// margin-left: 1.5rem;
@@ -53,6 +59,7 @@
 			.menu { // ul
 				margin-left: -2.5%;
 				margin-right: -2.5%;
+				border-bottom: 1px solid rgba(255,255,255,.5);
 			}
 				.menu-item { // li
 					&:before {
@@ -61,10 +68,11 @@
 					a {
 						// display: block;
 						padding-left: 2.2rem; // 左余白 + 1.2rem (.menu-item a の padding-left 値)
-						border-bottom: 1px dotted $color-primary-light;
-						&:first-child {
-							border-top: 1px dotted $color-primary-light;
-						}
+						border-top: 1px solid rgba(255,255,255,.5);
+						border-bottom: 1px solid rgba(0,0,0,.1);
+					}
+					&:first-child a {
+						border-top: none;
 					}
 				}
 	}
@@ -96,8 +104,6 @@
 	@media($_lg) {
 		address {
 			text-align: center;
-			padding-top: 2rem;
-			border-top: 1px dotted $color-primary-dark;
 		}
 	}
 	@media($sm_lg){
@@ -108,9 +114,13 @@
 			address {
 				width: 100%;
 				order: 2 !important;
+				padding-top: 1.5rem;
+				margin-top: 1.5rem;
+				border-top: 1px dotted $color-primary-dark;
 			}
 			.widget {
 				order: 1 !important;
+				max-width: 33%;
 			}
 	}
 

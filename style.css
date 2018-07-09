@@ -683,6 +683,10 @@ legend.screen-reader-text {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.full-width {
+  width: 100%;
+}
+
 .box,
 .box--white {
   margin-top: 1rem;
@@ -1349,6 +1353,10 @@ main section {
 
 .footer-information .menu-item {
   position: relative;
+}
+
+.footer-information .menu-item:hover {
+  border-bottom: none;
 }
 
 .footer-information .menu-item:before {
@@ -2111,12 +2119,17 @@ a:active img {
 }
 
 .widget-area-after-post .widget {
-  padding-top: 1rem;
+  padding-top: 2rem;
   padding-bottom: 1rem;
 }
 
 .widget-area-after-post .widget-title {
   margin-bottom: 0;
+  text-align: center;
+}
+
+.widget-area-after-post .widget {
+  padding: 2rem 1rem 1rem;
 }
 
 .widget-area-main-bottom {
@@ -6454,19 +6467,24 @@ readers do not read off random characters that represent icons */
     margin-bottom: 4%;
     content: '';
   }
+  .footer-information .container {
+    margin-top: 0;
+  }
   .footer-information .menu {
     margin-right: -2.5%;
     margin-left: -2.5%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   }
   .footer-information .menu-item:before {
     left: 1rem;
   }
   .footer-information .menu-item a {
     padding-left: 2.2rem;
-    border-bottom: 1px dotted #e3dacb;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-  .footer-information .menu-item a:first-child {
-    border-top: 1px dotted #e3dacb;
+  .footer-information .menu-item:first-child a {
+    border-top: none;
   }
   .media__meta {
     font-size: 0.625rem;
@@ -7437,8 +7455,6 @@ readers do not read off random characters that represent icons */
     text-align: center;
   }
   .footer-information address {
-    padding-top: 2rem;
-    border-top: 1px dotted #826c47;
     text-align: center;
   }
 }
@@ -7451,9 +7467,13 @@ readers do not read off random characters that represent icons */
   .footer-information address {
     order: 2 !important;
     width: 100%;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px dotted #826c47;
   }
   .footer-information .widget {
     order: 1 !important;
+    max-width: 33%;
   }
 }
 
