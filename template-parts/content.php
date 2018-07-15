@@ -7,11 +7,13 @@
  * @package igeta
  */
 
+// カテゴリーを取得
+$cat = get_the_category();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
-        <p class="entry-category"><?php $cat = get_the_category(); $cat = $cat[0]; {echo "$cat->cat_name " ;} ?></p>
+        <?php if ( ! empty( $cat ) ){ echo '<p class="entry-category">' . $cat[0]->cat_name . '</p>'; } ?>
         <?php
         if ( is_singular() ) :
             the_title( '<h1 class="entry-title">', show_page_number() . '</h1>' );
@@ -19,7 +21,7 @@
             the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
         endif;
 
-        if ( 'post' === get_post_type() ) :
+        if ( 'page' !== get_post_type() ) :
             ?>
             <div class="entry-meta">
                 <?php

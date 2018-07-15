@@ -281,14 +281,21 @@
 /**
  * 前後リンク表示、ページネーションリンク
  */
-// wp関数の the_post_navigation() が吐き出す
+// the_post_navigation()　前後リンク
 .post-navigation {
 	margin-top: 1em;
 }
+// the_posts_pagination() ページャー
+.navigation.pagination { // nav
+	margin-top: 1em;
+}
 	.nav-links { //div
+		// 共通
 		display: flex;
 		justify-content: center;
 		align-items: stretch;
+
+		// 前後リンク
 		.nav-previous, .nav-next {
 			width: 49%;
 			padding: .5rem 1rem;
@@ -311,15 +318,24 @@
 			}
 		}
 
+		// アーカイブページのページャー
 		.page-numbers { // リンクなしの.currentはspan、リンクはa
 			margin-right: .5rem;
 			margin-left: .5rem;
-			.current {}
-			&.next {}
-			&.previous {}
+		}
+		.prev { // a, &.page-numbers
+			&:before {
+				content: '« ';
+			}
+		}
+		.next { // a, &.page-numbers
+			&:after {
+				content: ' »';
+			}
+		}
+		.current { // span,  &.page-numbers
 		}
 	}
-
 
 
 /**

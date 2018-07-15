@@ -20,6 +20,9 @@
 
 // 広さ3段階
 .grid {
+	.grid__item {
+		// margin-bottom: 1rem !important;
+	}
 	@media($sm_md) {
 		.grid__item {
 			flex-basis: 48%;
@@ -404,6 +407,42 @@
 					&:after {
 						@include inner-bottom-margin(2%);
 					}
+				}
+			}
+		}
+	}
+}
+
+@media($_lg) {
+	.grid--tablet-2col {
+		.grid__item {
+			flex-basis: 48%;
+			margin: 0 1%;
+			&:after {
+				@include inner-bottom-margin(2%);
+			}
+		}
+		&.grid--gap-none {
+			.grid__item {
+				flex-basis: 50%;
+				margin: 0;
+			}
+		}
+		&.grid--gap-narrow {
+			.grid__item {
+				flex-basis: 49%;
+				margin: 0 .5%;
+			}
+			&:after {
+				@include inner-bottom-margin(1%);
+			}
+		}
+		&.grid--gap-wide {
+			.grid__item {
+				flex-basis: 46%;
+				margin: 0 2%;
+				&:after {
+					@include inner-bottom-margin(4%);
 				}
 			}
 		}

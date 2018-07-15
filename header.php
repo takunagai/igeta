@@ -113,16 +113,4 @@
 
 
 
-
-	<?php
-	/**
-	 * カラム分け用
-	 */
-	$layout_class = '';
-	if ( ( is_singular() && ( ! is_singular( 'page' ) ) ) || is_archive() || is_home() ) {
-		$layout_class = ' container';
-	}
-	?>
-
-
-	<div class="site-content<?php echo $layout_class ?>">
+	<div class="site-content<?php igeta_wrapper_container_setting(); ?>">

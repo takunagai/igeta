@@ -1208,10 +1208,6 @@ ul.inline-list--label li {
   grid-area: secondary;
 }
 
-main section {
-  padding-bottom: 2rem;
-}
-
 .archive main [class^="container"],
 .blog main [class^="container"] {
   margin-top: 0;
@@ -1429,6 +1425,7 @@ main section {
  */
 .card, .card.card--base,
 .card--base .card {
+  margin-bottom: .75rem !important;
   line-height: 1.4;
 }
 
@@ -2152,6 +2149,10 @@ a:active img {
   margin-top: 1em;
 }
 
+.navigation.pagination {
+  margin-top: 1em;
+}
+
 .nav-links {
   display: flex;
   align-items: stretch;
@@ -2185,6 +2186,14 @@ a:active img {
 .nav-links .page-numbers {
   margin-right: .5rem;
   margin-left: .5rem;
+}
+
+.nav-links .prev:before {
+  content: '« ';
+}
+
+.nav-links .next:after {
+  content: ' »';
 }
 
 /**
@@ -2354,43 +2363,6 @@ a:active img {
 /**
  * ページナビゲーション（ページ送り） WP-PageNavi プラグイン
  */
-.wp-pagenavi {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-top: 1px dotted #E9ECEF;
-  border-bottom: 1px dotted #E9ECEF;
-}
-
-.wp-pagenavi .pages {
-  border: none;
-}
-
-.wp-pagenavi .current, .wp-pagenavi .page, .wp-pagenavi .nextpostslink {
-  padding-right: .75rem;
-  padding-left: .75rem;
-  border-radius: 2rem;
-}
-
-.wp-pagenavi .current {
-  border-color: #BFBFBF !important;
-  background-color: #BFBFBF;
-  font-weight: normal !important;
-}
-
-.wp-pagenavi .page:hover {
-  border-color: #BFBFBF;
-  background-color: #BFBFBF;
-}
-
-.wp-pagenavi .nextpostslink,
-.wp-pagenavi .previouspostslink {
-  border: none;
-  text-decoration: underline;
-}
-
 /**
  * Recent Posts Widget Extended
  *		 干渉を防ぐため、配置したウィジェットアイテムの "Use Default Styles" にチェック
@@ -7075,6 +7047,49 @@ readers do not read off random characters that represent icons */
   }
 }
 
+@media (max-width: 1024px) {
+  .grid--tablet-2col .grid__item {
+    flex-basis: 48%;
+    margin: 0 1%;
+  }
+  .grid--tablet-2col .grid__item:after {
+    display: block;
+    margin-bottom: 2%;
+    content: '';
+  }
+  .grid--tablet-2col.grid--gap-none .grid__item {
+    flex-basis: 50%;
+    margin: 0;
+  }
+  .grid--tablet-2col.grid--gap-narrow .grid__item {
+    flex-basis: 49%;
+    margin: 0 .5%;
+  }
+  .grid--tablet-2col.grid--gap-narrow:after {
+    display: block;
+    margin-bottom: 1%;
+    content: '';
+  }
+  .grid--tablet-2col.grid--gap-wide .grid__item {
+    flex-basis: 46%;
+    margin: 0 2%;
+  }
+  .grid--tablet-2col.grid--gap-wide .grid__item:after {
+    display: block;
+    margin-bottom: 4%;
+    content: '';
+  }
+  #masthead .site-header-inner {
+    width: 100%;
+  }
+  .site-branding {
+    text-align: center;
+  }
+  .footer-information address {
+    text-align: center;
+  }
+}
+
 @media (min-width: 769px) {
   .width-50,
   .width-75 {
@@ -7444,18 +7459,6 @@ readers do not read off random characters that represent icons */
   .gallery-columns-6 .gallery-item {
     flex-basis: 14%;
     margin: 1%;
-  }
-}
-
-@media (max-width: 1024px) {
-  #masthead .site-header-inner {
-    width: 100%;
-  }
-  .site-branding {
-    text-align: center;
-  }
-  .footer-information address {
-    text-align: center;
   }
 }
 

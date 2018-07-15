@@ -282,6 +282,11 @@ require get_template_directory() . '/inc/dashboard.php';
 require get_template_directory() . '/inc/tinymce.php';
 
 /**
+ * wrapper container setting ( used in header.php ) // 追加
+ */
+require get_template_directory() . '/inc/wrapper-container-setting.php';
+
+/**
  * Widgets // 追加
  */
 require get_template_directory() . '/inc/widgets.php';

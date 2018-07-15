@@ -33,7 +33,7 @@
 
 
 main section {
-	padding-bottom: 2rem;
+	// padding-bottom: 2rem;
 }
 
 
@@ -123,3 +123,5 @@ main section {
 	.form-submit .submit { // 送信ボタン
 		@extend .btn--primary;
 	}
+
+
