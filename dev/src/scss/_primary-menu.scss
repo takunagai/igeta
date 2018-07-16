@@ -31,11 +31,8 @@
 // 		top: 0;
 // 	}
 // }
-#masthead {
+.site-header { // &#masthead
 	z-index: 998;
-	@media($md_){
-		background-color: rgba(255,255,255,.5);
-	}
 	.site-header-inner { // &.container--no-margin, flex wrapper
 		@media ($_lg) {
 			width: 100%;

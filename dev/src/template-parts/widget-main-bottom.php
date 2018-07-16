@@ -8,7 +8,7 @@
  */
 ?>
 <?php if ( is_active_sidebar( 'main-bottom' ) ) : ?>
-    <aside id="widget-area-main-bottom" class="widget-area-main-bottom">
+    <aside id="widget-area-main-bottom" class="widget-area-main-bottom container--narrow">
     <?php dynamic_sidebar( 'main-bottom' ); ?>
     </aside>
 <?php endif; ?>

@@ -395,17 +395,18 @@
 	display: inline-block;
 }
 	.custom-logo { // img カスタムロゴを設定した場合のみ表示
-		width: auto;
-		@media ($_md){
+		width: auto;;
+		@media($_md){
 			margin-right: auto;
 			margin-left: auto;
 			height: 1rem;
+			vertical-align: baseline
 		}
-		@media ($md_){
+		@media($md_){
 			// max-height: 2rem;
 		}
 	}
-	#masthead {
+	.site-header { // &#masthead
 		.custom-logo-link { // h1 or p > a カスタムロゴ未設定時のテキスト装飾
 			text-decoration: none;
 			.custom-logo { // img カスタムロゴを設定した場合のみ表示

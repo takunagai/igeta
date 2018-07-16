@@ -1065,7 +1065,7 @@ ul.inline-list--label li {
  * 						ul.sub-menu
  * 							li.menu-item.menu-item-has-children.その他クラス
  */
-#masthead {
+.site-header {
   z-index: 998;
 }
 
@@ -2244,7 +2244,7 @@ a:active img {
   width: auto;
 }
 
-#masthead .custom-logo-link {
+.site-header .custom-logo-link {
   text-decoration: none;
 }
 
@@ -6732,8 +6732,9 @@ readers do not read off random characters that represent icons */
     height: 1rem;
     margin-right: auto;
     margin-left: auto;
+    vertical-align: baseline;
   }
-  #masthead .custom-logo-link .custom-logo {
+  .site-header .custom-logo-link .custom-logo {
     max-height: 2.5rem;
   }
   .footer-information .custom-logo-link .custom-logo {
@@ -7032,7 +7033,7 @@ readers do not read off random characters that represent icons */
     margin-bottom: 4%;
     content: '';
   }
-  #masthead .site-header-inner {
+  .site-header .site-header-inner {
     display: flex;
     align-items: center;
   }
@@ -7079,7 +7080,7 @@ readers do not read off random characters that represent icons */
     margin-bottom: 4%;
     content: '';
   }
-  #masthead .site-header-inner {
+  .site-header .site-header-inner {
     width: 100%;
   }
   .site-branding {
@@ -7101,9 +7102,6 @@ readers do not read off random characters that represent icons */
   }
   .width-75 {
     width: 75%;
-  }
-  #masthead {
-    background-color: rgba(255, 255, 255, 0.5);
   }
   .site-branding {
     max-width: 25%;
