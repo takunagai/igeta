@@ -11,7 +11,7 @@
 	"private": true,
 	"license": "ISC",
 	"devDependencies": {
-		"autoprefixer": "^8.6.5",
+		"autoprefixer": "^9.0.0",
 		"babel-core": "^6.26.3",
 		"babel-loader": "^7.1.5",
 		"babel-preset-env": "^1.7.0",
@@ -35,7 +35,7 @@
 		"postcss-uncss": "^0.16.1",
 		"require-dir": "^1.0.0",
 		"uncss": "^0.16.2",
-		"webpack": "^4.16.0",
+		"webpack": "^4.16.1",
 		"webpack-command": "^0.4.1"
 	},
 	"dependencies": {
