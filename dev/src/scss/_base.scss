@@ -151,9 +151,18 @@ legend.screen-reader-text {
 --------------------------------------------------------------*/
 
 // device
-.mobile-only {
-	@media ($sm_) {
+@media ($sm_) {
+	.mobile-only {
 		display: none;
+	}
+}
+
+@media ($_sm) {
+	.mobile-aligncenter {
+		text-align: center;
+	}
+	.mobile-full-width {
+		width: 100%;
 	}
 }
 
@@ -233,10 +242,10 @@ legend.screen-reader-text {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	padding: .5rem;
-	*:first-child {
+	>*:first-child {
 		margin-top: 0;
 	}
-	*:last-child {
+	>*:last-child {
 		margin-bottom: 0;
 	}
 	@media($sm_){

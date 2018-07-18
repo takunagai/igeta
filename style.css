@@ -694,13 +694,13 @@ legend.screen-reader-text {
   padding: .5rem;
 }
 
-.box *:first-child,
-.box--white *:first-child {
+.box > *:first-child,
+.box--white > *:first-child {
   margin-top: 0;
 }
 
-.box *:last-child,
-.box--white *:last-child {
+.box > *:last-child,
+.box--white > *:last-child {
   margin-bottom: 0;
 }
 
@@ -6407,6 +6407,12 @@ readers do not read off random characters that represent icons */
 @media (max-width: 480px) {
   .small-text-mobile {
     font-size: smaller;
+  }
+  .mobile-aligncenter {
+    text-align: center;
+  }
+  .mobile-full-width {
+    width: 100%;
   }
   .grid--mobile-2col .grid__item {
     flex-basis: 48%;
