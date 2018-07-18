@@ -1545,6 +1545,15 @@ ul.inline-list--label li {
   border-bottom: 1px dotted #e3dacb;
 }
 
+.media--thumbnail li:first-child {
+  padding-top: 0 !important;
+}
+
+.media--thumbnail li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
 .media--thumbnail li .media__img {
   -ms-grid-row: 1;
   -ms-grid-column: 1;

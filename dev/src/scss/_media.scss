@@ -195,6 +195,13 @@
 			font-size: smaller;
 			line-height: 1.5;
 		}
+		&:first-child {
+			padding-top: 0 !important;
+		}
+		&:last-child {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
 		.media__img { // img
 			grid-area: media-image;
 		}
