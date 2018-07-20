@@ -24,7 +24,8 @@ img {
 	}
 }
 a:hover img { // ロールオーバー時に明るくなる効果
-	filter: brightness(105%);// filter: blur( ぼかしの長さ ); contrast( 数字 or パーセンテージ );
+	opacity: .8;
+	// filter: brightness(102%);// filter: blur( ぼかしの長さ ); contrast( 数字 or パーセンテージ );
 }
 a:active img { // クリック時にボタン押したように凹む効果
 	position: relative;

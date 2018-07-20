@@ -525,6 +525,11 @@ textarea {
   max-width: 100%;
 }
 
+small {
+  display: inline-block;
+  line-height: 1.5em;
+}
+
 .warning {
   color: #F00;
 }
@@ -1933,8 +1938,7 @@ img {
 }
 
 a:hover img {
-  -webkit-filter: brightness(105%);
-          filter: brightness(105%);
+  opacity: .8;
 }
 
 a:active img {

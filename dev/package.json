@@ -11,6 +11,7 @@
 	"private": true,
 	"license": "ISC",
 	"devDependencies": {
+		"ajv": "^6.5.2",
 		"autoprefixer": "^9.0.0",
 		"babel-core": "^6.26.3",
 		"babel-loader": "^7.1.5",
@@ -20,7 +21,7 @@
 		"del": "^3.0.0",
 		"doiuse": "^4.1.0",
 		"eslint": "^5.1.0",
-		"eslint-loader": "^2.0.0",
+		"eslint-loader": "^2.1.0",
 		"gulp": "^4.0.0",
 		"gulp-concat": "^2.6.1",
 		"gulp-htmlmin": "^4.0.0",
