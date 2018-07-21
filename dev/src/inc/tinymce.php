@@ -71,6 +71,11 @@ if ( ! function_exists( 'igeta_customize_tinymce_settings' ) ):
 				'inline' => 'small'
 			],
 			[
+				'title' => 'リード文',
+				'block' => 'p',
+				'classes' => 'lead'
+			],
+			[
 				'title' => 'ボタン1',
 				'inline' => 'a',
 				'classes' => 'btn--primary',

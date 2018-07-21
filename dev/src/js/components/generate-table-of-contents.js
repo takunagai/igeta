@@ -13,7 +13,7 @@ module.exports = function(settings) {
 	// デフォルト値の設定
 	const displayArea = $(settings.displayArea) || $('.page-index'),
 		headers   = $(settings.headersIntoIndex) || $('article h2'),
-		title     = settings.title || '<p><i class="fa fa-list-alt"></i> このページの目次 <small>(クリックで移動)</small></p>';
+		title     = settings.title || '<p>このページの目次 <small>(クリックで移動)</small></p>';
 		// isCollapse  = settings.isCollapse || false,
 		// isFloat   = settings.isFloat || false;
 

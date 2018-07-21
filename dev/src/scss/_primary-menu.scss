@@ -264,11 +264,11 @@
 			#primary-menu {
 				> ul {
 					display:inline-flex;
-				}
-					.menu-item {} // li
-					.menu-item-home {
+					> .menu-item-home {
 						display: none !important;
 					}
+				}
+					.menu-item {} // li
 					.menu-item-has-children { // 子を持つ親メニュー項目 li
 						position: relative;
 						> a:after {

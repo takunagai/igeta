@@ -488,7 +488,7 @@ hr {
 }
 
 .font-x-small {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
 }
 
 .bold {
@@ -1089,7 +1089,7 @@ ul.inline-list--label li {
 .catch-phrase {
   margin-top: 0;
   margin-bottom: .5rem;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
 }
 
 /**
@@ -1211,6 +1211,59 @@ ul.inline-list--label li {
 .blog #secondary,
 .page-template-page-two-column #secondary {
   grid-area: secondary;
+}
+
+/**
+ * 目次
+ */
+.page-index {
+  max-width: 20em;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: .5em;
+  padding-left: .5em;
+  background-color: #F8F9FA;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.page-index p, .page-index ul {
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+.page-index p {
+  color: #495057;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.page-index ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.page-index li {
+  display: inline-block;
+  margin-right: 1em;
+  letter-spacing: -.1em;
+  list-style-image: none;
+}
+
+.page-index a {
+  text-decoration: none;
+}
+
+.page-index a:hover {
+  text-decoration: underline;
+}
+
+/**
+ * リード文
+ */
+.lead {
+  font-size: 1.125rem;
+  font-weight: bold;
 }
 
 .archive main [class^="container"],
@@ -1403,7 +1456,7 @@ ul.inline-list--label li {
 
 .site-footer {
   background-color: #AD9468;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   text-align: center;
 }
 
@@ -2012,7 +2065,7 @@ a:active img {
 }
 
 .wp-caption-text {
-  margin-top: .25rem;
+  margin-top: .2rem;
   font-size: 0.875rem;
 }
 
@@ -6478,7 +6531,7 @@ readers do not read off random characters that represent icons */
     border-top: none;
   }
   .media__meta {
-    font-size: 0.625rem;
+    font-size: 0.75rem;
   }
   .media--mobile-2col {
     font-size: smaller;
@@ -7131,7 +7184,7 @@ readers do not read off random characters that represent icons */
   #primary-menu > ul {
     display: inline-flex;
   }
-  #primary-menu .menu-item-home {
+  #primary-menu > ul > .menu-item-home {
     display: none !important;
   }
   #primary-menu .menu-item-has-children {

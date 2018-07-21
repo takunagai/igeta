@@ -37,6 +37,55 @@ main section {
 }
 
 
+/**
+ * 目次
+ */
+.page-index {
+	text-align: center;
+	max-width: 20em;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: .5em;
+	padding-left: .5em;
+	font-size: $font-small;
+	background-color: $color-gray-100;
+	p, ul {
+		margin-top: .5em;
+		margin-bottom: .5em;
+	}
+	p {
+		font-size: $font-x-small;
+		font-weight: bold;
+		color: $color-gray-700;
+	}
+	ul {
+		padding-left: 0;
+		list-style-type: none;
+	}
+		li {
+			display: inline-block;
+			margin-right: 1em;
+			list-style-image: none;
+			letter-spacing: -.1em;
+		}
+			a {
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+}
+
+
+/**
+ * リード文
+ */
+.lead {
+	font-size: $font-large;
+	font-weight: bold;
+}
+
+
 
 .archive,
 .blog {
