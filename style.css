@@ -1497,7 +1497,7 @@ ul.inline-list--label li {
 }
 
 .card__meta {
-  font-size: smaller;
+  font-size: 0.75rem;
 }
 
 .card--base.card,
@@ -6735,7 +6735,6 @@ readers do not read off random characters that represent icons */
   .media--inverse--75 .media__img {
     margin-bottom: .75rem;
   }
-  @media (min-width: 769px) {
   .media .media__img,
   .media--25 .media__img,
   .media--50 .media__img,
@@ -6744,8 +6743,8 @@ readers do not read off random characters that represent icons */
   .media--inverse--25 .media__img,
   .media--inverse--50 .media__img,
   .media--inverse--75 .media__img {
-      -ms-grid-row: 1;
-      -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
   }
   .media .media__body,
   .media--25 .media__body,
@@ -6755,9 +6754,8 @@ readers do not read off random characters that represent icons */
   .media--inverse--25 .media__body,
   .media--inverse--50 .media__body,
   .media--inverse--75 .media__body {
-      -ms-grid-row: 1;
-      -ms-grid-column: 3;
-  }
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
   }
   .media--mobile-2col {
     -ms-grid-rows: auto;
@@ -7340,56 +7338,6 @@ readers do not read off random characters that represent icons */
     -ms-grid-column: 3;
     grid-area: media-body;
   }
-
-@media (max-width: 768px) {
-  .media .media__img,
-  .media--25 .media__img,
-  .media--50 .media__img,
-  .media--75 .media__img,
-  .media--inverse .media__img,
-  .media--inverse--25 .media__img,
-  .media--inverse--50 .media__img,
-  .media--inverse--75 .media__img {
-      -ms-grid-row: 1;
-      -ms-grid-column: 1;
-  }
-  .media .media__body,
-  .media--25 .media__body,
-  .media--50 .media__body,
-  .media--75 .media__body,
-  .media--inverse .media__body,
-  .media--inverse--25 .media__body,
-  .media--inverse--50 .media__body,
-  .media--inverse--75 .media__body {
-      -ms-grid-row: 1;
-      -ms-grid-column: 3;
-  }
-}
-
-@media (min-width: 769px) {
-  .media .media__img,
-  .media--25 .media__img,
-  .media--50 .media__img,
-  .media--75 .media__img,
-  .media--inverse .media__img,
-  .media--inverse--25 .media__img,
-  .media--inverse--50 .media__img,
-  .media--inverse--75 .media__img {
-      -ms-grid-row: 1;
-      -ms-grid-column: 1;
-  }
-  .media .media__body,
-  .media--25 .media__body,
-  .media--50 .media__body,
-  .media--75 .media__body,
-  .media--inverse .media__body,
-  .media--inverse--25 .media__body,
-  .media--inverse--50 .media__body,
-  .media--inverse--75 .media__body {
-      -ms-grid-row: 1;
-      -ms-grid-column: 3;
-  }
-}
   .media .media__body *:first-child,
   .media--25 .media__body *:first-child,
   .media--50 .media__body *:first-child,
@@ -7490,7 +7438,6 @@ readers do not read off random characters that represent icons */
     align-items: center;
             column-gap: 2.5rem;
   }
-  @media (min-width: 769px) {
   .media .media__img,
   .media--25 .media__img,
   .media--50 .media__img,
@@ -7499,8 +7446,8 @@ readers do not read off random characters that represent icons */
   .media--inverse--25 .media__img,
   .media--inverse--50 .media__img,
   .media--inverse--75 .media__img {
-      -ms-grid-row: 1;
-      -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
   }
   .media .media__body,
   .media--25 .media__body,
@@ -7510,9 +7457,162 @@ readers do not read off random characters that represent icons */
   .media--inverse--25 .media__body,
   .media--inverse--50 .media__body,
   .media--inverse--75 .media__body {
-      -ms-grid-row: 1;
-      -ms-grid-column: 3;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
   }
+  .media .media__img,
+  .media--25 .media__img,
+  .media--50 .media__img,
+  .media--75 .media__img,
+  .media--inverse .media__img,
+  .media--inverse--25 .media__img,
+  .media--inverse--50 .media__img,
+  .media--inverse--75 .media__img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .media .media__body,
+  .media--25 .media__body,
+  .media--50 .media__body,
+  .media--75 .media__body,
+  .media--inverse .media__body,
+  .media--inverse--25 .media__body,
+  .media--inverse--50 .media__body,
+  .media--inverse--75 .media__body {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .media .media__img,
+  .media--25 .media__img,
+  .media--50 .media__img,
+  .media--75 .media__img,
+  .media--inverse .media__img,
+  .media--inverse--25 .media__img,
+  .media--inverse--50 .media__img,
+  .media--inverse--75 .media__img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .media .media__body,
+  .media--25 .media__body,
+  .media--50 .media__body,
+  .media--75 .media__body,
+  .media--inverse .media__body,
+  .media--inverse--25 .media__body,
+  .media--inverse--50 .media__body,
+  .media--inverse--75 .media__body {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .media .media__img,
+  .media--25 .media__img,
+  .media--50 .media__img,
+  .media--75 .media__img,
+  .media--inverse .media__img,
+  .media--inverse--25 .media__img,
+  .media--inverse--50 .media__img,
+  .media--inverse--75 .media__img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .media .media__body,
+  .media--25 .media__body,
+  .media--50 .media__body,
+  .media--75 .media__body,
+  .media--inverse .media__body,
+  .media--inverse--25 .media__body,
+  .media--inverse--50 .media__body,
+  .media--inverse--75 .media__body {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .media .media__img,
+  .media--25 .media__img,
+  .media--50 .media__img,
+  .media--75 .media__img,
+  .media--inverse .media__img,
+  .media--inverse--25 .media__img,
+  .media--inverse--50 .media__img,
+  .media--inverse--75 .media__img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .media .media__body,
+  .media--25 .media__body,
+  .media--50 .media__body,
+  .media--75 .media__body,
+  .media--inverse .media__body,
+  .media--inverse--25 .media__body,
+  .media--inverse--50 .media__body,
+  .media--inverse--75 .media__body {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .media .media__img,
+  .media--25 .media__img,
+  .media--50 .media__img,
+  .media--75 .media__img,
+  .media--inverse .media__img,
+  .media--inverse--25 .media__img,
+  .media--inverse--50 .media__img,
+  .media--inverse--75 .media__img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .media .media__body,
+  .media--25 .media__body,
+  .media--50 .media__body,
+  .media--75 .media__body,
+  .media--inverse .media__body,
+  .media--inverse--25 .media__body,
+  .media--inverse--50 .media__body,
+  .media--inverse--75 .media__body {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .media .media__img,
+  .media--25 .media__img,
+  .media--50 .media__img,
+  .media--75 .media__img,
+  .media--inverse .media__img,
+  .media--inverse--25 .media__img,
+  .media--inverse--50 .media__img,
+  .media--inverse--75 .media__img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .media .media__body,
+  .media--25 .media__body,
+  .media--50 .media__body,
+  .media--75 .media__body,
+  .media--inverse .media__body,
+  .media--inverse--25 .media__body,
+  .media--inverse--50 .media__body,
+  .media--inverse--75 .media__body {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .media .media__img,
+  .media--25 .media__img,
+  .media--50 .media__img,
+  .media--75 .media__img,
+  .media--inverse .media__img,
+  .media--inverse--25 .media__img,
+  .media--inverse--50 .media__img,
+  .media--inverse--75 .media__img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .media .media__body,
+  .media--25 .media__body,
+  .media--50 .media__body,
+  .media--75 .media__body,
+  .media--inverse .media__body,
+  .media--inverse--25 .media__body,
+  .media--inverse--50 .media__body,
+  .media--inverse--75 .media__body {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
   }
   .gallery-columns-3 .gallery-item {
     flex-basis: 30%;

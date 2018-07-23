@@ -8,6 +8,9 @@ html {
 	line-height: 1.7;
 	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Meiryo, "Yu Gothic", sans-serif; // 游ゴシックを使いたければ「頭に」 YuGothic を追加;
 	// font-weight: 500;//Windowsで游ゴシック体のウェイトを Medium にするために必要
+	// font-feature-settings: "palt";
+	// letter-spacing: .1em;
+	// font-variant-numeric: slashed-zero tabular-nums;
 	color: $color_font;
 	-webkit-font-smoothing: antialiased; // Safari(Mac,iOS)で文字を細めに。ボタンは文字が見にくくなるので戻している
 	-moz-osx-font-smoothing: grayscale; // Firefoxで文字にアンチエイリアス。ボタンは文字が見えにくく鳴るので戻している
