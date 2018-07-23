@@ -279,15 +279,16 @@
 
 
 /**
- * 前後リンク表示、ページネーションリンク
+ * アーカイブページのページャー
+ *   前後リンク はthe_post_navigation()) で出力
+ *   ページネーションリンク は the_posts_pagination() で出力
  */
-// the_post_navigation()　前後リンク
-.post-navigation {
+.navigation {
 	margin-top: 1em;
-}
-// the_posts_pagination() ページャー
-.navigation.pagination { // nav
-	margin-top: 1em;
+	// 前後リンク, nav
+	&.post-navigation {}
+	// ページャー, nav
+	&.pagination {}
 }
 	.nav-links { //div
 		// 共通
@@ -296,13 +297,14 @@
 		align-items: stretch;
 
 		// 前後リンク
-		.nav-previous, .nav-next {
+		.nav-previous,
+		.nav-next {
 			width: 49%;
-			padding: .5rem 1rem;
-			border: 1px solid $color-gray-400;
-			font-size: smaller;
 			a {
 				display: block;
+				padding: .5rem 1rem;
+				border: 1px solid $color-gray-400;
+				font-size: smaller;
 				text-decoration: none;
 			}
 		}
@@ -318,7 +320,7 @@
 			}
 		}
 
-		// アーカイブページのページャー
+		// ページャー
 		.page-numbers { // リンクなしの.currentはspan、リンクはa
 			margin-right: .5rem;
 			margin-left: .5rem;

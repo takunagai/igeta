@@ -2209,13 +2209,11 @@ a:active img {
 }
 
 /**
- * 前後リンク表示、ページネーションリンク
+ * アーカイブページのページャー
+ *   前後リンク はthe_post_navigation()) で出力
+ *   ページネーションリンク は the_posts_pagination() で出力
  */
-.post-navigation {
-  margin-top: 1em;
-}
-
-.navigation.pagination {
+.navigation {
   margin-top: 1em;
 }
 
@@ -2225,15 +2223,17 @@ a:active img {
   justify-content: center;
 }
 
-.nav-links .nav-previous, .nav-links .nav-next {
+.nav-links .nav-previous,
+.nav-links .nav-next {
   width: 49%;
+}
+
+.nav-links .nav-previous a,
+.nav-links .nav-next a {
+  display: block;
   padding: .5rem 1rem;
   border: 1px solid #CED4DA;
   font-size: smaller;
-}
-
-.nav-links .nav-previous a, .nav-links .nav-next a {
-  display: block;
   text-decoration: none;
 }
 
