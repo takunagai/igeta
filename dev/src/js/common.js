@@ -19,6 +19,7 @@ import StickySidebar from 'sticky-sidebar';
 import generateTableOfContents from './components/generate-table-of-contents';
 import scroll                  from './components/scroll';
 import primaryMenu             from './components/primary-menu';
+import browserHack             from './components/browser-hack';
 
 
 
@@ -56,5 +57,10 @@ document.addEventListener('DOMContentLoaded', function(){
 		topSpacing: 32,
 		bottomSpacing: 32
 	});
+
+	/**
+	 * Browser Hack
+	 */
+	browserHack();
 
 }, false);

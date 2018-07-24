@@ -34,10 +34,10 @@
 .site-header { // &#masthead
 	z-index: 998;
 	.site-header-inner { // &.container--no-margin, flex wrapper
-		@media ($_lg) {
+		@media($_lg) {
 			width: 100%;
 		}
-		@media ($lg_) {
+		@media($lg_) {
 			display: flex;
         	align-items: center;
 		}
@@ -48,19 +48,19 @@
 		 * ロゴとキャッチフレーズを囲む領域
 		 */
 		.site-branding {
-			@media ($_lg){
+			@media($_lg){
 				text-align: center;
 			}
-			@media ($_md) {
+			@media($_md) {
 				height: 40px;
 				background-color: #FFF;
 			}
-			@media ($md_lg) {
+			@media($md_lg) {
 				margin-right: auto;
 				margin-left: auto;
 			}
 			@media($md_){
-				max-width: 25%;
+				max-width: 16rem;
 			}
 
 		}
@@ -74,7 +74,7 @@
 				font-size: $font-x-large; // ロゴ指定なしの場合
 				font-weight: bold; // ロゴ指定なしの場合
 				line-height: 1;
-				@media ($_md){
+				@media($_md){
 					margin-top: .5rem;
 					margin-bottom: .25rem;
 				}
@@ -82,13 +82,16 @@
 					// custom logo common settings -> _wp-essential.scss
 				}
 					.custom-logo { // img
+						@media($lg_) {
+							width: 100% !important;
+						}
 					}
 			}
 			.catch-phrase { // キャッチフレーズ(設定されていれば表示)
 				margin-top: 0;
 				margin-bottom: .5rem;
 				font-size: $font-x-small;
-				@media ($_md) {
+				@media($_md) {
 					display: none;
 				}
 			}
@@ -200,7 +203,7 @@
 
 		// スマートフォン
 
-		@media ($_md) {
+		@media($_md) {
 			#primary-menu {
 				display: none;
 				&.primary-menu--open {
@@ -256,7 +259,7 @@
 		/**
 		 * タブレット以上 (flex、ロゴ上・メインメニュー下)
 		 */
-		@media ($md_) {
+		@media($md_) {
 			#primary-menu-toggle-button {
 				display: none;
 			}
@@ -313,7 +316,7 @@
 		/**
 		 * タブレット
 		 */
-		@media ($md_lg) {
+		@media($md_lg) {
 			#primary-menu {
 				text-align: center;
 			}
@@ -322,7 +325,7 @@
 		/**
 		 * デスクトップ
 		 */
-		@media ($lg_) {
+		@media($lg_) {
 			#primary-menu {
 				margin-left: auto;
 			}

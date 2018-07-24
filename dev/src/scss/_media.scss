@@ -23,6 +23,11 @@
 		display: block;
 		margin-right: auto;
 		margin-left: auto;
+		img {
+			width: 100%;
+			height: auto;
+			vertical-align: bottom;
+		}
 	}
 	.media__body {}
 		.media__title {}

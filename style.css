@@ -1566,6 +1566,12 @@ ul.inline-list--label li {
   margin-left: auto;
 }
 
+.media__img img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
 .media__meta {
   font-size: 0.875rem;
   line-height: 1.5;
@@ -6601,7 +6607,7 @@ readers do not read off random characters that represent icons */
     text-decoration: none;
   }
   .footer-information .site-title .custom-logo {
-    width: 15rem;
+    width: 12rem !important;
   }
   .footer-information .widget {
     order: 2;
@@ -7107,6 +7113,9 @@ readers do not read off random characters that represent icons */
     display: flex;
     align-items: center;
   }
+  .site-title .custom-logo {
+    width: 100% !important;
+  }
   #primary-menu {
     margin-left: auto;
   }
@@ -7174,7 +7183,7 @@ readers do not read off random characters that represent icons */
     width: 75%;
   }
   .site-branding {
-    max-width: 25%;
+    max-width: 16rem;
   }
   #primary-menu-toggle-button {
     display: none;
