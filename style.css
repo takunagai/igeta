@@ -1219,6 +1219,7 @@ ul.inline-list--label li {
 .page-index {
   max-width: 20em;
   margin-right: auto;
+  margin-bottom: 1.5rem;
   margin-left: auto;
   padding-right: .5em;
   padding-left: .5em;
@@ -1246,11 +1247,17 @@ ul.inline-list--label li {
 .page-index li {
   display: inline-block;
   margin-right: 1em;
+  margin-left: 1em;
   letter-spacing: -.1em;
   list-style-image: none;
 }
 
+.page-index li:not(:first-of-type) {
+  margin-top: .5em;
+}
+
 .page-index a {
+  border-bottom: 1px dotted;
   text-decoration: none;
 }
 
@@ -1605,7 +1612,7 @@ ul.inline-list--label li {
   align-items: center;
   padding-top: .5rem;
   padding-bottom: .5rem;
-          column-gap: 1rem;
+  column-gap: 1rem;
   border-bottom: 1px dotted #e3dacb;
 }
 
@@ -6741,6 +6748,7 @@ readers do not read off random characters that represent icons */
   .media--inverse--75 .media__img {
     margin-bottom: .75rem;
   }
+  @media (min-width: 769px) {
   .media .media__img,
   .media--25 .media__img,
   .media--50 .media__img,
@@ -6749,8 +6757,8 @@ readers do not read off random characters that represent icons */
   .media--inverse--25 .media__img,
   .media--inverse--50 .media__img,
   .media--inverse--75 .media__img {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
   }
   .media .media__body,
   .media--25 .media__body,
@@ -6760,8 +6768,9 @@ readers do not read off random characters that represent icons */
   .media--inverse--25 .media__body,
   .media--inverse--50 .media__body,
   .media--inverse--75 .media__body {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
+      -ms-grid-row: 1;
+      -ms-grid-column: 3;
+  }
   }
   .media--mobile-2col {
     -ms-grid-rows: auto;
@@ -7289,6 +7298,9 @@ readers do not read off random characters that represent icons */
     -ms-grid-row: 1;
     -ms-grid-column: 3;
   }
+  .page-index {
+    max-width: 90%;
+  }
   #secondary .widget {
     padding: 1rem;
   }
@@ -7347,6 +7359,56 @@ readers do not read off random characters that represent icons */
     -ms-grid-column: 3;
     grid-area: media-body;
   }
+
+@media (max-width: 768px) {
+  .media .media__img,
+  .media--25 .media__img,
+  .media--50 .media__img,
+  .media--75 .media__img,
+  .media--inverse .media__img,
+  .media--inverse--25 .media__img,
+  .media--inverse--50 .media__img,
+  .media--inverse--75 .media__img {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
+  }
+  .media .media__body,
+  .media--25 .media__body,
+  .media--50 .media__body,
+  .media--75 .media__body,
+  .media--inverse .media__body,
+  .media--inverse--25 .media__body,
+  .media--inverse--50 .media__body,
+  .media--inverse--75 .media__body {
+      -ms-grid-row: 1;
+      -ms-grid-column: 3;
+  }
+}
+
+@media (min-width: 769px) {
+  .media .media__img,
+  .media--25 .media__img,
+  .media--50 .media__img,
+  .media--75 .media__img,
+  .media--inverse .media__img,
+  .media--inverse--25 .media__img,
+  .media--inverse--50 .media__img,
+  .media--inverse--75 .media__img {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
+  }
+  .media .media__body,
+  .media--25 .media__body,
+  .media--50 .media__body,
+  .media--75 .media__body,
+  .media--inverse .media__body,
+  .media--inverse--25 .media__body,
+  .media--inverse--50 .media__body,
+  .media--inverse--75 .media__body {
+      -ms-grid-row: 1;
+      -ms-grid-column: 3;
+  }
+}
   .media .media__body *:first-child,
   .media--25 .media__body *:first-child,
   .media--50 .media__body *:first-child,
@@ -7447,6 +7509,7 @@ readers do not read off random characters that represent icons */
     align-items: center;
             column-gap: 2.5rem;
   }
+  @media (min-width: 769px) {
   .media .media__img,
   .media--25 .media__img,
   .media--50 .media__img,
@@ -7455,8 +7518,8 @@ readers do not read off random characters that represent icons */
   .media--inverse--25 .media__img,
   .media--inverse--50 .media__img,
   .media--inverse--75 .media__img {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
   }
   .media .media__body,
   .media--25 .media__body,
@@ -7466,162 +7529,9 @@ readers do not read off random characters that represent icons */
   .media--inverse--25 .media__body,
   .media--inverse--50 .media__body,
   .media--inverse--75 .media__body {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
+      -ms-grid-row: 1;
+      -ms-grid-column: 3;
   }
-  .media .media__img,
-  .media--25 .media__img,
-  .media--50 .media__img,
-  .media--75 .media__img,
-  .media--inverse .media__img,
-  .media--inverse--25 .media__img,
-  .media--inverse--50 .media__img,
-  .media--inverse--75 .media__img {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-  }
-  .media .media__body,
-  .media--25 .media__body,
-  .media--50 .media__body,
-  .media--75 .media__body,
-  .media--inverse .media__body,
-  .media--inverse--25 .media__body,
-  .media--inverse--50 .media__body,
-  .media--inverse--75 .media__body {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-  }
-  .media .media__img,
-  .media--25 .media__img,
-  .media--50 .media__img,
-  .media--75 .media__img,
-  .media--inverse .media__img,
-  .media--inverse--25 .media__img,
-  .media--inverse--50 .media__img,
-  .media--inverse--75 .media__img {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-  }
-  .media .media__body,
-  .media--25 .media__body,
-  .media--50 .media__body,
-  .media--75 .media__body,
-  .media--inverse .media__body,
-  .media--inverse--25 .media__body,
-  .media--inverse--50 .media__body,
-  .media--inverse--75 .media__body {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-  }
-  .media .media__img,
-  .media--25 .media__img,
-  .media--50 .media__img,
-  .media--75 .media__img,
-  .media--inverse .media__img,
-  .media--inverse--25 .media__img,
-  .media--inverse--50 .media__img,
-  .media--inverse--75 .media__img {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-  }
-  .media .media__body,
-  .media--25 .media__body,
-  .media--50 .media__body,
-  .media--75 .media__body,
-  .media--inverse .media__body,
-  .media--inverse--25 .media__body,
-  .media--inverse--50 .media__body,
-  .media--inverse--75 .media__body {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-  }
-  .media .media__img,
-  .media--25 .media__img,
-  .media--50 .media__img,
-  .media--75 .media__img,
-  .media--inverse .media__img,
-  .media--inverse--25 .media__img,
-  .media--inverse--50 .media__img,
-  .media--inverse--75 .media__img {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-  }
-  .media .media__body,
-  .media--25 .media__body,
-  .media--50 .media__body,
-  .media--75 .media__body,
-  .media--inverse .media__body,
-  .media--inverse--25 .media__body,
-  .media--inverse--50 .media__body,
-  .media--inverse--75 .media__body {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-  }
-  .media .media__img,
-  .media--25 .media__img,
-  .media--50 .media__img,
-  .media--75 .media__img,
-  .media--inverse .media__img,
-  .media--inverse--25 .media__img,
-  .media--inverse--50 .media__img,
-  .media--inverse--75 .media__img {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-  }
-  .media .media__body,
-  .media--25 .media__body,
-  .media--50 .media__body,
-  .media--75 .media__body,
-  .media--inverse .media__body,
-  .media--inverse--25 .media__body,
-  .media--inverse--50 .media__body,
-  .media--inverse--75 .media__body {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-  }
-  .media .media__img,
-  .media--25 .media__img,
-  .media--50 .media__img,
-  .media--75 .media__img,
-  .media--inverse .media__img,
-  .media--inverse--25 .media__img,
-  .media--inverse--50 .media__img,
-  .media--inverse--75 .media__img {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-  }
-  .media .media__body,
-  .media--25 .media__body,
-  .media--50 .media__body,
-  .media--75 .media__body,
-  .media--inverse .media__body,
-  .media--inverse--25 .media__body,
-  .media--inverse--50 .media__body,
-  .media--inverse--75 .media__body {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-  }
-  .media .media__img,
-  .media--25 .media__img,
-  .media--50 .media__img,
-  .media--75 .media__img,
-  .media--inverse .media__img,
-  .media--inverse--25 .media__img,
-  .media--inverse--50 .media__img,
-  .media--inverse--75 .media__img {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-  }
-  .media .media__body,
-  .media--25 .media__body,
-  .media--50 .media__body,
-  .media--75 .media__body,
-  .media--inverse .media__body,
-  .media--inverse--25 .media__body,
-  .media--inverse--50 .media__body,
-  .media--inverse--75 .media__body {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
   }
   .gallery-columns-3 .gallery-item {
     flex-basis: 30%;

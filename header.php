@@ -108,6 +108,11 @@
 			<p class="parent-title">プライベート・ギャラリー</p>
 		</div>
 		<?php get_template_part( 'template-parts/breadcrumbs' ); ?>
+	<?php elseif ( is_singular( 'lesson' ) || is_post_type_archive( 'lesson' ) ) : ?>
+		<div class="bg--post-thumbnail">
+			<p class="parent-title">予約受付中のレッスン</p>
+		</div>
+		<?php get_template_part( 'template-parts/breadcrumbs' ); ?>
 	<?php endif ; ?>
 
 
