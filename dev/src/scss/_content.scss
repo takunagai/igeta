@@ -1,7 +1,7 @@
 /**
  * 2 Column Layout
  */
-.single-post,
+.single,
 .archive,
 .blog,
 .page-template-page-two-column {
@@ -129,7 +129,7 @@ main section {
 /**
  * WordPress Article
  */
-.single-post {
+// .single-post {
 	.entry-title {
 		color: $color-primary;
 		margin-top: .5rem;
@@ -149,7 +149,7 @@ main section {
 		text-align: right;
 		font-size: $font-small;
 	}
-}
+// }
 
 
 /**

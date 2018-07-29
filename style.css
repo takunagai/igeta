@@ -1199,14 +1199,14 @@ ul.inline-list--label li {
 /**
  * 2 Column Layout
  */
-.single-post .site-content,
+.single .site-content,
 .archive .site-content,
 .blog .site-content,
 .page-template-page-two-column .site-content {
   margin-top: 0;
 }
 
-.single-post #secondary,
+.single #secondary,
 .archive #secondary,
 .blog #secondary,
 .page-template-page-two-column #secondary {
@@ -1309,13 +1309,13 @@ ul.inline-list--label li {
 /**
  * WordPress Article
  */
-.single-post .entry-title {
+.entry-title {
   margin-top: .5rem;
   margin-bottom: .5rem;
   color: #AD9468;
 }
 
-.single-post .entry-category {
+.entry-category {
   display: inline-block;
   margin-top: 0;
   margin-bottom: 0;
@@ -1323,11 +1323,11 @@ ul.inline-list--label li {
   font-weight: bold;
 }
 
-.single-post .entry-meta {
+.entry-meta {
   font-size: 0.875rem;
 }
 
-.single-post .entry-footer {
+.entry-footer {
   font-size: 0.875rem;
   text-align: right;
 }
@@ -1654,7 +1654,7 @@ ul.inline-list--label li {
 .btn,
 .btn--primary, .form-submit .submit, .page-links_next-previous a,
 .btn--secondary, .wpcf7c-btn-confirm,
-.btn--strong {
+.btn--strong, .post-edit-link {
   display: inline-block;
   max-width: 100%;
   margin-bottom: .5rem;
@@ -1670,10 +1670,10 @@ ul.inline-list--label li {
 .btn:hover,
 .btn--primary:hover, .form-submit .submit:hover, .page-links_next-previous a:hover,
 .btn--secondary:hover, .wpcf7c-btn-confirm:hover,
-.btn--strong:hover, .btn:focus,
+.btn--strong:hover, .post-edit-link:hover, .btn:focus,
 .btn--primary:focus, .form-submit .submit:focus, .page-links_next-previous a:focus,
 .btn--secondary:focus, .wpcf7c-btn-confirm:focus,
-.btn--strong:focus {
+.btn--strong:focus, .post-edit-link:focus {
   -webkit-filter: brightness(110%);
           filter: brightness(110%);
 }
@@ -1681,7 +1681,7 @@ ul.inline-list--label li {
 .btn:active,
 .btn--primary:active, .form-submit .submit:active, .page-links_next-previous a:active,
 .btn--secondary:active, .wpcf7c-btn-confirm:active,
-.btn--strong:active {
+.btn--strong:active, .post-edit-link:active {
   position: relative;
   top: 1px;
   left: 1px;
@@ -2128,6 +2128,29 @@ a:active img {
   display: block;
   clear: right;
   content: '';
+}
+
+/**
+ * 投稿の "編集 (Edit)" リンク
+ */
+.edit-link {
+  display: block;
+  margin-top: 1rem;
+}
+
+.post-edit-link {
+  display: inline-block;
+  padding: .25em 1em;
+  background-color: #F00;
+  color: white;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.post-edit-link:hover {
+  color: white;
+  text-decoration: underline;
+  opacity: .7;
 }
 
 /**
@@ -7257,7 +7280,7 @@ readers do not read off random characters that represent icons */
   .hero-image-wrapper .hero-image .hero-image__content .hero-image__content__title {
     font-size: 1.5rem;
   }
-  .single-post .site-content,
+  .single .site-content,
   .archive .site-content,
   .blog .site-content,
   .page-template-page-two-column .site-content {
@@ -7269,27 +7292,27 @@ readers do not read off random characters that represent icons */
     grid-template-columns: 1fr 15rem;
             column-gap: 3%;
   }
-  .single-post #primary,
+  .single #primary,
   .archive #primary,
   .blog #primary,
   .page-template-page-two-column #primary {
     grid-area: primary;
     margin-top: 0;
   }
-  .single-post main,
+  .single main,
   .archive main,
   .blog main,
   .page-template-page-two-column main {
     padding: 2rem;
   }
-  .single-post #primary,
+  .single #primary,
   .archive #primary,
   .blog #primary,
   .page-template-page-two-column #primary {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
   }
-  .single-post #secondary,
+  .single #secondary,
 .archive #secondary,
 .blog #secondary,
 .page-template-page-two-column #secondary {

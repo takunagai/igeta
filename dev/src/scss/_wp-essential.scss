@@ -110,6 +110,28 @@
 }
 
 /**
+ * 投稿の "編集 (Edit)" リンク
+ */
+.edit-link { // span
+	display: block;
+	margin-top: 1rem;
+}
+	.post-edit-link { // a
+		@extend %btn;
+		display: inline-block;
+		text-decoration: none;
+		padding: .25em 1em;
+		font-size: $font-small;
+		color: white;
+		background-color: $color-red;
+		&:hover {
+			color: white;
+			opacity: .7;
+			text-decoration: underline;
+		}
+	}
+
+/**
  * 画像
  */
 .size-thumbnail { max-width: 240px; }

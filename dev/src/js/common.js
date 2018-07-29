@@ -50,13 +50,16 @@ document.addEventListener('DOMContentLoaded', function(){
 	 * TODO: モバイル表示時は実行させない
 	 */
 	/* eslint no-unused-vars: 0 */
-	const sidebar = new StickySidebar('.sticky-sidebar', {// #sidebar
-		containerSelector: '#primary', // #main-content
-		innerWrapperSelector: '.sticky-sidebar__inner', // .sidebar__inner
-		minWidth: 992, // TODO: 992px付近でうまく動作しない。modernizrで分岐させても同様だった
-		topSpacing: 32,
-		bottomSpacing: 32
-	});
+	const hasSidebar = document.getElementsByClassName('sticky-sidebar');
+	if ( hasSidebar.length ){
+		const sidebar = new StickySidebar('.sticky-sidebar', {// #sidebar
+			containerSelector: '#primary', // #main-content
+			innerWrapperSelector: '.sticky-sidebar__inner', // .sidebar__inner
+			minWidth: 992, // TODO: 992px付近でうまく動作しない。modernizrで分岐させても同様だった
+			topSpacing: 32,
+			bottomSpacing: 32
+		});
+	}
 
 	/**
 	 * Browser Hack

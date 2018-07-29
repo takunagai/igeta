@@ -207,6 +207,55 @@ if ( ! function_exists( 'igeta_setup' ) ) :
 		}
 		add_filter( 'the_content', 'noautop', 1 );
 
+
+		/**
+		 * 「最近の投稿」ウィジェットのカスタマイズ
+		 * デフォルトで投稿タイプ post のみしか表示しない → カスタム投稿で当該投稿タイプの最新記事を表示
+		 * @link https://tenman.info/labo/snip/archives/8819
+		 */
+		function filter_custom_post_content( $args ) {
+
+			if ( is_singular() ) {
+				$post_type = get_post_type( get_the_ID() );
+
+				if ( "post" == $post_type || "page" == $post_type || "attachment" == $post_type || "revision" == $post_type || "nav_menu_item" == $post_type ) {
+					return $args;
+				}
+				$obj = get_post_type_object( $post_type );
+
+				if ( !empty( $obj ) && true == $obj->has_archive  ) {
+					$args['post_type'] = $post_type;
+				}
+			}
+			return $args;
+		}
+		add_filter('widget_posts_args', 'filter_custom_post_content');
+
+
+		function filter_custom_post_title( $title, $instance, $id_base ) {
+
+			if( 'recent-posts' == $id_base ) {
+				if ( is_singular() ) {
+
+					$post_type = get_post_type( get_the_ID() );
+
+					if ( "post" == $post_type || "page" == $post_type || "attachment" == $post_type || "revision" == $post_type || "nav_menu_item" == $post_type ) {
+
+						return $title;
+					}
+					$obj = get_post_type_object( $post_type );
+
+					if ( !empty( $obj ) && true == $obj->has_archive  ) {
+
+						return sprintf(__('最近の%1$s','text_domain'),$obj->label);
+					}
+				}
+			}
+			return $title;
+		}
+		add_filter( 'widget_title','filter_custom_post_title',10,3 );
+
+
 		/* --------- 追加 ここまで --------- */
 	}
 endif;
@@ -295,3 +344,6 @@ require get_template_directory() . '/inc/widgets.php';
  * Custom functions for plugins. // 追加
  */
 require get_template_directory() . '/inc/plugins.php';
+
+
+
