@@ -8,7 +8,7 @@ module.exports = function() {
 	*/
 
 	const mediaImages = document.getElementsByClassName('media__img');
-	console.log(mediaImages[0]);
+
 	for (var i=0; i<mediaImages.length; i++) {
 		mediaImages[i].classList.remove('media__img');
 		mediaImages[i].outerHTML = '<div class="media__img">' + mediaImages[i].outerHTML + '</div>'; // = jQuery: $( ".inner" ).wrap( "<div class='new'></div>" );

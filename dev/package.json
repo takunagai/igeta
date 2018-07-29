@@ -16,8 +16,8 @@
 		"babel-core": "^6.26.3",
 		"babel-loader": "^7.1.5",
 		"babel-preset-env": "^1.7.0",
-		"css-declaration-sorter": "^3.0.1",
-		"css-mqpacker": "^6.0.2",
+		"css-declaration-sorter": "^4.0.0",
+		"css-mqpacker": "^7.0.0",
 		"del": "^3.0.0",
 		"doiuse": "^4.1.0",
 		"eslint": "^5.2.0",
@@ -36,13 +36,13 @@
 		"postcss-uncss": "^0.16.1",
 		"require-dir": "^1.0.0",
 		"uncss": "^0.16.2",
-		"webpack": "^4.16.1",
+		"webpack": "^4.16.3",
 		"webpack-command": "^0.4.1"
 	},
 	"dependencies": {
 		"jquery": "^3.3.1",
 		"normalize.css": "^8.0.0",
 		"sticky-sidebar": "^3.3.1",
-		"throttle-debounce": "^2.0.0"
+		"throttle-debounce": "^2.0.1"
 	}
 }

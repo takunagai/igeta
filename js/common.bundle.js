@@ -174,7 +174,7 @@ eval("\n\n__webpack_require__(/*! ./skip-link-focus-fix */ \"./src/js/skip-link-
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nmodule.exports = function () {\n\n\t/**\n * BROWSERHACKS\n *     @link https://qiita.com/hashrock/items/189db03021b0f565ae27#2-align-itemscenter-%E3%81%AF%E3%81%BF%E5%87%BA%E3%81%99%E5%95%8F%E9%A1%8C\n *     @link http://browserhacks.com\n *     @link https://github.com/saadeghi/browser-hack-sass-mixins\n */\n\n\tvar mediaImages = document.getElementsByClassName('media__img');\n\tconsole.log(mediaImages[0]);\n\tfor (var i = 0; i < mediaImages.length; i++) {\n\t\tmediaImages[i].classList.remove('media__img');\n\t\tmediaImages[i].outerHTML = '<div class=\"media__img\">' + mediaImages[i].outerHTML + '</div>'; // = jQuery: $( \".inner\" ).wrap( \"<div class='new'></div>\" );\n\t}\n};\n\n//# sourceURL=webpack:///./src/js/components/browser-hack.js?");
+eval("\n\nmodule.exports = function () {\n\n\t/**\n * BROWSERHACKS\n *     @link https://qiita.com/hashrock/items/189db03021b0f565ae27#2-align-itemscenter-%E3%81%AF%E3%81%BF%E5%87%BA%E3%81%99%E5%95%8F%E9%A1%8C\n *     @link http://browserhacks.com\n *     @link https://github.com/saadeghi/browser-hack-sass-mixins\n */\n\n\tvar mediaImages = document.getElementsByClassName('media__img');\n\n\tfor (var i = 0; i < mediaImages.length; i++) {\n\t\tmediaImages[i].classList.remove('media__img');\n\t\tmediaImages[i].outerHTML = '<div class=\"media__img\">' + mediaImages[i].outerHTML + '</div>'; // = jQuery: $( \".inner\" ).wrap( \"<div class='new'></div>\" );\n\t}\n};\n\n//# sourceURL=webpack:///./src/js/components/browser-hack.js?");
 
 /***/ }),
 
