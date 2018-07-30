@@ -345,5 +345,3 @@ require get_template_directory() . '/inc/widgets.php';
  */
 require get_template_directory() . '/inc/plugins.php';
 
-
-

@@ -912,7 +912,15 @@ ul.inline-list--label li {
   padding: 5px 10px;
   background-color: #AD9468;
   color: #FFF;
-  font-weight: bold;
+}
+
+ul.inline-list--label li a {
+  display: block;
+  color: #FFF;
+}
+
+ul.inline-list--label li a:hover {
+  opacity: .7;
 }
 
 /*--------------------------------------------------------------

@@ -42,7 +42,13 @@ ul.inline-list--label {
 		margin-bottom: 5px;
 		padding: 5px 10px;
 		color: #FFF;
-		font-weight: bold;
 		background-color: $color-primary;
+		a {
+			display: block;
+			color: #FFF;
+			&:hover {
+				opacity: .7;
+			}
+		}
 	}
 }

@@ -84,14 +84,14 @@
 		if ( has_post_thumbnail() ) {
 			echo '<div class="bg--post-thumbnail bg--post-thumbnail--large" style="background-image:url(' . wp_get_attachment_url( get_post_thumbnail_id() ) . ');"></div>';
 		} else {
-			echo '<div class="bg--post-thumbnail"><p class="parent-title">ブログ</p></div>';
+			echo '<div class="bg--post-thumbnail"><p class="parent-title">Blog</p></div>';
 		}
 
 		get_template_part( 'template-parts/breadcrumbs' );
 
 		// $post_thumnail_bg_style = '';
 		// if ( has_post_thumbnail() ) {
-		// 	$post_thumnail_bg_style = ' style="background-image:url('
+		// 	$post_thumnail_bg_style = ' style="background-image: '
 		// 	. wp_get_attachment_url( get_post_thumbnail_id() )
 		// 	. ');"';
 		// }
@@ -100,7 +100,7 @@
 	?>
 	<?php if ( is_home() || ( 'post' === get_post_type() && ( is_category() || is_tag() || is_month() || is_author() ) ) ) : ?>
 		<div class="bg--post-thumbnail">
-			<p class="parent-title">ブログ</p>
+			<p class="parent-title">Blog</p>
 		</div>
 		<?php get_template_part( 'template-parts/breadcrumbs' ); ?>
 	<?php elseif ( is_singular( 'member' ) || is_post_type_archive( 'member' ) ) : ?>
