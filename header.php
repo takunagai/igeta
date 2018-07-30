@@ -78,6 +78,10 @@
 
 
 	<?php
+	/**
+	 * ★★ 要修正。汎用できるように
+	 */
+
 	// アイキャッチ画像をCSS背景に
 	//   出力：echo $post_thumnail_bg_style;
 	if ( is_singular( 'post' ) ) {

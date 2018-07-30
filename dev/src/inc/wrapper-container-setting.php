@@ -2,7 +2,7 @@
 /**
  * Layout Column Setting
  *
- * If you need, Override same file in Child Page
+ * If you need, Override same function (without if statement) in child theme
  *
  * @package igeta
  */
