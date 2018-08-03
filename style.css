@@ -6524,6 +6524,9 @@ readers do not read off random characters that represent icons */
   .mobile-full-width {
     width: 100%;
   }
+  .mobile-br {
+    display: block;
+  }
   .grid--mobile-2col .grid__item {
     flex-basis: 48%;
     margin: 0 1%;
