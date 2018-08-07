@@ -1,0 +1,227 @@
+/**
+ * Media - autoprefixer で IE対応
+ */
+
+// Common Settings
+.media,
+.media--25,
+.media--50,
+.media--75,
+.media--inverse,
+.media--inverse--25,
+.media--inverse--50,
+.media--inverse--75 {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+	.media__img {
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+		img {
+			width: 100%;
+			height: auto;
+			vertical-align: bottom;
+		}
+	}
+	.media__body {}
+		.media__title {}
+		.media__meta {
+			font-size: $font-small;
+			line-height: 1.5;
+			@media($_sm){
+				font-size: $font-x-small;
+			}
+		}
+
+.media--no-padding {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.media--narrow-padding {
+	padding-top: 1rem !important;
+	padding-bottom: 1rem !important;
+}
+
+.media--valign-top {
+	align-items: start !important;
+}
+
+
+@media($_md){
+	.media,
+	.media--25,
+	.media--50,
+	.media--75,
+	.media--inverse,
+	.media--inverse--25,
+	.media--inverse--50,
+	.media--inverse--75 {
+		.media__img {
+			margin-bottom: .75rem;
+		}
+	}
+}
+
+// 2 column layout parts
+@media($md_){
+	.media,
+	.media--25,
+	.media--50,
+	.media--75,
+	.media--inverse,
+	.media--inverse--25,
+	.media--inverse--50,
+	.media--inverse--75 {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		.media__img {
+			grid-area: media-image;
+		}
+		.media__body {
+			grid-area: media-body;
+			*:first-child {
+				margin-top: 0;
+			}
+			*:last-child {
+				margin-bottom: 0;
+			}
+		}
+		  .media__title {}
+		  .media__meta {}
+	}
+
+	// set width
+
+	$media-column-gap: 2.5rem;
+	.media {
+		display: grid;
+		column-gap: $media-column-gap;
+		align-items: center;
+		grid-template:
+			"media-image media-body" /
+			auto auto;
+	}
+	.media--inverse {
+		display: grid;
+		column-gap: 2.5rem;
+		align-items: center;
+		grid-template:
+			"media-body media-image" /
+			auto auto;
+	}
+	.media--25 {
+		display: grid;
+		column-gap: 2.5rem;
+		align-items: center;
+		grid-template:
+			"media-image media-body" /
+			25% 1fr;
+	}
+	.media--inverse--25 {
+		display: grid;
+		column-gap: 2.5rem;
+		align-items: center;
+		grid-template:
+			"media-body media-image" /
+			1fr 25%;
+	}
+	.media--50 {
+		display: grid;
+		column-gap: 2.5rem;
+		align-items: center;
+		grid-template:
+			"media-image media-body" /
+			1fr 1fr;
+	}
+	.media--inverse--50 {
+		display: grid;
+		column-gap: 2.5rem;
+		align-items: center;
+		grid-template:
+			"media-body media-image" /
+			1fr 1fr;
+	}
+	.media--75 {
+		display: grid;
+		column-gap: 2.5rem;
+		align-items: center;
+		grid-template:
+			"media-image media-body" /
+			75% 1fr;
+	}
+	.media--inverse--75 {
+		display: grid;
+		column-gap: 2.5rem;
+		align-items: center;
+		grid-template:
+			"media-body media-image" /
+			1fr 75%;
+	}
+}
+
+.media--mobile-2col {
+	@media($_sm){
+		font-size: smaller;
+		line-height: 1.5;
+	}
+	@media($_md){
+		display: grid;
+		grid-template:
+			"media-image media-body" /
+			auto auto;
+		column-gap: 1.5rem;
+	}
+}
+
+
+
+// thumbnail style for index page
+.media--thumbnail { // ul
+	padding-left: 0;
+	li { // li
+		display: grid;
+		grid-template:
+			"media-image media-body" /
+			5rem 1fr;
+	    column-gap: 1rem;
+	    -webkit-column-gap: 1rem;
+		align-items: center;
+		padding-top: .5rem;
+		padding-bottom: .5rem;
+		border-bottom: 1px dotted $color-primary-light;
+		@media($_sm){
+			column-gap: .625rem;
+			font-size: smaller;
+			line-height: 1.5;
+		}
+		&:first-child {
+			padding-top: 0 !important;
+		}
+		&:last-child {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+		.media__img { // img
+			grid-area: media-image;
+		}
+		.media__body { // div
+			grid-area: media-body;
+		}
+			.media__title { // h3
+				margin-bottom: 0;
+				font-size: $font-normal;
+				font-weight: normal;
+				&+* {
+					margin-top: .25rem;
+				}
+			}
+			.media__meta {} // p
+	}
+}

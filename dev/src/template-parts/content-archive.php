@@ -11,11 +11,11 @@
 
 	<li>
 		<?php if ( has_post_thumbnail() ) : ?>
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'thumbnail', array( 'class' => "media__img" ) ); ?>
+			<a href="<?php the_permalink(); ?>" class="media__img">
+				<?php the_post_thumbnail( 'thumbnail', array() ); ?>
 			</a>
 		<?php else : // アイキャッチ画像がない場合 ?>
-			<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/no-image.png" alt="" class="media__img"></a>
+			<a href="<?php the_permalink(); ?>" class="media__img"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/no-image.png" alt=""></a>
 		<?php endif; ?>
         <div class="media__body">
             <?php the_title( '<h3 class="entry-title media__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
