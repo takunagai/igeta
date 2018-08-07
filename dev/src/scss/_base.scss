@@ -172,6 +172,9 @@ legend.screen-reader-text {
 	.mobile-full-width {
 		width: 100%;
 	}
+	.mobile-br { // wbr
+		display: block;
+	}
 }
 
 // margin adjustment

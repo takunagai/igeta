@@ -2,6 +2,38 @@
  * Media - IE非対応なシンプル版
  */
 
+// Common Settings
+.media {
+	.media__img { // img, a img, div img, p img
+		display: block;
+		img {
+			// width: 100%;
+		}
+	}
+	.media__body {
+		*:first-child {
+			margin-top: 0;
+		}
+		*:last-child {
+			margin-bottom: 0;
+		}
+	}
+		.media__title {}
+		// .media__meta {
+		// 	font-size: $font-small;
+		// 	line-height: 1.5;
+		// 	@media($_sm){
+		// 		font-size: $font-x-small;
+		// 	}
+		// }
+}
+
+.media--valign-top {
+	align-items: start !important;
+}
+
+
+
 // mixin
 @mixin media-2col() {
 	display: flex;
@@ -15,72 +47,13 @@
 	& .media__body {
 		width: 100%;
 	}
-
-	&.media--inverse {
-		flex-direction: row-reverse;
-		& .media__img {
-			margin-right: 0;
-			margin-left: 2.5rem;
-		}
-	}
 }
-
-
 
 @media($sm_){
+	// 2 column layout only
 	.media {
 		@include media-2col
-	}
-}
-@media($_sm){
-	.media--mobile-2col {
-		@include media-2col
-	}
-}
-
-
-// Common Settings
-.media {}
-	.media__img { // img, a img, div img, p img
-		// display: block;
-		// margin-right: auto;
-		// margin-left: auto;
-		img {
-			// width: 100%;
-		}
-	}
-	.media__body {}
-		.media__title {}
-		// .media__meta {
-		// 	font-size: $font-small;
-		// 	line-height: 1.5;
-		// 	@media($_sm){
-		// 		font-size: $font-x-small;
-		// 	}
-		// }
-
-.media--valign-top {
-	align-items: start !important;
-}
-
-
-
- // 1 column layout
-@media($_sm){
-	.media {
-		// border-bottom: 1px dotted $color-primary-light;
-	}
-		.media__img {
-			// margin-bottom: .75rem;
-		}
-}
-
-
-// 2 column layout
-@media($sm_){
-	.media {
-		.media__img {
-		}
+		.media__img {}
 		.media__body {
 			*:first-child {
 				margin-top: 0;
@@ -92,20 +65,52 @@
 		  .media__title {}
 		  .media__meta {}
 	}
-}
-
-@media($sm_md){
-	.media--75 {
-		.media__img {
-			width: 50%;
-		}
-		.media__body {
-			width: 50%;
+	&.media--inverse {
+		flex-direction: row-reverse;
+		& .media__img {
+			margin-right: 0;
+			margin-left: 2.5rem;
 		}
 	}
 }
 
-@media($md_){
+@media($_sm){
+	 // 1 column layout
+	.media {
+		.media__img {
+			text-align: center;
+			img {
+				margin-bottom: .75rem;
+			}
+		}
+	}
+
+	 // 2 column layout
+	.media--mobile-2col {
+		@include media-2col
+		// align-items: start;		font-size: $font-small;
+		line-height: 1.5;
+		& .media__img {
+			max-width: 40%;
+			margin-right: 1rem;
+		}
+		& .media__body {
+			text-align: left !important;
+		}
+			& .media__title {
+				font-size: $font-large;
+			}
+		// &.media--inverse {
+		// 	flex-direction: row;
+		// }
+	}
+
+}
+
+
+
+// 幅設定
+@media($sm_){
 	.media--25 {
 		.media__img {
 			width: 25%;
@@ -122,27 +127,26 @@
 			width: 50%;
 		}
 	}
+}
+
+@media($sm_md){
+	.media--75 {
+		.media__img {
+			width: 50%;
+		}
+		.media__body {
+			width: 50%;
+		}
+	}
+}
+
+@media($md_){
 	.media--75 {
 		.media__img {
 			width: 75%;
 		}
 		.media__body {
 			width: 25%;
-		}
-	}
-}
-
-
-@media($_sm){
-	.media--mobile-2col {
-		font-size: $font-small;
-		line-height: 1.5;
-		& .media__title {
-			font-size: $font-large;
-		}
-		& .media__img {
-			max-width: 40%;
-			margin-right: 1rem;
 		}
 	}
 }
@@ -170,6 +174,9 @@
 			@media($sm_){
 				margin-right: 1rem;
 			}
+			img {
+				max-width: 100%;
+			}
 		}
 		.media__body { // div
 			width: 100%;
@@ -182,6 +189,7 @@
 				}
 			}
 			.media__meta { // p
+				font-size: $font-x-small;
 				margin-bottom: 0;
 			}
 	}

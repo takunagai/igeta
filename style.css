@@ -1550,6 +1550,17 @@ ul.inline-list--label li a:hover {
 /**
  * Media - IE非対応なシンプル版
  */
+.media .media__img {
+  display: block;
+}
+
+.media .media__body *:first-child {
+  margin-top: 0;
+}
+
+.media .media__body *:last-child {
+  margin-bottom: 0;
+}
 
 .media--valign-top {
   align-items: start !important;
@@ -1579,6 +1590,10 @@ ul.inline-list--label li a:hover {
   margin-right: .5rem;
 }
 
+.media--thumbnail li .media__img img {
+  max-width: 100%;
+}
+
 .media--thumbnail li .media__body {
   width: 100%;
 }
@@ -1594,6 +1609,7 @@ ul.inline-list--label li a:hover {
 
 .media--thumbnail li .media__meta {
   margin-bottom: 0;
+  font-size: 0.75rem;
 }
 
 /**
@@ -6465,6 +6481,9 @@ readers do not read off random characters that represent icons */
   .mobile-full-width {
     width: 100%;
   }
+  .mobile-br {
+    display: block;
+  }
   .grid--mobile-2col .grid__item {
     flex-basis: 48%;
     margin: 0 1%;
@@ -6515,9 +6534,16 @@ readers do not read off random characters that represent icons */
   .footer-information .menu-item:first-child a {
     border-top: none;
   }
+  .media .media__img {
+    text-align: center;
+  }
+  .media .media__img img {
+    margin-bottom: .75rem;
+  }
   .media--mobile-2col {
     display: flex;
     align-items: center;
+    line-height: 1.5;
   }
   .media--mobile-2col:after::after {
     display: block;
@@ -6530,23 +6556,15 @@ readers do not read off random characters that represent icons */
   .media--mobile-2col .media__body {
     width: 100%;
   }
-  .media--mobile-2col.media--inverse {
-    flex-direction: row-reverse;
-  }
-  .media--mobile-2col.media--inverse .media__img {
-    margin-right: 0;
-    margin-left: 2.5rem;
-  }
-  .media--mobile-2col {
-    font-size: 0.875rem;
-    line-height: 1.5;
-  }
-  .media--mobile-2col .media__title {
-    font-size: 1.125rem;
-  }
   .media--mobile-2col .media__img {
     max-width: 40%;
     margin-right: 1rem;
+  }
+  .media--mobile-2col .media__body {
+    text-align: left !important;
+  }
+  .media--mobile-2col .media__title {
+    font-size: 1.125rem;
   }
   .post-thumbnail img {
     width: 100%;
@@ -6628,18 +6646,30 @@ readers do not read off random characters that represent icons */
   .media .media__body {
     width: 100%;
   }
-  .media.media--inverse {
-    flex-direction: row-reverse;
-  }
-  .media.media--inverse .media__img {
-    margin-right: 0;
-    margin-left: 2.5rem;
-  }
   .media .media__body *:first-child {
     margin-top: 0;
   }
   .media .media__body *:last-child {
     margin-bottom: 0;
+  }
+  .media--inverse {
+    flex-direction: row-reverse;
+  }
+  .media--inverse .media__img {
+    margin-right: 0;
+    margin-left: 2.5rem;
+  }
+  .media--25 .media__img {
+    width: 25%;
+  }
+  .media--25 .media__body {
+    width: 75%;
+  }
+  .media--50 .media__img {
+    width: 50%;
+  }
+  .media--50 .media__body {
+    width: 50%;
   }
   .media--thumbnail li .media__img {
     margin-right: 1rem;
@@ -7309,18 +7339,6 @@ readers do not read off random characters that represent icons */
   .card.card--label .card__title,
   .card--label .card .card__title {
     margin-top: 2rem;
-  }
-  .media--25 .media__img {
-    width: 25%;
-  }
-  .media--25 .media__body {
-    width: 75%;
-  }
-  .media--50 .media__img {
-    width: 50%;
-  }
-  .media--50 .media__body {
-    width: 50%;
   }
   .media--75 .media__img {
     width: 75%;
