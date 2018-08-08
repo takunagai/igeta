@@ -769,7 +769,7 @@ table, th, td {
 table {
   max-width: 100%;
   margin: 1em 0 2em;
-  border-width: 1px 0 0 1px;
+  border-width: 1px;
   border-collapse: collapse;
 }
 
@@ -1586,7 +1586,6 @@ ul.inline-list--label li a:hover {
 }
 
 .media--thumbnail li .media__img {
-  width: 9rem;
   margin-right: .5rem;
 }
 
@@ -1601,6 +1600,8 @@ ul.inline-list--label li a:hover {
 .media--thumbnail li .media__title {
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 .media--thumbnail li .media__title + * {
@@ -2017,22 +2018,31 @@ a:active img {
  * 参考：https://gist.github.com/codeclarifiedsnip/2156515
  */
 .aligncenter {
-  display: block;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
 }
 
+img.aligncenter {
+  display: block;
+}
+
 .alignleft {
   margin-right: .75em;
-  float: left;
   text-align: left;
+}
+
+img.alignleft {
+  float: left;
 }
 
 .alignright {
   margin-left: .75em;
-  float: right;
   text-align: right;
+}
+
+img.alignright {
+  float: right;
 }
 
 .wp-caption {
@@ -6484,6 +6494,9 @@ readers do not read off random characters that represent icons */
   .mobile-br {
     display: block;
   }
+  .mobile-small {
+    font-size: 0.875rem;
+  }
   .grid--mobile-2col .grid__item {
     flex-basis: 48%;
     margin: 0 1%;
@@ -6565,6 +6578,17 @@ readers do not read off random characters that represent icons */
   }
   .media--mobile-2col .media__title {
     font-size: 1.125rem;
+  }
+  .img--mobile-small,
+  .img--mobile-x-small {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .img--mobile-small {
+    width: 75%;
+  }
+  .img--mobile-x-small {
+    width: 50%;
   }
   .post-thumbnail img {
     width: 100%;
@@ -6811,17 +6835,6 @@ readers do not read off random characters that represent icons */
   }
   .bubble--reverse .bubble__speech {
     margin-right: 1.5rem;
-  }
-  .img--mobile-small,
-  .img--mobile-x-small {
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .img--mobile-small {
-    width: 75%;
-  }
-  .img--mobile-x-small {
-    width: 50%;
   }
   .custom-logo {
     height: 1rem;

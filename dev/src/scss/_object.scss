@@ -10,19 +10,6 @@ img {
 	vertical-align: text-bottom;
 	// pointer-events: none;
 }
-@media($_md){
-	.img--mobile-small,
-	.img--mobile-x-small {
-		margin-right: auto;
-		margin-left: auto;
-	}
-	.img--mobile-small {
-		width: 75%;
-	}
-	.img--mobile-x-small {
-		width: 50%;
-	}
-}
 a:hover img { // ロールオーバー時に明るくなる効果
 	opacity: .8;
 	// filter: brightness(102%);// filter: blur( ぼかしの長さ ); contrast( 数字 or パーセンテージ );
@@ -51,7 +38,30 @@ a:active img { // クリック時にボタン押したように凹む効果
 	}
 }
 
+.rounded--images,
+.rounded-images--3,
+.rounded-images--5,
+.rounded-images--7,
+.rounded-images--10,
+.circle--images,
+.box-shadow-images {
+	img {
+		// 角丸、円、Box Shadow、Blur -> _base.scss
+		// 画像単体なら img タグに直接クラスを付加
+	}
+}
 
-.rounded--images img {
-	// ※ 角丸、円、Box Shadow、Blur -> _base.scss
+
+@media($_sm){
+	.img--mobile-small,
+	.img--mobile-x-small {
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.img--mobile-small {
+		width: 75%;
+	}
+	.img--mobile-x-small {
+		width: 50%;
+	}
 }

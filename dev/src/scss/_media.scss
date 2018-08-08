@@ -169,7 +169,7 @@
 			padding-bottom: 0;
 		}
 		.media__img { // img
-			width: 9rem;
+			// width: 9rem;
 			margin-right: .5rem;
 			@media($sm_){
 				margin-right: 1rem;
@@ -184,6 +184,8 @@
 			.media__title { // h3
 				margin-top: 0;
 				margin-bottom: 0;
+				font-size: $font-normal;
+				font-weight: normal;
 				&+* {
 					margin-top: .25rem;
 				}

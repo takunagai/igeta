@@ -10,7 +10,8 @@ table {
 	max-width: 100%;
 	margin: 1em 0 2em;
 	border-collapse: collapse;
-	border-width: $table-line-width 0 0 $table-line-width;
+	border-width: 1px;
+	// border-width: $table-line-width 0 0 $table-line-width;
 }
 table.equal-row-width { // 中のtd幅均等に
 	width: 100%;

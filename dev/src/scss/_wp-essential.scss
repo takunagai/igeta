@@ -5,20 +5,26 @@
  * 参考：https://gist.github.com/codeclarifiedsnip/2156515
  */
 .aligncenter {
-	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
 }
+img.aligncenter { // inline
+	display: block;
+}
 .alignleft {
-	float: left;
 	margin-right: .75em;
 	text-align: left;
 }
+img.alignleft {
+	float: left;
+}
 .alignright {
-	float: right;
 	margin-left: .75em;
 	text-align: right;
+}
+img.alignright {
+	float: right;
 }
 
 .wp-caption { // figure
