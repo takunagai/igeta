@@ -4,10 +4,12 @@
 
 // Common Settings
 .media {
-	.media__img { // img, a img, div img, p img
-		display: block;
+	.media__img { // img, a, div, p
 		img {
-			// width: 100%;
+			display: inline-block;
+			max-width: 100%;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 	.media__body {

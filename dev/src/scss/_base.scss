@@ -131,13 +131,6 @@ legend.screen-reader-text {
 	display: none;
 }
 
-// モバイルは文字サイズ小さく
-@media($_sm) {
-	.small-text-mobile {
-		font-size: smaller;
-	}
-}
-
 
 /**
  * FontAwesome (font-awesome)
@@ -158,6 +151,10 @@ legend.screen-reader-text {
 # Utility Classes
 --------------------------------------------------------------*/
 
+.inline-block {
+	display: inline-block;
+}
+
 // device
 @media ($sm_) {
 	.mobile-only {
@@ -166,19 +163,37 @@ legend.screen-reader-text {
 }
 
 @media ($_sm) {
-	.mobile-aligncenter {
-		text-align: center;
-	}
 	.mobile-full-width {
 		width: 100%;
 	}
-	.mobile-br { // wbr
+	.mobile-no-break {
+		display: inline-block;
+	}
+	.mobile-small-text {
+		font-size: smaller;
+	}
+	.mobile-br { // apply to only wbr element `<wbr class="mobile-br">`
 		display: block;
 	}
-	.mobile-small {
-		font-size: $font-small;
+
+	// align: same settings as _wp-essential.scss
+	.mobile-aligncenter {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		img.mobile-aligncenter { // inline
+			display: block;
+		}
+	}
+	.mobile-alignleft {
+		margin-right: .75em;
+		text-align: left;
+	}
+	img.mobile-alignleft {
+		float: left;
 	}
 }
+
 
 // margin adjustment
 .mt-0 { margin-top:      0 !important; }
@@ -228,13 +243,6 @@ legend.screen-reader-text {
 .my-6 {
 	margin-top: 3rem !important;
 	margin-bottom: 3rem !important;
-}
-
-// モバイルだけ改行させない
-@media($_md){
-	.no-break {
-		display: inline-block;
-	}
 }
 
 

@@ -1,9 +1,10 @@
 /**
- * WordPress 用のクラス
+ * WordPress Essential Classes
  * ============================================================
  * 公式テーマに必須 (ないと Theme Check 通らない)
  * 参考：https://gist.github.com/codeclarifiedsnip/2156515
  */
+
 .aligncenter {
 	margin-left: auto;
 	margin-right: auto;
@@ -26,6 +27,8 @@ img.alignleft {
 img.alignright {
 	float: right;
 }
+// スマートフォン表示のみに中央、右揃え
+// -> _base.scss の "Utility Classes" の項
 
 .wp-caption { // figure
 	max-width: 100%;
