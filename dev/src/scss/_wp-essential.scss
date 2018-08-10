@@ -87,6 +87,13 @@ img.alignright {
 		z-index: 100000; /* Above WP toolbar. */
 	}
 }
+legend.screen-reader-text {
+	display: none;
+}
+// .screen-reader-text {
+// 	position: absolute;
+// 	left: -9999px;
+// }
 
 
 // 以下必要なら

@@ -123,13 +123,8 @@ small {
 }
 
 // アクセシビリティ用 (スクリーンリーダー用)
-.screen-reader-text {
-	position: absolute;
-	left: -9999px;
-}
-legend.screen-reader-text {
-	display: none;
-}
+.screen-reader-text {} // -> _wp-essential.scss
+
 
 
 /**
@@ -158,17 +153,20 @@ legend.screen-reader-text {
 	display: inline-block;
 }
 
-// device
-@media ($sm_) {
-	.mobile-only {
+// Device
+//     Usage: 1. add class to element directory
+//            2. add `@include mobile-small-text;` in css block
+@mixin mobile-only {
+	@media($sm_) {
 		display: none;
 	}
 }
+	.mobile-only {
+		@include mobile-only;
+	}
 
-// Usage: 1. add class to element directory
-//        2. add `@include mobile-small-text;` in css block
 @mixin mobile-small-text {
-	@media ($_sm) {
+	@media($_sm) {
 		font-size: smaller;
 	}
 }
@@ -177,7 +175,7 @@ legend.screen-reader-text {
 	}
 
 @mixin mobile-full-width {
-	@media ($_sm) {
+	@media($_sm) {
 		width: 100%;
 	}
 }
@@ -186,7 +184,7 @@ legend.screen-reader-text {
 	}
 
 @mixin mobile-no-break {
-	@media ($_sm) {
+	@media($_sm) {
 		display: inline-block;
 	}
 }
@@ -195,7 +193,7 @@ legend.screen-reader-text {
 	}
 
 @mixin mobile-small-text {
-	@media ($_sm) {
+	@media($_sm) {
 		font-size: smaller;
 	}
 }
@@ -205,7 +203,7 @@ legend.screen-reader-text {
 	// -> .img--mobile-small in _object.scss
 
 
-@media ($_sm) {
+@media($_sm) {
 	.mobile-br { // apply to only wbr element `<wbr class="mobile-br">`
 		display: block;
 	}
@@ -215,18 +213,19 @@ legend.screen-reader-text {
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
-		img.mobile-aligncenter { // inline
+	}
+		img.mobile-aligncenter {
 			display: block;
 		}
-	}
 	.mobile-alignleft {
 		margin-right: .75em;
 		text-align: left;
 	}
-	img.mobile-alignleft {
-		float: left;
-	}
+		img.mobile-alignleft {
+			float: left;
+		}
 }
+
 
 
 // margin adjustment

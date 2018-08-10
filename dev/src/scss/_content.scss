@@ -145,6 +145,12 @@ main section {
 	.entry-meta {
 		font-size: $font-small;
 	}
+	@media($_sm){
+		.entry-content [class^="container"]:first-child,
+		.single #primary {
+			margin-top: 0 !important;
+		}
+	}
 	.entry-footer {
 		text-align: right;
 		font-size: $font-small;

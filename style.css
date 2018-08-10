@@ -546,15 +546,6 @@ small {
   color: #CED4DA;
 }
 
-.screen-reader-text {
-  position: absolute;
-  left: -9999px;
-}
-
-legend.screen-reader-text {
-  display: none;
-}
-
 /**
  * FontAwesome (font-awesome)
  *   @link http://weboook.blog22.fc2.com/blog-entry-399.html
@@ -2096,6 +2087,10 @@ img.alignright {
   line-height: normal;
   text-decoration: none;
   /* Above WP toolbar. */
+}
+
+legend.screen-reader-text {
+  display: none;
 }
 
 /**
@@ -6608,7 +6603,7 @@ readers do not read off random characters that represent icons */
     margin-left: auto;
     text-align: center;
   }
-  .mobile-aligncenter img.mobile-aligncenter {
+  img.mobile-aligncenter {
     display: block;
   }
   .mobile-alignleft {
@@ -6648,6 +6643,10 @@ readers do not read off random characters that represent icons */
     display: block;
     margin-bottom: 4%;
     content: '';
+  }
+  .entry-content [class^="container"]:first-child,
+  .single #primary {
+    margin-top: 0 !important;
   }
   .footer-information .container {
     margin-top: 0;
