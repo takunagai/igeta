@@ -145,7 +145,7 @@ main section {
 	.entry-meta {
 		font-size: $font-small;
 	}
-	@media($_sm){
+	@media($_sm){ // ★★反映されていない
 		.entry-content [class^="container"]:first-child,
 		.single #primary {
 			margin-top: 0 !important;

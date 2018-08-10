@@ -319,6 +319,9 @@
 		@media($md_lg) {
 			#primary-menu {
 				text-align: center;
+				.sub-menu { // ul
+					text-align: left;
+				}
 			}
 		}
 

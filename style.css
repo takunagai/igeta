@@ -6930,6 +6930,9 @@ readers do not read off random characters that represent icons */
   #primary-menu {
     text-align: center;
   }
+  #primary-menu .sub-menu {
+    text-align: left;
+  }
 }
 
 @media (min-width: 1025px) {
