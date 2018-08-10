@@ -147,9 +147,12 @@ legend.screen-reader-text {
 }
 
 
-/*--------------------------------------------------------------
-# Utility Classes
---------------------------------------------------------------*/
+
+/**
+ *
+ * Utility Classes
+ *
+ */
 
 .inline-block {
 	display: inline-block;
@@ -162,16 +165,47 @@ legend.screen-reader-text {
 	}
 }
 
-@media ($_sm) {
-	.mobile-full-width {
-		width: 100%;
-	}
-	.mobile-no-break {
-		display: inline-block;
-	}
-	.mobile-small-text {
+// Usage: 1. add class to element directory
+//        2. add `@include mobile-small-text;` in css block
+@mixin mobile-small-text {
+	@media ($_sm) {
 		font-size: smaller;
 	}
+}
+	.mobile-small-text {
+		@include mobile-small-text;
+	}
+
+@mixin mobile-full-width {
+	@media ($_sm) {
+		width: 100%;
+	}
+}
+	.mobile-full-width {
+		@include mobile-full-width;
+	}
+
+@mixin mobile-no-break {
+	@media ($_sm) {
+		display: inline-block;
+	}
+}
+	.mobile-no-break {
+		@include mobile-no-break;
+	}
+
+@mixin mobile-small-text {
+	@media ($_sm) {
+		font-size: smaller;
+	}
+}
+	.mobile-small-text {
+		@include mobile-small-text;
+	}
+	// -> .img--mobile-small in _object.scss
+
+
+@media ($_sm) {
 	.mobile-br { // apply to only wbr element `<wbr class="mobile-br">`
 		display: block;
 	}

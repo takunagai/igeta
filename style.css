@@ -584,9 +584,11 @@ legend.screen-reader-text {
           filter: brightness(120%);
 }
 
-/*--------------------------------------------------------------
-# Utility Classes
---------------------------------------------------------------*/
+/**
+ *
+ * Utility Classes
+ *
+ */
 .inline-block {
   display: inline-block;
 }
@@ -6586,6 +6588,9 @@ readers do not read off random characters that represent icons */
 }
 
 @media (max-width: 480px) {
+  .mobile-small-text {
+    font-size: smaller;
+  }
   .mobile-full-width {
     width: 100%;
   }
