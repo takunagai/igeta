@@ -8,12 +8,19 @@
 	.card__img {
 		width: 100%;
 	}
-	.card__body {}
+	.card__body {
+		margin-top: .7rem;
+	}
 		.card__title {
-			margin-top: 1rem;
-			margin-bottom: 1rem;
+			margin-top: 1.5rem;
+			margin-bottom: .7rem;
+			&:first-of-type {
+				margin-top: 0;
+			}
 		}
 		.card__meta {
+			margin-top: 0 !important;
+			margin-bottom: .7rem !important;
 			font-size: $font-x-small;
 		}
 .card.card--base,
@@ -25,6 +32,7 @@
 }
 	.card.card--base .card__body,
 	.card--base .card .card__body {
+		margin-top: 1rem;
 		margin-right: 1rem;
 		margin-left: 1rem;
 	}
@@ -51,9 +59,7 @@
 		& .card__body {
 			margin: 1.5rem 1.5rem 1rem;
 		}
-			& .card__title {
-				margin-top: 1.5rem;
-			}
+			& .card__title {}
 	}
 }
 

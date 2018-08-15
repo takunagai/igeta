@@ -469,6 +469,211 @@ hr {
 }
 
 /**
+ * Color
+ */
+.color-font {
+  color: #333;
+}
+
+.color-font-light {
+  color: #666;
+}
+
+.color-primary {
+  color: #AD9468;
+}
+
+.color-primary-light {
+  color: #e3dacb;
+}
+
+.color-primary-dark {
+  color: #826c47;
+}
+
+.color-secondary {
+  color: #dee2e6;
+}
+
+.color-secondary-light {
+  color: #e1e5e8;
+}
+
+.color-secondary-dark {
+  color: #b2bcc5;
+}
+
+.color-accent {
+  color: #B95B28;
+}
+
+.color-info {
+  color: #A4C6FF;
+}
+
+.color-link {
+  color: #03C;
+}
+
+.color-link-hover {
+  color: #1a53ff;
+}
+
+.color-link-visited {
+  color: #002080;
+}
+
+.color-warning, .warning,
+.color-red {
+  color: #F00;
+}
+
+.color-yellow {
+  color: #FFD700;
+}
+
+.color-gray-100 {
+  color: #F8F9FA;
+}
+
+.color-gray-200 {
+  color: #E9ECEF;
+}
+
+.color-gray-300 {
+  color: #DEE2E6;
+}
+
+.color-gray-400 {
+  color: #CED4DA;
+}
+
+.color-gray,
+.color-gray-500 {
+  color: #ADB5BD;
+}
+
+.color-gray-600 {
+  color: #868E96;
+}
+
+.color-gray-700 {
+  color: #495057;
+}
+
+.color-gray-800 {
+  color: #343A40;
+}
+
+.color-gray-900 {
+  color: #212529;
+}
+
+.separator {
+  color: #CED4DA;
+}
+
+.bgc-font {
+  background-color: #333;
+}
+
+.bgc-font-light {
+  background-color: #666;
+}
+
+.bgc-primary {
+  background-color: #AD9468;
+}
+
+.bgc-primary-light {
+  background-color: #e3dacb;
+}
+
+.bgc-primary-dark {
+  background-color: #826c47;
+}
+
+.bgc-secondary {
+  background-color: #dee2e6;
+}
+
+.bgc-secondary-light {
+  background-color: #e1e5e8;
+}
+
+.bgc-secondary-dark {
+  background-color: #b2bcc5;
+}
+
+.bgc-accent {
+  background-color: #B95B28;
+}
+
+.bgc-info {
+  background-color: #A4C6FF;
+}
+
+.bgc-link {
+  background-color: #03C;
+}
+
+.bgc-link-hover {
+  background-color: #1a53ff;
+}
+
+.bgc-link-visited {
+  background-color: #002080;
+}
+
+.bgc-red {
+  background-color: #F00;
+}
+
+.bgc-yellow {
+  background-color: #FFD700;
+}
+
+.bgc-gray-100 {
+  background-color: #F8F9FA;
+}
+
+.bgc-gray-200 {
+  background-color: #E9ECEF;
+}
+
+.bgc-gray-300 {
+  background-color: #DEE2E6;
+}
+
+.bgc-gray-400 {
+  background-color: #CED4DA;
+}
+
+.bgc-gray {
+  background-color: #ADB5BD;
+}
+
+.bgc-gray-500 {
+  background-color: #ADB5BD;
+}
+
+.bgc-gray-600 {
+  background-color: #868E96;
+}
+
+.bgc-gray-700 {
+  background-color: #495057;
+}
+
+.bgc-gray-800 {
+  background-color: #343A40;
+}
+
+.bgc-gray-900 {
+  background-color: #212529;
+}
+
+/**
  * Typography
  */
 .font-xx-large {
@@ -528,22 +733,6 @@ textarea {
 small {
   display: inline-block;
   line-height: 1.5em;
-}
-
-.warning {
-  color: #F00;
-}
-
-.color-primary {
-  color: #AD9468;
-}
-
-.color-secondary {
-  color: #dee2e6;
-}
-
-.separator {
-  color: #CED4DA;
 }
 
 /**
@@ -1502,12 +1691,22 @@ ul.inline-list--label li a:hover {
   width: 100%;
 }
 
+.card__body {
+  margin-top: .7rem;
+}
+
 .card__title {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: .7rem;
+}
+
+.card__title:first-of-type {
+  margin-top: 0;
 }
 
 .card__meta {
+  margin-top: 0 !important;
+  margin-bottom: .7rem !important;
   font-size: 0.75rem;
 }
 
@@ -1518,6 +1717,7 @@ ul.inline-list--label li a:hover {
 
 .card--base.card .card__body,
 .card--base .card .card__body {
+  margin-top: 1rem;
   margin-right: 1rem;
   margin-left: 1rem;
 }
@@ -7365,10 +7565,6 @@ readers do not read off random characters that represent icons */
   .card.card--boxed .card__body,
   .card--boxed .card .card__body {
     margin: 1.5rem 1.5rem 1rem;
-  }
-  .card.card--boxed .card__title,
-  .card--boxed .card .card__title {
-    margin-top: 1.5rem;
   }
   .card.card--label .card__body,
   .card--label .card .card__body {

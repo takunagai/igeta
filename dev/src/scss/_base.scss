@@ -60,6 +60,66 @@ hr {
 }
 
 /**
+ * Color
+ */
+// text
+.color-font            { color: $color-font; }
+.color-font-light      { color: $color-font-light; }
+.color-primary         { color: $color-primary; }
+.color-primary-light   { color: $color-primary-light; }
+.color-primary-dark    { color: $color-primary-dark; }
+.color-secondary       { color: $color-secondary; }
+.color-secondary-light { color: $color-secondary-light; }
+.color-secondary-dark  { color: $color-secondary-dark; }
+.color-accent          { color: $color-accent; }
+.color-info            { color: $color-info; }
+.color-link            { color: $color-link; }
+.color-link-hover      { color: $color-link-hover; }
+.color-link-visited    { color: $color-link-visited; }
+.color-warning, .warning,
+.color-red             { color: $color-red; }
+.color-yellow          { color: $color-yellow; }
+.color-gray-100        { color: $color-gray-100; }
+.color-gray-200        { color: $color-gray-200; }
+.color-gray-300        { color: $color-gray-300; }
+.color-gray-400        { color: $color-gray-400; }
+.color-gray,
+.color-gray-500        { color: $color-gray-500; }
+.color-gray-600        { color: $color-gray-600; }
+.color-gray-700        { color: $color-gray-700; }
+.color-gray-800        { color: $color-gray-800; }
+.color-gray-900        { color: $color-gray-900; }
+
+.separator             { color: $color-gray-400; } // 区切り文字
+
+// background-color
+.bgc-font              { background-color: $color-font; }
+.bgc-font-light        { background-color: $color-font-light; }
+.bgc-primary           { background-color: $color-primary; }
+.bgc-primary-light     { background-color: $color-primary-light; }
+.bgc-primary-dark      { background-color: $color-primary-dark; }
+.bgc-secondary         { background-color: $color-secondary; }
+.bgc-secondary-light   { background-color: $color-secondary-light; }
+.bgc-secondary-dark    { background-color: $color-secondary-dark; }
+.bgc-accent            { background-color: $color-accent; }
+.bgc-info              { background-color: $color-info; }
+.bgc-link              { background-color: $color-link; }
+.bgc-link-hover        { background-color: $color-link-hover; }
+.bgc-link-visited      { background-color: $color-link-visited; }
+.bgc-red               { background-color: $color-red; }
+.bgc-yellow            { background-color: $color-yellow; }
+.bgc-gray-100          { background-color: $color-gray-100; }
+.bgc-gray-200          { background-color: $color-gray-200; }
+.bgc-gray-300          { background-color: $color-gray-300; }
+.bgc-gray-400          { background-color: $color-gray-400; }
+.bgc-gray              { background-color: $color-gray-500; }
+.bgc-gray-500          { background-color: $color-gray-500; }
+.bgc-gray-600          { background-color: $color-gray-600; }
+.bgc-gray-700          { background-color: $color-gray-700; }
+.bgc-gray-800          { background-color: $color-gray-800; }
+.bgc-gray-900          { background-color: $color-gray-900; }
+
+/**
  * Typography
  */
 
@@ -105,22 +165,7 @@ small {
 	line-height: 1.5em;
 }
 
-.warning {
-	color: $color-red;
-}
 
-.color-primary {
-	color: $color-primary;
-}
-
-.color-secondary {
-	color: $color-secondary;
-}
-
-// 区切り文字
-.separator {
-	color: $color-gray-400;
-}
 
 // アクセシビリティ用 (スクリーンリーダー用)
 .screen-reader-text {} // -> _wp-essential.scss
