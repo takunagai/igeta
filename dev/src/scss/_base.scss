@@ -218,6 +218,7 @@ small {
 	.mobile-small-text {
 		@include mobile-small-text;
 	}
+	// -> .img--mobile-small in _object.scss
 
 @mixin mobile-full-width {
 	@media($_sm) {
@@ -236,16 +237,6 @@ small {
 	.mobile-no-break {
 		@include mobile-no-break;
 	}
-
-@mixin mobile-small-text {
-	@media($_sm) {
-		font-size: smaller;
-	}
-}
-	.mobile-small-text {
-		@include mobile-small-text;
-	}
-	// -> .img--mobile-small in _object.scss
 
 
 @media($_sm) {

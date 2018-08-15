@@ -6792,9 +6792,6 @@ readers do not read off random characters that represent icons */
   .mobile-no-break {
     display: inline-block;
   }
-  .mobile-small-text {
-    font-size: smaller;
-  }
   .mobile-br {
     display: block;
   }

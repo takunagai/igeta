@@ -376,6 +376,21 @@ get_header(); ?>
 
 
 
+				<section class="border-bottom">
+					<div class="container mb-6">
+						<h2>デバイスで表示切り替え</h2>
+						<p class="mobile-only">This message is displayed only on small monitor.</p>
+						<p class="mobile-small-text">This message is displayed smaller on small monitor.</p>
+						<p><span style="display:inline-block;outline:1px solid red;" class="mobile-full-width">This message is displayed full width on small monitor.</span></p>
+						<p>小さいモニタになっても<span class="mobile-no-break">「折り返したくないフレーズ」</span></p>
+						<p>小さいモニタなら<wbr class="mobile-br">折返す</p>
+						<p class="mobile-aligncenter">小さいモニタならセンター揃え</p>
+						<div class="aligncenter"><p class="mobile-alignleft">小さいモニタなら左揃え</p></div>
+					</div>
+				</section>
+
+
+
 				<?php // get_template_part( 'template-parts/widget-main-bottom' ); ?>
 
 			</main>
