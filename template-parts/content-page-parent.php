@@ -7,25 +7,35 @@
  * @package igeta
  */
 
+the_post();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
-        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
         <?php igeta_post_thumbnail(); ?>
+        <div class="container">
+        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+    	</div>
     </header>
 
 
-    <div class="entry-content">
-        <?php the_content(); ?>
+    <div class="entry-content container">
+
+		<?php the_content(); ?>
 
         <?php
         /**
          * 子ページ一覧を表示
          */
-        $child_posts = query_posts( 'numberposts=-1&order=ASC&orderby=post_title&post_type=page&post_parent=' . $post->ID );
+        $child_posts = query_posts(
+        	'numberposts=-1
+        	&order=ASC
+        	&orderby=post_title
+        	&post_type=page
+        	&post_parent=' . $post->ID
+        );
         if ( $child_posts ) {
-            echo ( '<div class="container"><div class="grid grid--mobile-2col card--base">' );
+            echo ( '<div class="grid grid--mobile-2col card--base">' );
             foreach ( $child_posts as $child ) {
                 $child_posttitle = apply_filters( 'the_title', $child->post_title );
                 $child_permalink = apply_filters( 'the_permalink', get_permalink( $child->ID ) );
@@ -39,7 +49,7 @@
                     $child_image_url = $child_image_url[0]; // 1 は幅、2 は高さ、3はリサイズされてたら true
                 }
             ?>
-                <div class="child-page card">
+                <div class="child-page card grid__item">
                     <a href="<?php echo $child_permalink; ?>">
                         <img src="<?php echo $child_image_url; ?>" class="card__img child-page__img">
                     </a>
@@ -50,7 +60,7 @@
                 </div>
         <?php
             }
-            echo ( '</div></div>' );
+            echo ( '</div>' );
         }
         else {
         ?>
@@ -66,26 +76,27 @@
 
     </div>
 
-    <?php if ( get_edit_post_link() ) : ?>
-        <footer class="entry-footer">
-            <?php
-            edit_post_link(
-                sprintf(
-                    wp_kses(
-                        /* translators: %s: Name of current post. Only visible to screen readers */
-                        __( 'Edit <span class="screen-reader-text">%s</span>', 'igeta' ),
-                        array(
-                            'span' => array(
-                                'class' => array(),
-                            ),
-                        )
-                    ),
-                    get_the_title()
+<?php if ( get_edit_post_link() ) : ?>
+    <footer class="entry-footer">
+        <?php
+        edit_post_link(
+            sprintf(
+                wp_kses(
+                    /* translators: %s: Name of current post. Only visible to screen readers */
+                    __( 'Edit <span class="screen-reader-text">%s</span>', 'igeta' ),
+                    array(
+                        'span' => array(
+                            'class' => array(),
+                        ),
+                    )
                 ),
-                '<span class="edit-link">',
-                '</span>'
-            );
-            ?>
-        </footer>
-    <?php endif; ?>
+                get_the_title()
+            ),
+            '<span class="edit-link">',
+            '</span>'
+        );
+        ?>
+    </footer>
+<?php endif; ?>
+
 </article>

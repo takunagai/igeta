@@ -124,7 +124,7 @@
 			}
 	}
 
-		.footer-nav:first-child {
+		.footer-nav:not(:last-of-type) {
 			margin-bottom: 0;
 		}
 
@@ -141,6 +141,9 @@
 			.widget-title { // ウィジェットタイトルあれば
 				font-size: $font-small;
 				margin-bottom: 0;
+				@media($_md) {
+					display: none;
+				}
 			}
 			.widget_text {} // テキストウィジェットなら
 			.menu { // ul、リストタイプのウィジェットなら

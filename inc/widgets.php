@@ -153,7 +153,7 @@ function get_dynamic_sidebar( $index = 1 ) {
 }
 // 本文と本文直後のウィジェットを返す
 function igeta_after_post_widget( $content ) {
-    if ( is_singular() && is_active_sidebar( 'after-post' ) && ! is_front_page() && is_main_query() ) {
+    if ( is_singular() && is_active_sidebar( 'after-post' ) && ! is_front_page() && ! is_page_template( 'page-parent.php' ) && is_main_query() ) {
         $addText = '<aside class="widget-area-after-post">' . get_dynamic_sidebar( 'after-post' ) . '</aside>';
     }
     else {

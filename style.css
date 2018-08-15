@@ -1438,7 +1438,7 @@ ul.inline-list--label li a:hover {
   padding: .1rem 0 .1rem 1.2rem;
 }
 
-.footer-information .footer-nav:first-child {
+.footer-information .footer-nav:not(:last-of-type) {
   margin-bottom: 0;
 }
 
@@ -7143,6 +7143,9 @@ readers do not read off random characters that represent icons */
   }
   .hero-image-wrapper .hero-image .hero-image__content .textwidget p {
     font-size: 0.875rem;
+  }
+  .footer-information .widget-title {
+    display: none;
   }
   .footer-information .menu {
     margin-top: 0;
