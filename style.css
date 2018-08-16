@@ -2765,36 +2765,7 @@ legend.screen-reader-text {
   margin-bottom: 2rem;
 }
 
-.gallery-columns-3,
-.gallery-columns-4,
-.gallery-columns-5,
-.gallery-columns-6 {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.gallery-columns-3 .gallery-item,
-.gallery-columns-4 .gallery-item,
-.gallery-columns-5 .gallery-item,
-.gallery-columns-6 .gallery-item {
-  flex-basis: 48%;
-  margin: 1%;
-}
-
-.gallery-columns-2,
-.gallery-columns-3,
-.gallery-columns-4,
-.gallery-columns-5,
-.gallery-columns-6 {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.gallery-columns-2 .gallery-item,
-.gallery-columns-3 .gallery-item,
-.gallery-columns-4 .gallery-item,
-.gallery-columns-5 .gallery-item,
-.gallery-columns-6 .gallery-item {
+.gallery-item {
   width: 100%;
 }
 
@@ -2826,6 +2797,22 @@ legend.screen-reader-text {
 .gallery-caption {
   line-height: 1.1;
   text-align: center;
+}
+
+.gallery-columns-3,
+.gallery-columns-4,
+.gallery-columns-5,
+.gallery-columns-6 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery-columns-3 .gallery-item,
+.gallery-columns-4 .gallery-item,
+.gallery-columns-5 .gallery-item,
+.gallery-columns-6 .gallery-item {
+  flex-basis: 47%;
+  margin: 1%;
 }
 
 input,
@@ -6801,7 +6788,7 @@ readers do not read off random characters that represent icons */
     flex-wrap: wrap;
   }
   .gallery-columns-2 .gallery-item {
-    flex-basis: 48%;
+    flex-basis: 47%;
     margin: 1%;
   }
 }
@@ -6934,20 +6921,12 @@ readers do not read off random characters that represent icons */
   .post-thumbnail img {
     width: 100%;
   }
+  .gallery {
+    font-size: 0.875rem;
+  }
   .gallery-columns-5 .gallery-item,
   .gallery-columns-6 .gallery-item {
     flex-basis: 30%;
-    margin: 1%;
-  }
-  .gallery-columns-2,
-  .gallery-columns-3,
-  .gallery-columns-4,
-  .gallery-columns-5,
-  .gallery-columns-6 {
-    -ms-grid-columns: 1fr 1fr;
-    gap: .5rem .25rem;
-        grid-template-columns: 1fr 1fr;
-    font-size: 0.875rem;
   }
 }
 
@@ -7038,15 +7017,12 @@ readers do not read off random characters that represent icons */
   }
   .gallery-columns-4 .gallery-item {
     flex-basis: 30%;
-    margin: 1%;
   }
   .gallery-columns-5 .gallery-item {
     flex-basis: 23%;
-    margin: 1%;
   }
   .gallery-columns-6 .gallery-item {
     flex-basis: 18%;
-    margin: 1%;
   }
 }
 
@@ -7603,19 +7579,15 @@ readers do not read off random characters that represent icons */
   }
   .gallery-columns-3 .gallery-item {
     flex-basis: 30%;
-    margin: 1%;
   }
   .gallery-columns-4 .gallery-item {
     flex-basis: 23%;
-    margin: 1%;
   }
   .gallery-columns-5 .gallery-item {
     flex-basis: 18%;
-    margin: 1%;
   }
   .gallery-columns-6 .gallery-item {
     flex-basis: 14%;
-    margin: 1%;
   }
 }
 
