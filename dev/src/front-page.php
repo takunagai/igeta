@@ -23,7 +23,6 @@ get_header(); ?>
 
 	<div id="content" class="site-content">
 
-
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 
@@ -58,7 +57,7 @@ get_header(); ?>
 				if ( is_active_sidebar( 'front-page-contents' ) ) :
 				?>
 					<div class="front-page-contents-area">
-							<?php dynamic_sidebar( 'front-page-contents' ); ?>
+						<?php dynamic_sidebar( 'front-page-contents' ); ?>
 					</div>
 				<?php endif; ?>
 
@@ -336,7 +335,6 @@ get_header(); ?>
 						</div>
 					</div>
 				</section>
-
 
 
 
