@@ -378,6 +378,36 @@ get_header(); ?>
 
 				<section class="border-bottom">
 					<div class="container mb-6">
+						<h2>ボタン</h2>
+						<p><a href="#" class="btn">.btn</a>
+							<a href="#" class="btn--primary">.btn--primary</a>
+							<a href="#" class="btn--secondary">.btn--secondary</a>
+							<a href="#" class="btn--strong">.btn--strong</a>
+						</p>
+						<p>
+							<a href="#" class="btn btn--small">.btn--small</a>
+							<a href="#" class="btn btn--large">.btn--large</a>
+						</p>
+						<p>
+							<a href="#" class="btn btn--selected">.btn--selected</a>
+							<a href="#" class="btn btn--visited">.btn--visited</a>
+							<a href="#" class="btn btn--disabled">.btn--disabled</a>
+						</p>
+						<p>
+							<a href="#" class="btn btn--pill">.btn--pill</a>
+							<a href="#" class="btn">.btn<small>small</small></a>
+							<a href="#" class="btn">.btn <small class="inline">small</small></a>
+						</p>
+						<p>
+							<a href="#" class="btn btn--full-width">.btn--full-width</a>
+						</p>
+					</div>
+				</section>
+
+
+
+				<section class="border-bottom">
+					<div class="container mb-6">
 						<h2>デバイスで表示切り替え</h2>
 						<p class="mobile-only">This message is displayed only on small monitor.</p>
 						<p class="mobile-small-text">This message is displayed smaller on small monitor.</p>

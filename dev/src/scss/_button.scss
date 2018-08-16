@@ -38,7 +38,7 @@
 		padding: .25em 1em;
 		font-size: $font-small;
 	}
-	&.btn--fullwidth {
+	&.btn--full-width {
 		display: block;
 		width: 100%;
 	}
@@ -68,8 +68,10 @@
 	small {
 		display: block;
 		font-size: small;
-		color: white;
-		opacity: .6;
+		opacity: .7;
+		&.inline {
+			display: inline;
+		}
 	}
 }
 

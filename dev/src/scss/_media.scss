@@ -154,6 +154,18 @@
 }
 
 
+.media--full-width {
+	.media__img {
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+	}
+	.media__body {
+		padding-right: 2rem;
+		padding-left: 2rem;
+	}
+}
+
+
 
 // thumbnail style for index page
 .media--thumbnail { // ul

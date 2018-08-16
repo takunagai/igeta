@@ -3,25 +3,31 @@
  */
 .card {
 	line-height: 1.4;
-	margin-bottom: .75rem !important;
+	margin-bottom: .7rem !important;
 }
 	.card__img {
 		width: 100%;
 	}
+	.card__img+.card__body {
+		margin-top: .7rem !important;
+	}
 	.card__body {
-		margin-top: .7rem;
+		*:first-child {
+			margin-top: 0;
+		}
 	}
 		.card__title {
-			margin-top: 1.5rem;
 			margin-bottom: .7rem;
-			&:first-of-type {
-				margin-top: 0;
-			}
 		}
 		.card__meta {
-			margin-top: 0 !important;
-			margin-bottom: .7rem !important;
+			// margin-bottom: .7rem !important;
 			font-size: $font-x-small;
+		}
+		.card__meta+.card__title { // in case of set .card__meta above .card__title
+			margin-top: -.5rem !important;
+		}
+		.card__title+.card__meta { // in case of set .card__meta below .card__title
+			margin-top: -.5rem !important;
 		}
 .card.card--base,
 .card--base .card {
@@ -29,6 +35,7 @@
 	background-color: #FFF;
 	// box-shadow: 0 0 3px rgba(0,0,0,.3);
 	// filter: drop-shadow(0 1px 2px rgba(0,0,0,.2));
+	.card__img+.card__body {}
 }
 	.card.card--base .card__body,
 	.card--base .card .card__body {
