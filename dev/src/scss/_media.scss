@@ -64,8 +64,8 @@
 				margin-bottom: 0;
 			}
 		}
-		  .media__title {}
-		  .media__meta {}
+			.media__title {}
+			.media__meta {}
 	}
 	&.media--inverse {
 		flex-direction: row-reverse;
@@ -81,10 +81,17 @@
 	.media {
 		.media__img {
 			text-align: center;
-			img {
-				margin-bottom: .75rem;
-			}
 		}
+		.media__body {
+			margin-top: .75rem;
+		}
+			.media__title {}
+			.media__meta {}
+	}
+	.media+.media {
+		margin-top: 1.3rem;
+		padding-top: 2rem;
+		border-top: 1px solid $color-gray-200;
 	}
 
 	 // 2 column layout
@@ -97,6 +104,7 @@
 			margin-right: 1rem;
 		}
 		& .media__body {
+			margin-top: 0;
 			text-align: left !important;
 		}
 			& .media__title {

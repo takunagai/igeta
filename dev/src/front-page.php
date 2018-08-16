@@ -347,28 +347,32 @@ get_header(); ?>
 
 						<div class="grid--narrow grid--mobile-2col aligncenter">
 							<div class="grid__item">
+								<img src="http://dummyimage.com/600x400/CCC/fff.png&text=代替テキスト"><br>
+								指定なし
+							</div>
+							<div class="grid__item">
 								<img class="rounded--3" src="http://dummyimage.com/600x400/CCC/fff.png&text=代替テキスト"><br>
-								角丸 3px
+								角丸 3px (.rounded--3)
 							</div>
 							<div class="grid__item">
 								<img class="rounded" src="http://dummyimage.com/600x400/CCC/fff.png&text=代替テキスト">
-								角丸 5px
+								角丸 5px (.rounded--5)
 							</div>
 							<div class="grid__item">
 								<img class="rounded--7" src="http://dummyimage.com/600x400/CCC/fff.png&text=代替テキスト">
-								角丸 7px
+								角丸 7px (.rounded--7)
 							</div>
 							<div class="grid__item">
 								<img class="rounded--10" src="http://dummyimage.com/600x400/CCC/fff.png&text=代替テキスト">
-								角丸 10px
+								角丸 10px (.rounded--10)
 							</div>
 							<div class="grid__item">
 								<img class="circle" src="http://dummyimage.com/400x400/CCC/fff.png&text=代替テキスト">
-								円
+								円 (.circle)
 							</div>
 							<div class="grid__item">
 								<img class="box-shadow" src="http://dummyimage.com/600x400/CCC/fff.png&text=代替テキスト">
-								box-shadow
+								box-shadow (.boxshadow)
 							</div>
 						</div>
 					</div>
