@@ -7565,18 +7565,6 @@ readers do not read off random characters that represent icons */
     background-color: rgba(0, 0, 0, 0.4);
     text-decoration: none;
   }
-  .card.card--boxed .card__body,
-  .card--boxed .card .card__body {
-    margin: 1.5rem 1.5rem 1rem;
-  }
-  .card.card--label .card__body,
-  .card--label .card .card__body {
-    margin: 1rem 2rem;
-  }
-  .card.card--label .card__title,
-  .card--label .card .card__title {
-    margin-top: 2rem;
-  }
   .media--75 .media__img {
     width: 75%;
   }
