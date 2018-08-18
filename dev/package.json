@@ -11,7 +11,7 @@
 	"private": true,
 	"license": "ISC",
 	"devDependencies": {
-		"ajv": "^6.5.2",
+		"ajv": "^6.5.3",
 		"autoprefixer": "^9.1.1",
 		"babel-core": "^6.26.3",
 		"babel-loader": "^7.1.5",
