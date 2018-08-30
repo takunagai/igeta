@@ -64,3 +64,4 @@ if ( has_post_thumbnail() ) {
         </footer>
     <?php endif; ?>
 </article>
+
