@@ -82,3 +82,8 @@
 			}
 	}
 }
+
+.card.card--box-shadow,
+.card--box-shadow .card {
+	@include box-shadow;
+}

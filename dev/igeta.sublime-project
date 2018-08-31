@@ -3,21 +3,21 @@
 	[
 		{
 			"follow_symlinks": true,
-			"path": "/Users/taku_n/vccwt1/wordpress/wp/wp-content/themes/igeta/dev/src",
+			"path": "/Users/taku_n/vccw5/wordpress/wp/wp-content/themes/igeta/dev/src",
 			"folder_exclude_patterns":["node_modules"]
 		},
 		{
 			"follow_symlinks": true,
-			"path": "/Users/taku_n/vccwt1/wordpress/wp/wp-content/themes/igeta/dev",
+			"path": "/Users/taku_n/vccw5/wordpress/wp/wp-content/themes/igeta/dev",
 			"folder_exclude_patterns":["node_modules"]
 		},
 		{
 			"follow_symlinks": true,
-			"path": "/Users/taku_n/vccwt1/wordpress/wp/wp-content/themes/igeta",
+			"path": "/Users/taku_n/vccw5/wordpress/wp/wp-content/themes/igeta",
 		},
 		{
 			"follow_symlinks": true,
-			"path": "/Users/taku_n/vccwt1",
+			"path": "/Users/taku_n/vccw5",
 		},
 	],
 	"settings": {
