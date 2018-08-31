@@ -3,7 +3,7 @@
 import { throttle } from 'throttle-debounce';// { throttle, debounce }
 
 
-module.exports = function(setting) {
+export default function(setting) { // module.exports = function(setting) {
 
 	const myTouch = ('ontouchstart' in document) ? 'touchstart' : 'click',
 		buttonSelector = setting.topLinkButtonID || '#move-to-page-top';//デフォルト値
@@ -60,4 +60,4 @@ module.exports = function(setting) {
 	//   }
 	// }, 500));
 
-};
+}

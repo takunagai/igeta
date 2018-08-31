@@ -4,7 +4,6 @@
 # Base
 --------------------------------------------------------------*/
 // @import './dev/node_modules/normalize.css/'; // -> glup-concat で統合
-
 @import './scss/variables';
 @import './scss/mixin';
 @import './scss/base';
@@ -67,6 +66,12 @@
 @import './scss/javascript';
 
 /*--------------------------------------------------------------
+# JavaScript Library
+--------------------------------------------------------------*/
+// remodal -> functions.php > enqueue
+
+
+/*--------------------------------------------------------------
 # Print
 --------------------------------------------------------------*/
  @import './scss/print';
@@ -84,15 +89,4 @@
 /*--------------------------------------------------------------
 # Web Font
 --------------------------------------------------------------*/
-// ★★子テーマと重複。パス。整理すること
-
-/**
- * Font Awesome
- *   Cheetsheet: @link https://fontawesome.com/cheatsheet
- *   Icon List : @link https://fontawesome.com/icons?d=gallery&s=solid&m=free (右上 i マークで文字コード表示)
- */
-@import './scss/font-awesome/fontawesome.scss'; //基本・必須
-@import './scss/font-awesome/fa-solid.scss'; //Solid (塗り)
-// @import './scss/font-awesome/fa-regular.scss'; //Regular (線)
-@import './scss/font-awesome/fa-brands.scss'; //ロゴ等
-// -> glup-concat で統合
+// -> 子テーマ

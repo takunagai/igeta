@@ -1,3 +1,4 @@
-# Browsers for autoprefixer (checker: http://browserl.ist)
+# Browser list for autoprefixer and @babel/preset-env
+# checker: http://browserl.ist
 > 0.5% in JP
 Firefox ESR
