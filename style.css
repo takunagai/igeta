@@ -1519,6 +1519,13 @@ ul.inline-list--label li a:hover {
 }
 
 /**
+ * アイキャッチ画像がないときのk時タイトルの背景
+ */
+.bg--post-thumbnail {
+  background-image: url(https://placehold.jp/e0e0e0/ebebeb/1200x800.png?text=back%20ground%20image) !important;
+}
+
+/**
  * 目次
  */
 .page-index {
