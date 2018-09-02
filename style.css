@@ -1301,19 +1301,38 @@ ul.inline-list--label li a:hover {
  */
 /**
  * パンくずリスト
- * Breadcrumb NavXT
- * セパレーターの設定は上記プラグインの設定画面で
- * Bootstrap のものをオーバーライド
+ *
+ * ここは基本設定。
+ * Breadcrumb NavXT を使う場合、設定でシンプルなリストに変更する。
+ *   デフォルト設定のHTMLでいく場合は、_wp-plugins.scss の .breadcrumbs.breadcrumb-navxt に記述
  */
 .breadcrumbs {
   margin-top: .5rem;
   margin-bottom: 2rem;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+}
+
+.breadcrumbs ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.breadcrumbs li {
+  display: inline-block;
+  line-height: 1.7em;
+}
+
+.breadcrumbs li + li:before {
+  margin-left: .5em;
+  color: #868E96;
+  content: '» ';
 }
 
 .breadcrumbs a {
-  display: inline-block;
-  color: #868E96;
+  display: inline;
+  color: #343A40;
 }
 
 .breadcrumbs a:hover {
@@ -1518,15 +1537,17 @@ ul.inline-list--label li a:hover {
 /**
  * 2 Column Layout
  */
-.single .site-content,
+.single-post .site-content,
 .archive .site-content,
+.category .site-content,
 .blog .site-content,
 .page-template-page-two-column .site-content {
   margin-top: 0;
 }
 
-.single #secondary,
+.single-post #secondary,
 .archive #secondary,
+.category #secondary,
 .blog #secondary,
 .page-template-page-two-column #secondary {
   grid-area: secondary;
@@ -1536,7 +1557,7 @@ ul.inline-list--label li a:hover {
  * アイキャッチ画像がないときのk時タイトルの背景
  */
 .bg--post-thumbnail {
-  background-image: url(https://placehold.jp/e0e0e0/ebebeb/1200x800.png?text=back%20ground%20image) !important;
+  background-image: url(https://placehold.jp/e0e0e0/ebebeb/1200x800.png?text=back%20ground%20image) default;
 }
 
 /**
@@ -2757,16 +2778,8 @@ legend.screen-reader-text {
 
 /**
  * Breadcrumb NavXT (パンくずリスト)
+ *   設定画面でシンプルなリストに変更
  */
-.breadcrumbs span[property="name"] {
-  display: inline-block;
-  max-width: 10rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  vertical-align: middle;
-  white-space: nowrap;
-}
-
 /**
  * Wordpress Related Posts (関連記事表示)
  */
@@ -3203,6 +3216,9 @@ textarea {
     display: block;
     margin-bottom: 4%;
     content: '';
+  }
+  .breadcrumbs {
+    margin-bottom: 1.5rem;
   }
   .entry-content [class^="container"]:first-child,
   .single #primary {
@@ -3880,8 +3896,9 @@ textarea {
   .hero-image-wrapper .hero-image .hero-image__content .hero-image__content__title {
     font-size: 1.5rem;
   }
-  .single .site-content,
+  .single-post .site-content,
   .archive .site-content,
+  .category .site-content,
   .blog .site-content,
   .page-template-page-two-column .site-content {
     -ms-grid-columns: 1fr 3% 15rem;
@@ -3892,28 +3909,32 @@ textarea {
     grid-template-columns: 1fr 15rem;
             column-gap: 3%;
   }
-  .single #primary,
+  .single-post #primary,
   .archive #primary,
+  .category #primary,
   .blog #primary,
   .page-template-page-two-column #primary {
     grid-area: primary;
     margin-top: 0;
   }
-  .single main,
+  .single-post main,
   .archive main,
+  .category main,
   .blog main,
   .page-template-page-two-column main {
     padding: 2rem;
   }
-  .single #primary,
+  .single-post #primary,
   .archive #primary,
+  .category #primary,
   .blog #primary,
   .page-template-page-two-column #primary {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
   }
-  .single #secondary,
+  .single-post #secondary,
 .archive #secondary,
+.category #secondary,
 .blog #secondary,
 .page-template-page-two-column #secondary {
     -ms-grid-row: 1;

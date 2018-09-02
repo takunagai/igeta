@@ -1,8 +1,9 @@
 /**
  * 2 Column Layout
  */
-.single,
+.single-post,
 .archive,
+.category,
 .blog,
 .page-template-page-two-column {
 	.site-content { // &.container
@@ -41,7 +42,7 @@ main section {
  * アイキャッチ画像がないときのk時タイトルの背景
  */
 .bg--post-thumbnail {
-	background-image: url(https://placehold.jp/e0e0e0/ebebeb/1200x800.png?text=back%20ground%20image) !important;
+	background-image: url(https://placehold.jp/e0e0e0/ebebeb/1200x800.png?text=back%20ground%20image) default;
 }
 
 

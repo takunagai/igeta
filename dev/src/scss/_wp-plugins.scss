@@ -15,24 +15,46 @@
 
 /**
  * Breadcrumb NavXT (パンくずリスト)
+ *   設定画面でシンプルなリストに変更
  */
-.breadcrumbs {
-	span[property="name"] { // 各項目
-		display: inline-block;
-		max-width: 10rem;
-		vertical-align: middle;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-		a[property="item"] {
-			//
-		}
-		.home {} // トップページ
-			span[property="name"] {
-				//
-			}
-}
+// .breadcrumbs.breadcrumb-navxt { // div
+// 	ol {
+// 		margin-top: 0;
+// 		margin-bottom: 0;
+// 		padding-left: 0;
+// 		list-style-type: none;
+// 	}
+// 		li {
+// 			display: inline-block;
+// 			line-height: 1.7em;
+// 		}
+// 		li+li:before {
+// 			margin-left: .5em;
+// 			content: '» ';
+// 			color: $color-gray-600;
+// 		}
+// 			li a {
+// 				display: inline;
+// 			}
+// }
+// // デフォルト設定の場合
+// .breadcrumbs {
+// 	span[property="name"] { // 各項目
+// 		display: inline-block;
+// 		max-width: 10rem;
+// 		vertical-align: middle;
+// 		white-space: nowrap;
+// 		overflow: hidden;
+// 		text-overflow: ellipsis;
+// 	}
+// 		a[property="item"] {
+// 			//
+// 		}
+// 		.home {} // トップページ
+// 			span[property="name"] {
+// 				//
+// 			}
+// }
 
 /**
  * Wordpress Related Posts (関連記事表示)

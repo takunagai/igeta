@@ -28,21 +28,40 @@
 
 /**
  * パンくずリスト
- * Breadcrumb NavXT
- * セパレーターの設定は上記プラグインの設定画面で
- * Bootstrap のものをオーバーライド
+ *
+ * ここは基本設定。
+ * Breadcrumb NavXT を使う場合、設定でシンプルなリストに変更する。
+ *   デフォルト設定のHTMLでいく場合は、_wp-plugins.scss の .breadcrumbs.breadcrumb-navxt に記述
  */
-.breadcrumbs {
+.breadcrumbs { // div
 	margin-top: .5rem;
-	margin-bottom: 2rem;
-	font-size: $font-small;
-	a {
-		display: inline-block;
-		color: $color-gray-600;
-		&:hover {
-			color: $color-link;
-		}
+	@media($_sm){
+		margin-bottom: 1.5rem;
 	}
+	margin-bottom: 2rem;
+	font-size: $font-x-small;
+	ol {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-left: 0;
+		list-style-type: none;
+	}
+		li {
+			display: inline-block;
+			line-height: 1.7em;
+		}
+		li+li:before {
+			margin-left: .5em;
+			content: '» ';
+			color: $color-gray-600;
+		}
+			a {
+				display: inline;
+				color: $color-gray-800;
+				&:hover {
+					color: $color-link;
+				}
+			}
 }
 
 
