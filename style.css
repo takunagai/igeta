@@ -2778,7 +2778,7 @@ legend.screen-reader-text {
 
 /**
  * Breadcrumb NavXT (パンくずリスト)
- *   設定画面でシンプルなリストに変更
+ *   -> 設定画面でシンプルなリストに変更 _header.scss で設定
  */
 /**
  * Wordpress Related Posts (関連記事表示)
