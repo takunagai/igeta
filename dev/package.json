@@ -16,7 +16,7 @@
 		"@babel/register": "^7.0.0",
 		"ajv": "^6.5.3",
 		"autoprefixer": "^9.1.3",
-		"babel-loader": "^8.0.0",
+		"babel-loader": "^8.0.2",
 		"css-declaration-sorter": "^4.0.1",
 		"css-mqpacker": "^7.0.0",
 		"del": "^3.0.0",
@@ -37,7 +37,7 @@
 		"postcss-uncss": "^0.16.1",
 		"require-dir": "^1.0.0",
 		"uncss": "^0.16.2",
-		"webpack": "^4.17.1",
+		"webpack": "^4.17.2",
 		"webpack-command": "^0.4.1"
 	},
 	"dependencies": {
