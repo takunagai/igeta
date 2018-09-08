@@ -5,6 +5,9 @@
 // Common Settings
 .media {
 	.media__img { // img, a, div, p
+		.wp-caption { // figure
+			max-width: 100%;
+		}
 		img {
 			display: inline-block;
 			max-width: 100%;
@@ -185,7 +188,7 @@
 		padding-bottom: .5rem;
 		&+li {
 			padding-top: .5rem;
-			border-top: 1px dotted $color-primary-light;
+			border-top: 1px solid $color-gray-200;
 		}
 		&:last-child {
 			padding-bottom: 0;
@@ -198,6 +201,7 @@
 			}
 			img {
 				max-width: 100%;
+				vertical-align: bottom;
 			}
 		}
 		.media__body { // div
@@ -207,7 +211,6 @@
 				margin-top: 0;
 				margin-bottom: 0;
 				font-size: $font-normal;
-				font-weight: normal;
 				&+* {
 					margin-top: .25rem;
 				}
