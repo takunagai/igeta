@@ -15,7 +15,7 @@
 				<?php the_post_thumbnail( 'thumbnail', array() ); ?>
 			</a>
 		<?php else : // アイキャッチ画像がない場合 ?>
-			<a href="<?php the_permalink(); ?>" class="media__img"><img src="<?php echo site_url() ?>/wp-content/uploads/2018/09/dummy-150x100.png" alt=""></a>
+			<a href="<?php the_permalink(); ?>" class="media__img"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/no-image.png" alt=""></a>
 		<?php endif; ?>
         <div class="media__body">
             <?php the_title( '<h3 class="entry-title media__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
