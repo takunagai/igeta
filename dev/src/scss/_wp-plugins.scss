@@ -7,11 +7,27 @@
  * ContactForm 7
  */
 .wpcf7-list-item { // span
-	display: block !important;
+	display: block;
 }
 .wpcf7c-btn-confirm {
 	@extend .btn--secondary;
 }
+
+// // 送信後にフォームを非表示にし、送信後のメッセージを表示
+// .cf7-sent-complete { // 送信後に表示されるメッセージ
+//     display: none;
+// }
+// .wpcf7-form.sent { // .sent は、送信後にフォーム要素に付くクラス
+//     .wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok { // デフォルトの送信完了メッセージ
+//     	display: none;
+//     }
+// 	.cf7-form { // ホーム入力欄を囲む div 要素
+// 	    display: none;
+//     }
+// 	.cf7-sent-complete {
+// 	    display: block;
+//     }
+// }
 
 /**
  * Breadcrumb NavXT (パンくずリスト)

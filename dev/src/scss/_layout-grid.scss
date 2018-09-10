@@ -1,39 +1,4 @@
 /**
- * Masonry レンガ風
- */
- .masonry {
-	column-gap: 1rem;
-	@media($_sm){
-		column-count: 1;
-	}
-	@media($sm_md){
-		column-count: 2;
-	}
-	@media($md_lg){
-		column-count: 3;
-	}
-	@media($lg_){
-		column-count: 4;
-	}
-	@media($xl_){
-		column-count: 5;
-	}
-}
-	.masonry__item {
-		display: inline-block;
-		margin-bottom: .5rem;
-		transition: 1s ease all;
-		// box-sizing: border-box;
-		// break-inside: avoid;
-		// width: 100%;
-		// background-color: #fff;
-	}
-		.masonry__item img {
-			// max-width: 100%;
-		}
-
-
-/**
  * Grid Layout
  */
 @mixin inner-bottom-margin($size) {
@@ -483,3 +448,43 @@
 		}
 	}
 }
+
+/**
+ * Masonry レンガ風
+ */
+ .masonry {
+	column-gap: 1rem;
+	@media($_sm){
+		column-count: 2;
+	}
+	@media($sm_md){
+		column-count: 2;
+	}
+	@media($md_lg){
+		column-count: 3;
+	}
+	@media($lg_){
+		column-count: 4;
+	}
+	@media($xl_){
+		column-count: 5;
+	}
+}
+	.masonry__item {
+		display: inline-block;
+		margin-bottom: .5rem;
+		transition: 1s ease all;
+		// box-sizing: border-box;
+		// break-inside: avoid;
+		// width: 100%;
+		// background-color: #fff;
+	}
+		.masonry__item img {
+			// max-width: 100%;
+		}
+
+	// .masonry.mobile-2col {
+	// 	.masonry__item {
+
+	// 	}
+	// }
