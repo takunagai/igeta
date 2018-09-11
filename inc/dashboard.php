@@ -244,28 +244,30 @@ add_action('wp_dashboard_setup', 'custom_remove_dashboard_widgets');
  */
 
 // デフォルト投稿タイプ
-function remove_default_post_screen_metaboxes() {
-	if (!current_user_can('administrator')) {
-		remove_meta_box( 'slugdiv','post','normal' );            // スラッグ
-		remove_meta_box( 'postcustom','post','normal' );         // カスタムフィールド
-		remove_meta_box( 'commentstatusdiv','post','normal' );   // ディスカッション (コメント、トラックバック、ピンバックの投稿を許可するの選択)
-		remove_meta_box( 'trackbacksdiv','post','normal' );      // トラックバック
-		remove_meta_box( 'revisionsdiv','post','normal' );       // リビジョン
+if ( ! function_exists( 'remove_default_post_screen_metaboxes' ) ) :
+	function remove_default_post_screen_metaboxes() {
+		if (!current_user_can('administrator')) {
+			remove_meta_box( 'slugdiv','post','normal' );            // スラッグ
+			remove_meta_box( 'postcustom','post','normal' );         // カスタムフィールド
+			remove_meta_box( 'commentstatusdiv','post','normal' );   // ディスカッション (コメント、トラックバック、ピンバックの投稿を許可するの選択)
+			remove_meta_box( 'trackbacksdiv','post','normal' );      // トラックバック
+			remove_meta_box( 'revisionsdiv','post','normal' );       // リビジョン
 
-		// remove_meta_box( 'postexcerpt','post','normal' );        // 抜粋
-		// remove_meta_box( 'commentsdiv','post','normal' );        // コメント
-		// remove_meta_box( 'authordiv','post','normal' );          // 投稿者
-		// remove_meta_box( 'categorydiv', 'post', 'normal' );      // カテゴリー
-		// remove_meta_box( 'tagsdiv-post_tag', 'post', 'normal' ); // タグ
-		// remove_meta_box( 'formatdiv', 'post', 'normal' );        // フォーマット設定
+			// remove_meta_box( 'postexcerpt','post','normal' );        // 抜粋
+			// remove_meta_box( 'commentsdiv','post','normal' );        // コメント
+			// remove_meta_box( 'authordiv','post','normal' );          // 投稿者
+			// remove_meta_box( 'categorydiv', 'post', 'normal' );      // カテゴリー
+			// remove_meta_box( 'tagsdiv-post_tag', 'post', 'normal' ); // タグ
+			remove_meta_box( 'formatdiv', 'post', 'normal' );        // フォーマット設定
 
-		// 以下不明
-		// remove_meta_box( 'linktargetdiv', 'link', 'normal' );
-		// remove_meta_box( 'linkxfndiv', 'link', 'normal' );
-		// remove_meta_box( 'linkadvanceddiv', 'link', 'normal' );
-		// remove_meta_box( 'sqpt-meta-tags', 'post', 'normal' );
+			// 以下不明
+			// remove_meta_box( 'linktargetdiv', 'link', 'normal' );
+			// remove_meta_box( 'linkxfndiv', 'link', 'normal' );
+			// remove_meta_box( 'linkadvanceddiv', 'link', 'normal' );
+			// remove_meta_box( 'sqpt-meta-tags', 'post', 'normal' );
+		}
 	}
-}
+endif;
 add_action('admin_menu','remove_default_post_screen_metaboxes');
 
 
@@ -284,7 +286,9 @@ function remove_page_screen_metaboxes() {
 	}
 }
 add_action('admin_menu','remove_page_screen_metaboxes');
-add_post_type_support( 'page', 'excerpt' ); // 抜粋(概要)の追加
+
+ // 固定ページに抜粋(概要)を追加
+add_post_type_support( 'page', 'excerpt' );
 
 
 /**

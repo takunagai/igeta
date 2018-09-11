@@ -11,7 +11,7 @@
 	"private": true,
 	"license": "ISC",
 	"devDependencies": {
-		"@babel/core": "^7.0.0",
+		"@babel/core": "^7.0.1",
 		"@babel/preset-env": "^7.0.0",
 		"@babel/register": "^7.0.0",
 		"ajv": "^6.5.3",
@@ -25,7 +25,7 @@
 		"eslint-loader": "^2.1.0",
 		"gulp": "^4.0.0",
 		"gulp-concat": "^2.6.1",
-		"gulp-htmlmin": "^4.0.0",
+		"gulp-htmlmin": "^5.0.1",
 		"gulp-imagemin": "^4.1.0",
 		"gulp-notify": "^3.2.0",
 		"gulp-plumber": "^1.2.0",
@@ -37,7 +37,7 @@
 		"postcss-uncss": "^0.16.1",
 		"require-dir": "^1.0.0",
 		"uncss": "^0.16.2",
-		"webpack": "^4.17.2",
+		"webpack": "^4.18.0",
 		"webpack-command": "^0.4.1"
 	},
 	"dependencies": {
