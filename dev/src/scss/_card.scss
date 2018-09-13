@@ -87,3 +87,15 @@
 .card--box-shadow .card {
 	@include box-shadow;
 }
+
+
+/**
+ * リンク
+ */
+a .card {
+	color: $color_font;
+}
+a:hover .card {
+	transform: scale(1.01);
+}
+
