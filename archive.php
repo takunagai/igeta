@@ -25,16 +25,16 @@ get_header();
 
             <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <div class="container--narrow">
+
                     <ul class="media--thumbnail">
+		            <?php
+		            while ( have_posts() ) : the_post();
+		                get_template_part( 'template-parts/content-archive', get_post_type() );
+		            endwhile;
+		            ?>
+            		</ul>
 
-            <?php
-            /* Start the Loop */
-            while ( have_posts() ) : the_post();
-
-                get_template_part( 'template-parts/content-archive', get_post_type() );
-
-            endwhile;
-
+			<?php
             the_posts_navigation();
 
         else :
@@ -43,7 +43,7 @@ get_header();
 
         endif;
         ?>
-                    </ul>
+
                 </div>
             </section>
 
