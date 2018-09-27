@@ -23,31 +23,25 @@ get_header();
 			</header>
 
 
-			<section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<div class="container--narrow">
+            <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <div class="container--narrow">
 
-					<ul class="media--thumbnail">
-					<?php
-					while ( have_posts() ) : the_post();
-						get_template_part( 'template-parts/content-archive', get_post_type() );
-					endwhile;
-					?>
-					</ul>
+                    <ul class="media--thumbnail">
+		            <?php
+		            while ( have_posts() ) : the_post();
+		                get_template_part( 'template-parts/content-archive', get_post_type() );
+		            endwhile;
+		            ?>
+            		</ul>
 
 			<?php
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
+            the_posts_navigation();
 
 		endif;
 		?>
 
-				</div>
-			</section>
-
-			<?php get_template_part( 'template-parts/widget-main-bottom' ); ?>
+                </div>
+            </section>
 
 		</main>
 	</div>
