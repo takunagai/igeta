@@ -1,15 +1,14 @@
 <?php
 /**
- * Template part for displaying the main navigation in header.php.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * Bread Crumbs.
  *
  * @package igeta
  *
  *
  *
- * This Parent Theme doesn't have breaacrumbs functions.
- * Set breadcrumbs in Child Theme
+ * This Parent Theme doesn't have breaacrumbs function.
+ * Set breadcrumbs in Child Theme.
+ * Sample Code by using breadcrumbs plugins below.
  *
  * <?php if ( ! is_front_page() ) : ?>
  *
@@ -33,7 +32,3 @@
  * <?php endif ; ?>
  */
 ?>
-
-
-
-

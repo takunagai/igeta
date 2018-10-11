@@ -10,17 +10,17 @@
 get_header();
 ?>
 
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
-        <?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : ?>
 
-            <header class="page-header">
-                <?php
-                the_archive_title( '<h1 class="page-title">', '</h1>' );
-                the_archive_description( '<div class="archive-description">', '</div>' );
-                ?>
-            </header>
+			<header class="page-header">
+				<?php
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
+				?>
+			</header>
 
 
             <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -37,20 +37,14 @@ get_header();
 			<?php
             the_posts_navigation();
 
-        else :
-
-            get_template_part( 'template-parts/content', 'none' );
-
-        endif;
-        ?>
+		endif;
+		?>
 
                 </div>
             </section>
 
-            <?php get_template_part( 'template-parts/widget-main-bottom' ); ?>
-
-        </main>
-    </div>
+		</main>
+	</div>
 
 <?php
 get_sidebar();

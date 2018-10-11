@@ -1224,20 +1224,6 @@ ul.inline-list--label li a:hover {
 # Layout
 --------------------------------------------------------------*/
 /**
- * Masonry レンガ風
- */
-.masonry {
-  -webkit-column-gap: 1rem;
-          column-gap: 1rem;
-}
-
-.masonry__item {
-  display: inline-block;
-  margin-bottom: .5rem;
-  transition: 1s ease all;
-}
-
-/**
  * Grid Layout
  */
 .grid,
@@ -1252,6 +1238,20 @@ ul.inline-list--label li a:hover {
   display: flex;
   flex-wrap: wrap;
   font-size: smaller;
+}
+
+/**
+ * Masonry レンガ風
+ */
+.masonry {
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+}
+
+.masonry__item {
+  display: inline-block;
+  margin-bottom: .5rem;
+  transition: 1s ease all;
 }
 
 .container,
@@ -1908,8 +1908,25 @@ ul.inline-list--label li a:hover {
 }
 
 /**
+ * リンク
+ */
+a .card, a .card.card--base,
+a .card--base .card, .card--base a .card {
+  color: #333;
+}
+
+a:hover .card {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+/**
  * Media - IE非対応なシンプル版
  */
+.media .media__img .wp-caption {
+  max-width: 100%;
+}
+
 .media .media__img img {
   display: inline-block;
   max-width: 100%;
@@ -1951,7 +1968,7 @@ ul.inline-list--label li a:hover {
 
 .media--thumbnail li + li {
   padding-top: .5rem;
-  border-top: 1px dotted #e3dacb;
+  border-top: 1px solid #E9ECEF;
 }
 
 .media--thumbnail li:last-child {
@@ -1964,6 +1981,7 @@ ul.inline-list--label li a:hover {
 
 .media--thumbnail li .media__img img {
   max-width: 100%;
+  vertical-align: bottom;
 }
 
 .media--thumbnail li .media__body {
@@ -1974,7 +1992,6 @@ ul.inline-list--label li a:hover {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 1rem;
-  font-weight: normal;
 }
 
 .media--thumbnail li .media__title + * {
@@ -3182,10 +3199,6 @@ textarea {
   img.mobile-alignleft {
     float: left;
   }
-  .masonry {
-    -webkit-column-count: 1;
-            column-count: 1;
-  }
   .grid--mobile-2col .grid__item {
     flex-basis: 48%;
     margin: 0 1%;
@@ -3216,6 +3229,10 @@ textarea {
     display: block;
     margin-bottom: 4%;
     content: '';
+  }
+  .masonry {
+    -webkit-column-count: 2;
+            column-count: 2;
   }
   .breadcrumbs {
     margin-bottom: 1.5rem;
@@ -3304,10 +3321,6 @@ textarea {
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
-  .masonry {
-    -webkit-column-count: 2;
-            column-count: 2;
-  }
   .grid .grid__item {
     flex-basis: 48%;
     margin: 0 1%;
@@ -3386,6 +3399,10 @@ textarea {
     flex-basis: 100%;
     margin: 0;
   }
+  .masonry {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
   .media--75 .media__img {
     width: 50%;
   }
@@ -3403,10 +3420,6 @@ textarea {
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
-  .masonry {
-    -webkit-column-count: 3;
-            column-count: 3;
-  }
   .grid .grid__item {
     flex-basis: 31.3%;
     margin: 0 1%;
@@ -3500,6 +3513,10 @@ textarea {
     margin-bottom: 4%;
     content: '';
   }
+  .masonry {
+    -webkit-column-count: 3;
+            column-count: 3;
+  }
   .site-branding {
     margin-right: auto;
     margin-left: auto;
@@ -3512,10 +3529,6 @@ textarea {
   }
 }
 @media (min-width: 1025px) {
-  .masonry {
-    -webkit-column-count: 4;
-            column-count: 4;
-  }
   .grid .grid__item {
     flex-basis: 31.3%;
     margin: 0 1%;
@@ -3609,6 +3622,10 @@ textarea {
     margin-bottom: 4%;
     content: '';
   }
+  .masonry {
+    -webkit-column-count: 4;
+            column-count: 4;
+  }
   .site-header .site-header-inner {
     display: flex;
     align-items: center;
@@ -3624,12 +3641,6 @@ textarea {
   }
   .hero-image-wrapper .hero-image {
     max-height: 70vh;
-  }
-}
-@media (min-width: 1440px) {
-  .masonry {
-    -webkit-column-count: 5;
-            column-count: 5;
   }
 }
 @media (max-width: 768px) {
@@ -3814,6 +3825,12 @@ textarea {
   }
   .footer-information address {
     text-align: center;
+  }
+}
+@media (min-width: 1440px) {
+  .masonry {
+    -webkit-column-count: 5;
+            column-count: 5;
   }
 }
 @media (min-width: 769px) {
