@@ -37,7 +37,7 @@
 		"postcss-uncss": "^0.16.1",
 		"require-dir": "^1.1.0",
 		"uncss": "^0.16.2",
-		"webpack": "^4.21.0",
+		"webpack": "^4.22.0",
 		"webpack-command": "^0.4.1"
 	},
 	"dependencies": {
