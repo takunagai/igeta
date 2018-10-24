@@ -15,7 +15,7 @@
 		"@babel/preset-env": "^7.1.0",
 		"@babel/register": "^7.0.0",
 		"ajv": "^6.5.4",
-		"autoprefixer": "^9.2.1",
+		"autoprefixer": "^9.3.1",
 		"babel-loader": "^8.0.4",
 		"css-declaration-sorter": "^4.0.1",
 		"css-mqpacker": "^7.0.0",
@@ -37,7 +37,7 @@
 		"postcss-uncss": "^0.16.1",
 		"require-dir": "^1.1.0",
 		"uncss": "^0.16.2",
-		"webpack": "^4.22.0",
+		"webpack": "^4.23.0",
 		"webpack-command": "^0.4.1"
 	},
 	"dependencies": {
