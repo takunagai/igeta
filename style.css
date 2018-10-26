@@ -3872,7 +3872,7 @@ textarea {
     box-shadow: 1px 1px 0 1px rgba(0, 0, 0, 0.2);
   }
   #primary-menu .sub-menu li {
-    width: 12rem;
+    width: 14rem;
   }
   #primary-menu .sub-menu a {
     border-bottom: #E9ECEF 1px dotted;
@@ -3934,6 +3934,13 @@ textarea {
     grid-area: primary;
     margin-top: 0;
   }
+  .single-post main,
+  .archive main,
+  .category main,
+  .blog main,
+  .page-template-page-two-column main {
+    padding: 2rem;
+  }
   .single-post #primary,
   .archive #primary,
   .category #primary,
@@ -3949,13 +3956,6 @@ textarea {
 .page-template-page-two-column #secondary {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
-  }
-  .single-post main,
-  .archive main,
-  .category main,
-  .blog main,
-  .page-template-page-two-column main {
-    padding: 2rem;
   }
   .page-index {
     max-width: 60%;
