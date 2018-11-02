@@ -1233,6 +1233,10 @@ ul.inline-list--label li a:hover {
   margin-bottom: 1rem;
 }
 
+.grid--aligncenter {
+  justify-content: center;
+}
+
 .grid--mobile-2col,
 .grid--mobile-3col {
   display: flex;
@@ -2014,7 +2018,7 @@ a:hover .card {
   display: inline-block;
   max-width: 100%;
   margin-bottom: .5rem;
-  padding: .5rem 1.5rem;
+  padding: .5rem 1rem;
   overflow: hidden;
   background-color: #868E96;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -3934,13 +3938,6 @@ textarea {
     grid-area: primary;
     margin-top: 0;
   }
-  .single-post main,
-  .archive main,
-  .category main,
-  .blog main,
-  .page-template-page-two-column main {
-    padding: 2rem;
-  }
   .single-post #primary,
   .archive #primary,
   .category #primary,
@@ -3956,6 +3953,13 @@ textarea {
 .page-template-page-two-column #secondary {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
+  }
+  .single-post main,
+  .archive main,
+  .category main,
+  .blog main,
+  .page-template-page-two-column main {
+    padding: 2rem;
   }
   .page-index {
     max-width: 60%;

@@ -18,6 +18,11 @@
 	}
 }
 
+// flexbox 中央揃え
+.grid--aligncenter {
+	justify-content: center;
+}
+
 // 広さ3段階
 .grid {
 	.grid__item {
