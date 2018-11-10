@@ -1014,6 +1014,10 @@ small {
   background-color: #FFF;
 }
 
+.box--gray {
+  background-color: #E7E7E7;
+}
+
 .rounded-images img,
 .rounded-images--5 img,
 .rounded,
@@ -3938,6 +3942,13 @@ textarea {
     grid-area: primary;
     margin-top: 0;
   }
+  .single-post main,
+  .archive main,
+  .category main,
+  .blog main,
+  .page-template-page-two-column main {
+    padding: 2rem;
+  }
   .single-post #primary,
   .archive #primary,
   .category #primary,
@@ -3953,13 +3964,6 @@ textarea {
 .page-template-page-two-column #secondary {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
-  }
-  .single-post main,
-  .archive main,
-  .category main,
-  .blog main,
-  .page-template-page-two-column main {
-    padding: 2rem;
   }
   .page-index {
     max-width: 60%;
