@@ -11,8 +11,8 @@
 	"private": true,
 	"license": "ISC",
 	"devDependencies": {
-		"@babel/core": "^7.1.2",
-		"@babel/preset-env": "^7.1.0",
+		"@babel/core": "^7.1.6",
+		"@babel/preset-env": "^7.1.6",
 		"@babel/register": "^7.0.0",
 		"ajv": "^6.5.5",
 		"autoprefixer": "^9.3.1",
@@ -21,7 +21,7 @@
 		"css-mqpacker": "^7.0.0",
 		"del": "^3.0.0",
 		"doiuse": "^4.2.0",
-		"eslint": "^5.8.0",
+		"eslint": "^5.9.0",
 		"eslint-loader": "^2.1.1",
 		"gulp": "^4.0.0",
 		"gulp-concat": "^2.6.1",
@@ -37,12 +37,12 @@
 		"postcss-uncss": "^0.16.1",
 		"require-dir": "^1.1.0",
 		"uncss": "^0.16.2",
-		"webpack": "^4.25.1",
+		"webpack": "^4.26.0",
 		"webpack-command": "^0.4.2"
 	},
 	"dependencies": {
 		"jquery": "^3.3.1",
-		"normalize.css": "^8.0.0",
+		"normalize.css": "^8.0.1",
 		"sticky-sidebar": "^3.3.1",
 		"throttle-debounce": "^2.0.1"
 	}

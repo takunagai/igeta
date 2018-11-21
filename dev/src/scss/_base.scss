@@ -211,8 +211,16 @@ small {
 // Device
 //     Usage: 1. add class to element directory
 //            2. add `@include mobile-small-text;` in css block
+@mixin desktop-only {
+	@media($_md) {
+		display: none;
+	}
+}
+	.desktop-only {
+		@include desktop-only;
+	}
 @mixin mobile-only {
-	@media($sm_) {
+	@media($md_) {
 		display: none;
 	}
 }
@@ -411,6 +419,9 @@ small {
 }
 .box--white {
 	background-color: #FFF;
+}
+.box--gray {
+	background-color: #E7E7E7;
 }
 
 
