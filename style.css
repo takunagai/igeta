@@ -1927,6 +1927,10 @@ a:hover .card {
 /**
  * Media - IE非対応なシンプル版
  */
+.media .media__img {
+  max-width: 100%;
+}
+
 .media .media__img .wp-caption {
   max-width: 100%;
 }
@@ -1936,6 +1940,7 @@ a:hover .card {
   max-width: 100%;
   margin-right: auto;
   margin-left: auto;
+  vertical-align: bottom;
 }
 
 .media .media__body *:first-child {
@@ -3133,7 +3138,11 @@ textarea {
     content: '';
   }
   .media .media__img {
+    width: 100%;
     margin-right: 2.5rem;
+  }
+  .media .media__img img {
+    width: 100%;
   }
   .media .media__body {
     width: 100%;
@@ -3286,7 +3295,11 @@ textarea {
     content: '';
   }
   .media--mobile-2col .media__img {
+    width: 100%;
     margin-right: 2.5rem;
+  }
+  .media--mobile-2col .media__img img {
+    width: 100%;
   }
   .media--mobile-2col .media__body {
     width: 100%;
@@ -3938,6 +3951,13 @@ textarea {
     grid-area: primary;
     margin-top: 0;
   }
+  .single-post main,
+  .archive main,
+  .category main,
+  .blog main,
+  .page-template-page-two-column main {
+    padding: 2rem;
+  }
   .single-post #primary,
   .archive #primary,
   .category #primary,
@@ -3953,13 +3973,6 @@ textarea {
 .page-template-page-two-column #secondary {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
-  }
-  .single-post main,
-  .archive main,
-  .category main,
-  .blog main,
-  .page-template-page-two-column main {
-    padding: 2rem;
   }
   .page-index {
     max-width: 60%;
