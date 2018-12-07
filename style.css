@@ -992,6 +992,10 @@ small {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.border-top {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .full-width {
   width: 100%;
 }
@@ -1566,6 +1570,11 @@ ul.inline-list--label li a:hover {
 .blog #secondary,
 .page-template-page-two-column #secondary {
   grid-area: secondary;
+}
+
+main li {
+  margin-bottom: .4em;
+  line-height: 1.4;
 }
 
 /**

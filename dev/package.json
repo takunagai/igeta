@@ -11,11 +11,11 @@
 	"private": true,
 	"license": "ISC",
 	"devDependencies": {
-		"@babel/core": "^7.1.6",
-		"@babel/preset-env": "^7.1.6",
+		"@babel/core": "^7.2.0",
+		"@babel/preset-env": "^7.2.0",
 		"@babel/register": "^7.0.0",
 		"ajv": "^6.6.1",
-		"autoprefixer": "^9.3.1",
+		"autoprefixer": "^9.4.2",
 		"babel-loader": "^8.0.4",
 		"css-declaration-sorter": "^4.0.1",
 		"css-mqpacker": "^7.0.0",
@@ -37,7 +37,7 @@
 		"postcss-uncss": "^0.16.1",
 		"require-dir": "^1.2.0",
 		"uncss": "^0.16.2",
-		"webpack": "^4.26.1",
+		"webpack": "^4.27.1",
 		"webpack-command": "^0.4.2"
 	},
 	"dependencies": {
