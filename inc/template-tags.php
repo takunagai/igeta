@@ -126,7 +126,7 @@ if ( ! function_exists( 'igeta_post_thumbnail' ) ) :
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function igeta_post_thumbnail() {
+	function igeta_post_thumbnail($size) {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
@@ -135,7 +135,7 @@ if ( ! function_exists( 'igeta_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail($size); ?>
 			</div>
 
 		<?php else : ?>
