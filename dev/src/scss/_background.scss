@@ -7,3 +7,18 @@
 .bg-dark {
 	background-color: rgba(0,0,0,.05);
 }
+
+
+/**
+ * 背景画像透
+ *     背景クラスが付いたタグの直下にdivタグを設置し指定
+ */
+[class^="bg-translucent"] {
+	height: 100%;
+}
+.bg-translucent-white {
+	background: rgba(255,255,255,.5);
+}
+.bg-translucent-black {
+	background: rgba(0,0,0,.5);
+}
