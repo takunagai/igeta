@@ -1,3 +1,6 @@
+.bg-white {
+	background-color: #FFF;
+}
 .bg-light {
 	background-color: rgba(255,255,255,.5);
 	// background-image : linear-gradient( #E7E7E7, #CCC );
@@ -5,7 +8,7 @@
 	// background: url(http://dummyimage.com/100x100/CCC/fff.png&text=背景画像) #99f; // repeat-y fixed
 }
 .bg-dark {
-	background-color: rgba(0,0,0,.05);
+	background-color: rgba(0,0,0,.5);
 }
 
 
