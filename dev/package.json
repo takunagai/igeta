@@ -15,7 +15,7 @@
 		"@babel/preset-env": "^7.2.0",
 		"@babel/register": "^7.0.0",
 		"ajv": "^6.6.2",
-		"autoprefixer": "^9.4.2",
+		"autoprefixer": "^9.4.3",
 		"babel-loader": "^8.0.4",
 		"css-declaration-sorter": "^4.0.1",
 		"css-mqpacker": "^7.0.0",
