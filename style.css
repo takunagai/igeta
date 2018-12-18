@@ -2444,6 +2444,10 @@ a:active img {
   background-color: #FFF;
 }
 
+.bg-pale-gray {
+  background-color: #E9ECEF;
+}
+
 .bg-light {
   background-color: rgba(255, 255, 255, 0.5);
 }
@@ -3592,6 +3596,12 @@ textarea {
   .media--mobile-2col .media__title {
     font-size: 1.125rem;
   }
+  .media--full-width .media__body {
+    margin-top: 1.5rem;
+  }
+  .media--full-width + .media--full-width {
+    border: none;
+  }
   .img--mobile-small,
   .img--mobile-x-small {
     margin-right: auto;
@@ -3662,6 +3672,11 @@ textarea {
             order: 2;
     max-width: 25%;
     margin-left: 2%;
+  }
+  .footer-information .widget a:hover {
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.05);
   }
   .media {
     -webkit-align-items: center;
