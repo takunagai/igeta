@@ -318,38 +318,6 @@ function solecolor_wp_terms_checklist_args( $args, $post_id ){
 add_filter( 'wp_terms_checklist_args', 'solecolor_wp_terms_checklist_args', 10, 2 );
 
 
-/**
- * カテゴリー選択を1つしかできないように制限 (新規投稿と投稿編集画面でのみ。カスタムメニューのカテゴリ選択では複数選択可能に)
- * @link: https://www.nxworld.net/wordpress/wp-limit-category-select.html
- */
-
-add_action( 'admin_print_footer_scripts-post.php', 'limit_category_select' ); // 新規投稿画面
-add_action( 'admin_print_footer_scripts-post-new.php', 'limit_category_select' ); // 投稿編集画面
-function limit_category_select() {
-?>
-<script>
-jQuery(function($) {
-	// 投稿画面のカテゴリー選択を制限
-	var cat_checklist = $('.categorychecklist input[type=checkbox]');
-	cat_checklist.click( function() {
-		$(this).parents('.categorychecklist').find('input[type=checkbox]').attr('checked', false);
-		$(this).attr('checked', true);
-	});
-
-	// クイック編集のカテゴリー選択を制限
-	var quickedit_cat_checklist = $('.cat-checklist input[type=checkbox]');
-	quickedit_cat_checklist.click( function() {
-		$(this).parents('.cat-checklist').find('input[type=checkbox]').attr('checked', false);
-		$(this).attr('checked', true);
-	});
-
-	$('.categorychecklist>li:first-child, .cat-checklist>li:first-child').before('<p style="padding-top:5px;">複数選択不可</p>');
-});
-</script>
-<?php
-}
-
-
 
 /**
  * 記事タイトル上下と本文入力欄の下に説明文を追加
