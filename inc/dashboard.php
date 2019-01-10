@@ -26,34 +26,34 @@
 
 // ロゴをカスタムロゴに
 function login_logo_custom_logo() {
-  $logo_url = wp_get_attachment_url( get_theme_mod( 'custom_logo' ) );
-  if ( false !== $logo_url ) {
-	echo '<style>#login h1 a { background-image:url(' . $logo_url . ');width:260px;background-size:contain; }</style>';
-  }
+	$logo_url = wp_get_attachment_url( get_theme_mod( 'custom_logo' ) );
+	if ( false !== $logo_url ) {
+	echo '<style>#login h1 a { background-image:url( ' . $logo_url . ' );width:260px;background-size:contain; }</style>';
+	}
 }
 add_action( 'login_enqueue_scripts', 'login_logo_custom_logo', 11 );
 
 // ロゴのリンク先を WordPress.org から自サイトトップページに変更
 function custom_login_logo_url() {
-  return get_bloginfo( 'url' );
+	return get_bloginfo( 'url' );
 }
 add_filter( 'login_headerurl', 'custom_login_logo_url' );
 
 // ポップオーバーラベルの文言の変更
 function login_logo_title(){
-  return get_bloginfo('name') . "トップページへ";
+	return get_bloginfo( 'name' ) . "トップページへ";
 }
-add_filter('login_headertitle','login_logo_title');
+add_filter( 'login_headertitle','login_logo_title' );
 
 
 
 /**
  * バージョン更新を非表示にし、バージョンチェックの通信をさせない
  */
-if (!current_user_can('administrator')) {
-	add_filter('pre_site_transient_update_core', '__return_zero');
-	remove_action('wp_version_check', 'wp_version_check');
-	remove_action('admin_init', '_maybe_update_core');
+if (!current_user_can( 'administrator' )) {
+	add_filter( 'pre_site_transient_update_core', '__return_zero' );
+	remove_action( 'wp_version_check', 'wp_version_check' );
+	remove_action( 'admin_init', '_maybe_update_core' );
 }
 
 
@@ -61,14 +61,14 @@ if (!current_user_can('administrator')) {
  * アドミンバーから指定項目を消す
  */
 function remove_admin_bar_menu() {
-	if (!current_user_can('administrator')) {
+	if ( ! current_user_can( 'administrator' ) ) {
 		global $wp_admin_bar;
 		// var_dump($wp_admin_bar); //開発用：全ての値を表示
-		$wp_admin_bar->remove_menu('wp-logo'); //ロゴ
-		// $wp_admin_bar->remove_node('site-name'); // 左上のサイト名 (子にサイトを表示 view-site)
-		$wp_admin_bar->remove_menu('comments'); //コメント
-		$wp_admin_bar->remove_menu('new-content'); //新規追加ボタン
-		$wp_admin_bar->remove_menu('updates'); //更新
+		$wp_admin_bar->remove_menu( 'wp-logo' ); //ロゴ
+		// $wp_admin_bar->remove_node( 'site-name' ); // 左上のサイト名 (子にサイトを表示 view-site)
+		$wp_admin_bar->remove_menu( 'comments' ); //コメント
+		$wp_admin_bar->remove_menu( 'new-content' ); //新規追加ボタン
+		$wp_admin_bar->remove_menu( 'updates' ); //更新
 	}
 }
 add_action( 'admin_bar_menu', 'remove_admin_bar_menu', 99 );
@@ -78,11 +78,11 @@ add_action( 'admin_bar_menu', 'remove_admin_bar_menu', 99 );
  * 右上の「表示オプション」と「ヘルプ」を非表示
  */
 function hide_display_option_and_help() {
-	if (!current_user_can('administrator')) {
+	if (!current_user_can( 'administrator' )) {
 		echo '<style>#contextual-help-link-wrap,#screen-options-link-wrap{display:none;}</style>';
 	}
 }
-add_action('admin_head', 'hide_display_option_and_help');
+add_action( 'admin_head', 'hide_display_option_and_help' );
 
 
 /**
@@ -91,7 +91,7 @@ add_action('admin_head', 'hide_display_option_and_help');
 function custom_admin_footer() {
 	echo '<a href="mainto:info@nagaishouten.com" target="_blank">お問合せ</a>';
 }
-add_filter('admin_footer_text', 'custom_admin_footer');
+add_filter( 'admin_footer_text', 'custom_admin_footer' );
 
 
 /**
@@ -106,54 +106,54 @@ add_filter('admin_footer_text', 'custom_admin_footer');
 
 // "編集者"権限で「外観」メニュー有効化
 function add_theme_caps() {
-	if (!current_user_can('administrator')) {
+	if (!current_user_can( 'administrator' )) {
 		get_role( 'editor' )->add_cap( 'edit_theme_options' );
 	}
 }
-add_action( 'admin_init', 'add_theme_caps', 102);
+add_action( 'admin_init', 'add_theme_caps', 102 );
 
 
 /**
- * 指定メニューを非表示
+ * 管理者以外は指定メニューを非表示
  */
 function remove_menus() {
-	if (!current_user_can('administrator')) {
-		// remove_menu_page('index.php'); // ダッシュボード
+	if ( ! current_user_can( 'administrator' ) ) {
+		// remove_menu_page( 'index.php' ); // ダッシュボード
 		remove_submenu_page( 'index.php', 'update-core.php' ); // 更新
-		// remove_menu_page('edit.php'); // 投稿
+		// remove_menu_page( 'edit.php' ); // 投稿
 		// remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' ); // カテゴリー
 		// remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' ); // 投稿タグ
-		// remove_menu_page('upload.php'); // メディア
+		// remove_menu_page( 'upload.php' ); // メディア
 		// remove_submenu_page( 'upload.php', 'media-new.php' ); // 新規追加
-		// remove_menu_page('edit.php?post_type=page'); // 固定ページ
+		// remove_menu_page( 'edit.php?post_type=page' ); // 固定ページ
 		// remove_submenu_page( 'edit.php?post_type=page', 'post-new.php?post_type=page' ); // 新規追加
-		// remove_menu_page('edit-comments.php'); // コメント
-		// remove_menu_page('themes.php'); // 外観
-		// remove_submenu_page('themes.php', 'widgets.php'); // ウィジェット
-		// remove_submenu_page('themes.php', 'theme-editor.php'); // テーマ編集
-		remove_submenu_page('themes.php', 'themes.php'); // テーマ
-		remove_menu_page('plugins.php'); // プラグイン
-		// remove_menu_page('users.php'); // (管理者のみ)ユーザー
+		// remove_menu_page( 'edit-comments.php' ); // コメント
+		// remove_menu_page( 'themes.php' ); // 外観
+		// remove_submenu_page( 'themes.php', 'widgets.php' ); // ウィジェット
+		// remove_submenu_page( 'themes.php', 'theme-editor.php' ); // テーマ編集
+		remove_submenu_page( 'themes.php', 'themes.php' ); // テーマ
+		remove_menu_page( 'plugins.php' ); // プラグイン
+		// remove_menu_page( 'users.php' ); // (管理者のみ)ユーザー
 		// remove_submenu_page( 'users.php', 'user-new.php' ); // (管理者のみ)新規追加
 		// remove_submenu_page( 'users.php', 'profile.php' ); // (管理者のみ)あなたのプロフィール
-		// remove_menu_page('profile.php'); // (管理者以外のみ)プロフィール
-		remove_menu_page('tools.php'); // ツール
-		remove_menu_page('options-general.php'); // 設定
+		// remove_menu_page( 'profile.php' ); // (管理者以外のみ)プロフィール
+		remove_menu_page( 'tools.php' ); // ツール
+		remove_menu_page( 'options-general.php' ); // 設定
 
 		// プラグイン
-		// remove_menu_page('edit.php?post_type=logbook' );
-		remove_menu_page('wpcf7');
-		remove_menu_page('edit.php?post_type=acf'); // Advanced Custom Fields (http://on-ze.com/archives/3178)
+		// remove_menu_page( 'edit.php?post_type=logbook' );
+		remove_menu_page( 'wpcf7' );
+		remove_menu_page( 'edit.php?post_type=acf' ); // Advanced Custom Fields (http://on-ze.com/archives/3178)
 	}
 }
-add_action('admin_menu', 'remove_menus', 102);
+add_action( 'admin_menu', 'remove_menus', 102 );
 
 
 /**
  * メニューの並び替え
  */
 function custom_menu_order($menu_ord) {
-	if (!current_user_can('administrator')) {
+	if (!current_user_can( 'administrator' )) {
 		if ( !$menu_ord ) {
 			return true;
 		}
@@ -172,8 +172,8 @@ function custom_menu_order($menu_ord) {
 		);
 	}
 }
-add_filter('custom_menu_order', 'custom_menu_order');
-add_filter('menu_order', 'custom_menu_order');
+add_filter( 'custom_menu_order', 'custom_menu_order' );
+add_filter( 'menu_order', 'custom_menu_order' );
 
 
 
@@ -232,10 +232,10 @@ function custom_remove_dashboard_widgets() {
 	remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );           // WordPressフォーラム
 	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );           // クイックドラフト
 		remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );     // 下書き
-	// remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');             // アクティビティ
+	// remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' );             // アクティビティ
 	//     remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' ); // 最近のコメント
 }
-add_action('wp_dashboard_setup', 'custom_remove_dashboard_widgets');
+add_action( 'wp_dashboard_setup', 'custom_remove_dashboard_widgets' );
 
 
 
@@ -246,7 +246,7 @@ add_action('wp_dashboard_setup', 'custom_remove_dashboard_widgets');
 // デフォルト投稿タイプ
 if ( ! function_exists( 'remove_default_post_screen_metaboxes' ) ) :
 	function remove_default_post_screen_metaboxes() {
-		if (!current_user_can('administrator')) {
+		if (!current_user_can( 'administrator' )) {
 			remove_meta_box( 'slugdiv','post','normal' );            // スラッグ
 			remove_meta_box( 'postcustom','post','normal' );         // カスタムフィールド
 			remove_meta_box( 'commentstatusdiv','post','normal' );   // ディスカッション (コメント、トラックバック、ピンバックの投稿を許可するの選択)
@@ -268,12 +268,12 @@ if ( ! function_exists( 'remove_default_post_screen_metaboxes' ) ) :
 		}
 	}
 endif;
-add_action('admin_menu','remove_default_post_screen_metaboxes');
+add_action( 'admin_menu','remove_default_post_screen_metaboxes' );
 
 
 // 固定ページ
 function remove_page_screen_metaboxes() {
-	if (!current_user_can('administrator')) {
+	if (!current_user_can( 'administrator' )) {
 		remove_meta_box( 'slugdiv','page','normal' );            // スラッグ
 		remove_meta_box( 'postcustom','page','normal' );         // カスタムフィールド
 		remove_meta_box( 'commentstatusdiv','page','normal' );   // ディスカッション (コメント、トラックバック、ピンバックの投稿を許可するの選択)
@@ -282,10 +282,10 @@ function remove_page_screen_metaboxes() {
 		remove_meta_box( 'trackbacksdiv','page','normal' );      // トラックバック
 		remove_meta_box( 'revisionsdiv','page','normal' );       // リビジョン TODO: 効かない
 
-		// remove_meta_box( 'pageparentdiv','page','side');         // 固定ページの属性
+		// remove_meta_box( 'pageparentdiv','page','side' );         // 固定ページの属性
 	}
 }
-add_action('admin_menu','remove_page_screen_metaboxes');
+add_action( 'admin_menu','remove_page_screen_metaboxes' );
 
  // 固定ページに抜粋(概要)を追加
 add_post_type_support( 'page', 'excerpt' );
@@ -316,38 +316,6 @@ function solecolor_wp_terms_checklist_args( $args, $post_id ){
 	return $args;
 }
 add_filter( 'wp_terms_checklist_args', 'solecolor_wp_terms_checklist_args', 10, 2 );
-
-
-/**
- * カテゴリー選択を1つしかできないように制限 (新規投稿と投稿編集画面でのみ。カスタムメニューのカテゴリ選択では複数選択可能に)
- * @link: https://www.nxworld.net/wordpress/wp-limit-category-select.html
- */
-
-add_action( 'admin_print_footer_scripts-post.php', 'limit_category_select' ); // 新規投稿画面
-add_action( 'admin_print_footer_scripts-post-new.php', 'limit_category_select' ); // 投稿編集画面
-function limit_category_select() {
-?>
-<script>
-jQuery(function($) {
-	// 投稿画面のカテゴリー選択を制限
-	var cat_checklist = $('.categorychecklist input[type=checkbox]');
-	cat_checklist.click( function() {
-		$(this).parents('.categorychecklist').find('input[type=checkbox]').attr('checked', false);
-		$(this).attr('checked', true);
-	});
-
-	// クイック編集のカテゴリー選択を制限
-	var quickedit_cat_checklist = $('.cat-checklist input[type=checkbox]');
-	quickedit_cat_checklist.click( function() {
-		$(this).parents('.cat-checklist').find('input[type=checkbox]').attr('checked', false);
-		$(this).attr('checked', true);
-	});
-
-	$('.categorychecklist>li:first-child, .cat-checklist>li:first-child').before('<p style="padding-top:5px;">複数選択不可</p>');
-});
-</script>
-<?php
-}
 
 
 
