@@ -152,28 +152,30 @@ add_action( 'admin_menu', 'remove_menus', 102 );
 /**
  * メニューの並び替え
  */
-function custom_menu_order($menu_ord) {
-	if (!current_user_can( 'administrator' )) {
-		if ( !$menu_ord ) {
-			return true;
+if ( ! function_exists( 'igeta_custom_menu_order' ) ) {
+	function igeta_custom_menu_order( $menu_ord ) {
+		if ( ! current_user_can( 'administrator' ) ) {
+			if ( !$menu_ord ) {
+				return true;
+			}
+			return array(
+				'index.php', // ダッシュボード
+				'edit.php', // 投稿
+				'edit.php?post_type=member', // プライベートギャラリー
+				'edit.php?post_type=page', // 固定ページ
+				'upload.php', // メディア
+				'themes.php', // 外観
+				'edit-comments.php', // コメント
+				'users.php', // ユーザー
+				'profile.php', // プロフィール
+				'edit.php?post_type=logbook', // ログ (プラグイン)
+				'admin.php?page=manual' // マニュアル
+			);
 		}
-		return array(
-			'index.php', // ダッシュボード
-			'edit.php', // 投稿
-			'edit.php?post_type=member', // プライベートギャラリー
-			'edit.php?post_type=page', // 固定ページ
-			'upload.php', // メディア
-			'themes.php', // 外観
-			'edit-comments.php', // コメント
-			'users.php', // ユーザー
-			'profile.php', // プロフィール
-			'edit.php?post_type=logbook', // ログ (プラグイン)
-			'admin.php?page=manual' // マニュアル
-		);
 	}
+	add_filter( 'custom_menu_order', 'igeta_custom_menu_order' );
+	add_filter( 'menu_order', 'igeta_custom_menu_order' );
 }
-add_filter( 'custom_menu_order', 'custom_menu_order' );
-add_filter( 'menu_order', 'custom_menu_order' );
 
 
 
