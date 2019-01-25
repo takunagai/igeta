@@ -27,6 +27,9 @@ caption {
 	content: '● ';
 	color: $color-table-line;
 	}
+table.td-align-left td { // tdを横左揃え
+	text-align: left !important;
+}
 table.td-align-center td { // tdを横センター揃え
 	text-align: center;
 }
