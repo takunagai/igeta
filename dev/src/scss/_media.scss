@@ -207,8 +207,15 @@
 		&:last-child {
 			padding-bottom: 0;
 		}
-		.media__img { // img
-			// width: 9rem;
+		img.media__img { // img
+			margin-right: .5rem;
+			@media($sm_){
+				margin-right: 1rem;
+			}
+			max-width: 100%;
+			vertical-align: bottom;
+		}
+		.media__img {
 			margin-right: .5rem;
 			@media($sm_){
 				margin-right: 1rem;

@@ -27,6 +27,12 @@
     background: #FFF;
     border-radius: .5rem;
     border: #E7E7E7 solid 3px;
+    *:first-child {
+    	margin-top: 0 !important;
+    }
+    *:last-child {
+    	margin-bottom: 0 !important;
+    }
   }
 
   .bubble__speech:before,
