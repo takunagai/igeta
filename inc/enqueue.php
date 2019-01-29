@@ -16,7 +16,7 @@
  *     CDNのバージョンリスト：https://developers.google.com/speed/libraries/#jquery
  * - 補足：WordPress本体組み込みのjQueryを使う場合は、カプセル化して使う必要がある (例：jQuery(function($) {//処理})
  */
-function igeta_scripts() {
+function igeta_load_styles_and_scripts() {
 
   // CSS, JSの読み込み
   //   引数：識別名, URL, 依存CSSの識別名, バージョン文字列, メディア指定
@@ -44,4 +44,4 @@ function igeta_scripts() {
     wp_enqueue_script( 'yubinbbango', '//yubinbango.github.io/yubinbango/yubinbango.js', array(), '1.0', false );
   }
 }
-add_action( 'wp_enqueue_scripts', 'igeta_scripts' );
+add_action( 'wp_enqueue_scripts', 'igeta_load_styles_and_scripts' );

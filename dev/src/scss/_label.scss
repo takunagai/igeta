@@ -1,0 +1,65 @@
+/**
+ * Label
+ */
+%label {
+	display: inline-block;
+	max-width: 100%;
+	overflow: hidden;
+	padding: .25em .5em;
+	text-align: center;
+	white-space: nowrap;
+}
+
+//全ボタン共通
+.label,
+.label--primary,
+.label--secondary,
+.label--strong {
+	@extend %label;
+	&.label--large {
+		font-size: $font-large;
+	}
+	&.label--small {
+		padding: .125em .5em;
+		font-size: $font-small;
+	}
+}
+
+a {
+	&.label,
+	&.label--primary,
+	&.label--secondary,
+	&.label--strong {
+		text-decoration: none;
+	}
+	&:hover,
+	&:focus {
+		filter: brightness(110%);
+	}
+	&:active { // クリック時にボタン押したように凹む効果
+		position: relative;
+		left: 1px;
+		top: 1px;
+	}
+}
+
+//ボタン個別設定
+.label {
+	background-color: $color-gray-600;
+	color: white;
+}
+.label--primary,
+.label--secondary,
+.label--strong {
+	color: white;
+}
+.label--primary {
+	background-color: $color-primary;
+}
+.label--secondary {
+	background-color: $color-secondary;
+	// background: linear-gradient(to bottom, $color-secondary 0%, $color-secondary-dark 100%);
+}
+.label--strong {
+	background-color: $color-red;
+}

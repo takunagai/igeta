@@ -723,6 +723,10 @@ hr {
   font-weight: bold;
 }
 
+.letter-spacing {
+  letter-spacing: .1em;
+}
+
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
 }
@@ -1103,6 +1107,10 @@ caption {
 caption:before {
   color: #CCC;
   content: '● ';
+}
+
+table.td-align-left td {
+  text-align: left !important;
 }
 
 table.td-align-center td {
@@ -2013,6 +2021,12 @@ a:hover .card {
   padding-bottom: 0;
 }
 
+.media--thumbnail li img.media__img {
+  max-width: 100%;
+  margin-right: .5rem;
+  vertical-align: bottom;
+}
+
 .media--thumbnail li .media__img {
   margin-right: .5rem;
 }
@@ -2256,6 +2270,74 @@ a:hover.btn, a:hover.btn--primary, .form-submit a.submit:hover, .page-links_next
 }
 
 /**
+ * Label
+ */
+.label,
+.label--primary,
+.label--secondary,
+.label--strong {
+  display: inline-block;
+  max-width: 100%;
+  padding: .25em .5em;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.label.label--large,
+.label--primary.label--large,
+.label--secondary.label--large,
+.label--strong.label--large {
+  font-size: 1.125rem;
+}
+
+.label.label--small,
+.label--primary.label--small,
+.label--secondary.label--small,
+.label--strong.label--small {
+  padding: .125em .5em;
+  font-size: 0.875rem;
+}
+
+a.label, a.label--primary, a.label--secondary, a.label--strong {
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+}
+
+a:active {
+  position: relative;
+  top: 1px;
+  left: 1px;
+}
+
+.label {
+  background-color: #868E96;
+  color: white;
+}
+
+.label--primary,
+.label--secondary,
+.label--strong {
+  color: white;
+}
+
+.label--primary {
+  background-color: #AD9468;
+}
+
+.label--secondary {
+  background-color: #819FF7;
+}
+
+.label--strong {
+  background-color: #F00;
+}
+
+/**
  * Speech Bubble
  *
  * TODO: モバイルファーストに
@@ -2291,6 +2373,14 @@ a:hover.btn, a:hover.btn--primary, .form-submit a.submit:hover, .page-links_next
   border: #E7E7E7 solid 3px;
   border-radius: .5rem;
   background: #FFF;
+}
+
+.bubble__speech *:first-child {
+  margin-top: 0 !important;
+}
+
+.bubble__speech *:last-child {
+  margin-bottom: 0 !important;
 }
 
 .bubble__speech:before,
@@ -3870,6 +3960,9 @@ textarea {
   }
   .media--50 .media__body {
     width: 50%;
+  }
+  .media--thumbnail li img.media__img {
+    margin-right: 1rem;
   }
   .media--thumbnail li .media__img {
     margin-right: 1rem;
