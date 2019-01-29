@@ -2018,6 +2018,12 @@ a:hover .card {
   padding-bottom: 0;
 }
 
+.media--thumbnail li img.media__img {
+  max-width: 100%;
+  margin-right: .5rem;
+  vertical-align: bottom;
+}
+
 .media--thumbnail li .media__img {
   margin-right: .5rem;
 }
@@ -3807,6 +3813,9 @@ textarea {
   }
   .media--50 .media__body {
     width: 50%;
+  }
+  .media--thumbnail li img.media__img {
+    margin-right: 1rem;
   }
   .media--thumbnail li .media__img {
     margin-right: 1rem;
