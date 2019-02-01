@@ -4,19 +4,20 @@
  */
 table,th,td {
 	border-color: $color-table-line;
-	border-style: solid;
 }
 table {
 	max-width: 100%;
 	margin: 1em 0 2em;
-	border-collapse: collapse;
-	border-width: 1px;
+	border-collapse: $table-border-collapse;
+	border-spacing: $table-border-spacing;
+	border-width: $table-border-width;
 	// border-width: $table-line-width 0 0 $table-line-width;
 }
 table.equal-row-width { // 中のtd幅均等に
 	width: 100%;
 	table-layout: fixed;
 }
+
 caption {
 	margin-bottom: .2rem;
 	text-align: left;
@@ -44,10 +45,12 @@ thead {}
 tfoot {}
 th, td {
 	border-width: 0 $table-line-width $table-line-width 0;
+	border-style: $table-line-style;
 	padding: 2px 10px;
 	vertical-align: middle;
 }
 th {
+	font-weight: $table-th-font-weight;
 	color: $color-table-th-text;
 	background-color: $color-table-th-bg;
 	line-height: 1.25;
@@ -67,6 +70,10 @@ td {
 	img {
 	vertical-align: top;
 	}
+}
+.table--wide-padding td,
+.table--wide-padding th {
+	padding: .75em 1em !important;
 }
 //奇数行にスタイリング
 .table--stripe tr:nth-child(2n+1) td {

@@ -83,4 +83,10 @@ $color-table-row-th-bg-highlight:  #BBD;            // 特定行の色付け th
 $color-table-row-td-bg-highlight:  #CCE;            // 特定行の色付け td
 $color-table-cell-th-bg-highlight: #BBD;            // 特定セルの色付け th or td
 $color-table-cell-td-bg-highlight: #CCE;            // 特定セルの色付け th or td
-$table-line-width: 1px; // 線幅
+
+$table-border-collapse: collapse; // 隣り合ったセルの線を結合 (collapse, separate)
+$table-border-spacing:  0;     // セル間の幅
+$table-border-width:    1px;   // 外枠の線幅
+$table-line-width:      1px;   // セル間の線幅
+$table-line-style:      solid; // セル間の線幅のスタイル (solid, dotted, none)
+$table-th-font-weight:  bold;
