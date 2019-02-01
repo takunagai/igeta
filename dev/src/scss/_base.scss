@@ -405,8 +405,7 @@ small {
 
 
 // 囲み記事
-.box,
-.box--white {
+@mixin box-base {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	padding: .5rem;
@@ -421,12 +420,15 @@ small {
 	}
 }
 .box {
+	@include box-base;
 	border: 1px solid $color-gray-400;
 }
 .box--white {
+	@include box-base;
 	background-color: #FFF;
 }
 .box--gray {
+	@include box-base;
 	background-color: #E7E7E7;
 }
 
