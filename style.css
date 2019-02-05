@@ -1035,6 +1035,20 @@ small {
   width: 100%;
 }
 
+.box-base {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.box-base > *:first-child {
+  margin-top: 0;
+}
+
+.box-base > *:last-child {
+  margin-bottom: 0;
+}
+
 .box {
   margin-top: 1rem;
   margin-bottom: 1rem;

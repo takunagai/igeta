@@ -552,6 +552,9 @@ $margin-value-6:   3rem;
 		margin-bottom: 0;
 	}
 }
+.box-base {
+	@include box-base;
+}
 .box {
 	@include box-base;
 	border: 1px solid $color-gray-400;
