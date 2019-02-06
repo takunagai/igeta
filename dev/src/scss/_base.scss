@@ -262,6 +262,8 @@ small {
 
 
 @media($_sm) {
+	.img--mobile-small {} // -> See _object.scss
+	.img--mobile-x-small {} // -> See _object.scss
 	.mobile-br { // apply to only wbr element `<wbr class="mobile-br">`
 		display: block;
 	}
@@ -541,7 +543,7 @@ $margin-value-6:   3rem;
 
 
 // 囲み記事
-@mixin box-base {
+%box-common {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	padding: 1rem;
@@ -552,19 +554,16 @@ $margin-value-6:   3rem;
 		margin-bottom: 0;
 	}
 }
-.box-base {
-	@include box-base;
-}
 .box {
-	@include box-base;
+	@extend %box-common;
 	border: 1px solid $color-gray-400;
 }
 .box--white {
-	@include box-base;
+	@extend %box-common;
 	background-color: #FFF;
 }
 .box--gray {
-	@include box-base;
+	@extend %box-common;
 	background-color: #E7E7E7;
 }
 

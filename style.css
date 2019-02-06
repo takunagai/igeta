@@ -1035,63 +1035,30 @@ small {
   width: 100%;
 }
 
-.box-base {
+.box, .box--white, .box--gray {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
 }
 
-.box-base > *:first-child {
+.box > *:first-child, .box--white > *:first-child, .box--gray > *:first-child {
   margin-top: 0;
 }
 
-.box-base > *:last-child {
+.box > *:last-child, .box--white > *:last-child, .box--gray > *:last-child {
   margin-bottom: 0;
 }
 
 .box {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding: 1rem;
   border: 1px solid #CED4DA;
 }
 
-.box > *:first-child {
-  margin-top: 0;
-}
-
-.box > *:last-child {
-  margin-bottom: 0;
-}
-
 .box--white {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding: 1rem;
   background-color: #FFF;
 }
 
-.box--white > *:first-child {
-  margin-top: 0;
-}
-
-.box--white > *:last-child {
-  margin-bottom: 0;
-}
-
 .box--gray {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding: 1rem;
   background-color: #E7E7E7;
-}
-
-.box--gray > *:first-child {
-  margin-top: 0;
-}
-
-.box--gray > *:last-child {
-  margin-bottom: 0;
 }
 
 .rounded-images img,
@@ -3634,10 +3601,10 @@ textarea {
     margin-left: auto;
   }
   .width-50 {
-    width: 50%;
+    width: 50% !important;
   }
   .width-75 {
-    width: 75%;
+    width: 75% !important;
   }
   .site-branding {
     max-width: 16rem;
