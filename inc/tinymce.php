@@ -2,9 +2,8 @@
 /**
  * TinyMCE and TinyMCE Advanced Settings.
  *
- * @link https://nagaishouten.com/
- *
  * @package igeta
+ * @link https://nagaishouten.com/
  */
 
 
