@@ -5,6 +5,7 @@
 table,th,td {
 	border-color: $color-table-line;
 }
+
 table {
 	max-width: 100%;
 	margin: 1em 0 2em;
@@ -22,7 +23,7 @@ caption {
 	margin-bottom: .2rem;
 	text-align: left;
 	font-weight: bold;
-	line-height: 1.4;
+	line-height: 1.25;
 }
 	caption:before {
 	content: '● ';
@@ -46,7 +47,7 @@ tfoot {}
 th, td {
 	border-width: 0 $table-line-width $table-line-width 0;
 	border-style: $table-line-style;
-	padding: 2px 10px;
+	padding: .25em .5em;
 	vertical-align: middle;
 }
 th {
@@ -63,6 +64,7 @@ th {
 td {
 	color: $color-table-td-text;
 	background-color: $color-table-td-bg;
+	line-height: 1.4;
 }
 .table--no-padding td,
 .table--no-padding th {
@@ -98,8 +100,8 @@ td.cell-highlight {background-color: $color-table-cell-td-bg-highlight;}
 	margin-bottom: 0;
 	}
 	.table-with-notes__note { // p
-	margin-top: 5px;
-	font-size: $font-small;
-	line-height: 1.4;
+		margin-top: 5px;
+		font-size: $font-small;
+		line-height: 1.25;
 	}
 }
