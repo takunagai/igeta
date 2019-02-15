@@ -144,6 +144,15 @@ hr {
 	font-weight: bold;
 }
 
+small {
+	display: inline-block;
+	line-height: 1.5em;
+}
+
+.small {
+	font-size:smaller;
+}
+
 .letter-spacing {
 	letter-spacing: .1em;
 }
@@ -172,11 +181,6 @@ a {
 
 textarea {
 	max-width: 100%;
-}
-
-small {
-	display: inline-block;
-	line-height: 1.5em;
 }
 
 
