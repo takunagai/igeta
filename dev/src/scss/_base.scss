@@ -221,12 +221,18 @@ textarea {
 //            2. add `@include mobile-small-text;` in css block
 @mixin desktop-only {
 	@media($_md) {
-		display: none;
+		display: none !important;
 	}
 }
 	.desktop-only {
 		@include desktop-only;
 	}
+@media($md_) {
+	.desktop-br { // apply to only wbr element `<wbr class="desktop-br">`
+		display: block;
+	}
+}
+
 @mixin mobile-only {
 	@media($md_) {
 		display: none;

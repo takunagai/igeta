@@ -3279,7 +3279,7 @@ textarea {
 --------------------------------------------------------------*/
 @media (max-width: 768px) {
   .desktop-only {
-    display: none;
+    display: none !important;
   }
   .mobile-mt-0 {
     margin-top: 0 !important;
@@ -3597,6 +3597,9 @@ textarea {
   }
 }
 @media (min-width: 769px) {
+  .desktop-br {
+    display: block;
+  }
   .mobile-only {
     display: none;
   }
