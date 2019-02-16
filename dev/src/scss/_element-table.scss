@@ -105,3 +105,14 @@ td.cell-highlight {background-color: $color-table-cell-td-bg-highlight;}
 		line-height: 1.25;
 	}
 }
+
+// スクロール (テーブルを div.scroll で囲む)
+@media($_md) {
+	.scroll {
+		overflow-x: auto;
+		table {
+			min-width: 40em;
+			margin-top: 0;
+		}
+	}
+}

@@ -3450,6 +3450,13 @@ textarea {
   .mobile-p-6 {
     padding: 3rem !important;
   }
+  .scroll {
+    overflow-x: auto;
+  }
+  .scroll table {
+    min-width: 40em;
+    margin-top: 0;
+  }
   .grid--mobile-3col .grid__item {
     -webkit-flex-basis: 31.3% !important;
             flex-basis: 31.3% !important;
