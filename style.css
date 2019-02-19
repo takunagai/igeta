@@ -1242,7 +1242,7 @@ td.cell-highlight {
  * Base
  */
 ul, ol {
-  padding-left: 1.5rem;
+  padding-left: 1.5em;
 }
 
 dt {
@@ -1250,15 +1250,15 @@ dt {
 }
 
 dd + dt {
-  margin-top: .5rem;
+  margin-top: .5em;
 }
 
 dd {
-  margin-left: 1rem;
+  margin-left: 1em;
 }
 
 ul.no-listmarker {
-  padding-left: .5rem;
+  padding-left: .5em;
   list-style-type: none;
 }
 
@@ -1268,10 +1268,14 @@ ul.inline-list {
 }
 
 ul.inline-list--label li {
-  margin-bottom: 5px;
-  padding: 5px 10px;
+  padding: .25em .75em;
   background-color: #AD9468;
   color: #FFF;
+  line-height: 1.5;
+}
+
+ul.inline-list--label li:not(:first-child) {
+  margin-left: .5em;
 }
 
 ul.inline-list--label li a {
