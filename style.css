@@ -1792,7 +1792,6 @@ main li {
  * Sidebar / Widget in Sidebar
  */
 #secondary {
-  padding: 2rem 0;
   font-size: smaller;
 }
 
@@ -2807,10 +2806,6 @@ legend.screen-reader-text {
   padding: 2rem 1rem 1rem;
 }
 
-.widget-area-main-bottom {
-  margin-bottom: 3rem;
-}
-
 .widget-area-main-bottom .widget {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -3422,6 +3417,9 @@ textarea {
   .page-index {
     max-width: 60%;
   }
+  #secondary {
+    padding: 2rem 0;
+  }
   #secondary .widget {
     padding: 1rem;
   }
@@ -3434,6 +3432,9 @@ textarea {
   }
   .media--75 .media__body {
     width: 25%;
+  }
+  .widget-area-main-bottom {
+    margin-bottom: 3rem;
   }
   .gallery-columns-3 .gallery-item {
     -webkit-flex-basis: 30%;

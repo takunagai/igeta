@@ -300,7 +300,9 @@ legend.screen-reader-text {
 
 
 .widget-area-main-bottom { // aside, &.widget
-	margin-bottom: 3rem;
+	@media ($md_) {
+		margin-bottom: 3rem;
+	}
 	.widget {
 		padding-top: 1rem;
 		padding-bottom: 1rem;

@@ -2,8 +2,10 @@
  * Sidebar / Widget in Sidebar
  */
 #secondary {
-	padding: 2rem 0;
 	font-size: smaller;
+	@media ($md_) {
+		padding: 2rem 0;
+	}
 	ul {
 		margin-bottom: 0;
 		padding-left: 0;
