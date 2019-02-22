@@ -337,24 +337,48 @@ legend.screen-reader-text {
 		// 前後リンク
 		.nav-previous,
 		.nav-next {
-			width: 49%;
+			// width: 49%;
 			a {
-				display: block;
-				padding: .5rem 1rem;
-				border: 1px solid $color-gray-400;
+				display: inline-block;
+				padding: .5em 1em;
+				background-color: $color-gray-200;
 				font-size: smaller;
 				text-decoration: none;
+				&:before {
+					position: absolute;
+					top: .6em;
+					font-family: fontAwesome;
+					font-size: 1em;
+					color: $color-gray-400;
+				}
+				&:hover {
+					background-color: $color-gray-400;
+					&:before {
+						color: $color-gray-600;
+					}
+				}
 			}
 		}
 		.nav-previous { //div
-			a:before {
-				content: '« ';
+			a {
+				position: relative;
+				padding-left: 1.5rem;
+				&:before {
+					left: .5em;
+					content: '\f053';
+				}
 			}
 		}
 		.nav-next { //div
+			margin-left: 1px;
 			text-align: right;
-			a:after {
-				content: ' »';
+			a {
+				position: relative;
+				padding-right: 1.5rem;
+				&:before {
+					right: .5em;
+					content: '\f054';
+				}
 			}
 		}
 

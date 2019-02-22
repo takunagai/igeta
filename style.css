@@ -2833,30 +2833,57 @@ legend.screen-reader-text {
           justify-content: center;
 }
 
-.nav-links .nav-previous,
-.nav-links .nav-next {
-  width: 49%;
-}
-
 .nav-links .nav-previous a,
 .nav-links .nav-next a {
-  display: block;
-  padding: .5rem 1rem;
-  border: 1px solid #CED4DA;
+  display: inline-block;
+  padding: .5em 1em;
+  background-color: #E9ECEF;
   font-size: smaller;
   text-decoration: none;
 }
 
+.nav-links .nav-previous a:before,
+.nav-links .nav-next a:before {
+  position: absolute;
+  top: .6em;
+  color: #CED4DA;
+  font-family: fontAwesome;
+  font-size: 1em;
+}
+
+.nav-links .nav-previous a:hover,
+.nav-links .nav-next a:hover {
+  background-color: #CED4DA;
+}
+
+.nav-links .nav-previous a:hover:before,
+.nav-links .nav-next a:hover:before {
+  color: #868E96;
+}
+
+.nav-links .nav-previous a {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
 .nav-links .nav-previous a:before {
-  content: '« ';
+  left: .5em;
+  content: '\f053';
 }
 
 .nav-links .nav-next {
+  margin-left: 1px;
   text-align: right;
 }
 
-.nav-links .nav-next a:after {
-  content: ' »';
+.nav-links .nav-next a {
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.nav-links .nav-next a:before {
+  right: .5em;
+  content: '\f054';
 }
 
 .nav-links .page-numbers {

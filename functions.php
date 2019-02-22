@@ -229,31 +229,32 @@ if ( ! function_exists( 'igeta_setup' ) ) :
 			}
 			return $args;
 		}
-		add_filter('widget_posts_args', 'filter_custom_post_content');
+		add_filter( 'widget_posts_args', 'filter_custom_post_content' );
 
 
-		function filter_custom_post_title( $title, $instance, $id_base ) {
+		// // タイトル
+		// function filter_custom_post_title( $title, $instance, $id_base ) {
 
-			if( 'recent-posts' == $id_base ) {
-				if ( is_singular() ) {
+		// 	if( 'recent-posts' == $id_base ) {
+		// 		if ( is_singular() ) {
 
-					$post_type = get_post_type( get_the_ID() );
+		// 			$post_type = get_post_type( get_the_ID() );
 
-					if ( "post" == $post_type || "page" == $post_type || "attachment" == $post_type || "revision" == $post_type || "nav_menu_item" == $post_type ) {
+		// 			if ( "post" == $post_type || "page" == $post_type || "attachment" == $post_type || "revision" == $post_type || "nav_menu_item" == $post_type ) {
 
-						return $title;
-					}
-					$obj = get_post_type_object( $post_type );
+		// 				return $title;
+		// 			}
+		// 			$obj = get_post_type_object( $post_type );
 
-					if ( !empty( $obj ) && true == $obj->has_archive  ) {
+		// 			if ( !empty( $obj ) && true == $obj->has_archive  ) {
 
-						return sprintf(__('最近の%1$s','text_domain'),$obj->label);
-					}
-				}
-			}
-			return $title;
-		}
-		add_filter( 'widget_title','filter_custom_post_title',10,3 );
+		// 				return sprintf(__('最近の%1$s','text_domain'),$obj->label);
+		// 			}
+		// 		}
+		// 	}
+		// 	return $title;
+		// }
+		// add_filter( 'widget_title','filter_custom_post_title', 10, 3 );
 
 
 		/* --------- 追加 ここまで --------- */
