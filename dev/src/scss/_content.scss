@@ -6,30 +6,7 @@
 .category,
 .blog,
 .page-template-page-two-column {
-	.site-content { // &.container
-		margin-top: 0;
-		@media($md_){
-			display: grid;
-			grid-template-areas: "primary secondary";
-			grid-template-columns: 1fr 15rem;
-			column-gap: 3%;
-		}
-	}
-		#primary {
-			@media($md_){
-				grid-area: primary;
-				margin-top: 0;
-			}
-		}
-			main {
-				@media($md_){
-					padding: 2rem;
-				}
-			}
-		#secondary {
-			grid-area: secondary;
-			// -> _sidebar.php
-		}
+	@extend %two-column-layout;
 }
 
 
