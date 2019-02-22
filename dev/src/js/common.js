@@ -3,7 +3,7 @@
 /**
  * 共通のスクリプト
  *
- *
+ * - メインメニュー
  */
 
 // WordPress _s theme
@@ -50,15 +50,23 @@ document.addEventListener('DOMContentLoaded', function(){
 	 * TODO: モバイル表示時は実行させない
 	 */
 	/* eslint no-unused-vars: 0 */
-	const hasSidebar = document.getElementsByClassName('sticky-sidebar');
-	if ( hasSidebar.length ){
-		const sidebar = new StickySidebar('.sticky-sidebar', {// #sidebar
-			containerSelector: '#primary', // #main-content
-			innerWrapperSelector: '.sticky-sidebar__inner', // .sidebar__inner
-			minWidth: 992, // TODO: 992px付近でうまく動作しない。modernizrで分岐させても同様だった
-			topSpacing: 32,
-			bottomSpacing: 32
-		});
+	const sidebar = document.getElementsByClassName('sticky-sidebar');
+	if ( sidebar.length ){
+
+		const mainareaHeight = document.getElementById('main').clientHeight,
+			sidebarHeight = document.getElementsByClassName('sticky-sidebar__inner')[0].clientHeight;
+
+		if ( mainareaHeight > sidebarHeight ) { // メインエリアの高さがサイドバーよりも低い場合にチラつく減少を防止するため
+			const sidebar = new StickySidebar('.sticky-sidebar', {// #sidebar
+				containerSelector: '#primary', // #main-content
+				innerWrapperSelector: '.sticky-sidebar__inner', // .sidebar__inner
+				minWidth: 992, // TODO: 992px付近でうまく動作しない。modernizrで分岐させても同様だった
+				topSpacing: 32,
+				bottomSpacing: 32
+				// ,resizeSensor: true, // Default: true
+				// stickyClass: 'is-affixed', // Default: is-affixed
+			});
+		}
 	}
 
 	/**
