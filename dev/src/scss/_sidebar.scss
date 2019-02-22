@@ -10,6 +10,8 @@
 		list-style-type: none;
 	}
 		li {
+			position: relative;
+			padding-left: 1em;
 			a {
 				&:hover {
 					text-decoration: underline;

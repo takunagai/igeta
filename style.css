@@ -1802,6 +1802,11 @@ main li {
   list-style-type: none;
 }
 
+#secondary li {
+  position: relative;
+  padding-left: 1em;
+}
+
 #secondary li a:hover {
   text-decoration: underline;
 }
