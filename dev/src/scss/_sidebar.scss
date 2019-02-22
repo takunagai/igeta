@@ -27,6 +27,10 @@
 		.widget {
 			// -> _wp-essential.scss
 
+			@media ($_md) {
+				padding: .5rem;
+			}
+
 			@media ($md_) {
 				padding: 1rem;
 			}

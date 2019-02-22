@@ -3732,6 +3732,9 @@ textarea {
   .hero-image-wrapper .hero-image .hero-image__content .textwidget p {
     font-size: 0.875rem;
   }
+  #secondary .widget {
+    padding: .5rem;
+  }
   .footer-information .widget-title {
     display: none;
   }
