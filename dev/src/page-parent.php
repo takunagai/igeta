@@ -22,21 +22,13 @@ get_header(); ?>
     <div id="content" class="site-content page--parent">
 
         <div id="primary" class="content-area">
-
-            <main id="main" class="site-main" role="main">
-
-                <?php get_template_part( 'template-parts/content', 'page-parent' ); ?>
-
-            </main>
-
+        	<div id="primary__inner">
+	            <main id="main" class="site-main" role="main">
+	                <?php get_template_part( 'template-parts/content', 'page-parent' ); ?>
+	            </main>
+	        </div>
         </div>
-
-
-
         <?php get_sidebar(); ?>
-
-
-
     </div>
 
     <a href="#top" id="move-to-page-top"><i class="fa fa-chevron-up" aria-hidden="true"></i> Top</a>

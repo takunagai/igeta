@@ -53,10 +53,10 @@ document.addEventListener('DOMContentLoaded', function(){
 	const sidebar = document.getElementsByClassName('sticky-sidebar');
 	if ( sidebar.length ){
 
-		const mainareaHeight = document.getElementById('main').clientHeight,
+		const mainAreaHeight = document.getElementById('primary__inner').clientHeight,
 			sidebarHeight = document.getElementsByClassName('sticky-sidebar__inner')[0].clientHeight;
 
-		if ( mainareaHeight > sidebarHeight ) { // メインエリアの高さがサイドバーよりも低い場合にチラつく減少を防止するため
+		if ( mainAreaHeight > sidebarHeight ) { // メインエリアの高さがサイドバーよりも低い場合にチラつく減少を防止するため
 			const sidebar = new StickySidebar('.sticky-sidebar', {// #sidebar
 				containerSelector: '#primary', // #main-content
 				innerWrapperSelector: '.sticky-sidebar__inner', // .sidebar__inner
