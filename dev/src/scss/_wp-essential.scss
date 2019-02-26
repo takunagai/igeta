@@ -349,8 +349,9 @@ legend.screen-reader-text {
 				&:before {
 					position: absolute;
 					top: .6em;
-					font-family: fontAwesome;
+					font-family: "Font Awesome 5 Free";
 					font-size: 1em;
+					font-weight: 900;
 					color: $color-gray-400;
 				}
 				&:hover {

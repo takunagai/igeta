@@ -2847,8 +2847,9 @@ legend.screen-reader-text {
   position: absolute;
   top: .6em;
   color: #CED4DA;
-  font-family: fontAwesome;
+  font-family: "Font Awesome 5 Free";
   font-size: 1em;
+  font-weight: 900;
 }
 
 .nav-links .nav-previous a:hover,
