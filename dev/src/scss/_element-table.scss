@@ -13,6 +13,7 @@ table {
 	border-spacing: $table-border-spacing;
 	border-width: $table-border-width;
 	// border-width: $table-line-width 0 0 $table-line-width;
+	border-style: $table-border-style;
 }
 table.equal-row-width { // 中のtd幅均等に
 	width: 100%;

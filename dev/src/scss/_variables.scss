@@ -87,6 +87,7 @@ $color-table-cell-td-bg-highlight: #CCE;            // 特定セルの色付け 
 $table-border-collapse: collapse; // 隣り合ったセルの線を結合 (collapse, separate)
 $table-border-spacing:  0;     // セル間の幅
 $table-border-width:    1px;   // 外枠の線幅
+$table-border-style:    solid; // 外枠の線のスタイル (solid, dotted, none)
 $table-line-width:      1px;   // セル間の線幅
-$table-line-style:      solid; // セル間の線幅のスタイル (solid, dotted, none)
+$table-line-style:      solid; // セル間の線のスタイル (solid, dotted, none)
 $table-th-font-weight:  bold;
