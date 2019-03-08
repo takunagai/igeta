@@ -8,6 +8,7 @@ import notify from 'gulp-notify';
 import concat from 'gulp-concat';
 
 import sass from 'gulp-sass';
+sass.compiler = require('node-sass'); // node-sass がデフォルトだが明治する方が良い
 import sourcemaps from 'gulp-sourcemaps';
 // import replace from 'gulp-replace';
 
