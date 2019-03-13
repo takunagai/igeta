@@ -50,6 +50,17 @@ function igeta_widgets_init() {
         'after_title'   => '</h2>'
     ) );
 
+    // ページヘッダーの下
+    register_sidebar( array(
+        'id'            => 'under-page-header',
+        'name'          => esc_html__( 'ページヘッダーの下', 'igeta' ),
+        'description'   => esc_html__( 'ページヘッダーの下 (ID: under-page-header)', 'igeta' ),
+        'before_widget' => '<aside id="%1$s" class="widget-area-under-page-header widget %2$s">', // default: <li id="%1$s" class="widget %2$s">
+        'after_widget'  => '</aside>',
+        'before_title'  => '<p class="widget-title">', // default: <h2 class="widgettitle">
+        'after_title'   => '</p>'
+    ) );
+
     // 投稿ページ、固定ページの the_contentの直前
     //     フィルターを使用し挿入するので(このファイル下記)、テンプレート中に挿入コードは書かない
     register_sidebar( array(
@@ -68,7 +79,7 @@ function igeta_widgets_init() {
         'id'          => 'after-post',
         'name'        => '記事本文の下 (ID: after-post)',
         'description' => esc_html__( '記事本文の下部エリア', 'igeta' ),
-        'before_widget' => '<div class="widget %2$s container width-50">',
+        'before_widget' => '<div class="widget-area-after-post widget %2$s container width-50">',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>'
@@ -80,7 +91,7 @@ function igeta_widgets_init() {
         'id'          => 'main-bottom',
         'name'        => 'メインカラム最下部 (ID: main-bottom)',
         'description' => esc_html__( 'メインカラム最下部', 'igeta' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'before_widget' => '<div id="%1$s" class="widget-area-main-bottom widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>'
@@ -91,7 +102,7 @@ function igeta_widgets_init() {
         'id'            => 'footer-nav',
         'name'          => esc_html__( 'フッターメニュー', 'igeta' ),
         'description'   => esc_html__( 'フッターメニュー (ID: footer-nav)', 'igeta' ),
-        'before_widget' => '<aside id="%1$s" class="footer-nav widget %2$s">', // default: <li id="%1$s" class="widget %2$s">
+        'before_widget' => '<aside id="%1$s" class="widget-area-footer-nav footer-nav widget %2$s">', // default: <li id="%1$s" class="widget %2$s">
         'after_widget'  => '</aside>',
         'before_title'  => '<h2 class="widget-title">', // default: <h2 class="widgettitle">
         'after_title'   => '</h2>'
