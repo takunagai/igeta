@@ -17,7 +17,6 @@ if ( is_singular( 'post' ) ) {
 		echo '<div class="bg--post-thumbnail"><p class="parent-title">Blog</p></div>';
 	}
 
-	get_template_part( 'template-parts/breadcrumbs' );
 
 	// $post_thumnail_bg_style = '';
 	// if ( has_post_thumbnail() ) {
@@ -29,15 +28,12 @@ if ( is_singular( 'post' ) ) {
 
 elseif ( is_home() || ( 'post' === get_post_type() && ( is_category() || is_tag() || is_month() || is_author() ) ) ) {
 	echo '<div class="bg--post-thumbnail"><p class="parent-title">Blog</p></div>';
-	get_template_part( 'template-parts/breadcrumbs' );
 }
 
-elseif ( is_singular( 'member' ) || is_post_type_archive( 'member' ) ) {
-	echo '<div class="bg--post-thumbnail"><p class="parent-title">プライベート・ギャラリー</p></div>';
-	get_template_part( 'template-parts/breadcrumbs' );
-}
+// elseif ( is_singular( 'member' ) || is_post_type_archive( 'member' ) ) {
+// 	echo '<div class="bg--post-thumbnail"><p class="parent-title">プライベート・ギャラリー</p></div>';
+// }
 
 elseif ( is_singular( 'lesson' ) || is_post_type_archive( 'lesson' ) ) {
 	echo '<div class="bg--post-thumbnail"><p class="parent-title">予約受付中のレッスン</p></div>';
-	get_template_part( 'template-parts/breadcrumbs' );
 }

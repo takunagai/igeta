@@ -27,8 +27,12 @@ if ( has_post_thumbnail() ) {
         <?php // igeta_post_thumbnail(); ?>
     </header>
 
-
     <?php get_template_part( 'template-parts/breadcrumbs' ); ?>
+	<?php if ( is_active_sidebar( 'under-page-header' ) ) : ?>
+		<div class="container mb-0">
+			<?php dynamic_sidebar( 'under-page-header' ); ?>
+		</div>
+	<?php endif; ?>
 
 
     <div class="entry-content">
