@@ -79,7 +79,7 @@ function igeta_widgets_init() {
         'id'          => 'after-post',
         'name'        => '記事本文の下 (ID: after-post)',
         'description' => esc_html__( '記事本文の下部エリア', 'igeta' ),
-        'before_widget' => '<div class="widget-area-after-post widget %2$s container width-50">',
+        'before_widget' => '<div class="widget-area-after-post widget %2$s container">',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>'
