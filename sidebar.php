@@ -9,7 +9,7 @@
 
 // 2カラムレイアウトなら表示
 if ( is_single() || is_archive() || is_home() || is_page_template( 'page-two-column.php' ) ) :
-?>
+	?>
 
 	<aside id="secondary" class="widget-area sticky-sidebar" role="complementary">
 		<div class="sticky-sidebar__inner">
@@ -29,6 +29,6 @@ if ( is_single() || is_archive() || is_home() || is_page_template( 'page-two-col
 		</div>
 	</aside>
 
-<?php
+	<?php
 endif;
 ?>

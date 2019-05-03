@@ -1,14 +1,11 @@
 <?php
 /**
- * igeta functions and definitions
+ * Functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package igeta
  */
-
-date_default_timezone_set('Asia/Tokyo');
-
 
 if ( ! function_exists( 'igeta_setup' ) ) :
 	/**
@@ -46,32 +43,42 @@ if ( ! function_exists( 'igeta_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'primary_menu'   => esc_html__( 'Primary', 'igeta' ),
-			'secondary_menu' => esc_html__( 'Secondary', 'igeta' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary_menu'   => esc_html__( 'Primary', 'igeta' ),
+				'secondary_menu' => esc_html__( 'Secondary', 'igeta' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'igeta_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'igeta_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
-
 
 		/* --------- 追加 ここから --------- */
 
@@ -80,45 +87,55 @@ if ( ! function_exists( 'igeta_setup' ) ) :
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 250,
+				'width'       => 250,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
 
 		/**
-		 * Add Editor Style and prevent cache
+		 * Add Editor Style
 		 *    テーマディレクトリ直下の editor-style.css を適用 (パスを指定したい場合は引数にセット)
 		 *
 		 * @link https://wpdocs.osdn.jp/Editor_Style
-		 * @link https://tenman.info/labo/css/?p=6033
 		 */
 		add_editor_style();
 
+		/**
+		 * Prevent editor style cache
+		 *    editor-style.css がキャッシュされないようにする
+		 *
+		 * @param string $mce_init target filter.
+		 * @link https://tenman.info/labo/css/?p=6033
+		 */
 		function extend_tiny_mce_before_init( $mce_init ) {
-			$mce_init['cache_suffix'] = 'v='.time();
+			$mce_init['cache_suffix'] = 'v=' . time();
 			return $mce_init;
 		}
 		add_filter( 'tiny_mce_before_init', 'extend_tiny_mce_before_init' );
 
-
 		/**
 		 * 固定ページでスラッグと斎場の祖先ページのスラッグを body_class() にクラスとして追加
+		 *
+		 * @param array $classes Target Classes.
 		 * @link https://www.nxworld.net/wordpress/wp-add-page-slug-body-class.html (fix necessary)
 		 */
 		function add_page_slug_class_name( $classes ) {
 			if ( is_page() ) {
-				$page = get_post( get_the_ID() );
+				$page      = get_post( get_the_ID() );
 				$classes[] = $page->post_name;
 
 				$parent_id = $page->post_parent;
-				if ( 0 == $parent_id ) {
-					$classes[] = get_post($parent_id)->post_name;
+				if ( 0 === $parent_id ) {
+					$classes[] = get_post( $parent_id )->post_name;
 				} else {
-					$ancestorsArray = get_ancestors( $page->ID, 'page', 'post_type' );
-					$progenitor_id = array_pop( $ancestorsArray );
-					$classes[] = get_post($progenitor_id)->post_name . '-child';
+					$ancestors_array = get_ancestors( $page->ID, 'page', 'post_type' );
+					$progenitor_id   = array_pop( $ancestors_array );
+					$classes[]       = get_post( $progenitor_id )->post_name . '-child';
 				}
 			}
 			return $classes;
@@ -148,69 +165,74 @@ if ( ! function_exists( 'igeta_setup' ) ) :
 		// remove_action( 'wp_head', 'wp_oembed_add_discovery_links' ); // Embed対応用
 		// remove_action( 'wp_head', 'wp_oembed_add_host_js' ); // Embed対応用
 
-
-		/**
-		 * 日付アーカイブのタイトルを調整
-		 * @link http://morilog.com/wordpress/tips/jp_date_wp_title/
-		 */
-		if ( ! function_exists('jp_date_wp_title') ) {
+		if ( ! function_exists( 'jp_date_wp_title' ) ) {
+			/**
+			 * 日付アーカイブのページタイトルを調整
+			 *   wp_title関数が生成するページタイトルを「YYYY年MM月DD日」に変更
+			 *
+			 * @param string $title title.
+			 * @param string $sep separator.
+			 * @param string $seplocation seplocation.
+			 * @link http://morilog.com/wordpress/tips/jp_date_wp_title/
+			 */
 			function jp_date_wp_title( $title, $sep, $seplocation ) {
 				if ( is_date() ) {
-					$m = get_query_var('m');
+					$m = get_query_var( 'm' );
 					if ( $m ) {
-						$year = substr($m, 0, 4);
-						$month = intval(substr($m, 4, 2));
-						$day = intval(substr($m, 6, 2));
+						$year  = substr( $m, 0, 4 );
+						$month = intval( substr( $m, 4, 2 ) );
+						$day   = intval( substr( $m, 6, 2 ) );
 					} else {
-						$year = get_query_var('year');
-						$month = get_query_var('monthnum');
-						$day = get_query_var('day');
+						$year  = get_query_var( 'year' );
+						$month = get_query_var( 'monthnum' );
+						$day   = get_query_var( 'day' );
 					}
 
-					$title = ($seplocation != 'right' ? " $sep " : '') .
-						($year ? $year . '年' : '') .
-						($month ? $month . '月' : '') .
-						($day ? $day . '日' : '') .
-						($seplocation == 'right' ? " $sep " : '');
+					$title = ( 'right' ? " $sep " : '' !== $seplocation ) .
+						( $year ? $year . '年' : '' ) .
+						( $month ? $month . '月' : '' ) .
+						( $day ? $day . '日' : '' ) .
+						( 'right' ? " $sep " : '' === $seplocation );
 				}
 				return $title;
 			}
 			add_filter( 'wp_title', 'jp_date_wp_title', 10, 3 );
 		}
 
-
 		/**
-		 * 現在のページ数とページ総数の表示。単ページなら何も表示しない
+		 * 投稿ページ分割用。現在のページ数とページ総数の表示。単ページなら何も表示しない
 		 *     使用：テンプレート中で <? show_current_page_number(); ?>
 		 *     参考：http://www.kxh-web.com/pagebunkatu/
 		 *     参考(
 		 */
-		//投稿ページ分割用
 		function show_page_number() {
 			global $pages, $page, $numpages, $multipage; // グローバル変数：https://wpdocs.osdn.jp/グローバル変数
-			$current_page_num = ( get_query_var('page') ) ? get_query_var('page') : 1; // 1ページ目なら 0 が返るので 1 を返す
+			$current_page_num = ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1; // 1ページ目なら 0 が返るので 1 を返す
 			if ( $multipage ) {
-				return ' (' . $current_page_num.' / '.$numpages . ')';
+				return ' (' . $current_page_num . ' / ' . $numpages . ')';
 			}
 		}
 
 		/**
 		 * 冒頭コメントで記事ごとに wpautop を無効にする
+		 *
+		 * @param string $content content.
 		 * @link https://elearn.jp/wpman/column/c20130813_01.html
 		 */
 		function noautop( $content ) {
 			if ( strpos( $content, '<!--noautop-->' ) !== false ) {
 				remove_filter( 'the_content', 'wpautop' );
-				$content = preg_replace( "/\s*\<!--noautop-->\s*(\r\n|\n|\r)?/u", "", $content );
+				$content = preg_replace( "/\s*\<!--noautop-->\s*(\r\n|\n|\r)?/u", '', $content );
 			}
 			return $content;
 		}
 		add_filter( 'the_content', 'noautop', 1 );
 
-
 		/**
 		 * 「最近の投稿」ウィジェットのカスタマイズ
 		 * デフォルトで投稿タイプ post のみしか表示しない → カスタム投稿で当該投稿タイプの最新記事を表示
+		 *
+		 * @param array $args An array of arguments used to retrieve the recent posts.
 		 * @link https://tenman.info/labo/snip/archives/8819
 		 */
 		function filter_custom_post_content( $args ) {
@@ -218,12 +240,12 @@ if ( ! function_exists( 'igeta_setup' ) ) :
 			if ( is_singular() ) {
 				$post_type = get_post_type( get_the_ID() );
 
-				if ( "post" == $post_type || "page" == $post_type || "attachment" == $post_type || "revision" == $post_type || "nav_menu_item" == $post_type ) {
+				if ( 'post' === $post_type || 'page' === $post_type || 'attachment' === $post_type || 'revision' === $post_type || 'nav_menu_item' === $post_type ) {
 					return $args;
 				}
 				$obj = get_post_type_object( $post_type );
 
-				if ( !empty( $obj ) && true == $obj->has_archive  ) {
+				if ( ! empty( $obj ) && true === $obj->has_archive ) {
 					$args['post_type'] = $post_type;
 				}
 			}
@@ -231,31 +253,29 @@ if ( ! function_exists( 'igeta_setup' ) ) :
 		}
 		add_filter( 'widget_posts_args', 'filter_custom_post_content' );
 
-
 		// // タイトル
 		// function filter_custom_post_title( $title, $instance, $id_base ) {
 
-		// 	if( 'recent-posts' == $id_base ) {
-		// 		if ( is_singular() ) {
+		// if( 'recent-posts' == $id_base ) {
+		// if ( is_singular() ) {
 
-		// 			$post_type = get_post_type( get_the_ID() );
+		// $post_type = get_post_type( get_the_ID() );
 
-		// 			if ( "post" == $post_type || "page" == $post_type || "attachment" == $post_type || "revision" == $post_type || "nav_menu_item" == $post_type ) {
+		// if ( "post" == $post_type || "page" == $post_type || "attachment" == $post_type || "revision" == $post_type || "nav_menu_item" == $post_type ) {
 
-		// 				return $title;
-		// 			}
-		// 			$obj = get_post_type_object( $post_type );
+		// return $title;
+		// }
+		// $obj = get_post_type_object( $post_type );
 
-		// 			if ( !empty( $obj ) && true == $obj->has_archive  ) {
+		// if ( !empty( $obj ) && true == $obj->has_archive  ) {
 
-		// 				return sprintf(__('最近の%1$s','text_domain'),$obj->label);
-		// 			}
-		// 		}
-		// 	}
-		// 	return $title;
+		// return sprintf(__('最近の%1$s','text_domain'),$obj->label);
+		// }
+		// }
+		// }
+		// return $title;
 		// }
 		// add_filter( 'widget_title','filter_custom_post_title', 10, 3 );
-
 
 		/* --------- 追加 ここまで --------- */
 	}
@@ -319,20 +339,20 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 require get_template_directory() . '/inc/extras.php';
 
 /**
- * enqueue scripts and css files // 追加
+ * Enqueue scripts and css files // 追加
  */
-if ( !is_admin() ) {
+if ( ! is_admin() ) {
 	require get_template_directory() . '/inc/enqueue.php';
 }
 
 /**
- * enqueue scripts and css files // 追加
+ * Enqueue scripts and css files // 追加
  */
 require get_template_directory() . '/inc/dashboard.php';
 require get_template_directory() . '/inc/tinymce.php';
 
 /**
- * wrapper container setting ( used in header.php ) // 追加
+ * Wrapper container setting ( used in header.php ) // 追加
  */
 require get_template_directory() . '/inc/wrapper-container-setting.php';
 

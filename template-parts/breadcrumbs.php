@@ -12,23 +12,23 @@
  *
  * <?php if ( ! is_front_page() ) : ?>
  *
- * 	<?php if ( function_exists( 'bcn_display' ) ) : // Breadcrumb NavXT Plugin ?>
+ *  <?php if ( function_exists( 'bcn_display' ) ) : // Breadcrumb NavXT Plugin ?>
  *
- * 		<div class="breadcrumbs breadcrumb-navxt">
- * 			<ol>
- * 			<?php bcn_display(); ?>
- * 			</ol>
- * 		</div>
+ *      <div class="breadcrumbs breadcrumb-navxt">
+ *          <ol>
+ *          <?php bcn_display(); ?>
+ *          </ol>
+ *      </div>
  *
  *
- * 	<?php elseif ( shortcode_exists( 'wp-structuring-markup-breadcrumb' ) ) : ?>
+ *  <?php elseif ( shortcode_exists( 'wp-structuring-markup-breadcrumb' ) ) : ?>
  *
- * 		<div class="breadcrumbs wp-structuring-markup-breadcrumb">
- * 	    <?php echo do_shortcode( '[wp-structuring-markup-breadcrumb]' ); // Markup (JSON-LD) structured in schema.org ?>
- * 		</div>
+ *      <div class="breadcrumbs wp-structuring-markup-breadcrumb">
+ *      <?php echo do_shortcode( '[wp-structuring-markup-breadcrumb]' ); // Markup (JSON-LD) structured in schema.org ?>
+ *      </div>
  *
- * 	<?php endif; ?>
+ *  <?php endif; ?>
  *
  * <?php endif ; ?>
  */
-?>
+

@@ -21,32 +21,34 @@ get_header();
 			</header>
 
 
-            <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <div class="container--narrow">
+			<section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<div class="container--narrow">
 
 				<?php if ( have_posts() ) : ?>
 
-                    <ul class="media--thumbnail">
-		            <?php
-		            while ( have_posts() ) : the_post();
-		                get_template_part( 'template-parts/content-archive', get_post_type() );
-		            endwhile;
-		            ?>
-            		</ul>
+					<ul class="media--thumbnail">
+					<?php
+					while ( have_posts() ) :
+						the_post();
+						get_template_part( 'template-parts/content-archive', get_post_type() );
+					endwhile;
+					?>
+					</ul>
 
-				<?php
-	            the_posts_navigation();
+					<?php
+					the_posts_navigation();
 
-	            else : ?>
+				else :
+					?>
 
 					<p>準備中です</p>
 
-				<?php
+					<?php
 				endif;
 				?>
 
-                </div>
-            </section>
+				</div>
+			</section>
 
 		</main>
 	</div>

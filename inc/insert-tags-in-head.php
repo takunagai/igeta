@@ -10,8 +10,8 @@
 
 // function igeta_indert_tags_in_head() {
 
-//     // TODO: header.php の <!–nextpage–> タグ関連のコードをここに移動
+// TODO: header.php の <!–nextpage–> タグ関連のコードをここに移動
 
 // }
 // add_action( 'wp_head', 'igeta_indert_tags_in_head' );
-?>
+

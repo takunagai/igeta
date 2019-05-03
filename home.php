@@ -15,45 +15,46 @@
 get_header();
 ?>
 
-    <div id="primary" class="content-area">
-    	<div id="primary__inner">
+	<div id="primary" class="content-area">
+		<div id="primary__inner">
 
-	        <main id="main" class="site-main" role="main">
+			<main id="main" class="site-main" role="main">
 
-	        <?php if ( have_posts() ) : ?>
+			<?php if ( have_posts() ) : ?>
 
-	            <header class="page-header">
-	                <h1 class="page-title">ブログ Top</h1>
-	            </header>
+				<header class="page-header">
+					<h1 class="page-title">ブログ Top</h1>
+				</header>
 
 
-	            <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	                <div class="container--narrow">
-	                    <ul class="media--thumbnail">
+				<section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<div class="container--narrow">
+						<ul class="media--thumbnail">
 
-			            <?php
-			            while ( have_posts() ) : the_post();
+						<?php
+						while ( have_posts() ) :
+							the_post();
 
-			                get_template_part( 'template-parts/content-archive', get_post_type() );
+							get_template_part( 'template-parts/content-archive', get_post_type() );
 
-			            endwhile;
+						endwhile;
 
-			            the_posts_navigation();
+						the_posts_navigation();
 
-	        else :
+			else :
 
-	            get_template_part( 'template-parts/content', 'none' );
+				get_template_part( 'template-parts/content', 'none' );
 
-	        endif;
-	        ?>
-	                    </ul>
-	                </div>
-	            </section>
-	        </main>
+			endif;
+			?>
+						</ul>
+					</div>
+				</section>
+			</main>
 
-	        <?php get_template_part( 'template-parts/widget-main-bottom' ); ?>
-	    </div>
-    </div>
+			<?php get_template_part( 'template-parts/widget-main-bottom' ); ?>
+		</div>
+	</div>
 
 <?php
 get_sidebar();

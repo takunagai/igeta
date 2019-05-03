@@ -1,20 +1,12 @@
 <?php
 /**
-Template Name: フロントページ
-Template Post Type: page
-*/
-
-/**
- * The template for displaying all pages.
+ * Template Name: フロントページ
+ * Template Post Type: page
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * The template for front page.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package kunai
+ * @package igeta
  */
 
 the_post();
@@ -40,22 +32,23 @@ get_header(); ?>
 									<?php endif; ?>
 									<?php if ( get_the_content() ) : ?>
 									<div class="front-page-content__body">
-											<?php the_content() ?>
+											<?php the_content(); ?>
 									</div>
 									<?php endif; ?>
 							</div>
 							<?php endif; ?>
 					<?php else : ?>
-					<?php get_template_part( 'template-parts/show-top-level-header' ); // 最上位のヘッダーの表示 ?>
-					<?php endif ; ?>
+						<?php get_template_part( 'template-parts/show-top-level-header' ); // 最上位のヘッダーの表示 ?>
+					<?php endif; ?>
 					</div>
 
 
 
 
-					<?php // フロントページのウィジェットコンテンツ群。有効なら表示
+					<?php
+					// フロントページのウィジェットコンテンツ群。有効なら表示
 					if ( is_active_sidebar( 'front-page-contents' ) ) :
-					?>
+						?>
 						<div class="front-page-contents-area">
 							<?php dynamic_sidebar( 'front-page-contents' ); ?>
 						</div>
@@ -71,10 +64,10 @@ get_header(); ?>
 				 */
 				$article_posts = get_posts(
 					array(
-						'post_type'        => 'post',
-						'order'            => 'DESC',
-						'orderby'          => 'date',
-						'posts_per_page'   => 12,
+						'post_type'      => 'post',
+						'order'          => 'DESC',
+						'orderby'        => 'date',
+						'posts_per_page' => 12,
 						// 'category_name'    => 'news',// カテゴリスラッグ
 						// 'category'         => 149,// カテゴリIDで指定する場合
 						// 'category__not_in' => array( 149 ),// ニュースカテゴリ以外
@@ -82,7 +75,7 @@ get_header(); ?>
 				);
 
 				if ( isset( $article_posts ) ) :
-				?>
+					?>
 
 					<section class="bg-dark">
 						<div class="container">
@@ -94,19 +87,21 @@ get_header(); ?>
 							<div class="grid grid--mobile-2col card--base">
 
 							<?php
-							foreach ( $article_posts as $post ) :setup_postdata( $post );
+							foreach ( $article_posts as $article_post ) :
+								setup_postdata( $article_post );
 
-							// カテゴリ表示用
-							$cat = get_the_category();
-							$cat = $cat[0];
-							?>
+								// カテゴリ表示用
+								$category = get_the_category();
+								$category = $category[0];
+								?>
 
 								<div class="grid__item">
 									<div class="card">
-									<?php if ( has_post_thumbnail() ) :
-									?>
+									<?php
+									if ( has_post_thumbnail() ) :
+										?>
 										<a href="<?php the_permalink(); ?>">
-											<?php the_post_thumbnail( 'large', array( 'class' => "card__img" ) ); ?>
+											<?php the_post_thumbnail( 'large', array( 'class' => 'card__img' ) ); ?>
 										</a>
 									<?php else : // アイキャッチ画像がない場合 ?>
 										<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/no-image.png" alt="" class="card__img"></a>
@@ -115,21 +110,21 @@ get_header(); ?>
 										<div class="card__body">
 												<h3 class="card__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 												<p class="card__meta"><?php echo get_the_date( 'Y年m月d日' ); ?></p>
-												<p class="card__meta"><?php echo get_cat_name($cat->term_id); ?></p>
-												<!-- <p><?php the_excerpt(); ?></p> -->
+												<p class="card__meta"><?php echo wp_kses_post( get_cat_name( $category->term_id ) ); ?></p>
 										</div>
 									</div>
 								</div>
 
-							<?php
-							endforeach; wp_reset_postdata();
+								<?php
+							endforeach;
+							wp_reset_postdata();
 							?>
 							</div>
 							<p class="aligncenter"><a class="btn--primary" href="./blog/">全ての記事を見る</a></p>
 						</div>
 					</section>
 
-				<?php
+					<?php
 				endif;
 				// ブログ最新記事 ここまで
 				?>

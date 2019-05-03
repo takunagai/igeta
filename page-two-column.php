@@ -1,10 +1,8 @@
 <?php
 /**
-Template Name: ２カラム (サイドメニュー付)
-Template Post Type: page
-*/
-
-/**
+ * Template Name: ２カラム (サイドメニュー付)
+ * Template Post Type: page
+ *
  * The template for displaying all pages
  *
  * This is the template that displays all pages by default.

@@ -39,23 +39,24 @@
 			<?php
 			if ( has_custom_logo() ) {
 				$igeta_site_title = get_custom_logo();
-			}
-			else {
-				$igeta_site_title = '<a href="' . get_bloginfo('url', 'display') . '" class="custom-logo-link">' . get_bloginfo('name', 'display') . "</a>";
+			} else {
+				$igeta_site_title = '<a href="' . get_bloginfo( 'url', 'display' ) . '" class="custom-logo-link">' . get_bloginfo( 'name', 'display' ) . '</a>';
 			}
 
-			if ( is_front_page() ) : ?>
+			if ( is_front_page() ) :
+				?>
 				<div class="site-branding">
-					<h1 class="site-title"><?php echo $igeta_site_title ?></h1>
+					<h1 class="site-title"><?php echo wp_kses_post( $igeta_site_title ); ?></h1>
 					<?php
 					$igeta_description = get_bloginfo( 'description', 'display' );
-					if ( isset( $igeta_description ) ) : ?>
-						<p class="catch-phrase"><?php echo $igeta_description; ?></p>
+					if ( isset( $igeta_description ) ) :
+						?>
+						<p class="catch-phrase"><?php echo wp_kses_post( $igeta_description ); ?></p>
 					<?php endif; ?>
 				</div>
 			<?php else : ?>
 				<div class="site-branding">
-					<p class="site-title"><?php echo $igeta_site_title ?></p>
+					<p class="site-title"><?php echo wp_kses_post( $igeta_site_title ); ?></p>
 				</div>
 			<?php endif; ?>
 
@@ -69,7 +70,7 @@
 
 		<?php if ( is_front_page() ) : ?>
 			<?php get_template_part( 'template-parts/hero-image' ); ?>
-		<?php endif ; ?>
+		<?php endif; ?>
 
 	</div>
 
