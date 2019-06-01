@@ -27,7 +27,7 @@ if ( ! function_exists( 'igeta_custom_header_setup' ) ) :
 				array(
 					'width'              => 1920,
 					'height'             => 1080,
-					// 'flex-width'         => true,
+					// 'flex-width'         => true, // 横幅を切り取れるか
 					'flex-height'        => true,
 					'default-text-color' => '333',
 					'default-image'      => get_template_directory_uri() . '/img/custom-header-dummy-image.png',
