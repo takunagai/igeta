@@ -15,7 +15,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
 
@@ -36,33 +35,28 @@
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-header-inner container my-0">
 
-			<?php
-			if ( has_custom_logo() ) {
-				$igeta_site_title = get_custom_logo();
-			} else {
-				$igeta_site_title = '<a href="' . get_bloginfo( 'url', 'display' ) . '" class="custom-logo-link">' . get_bloginfo( 'name', 'display' ) . '</a>';
-			}
-
-			if ( is_front_page() ) :
+				<?php
+				if ( has_custom_logo() ) {
+					$igeta_site_title = get_custom_logo();
+				} else {
+					$igeta_site_title = '<a href="' . get_bloginfo( 'url', 'display' ) . '" class="custom-logo-link">' . get_bloginfo( 'name', 'display' ) . '</a>';
+				}
 				?>
+
 				<div class="site-branding">
-					<h1 class="site-title"><?php echo wp_kses_post( $igeta_site_title ); ?></h1>
-					<?php
-					$igeta_description = get_bloginfo( 'description', 'display' );
-					if ( isset( $igeta_description ) ) :
-						?>
-						<p class="catch-phrase"><?php echo wp_kses_post( $igeta_description ); ?></p>
+					<?php if ( is_front_page() ) : ?>
+						<h1 class="site-title"><?php echo wp_kses_post( $igeta_site_title ); ?></h1>
+						<?php
+						$igeta_description = get_bloginfo( 'description', 'display' );
+						if ( isset( $igeta_description ) ) : ?>
+							<p class="catch-phrase"><?php echo wp_kses_post( $igeta_description ); ?></p>
+						<?php endif; ?>
+					<?php else : ?>
+						<p class="site-title"><?php echo wp_kses_post( $igeta_site_title ); ?></p>
 					<?php endif; ?>
 				</div>
-			<?php else : ?>
-				<div class="site-branding">
-					<p class="site-title"><?php echo wp_kses_post( $igeta_site_title ); ?></p>
-				</div>
-			<?php endif; ?>
 
-
-			<?php get_template_part( 'template-parts/primary-menu' ); ?>
-
+				<?php get_template_part( 'template-parts/primary-menu' ); ?>
 			</div>
 		</header>
 
@@ -77,5 +71,7 @@
 
 
 	<?php get_template_part( 'template-parts/page-header' ); ?>
+
+
 
 	<div class="site-content<?php igeta_wrapper_container_setting(); ?>">
