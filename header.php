@@ -18,7 +18,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( get_template() ); ?>>あ
+<body <?php body_class( get_template() ); ?>>
 <!--[if lt IE 10]>
 	<p class="browserupgrade">あなたは<a href="https://www.microsoft.com/japan/msbc/Express/ie_support/?tduid=(c23a0b4c2c4250d18195e73da240a60d)(256380)(2459594)(TnL5HPStwNw-X1eNbpe1sMi3IMh_IJlqPA)()" target="_blank">Microsoftがもはやサポートしていない</a>旧いWebブラウザを使用されています。サポート対象から外れたブラウザはセキュリティ的に危険です。安全性を確保し、表示の適正化するために<a href="https://browsehappy.com/">ブラウザをアップデート</a>することをおすすめします。</p>
 <![endif]-->
