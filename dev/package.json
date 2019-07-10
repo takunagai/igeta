@@ -11,8 +11,8 @@
 	"private": true,
 	"license": "ISC",
 	"devDependencies": {
-		"@babel/core": "^7.5.0",
-		"@babel/preset-env": "^7.5.0",
+		"@babel/core": "^7.5.4",
+		"@babel/preset-env": "^7.5.4",
 		"@babel/register": "^7.4.4",
 		"ajv": "^6.10.1",
 		"autoprefixer": "^9.6.1",
@@ -37,7 +37,7 @@
 		"postcss-uncss": "^0.17.0",
 		"require-dir": "^1.2.0",
 		"uncss": "^0.17.0",
-		"webpack": "^4.35.2",
+		"webpack": "^4.35.3",
 		"webpack-command": "^0.4.2"
 	},
 	"dependencies": {
