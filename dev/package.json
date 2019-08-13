@@ -37,11 +37,11 @@
 		"postcss-uncss": "^0.17.0",
 		"require-dir": "^1.2.0",
 		"uncss": "^0.17.0",
-		"webpack": "^4.38.0",
+		"webpack": "^4.39.1",
 		"webpack-command": "^0.4.2"
 	},
 	"dependencies": {
-		"acorn": "^6.2.1",
+		"acorn": "^6.3.0",
 		"jquery": "^3.4.1",
 		"normalize.css": "^8.0.1",
 		"sticky-sidebar": "^3.3.1",
