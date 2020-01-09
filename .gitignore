@@ -3,5 +3,5 @@
 node_modules/
 *.log
 *.sublime-project
-dev/igeta.sublime-project
 *.sublime-workspace
+
