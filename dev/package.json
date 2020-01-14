@@ -1,6 +1,6 @@
 {
 	"name": "igeta",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Common modules for websites",
 	"main": "index.js",
 	"scripts": {
@@ -14,9 +14,11 @@
 		"@babel/core": "^7.8.3",
 		"@babel/preset-env": "^7.8.3",
 		"@babel/register": "^7.8.3",
+		"acorn": "^7.1.0",
 		"ajv": "^6.10.2",
 		"autoprefixer": "^9.7.3",
 		"babel-loader": "^8.0.6",
+		"core-js": "^3.6.4",
 		"css-declaration-sorter": "^5.0.0",
 		"css-mqpacker": "^7.0.0",
 		"del": "^5.1.0",
@@ -41,9 +43,10 @@
 		"webpack-command": "^0.5.0"
 	},
 	"dependencies": {
-		"acorn": "^7.1.0",
+		"@glidejs/glide": "^3.4.1",
 		"jquery": "^3.4.1",
 		"normalize.css": "^8.0.1",
+		"remodal": "^1.1.1",
 		"sticky-sidebar": "^3.3.1",
 		"throttle-debounce": "^2.1.0"
 	}
