@@ -11,9 +11,9 @@
 	"private": true,
 	"license": "ISC",
 	"devDependencies": {
-		"@babel/core": "^7.7.7",
-		"@babel/preset-env": "^7.7.7",
-		"@babel/register": "^7.7.7",
+		"@babel/core": "^7.8.3",
+		"@babel/preset-env": "^7.8.3",
+		"@babel/register": "^7.8.3",
 		"ajv": "^6.10.2",
 		"autoprefixer": "^9.7.3",
 		"babel-loader": "^8.0.6",
