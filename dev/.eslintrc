@@ -1,17 +1,37 @@
  {
   "root": true,
   "extends": "eslint:recommended",
-  "rules": {
-    "indent": [ 1, "tab" ],
-    "linebreak-style": [ 2, "unix" ],
-    "semi": [ 2, "always" ],
-  },
   "env": {
     "es6": true,
     "node": true,
     "browser": true,
     "jquery": true
   },
+  "rules": {
+    "indent": [ 1, "tab" ],
+    "linebreak-style": [ 2, "unix" ],
+    "semi": [ 2, "always" ],
+    "no-extra-semi": "warn",
+    "arrow-body-style": "error",
+    "arrow-parens": "error",
+    "arrow-spacing": "error",
+    "generator-star-spacing": "error",
+    "no-duplicate-imports": "error",
+    "no-useless-computed-key": "error",
+    "no-useless-constructor": "error",
+    "no-useless-rename": "error",
+    "no-var": "error",
+    "object-shorthand": "error",
+    "prefer-arrow-callback": "error",
+    "prefer-const": "error",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "prefer-template": "error",
+    "rest-spread-spacing": "error",
+    "template-curly-spacing": "error",
+    "yield-star-spacing": "error"
+  },
+  "globals": {},
   "parserOptions": {
       "sourceType": "module"
   }

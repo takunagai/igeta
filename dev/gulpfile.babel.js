@@ -2,17 +2,15 @@ import path from 'path';
 import del from 'del';
 
 import gulp from 'gulp';
-
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import concat from 'gulp-concat';
-
 import sass from 'gulp-sass';
-sass.compiler = require('node-sass'); // node-sass がデフォルトだが明治する方が良い
 import sourcemaps from 'gulp-sourcemaps';
+import imagemin from 'gulp-imagemin';
 // import replace from 'gulp-replace';
 
-/* postcss */
+// postcss
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import cssDeclarationSorter from 'css-declaration-sorter';
@@ -21,7 +19,8 @@ import cssMqpacker from 'css-mqpacker';
 // import postcssUncss from 'postcss-uncss';
 // import postcssStyleGuide from 'postcss-style-guide';
 
-import imagemin from 'gulp-imagemin';
+
+sass.compiler = require('node-sass'); // node-sass がデフォルトだが明示しとく
 
 
 
