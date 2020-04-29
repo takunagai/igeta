@@ -44,7 +44,7 @@
 	},
 	"dependencies": {
 		"@glidejs/glide": "^3.4.1",
-		"jquery": "^3.4.1",
+		"jquery": "^3.5.0",
 		"normalize.css": "^8.0.1",
 		"remodal": "^1.1.1",
 		"sticky-sidebar": "^3.3.1",
